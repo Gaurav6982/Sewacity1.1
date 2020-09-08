@@ -42,7 +42,7 @@
              3px 3px #fe4902,
              4px 4px #fe4902,
              5px 5px #fe4902,
-             6px 6px #fe4902;">FOOD JUNCTION<br> Free delivery on order above ₹ 120 </h2>
+             6px 6px #fe4902;">FOOD JUNCTION<br>  Delivery Charge- ₹ 5 to ₹20 </h2>
 
  </div>
  <h4 class="text-center" style="background-color #ff4e00;
@@ -54,7 +54,7 @@ padding:4px 0;
 
 "><span style="color: #b3cdd1;
 text-shadow: 2px 2px 4px #000;
-">Rs.19 Delivery Charge Below 120</span></h4>
+"> Delivery Charge- ₹ 5 to ₹20</span></h4>
  <div class="row row-cols-1 row-cols-md-3">
    <div class="col mb-4">
      <div class="card">
