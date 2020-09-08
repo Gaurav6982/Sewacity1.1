@@ -1,0 +1,109 @@
+Return-Path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Delivered-To: mayank.gupta+spam@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id cNGwHBkqEF9b1QoAtyEQ0w
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	for <mayank.gupta+spam@sewacity.com>; Thu, 16 Jul 2020 06:21:13 -0400
+Return-path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Thu, 16 Jul 2020 06:21:13 -0400
+Received: from so254-28.mailgun.net ([198.61.254.28]:44962)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	id 1jw10h-003MNf-LJ
+	for mayank.gupta@sewacity.com; Thu, 16 Jul 2020 06:21:13 -0400
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=vakilsearch.com; q=dns/txt;
+ s=smtp; t=1594894845; h=Content-Transfer-Encoding: Content-Type:
+ Mime-Version: Subject: Message-ID: To: Reply-To: From: Date: Sender;
+ bh=AaEB7gVs5lA5eE+hOheUe86bFYOGnSJI+hLPpDHtsTc=; b=smtu43Oivs3LGPJbNC/y2BKMt49AVM4rhKDZKDscB2I4fHaiZ5QLYYj+RjvU/i4IbP9bbrmp
+ gUeFTIzrSHQoupKNa/i5H4mvaMqCQAkptd+PAO3XOKcyNzkvGKk7rFb/umGusNB7+O9LMS1x
+ CY+f5ZHg/mmFdPRJrAlKKZmb2qE=
+X-Mailgun-Sending-Ip: 198.61.254.28
+X-Mailgun-Sid: WyI4OGE1NyIsICJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwgImU0M2Q4Il0=
+Received: from mailgun.com (ec2-3-7-222-67.ap-south-1.compute.amazonaws.com
+ [3.7.222.67]) by smtp-out-n19.prod.us-east-1.postgun.com with SMTP id
+ 5f1029c503c8596cdbd746f8 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Thu, 16 Jul 2020 10:19:49
+ GMT
+Sender: support@vakilsearch.com
+Date: Thu, 16 Jul 2020 10:19:48 +0000
+From: Vakilsearch support <support@vakilsearch.com>
+Reply-To: support@vakilsearch.com
+To: mayank.gupta@sewacity.com
+Message-ID: <5f1029c4edee4_158e3fb7ef8ad33841815c2@prod-mobileapi-aws.mail>
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: Yes, score=6.7
+X-Spam-Score: 67
+X-Spam-Bar: ++++++
+X-Spam-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has identified this incoming email as possible spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Dear Customer, Thank you for contacting vakilsearch.com for
+    your Legal Assistance. As per your confirmation, we are closing your service
+    request. 
+ Content analysis details:   (6.7 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: vakilsearch.com]
+  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  6.2 RCVD_IN_MSPIKE_L5      RBL: Very bad reputation (-5)
+                             [198.61.254.28 listed in bl.mailspike.net]
+  0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+  0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML
+                             tag
+X-Spam-Flag: YES
+Subject:  ***SPAM***  Re: [#1369874] Need Help with : Trademark Registration
+
+<div class=3D"col-lg-6">
+  <div class=3D"span12">
+    <p>
+      <p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: =
+auto;">Dear Customer,</p><p style=3D"letter-spacing:normal; margin-bottom=
+: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:normal; ma=
+rgin-bottom: auto;margin-top: auto;">Thank you for contacting vakilsearch=
+.com for your Legal Assistance.</p><p style=3D"letter-spacing:normal; mar=
+gin-bottom: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:=
+normal; margin-bottom: auto;margin-top: auto;">As per your confirmation, =
+we are closing your service request.</p><p style=3D"letter-spacing:normal=
+; margin-bottom: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spa=
+cing:normal; margin-bottom: auto;margin-top: auto;">But even after I clos=
+e this request, the entire team of vakilsearch.com will be at your servic=
+e.</p><p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: =
+auto;">&nbsp;</p><p style=3D"letter-spacing:normal; margin-bottom: auto;m=
+argin-top: auto;">Should you have any requirements in the future that we =
+may be able to assist you with, please contact us.</p><p style=3D"letter-=
+spacing:normal; margin-bottom: auto;margin-top: auto;">&nbsp;</p><p style=
+=3D"letter-spacing:normal; margin-bottom: auto;margin-top: auto;">Looking=
+ forward to working with you soon.</p><br/> <span ><strong>Note: Please d=
+o not change the subject of the email while replying.</strong></span><br>=
+<br>---------------------------------------------<br>Thanks,<br><b>Anish =
+Chiramal</b><br>Business Advisor<br>Call: 7200365365 Extn.3132<br />Direc=
+t Number: 9360952068<br /><a href=3D"https://calendar.google.com/calendar=
+/embed?src=3Dvakilsearch.com_aas9v5jmkhmaidmpk9e72hjp6k%40group.calendar.=
+google.com&ctz=3DAsia%2FCalcutta" target=3D"_blank">Get tax payment and f=
+iling details on your Google calendar</a><br>----------------------------=
+----------------<br>
+    </p>
+  </div>
+</div>
+

@@ -1,0 +1,176 @@
+Return-Path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id 8CfFGPUrDV+atgAAtyEQ0w
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	for <mayank.gupta@sewacity.com>; Mon, 13 Jul 2020 23:52:21 -0400
+Return-path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Mon, 13 Jul 2020 23:52:21 -0400
+Received: from so254-49.mailgun.net ([198.61.254.49]:10548)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	id 1jvBzM-000DSF-Qu
+	for mayank.gupta@sewacity.com; Mon, 13 Jul 2020 23:52:21 -0400
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=vakilsearch.com; q=dns/txt;
+ s=smtp; t=1594698719; h=Content-Transfer-Encoding: Content-Type:
+ Mime-Version: Subject: Message-ID: To: Reply-To: From: Date: Sender;
+ bh=k89xMo/IVoi6omr6FM1lkHD+M1YuKz2/KQsD6zMZVyA=; b=iiCuslL8rr5VbjIXSJ+v7u8YmPfZ+t8sVWNPwSYrhHGawWYtAe/LKnwQtHzL7rR2b+UaAzuy
+ 2nUDls/PSB6MddNwEaBV/wBrX0UoxprP45Ewznh9ikEKf9bFEkhmH/Lke+ISJ6Vj2Yab7egV
+ Bhv+TalKQgCjcjI+Wn8Y3FqlMTY=
+X-Mailgun-Sending-Ip: 198.61.254.49
+X-Mailgun-Sid: WyI4OGE1NyIsICJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwgImU0M2Q4Il0=
+Received: from mailgun.com (ec2-3-7-222-67.ap-south-1.compute.amazonaws.com
+ [3.7.222.67]) by smtp-out-n19.prod.us-east-1.postgun.com with SMTP id
+ 5f0d2ba01e603dbb444dce18 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 14 Jul 2020 03:50:56
+ GMT
+Sender: support@vakilsearch.com
+Date: Tue, 14 Jul 2020 03:50:55 +0000
+From: Vakilsearch support <support@vakilsearch.com>
+Reply-To: support@vakilsearch.com
+To: mayank.gupta@sewacity.com
+Message-ID: <5f0d2b9f4a615_158e3fb7eee8bb3427667f6@prod-mobileapi-aws.mail>
+Subject: Re: [#1369894] Need Help with : Private Limited Company Registration
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Dear Customer, Thanks for choosing Vakilsearch, India's largest
+    legal platform and official partner of Start-up India. I'm Shashikala, a
+   business advisor here at vakilsearch.com. 
+ Content analysis details:   (0.5 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: bit.ly]
+  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [198.61.254.49 listed in wl.mailspike.net]
+  0.0 KAM_SHORT              Use of a URL Shortener for very short URL
+  0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML
+                             tag
+X-Spam-Flag: NO
+
+<div class=3D"col-lg-6">=0D
+  <div class=3D"span12">=0D
+    <p>=0D
+      <p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: a=
+uto;">Dear Customer,&nbsp;</p><p style=3D"letter-spacing:normal;margin-bo=
+ttom: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:normal=
+;margin-bottom: auto;margin-top: auto;">Thanks for choosing Vakilsearch, =
+India's largest legal platform and official partner of Start-up India.</p=
+><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;"=
+>&nbsp;</p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-t=
+op: auto;"><strong>I'm Shashikala, a business advisor here at vakilsearch=
+.com.</strong></p><p style=3D"letter-spacing:normal;margin-bottom: auto;m=
+argin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:normal;margin-bott=
+om: auto;margin-top: auto;">To begin with, we would require some basic se=
+t of documents from the members to start the process, such as,</p><p styl=
+e=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;">&nbsp;<=
+/p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto=
+;"><strong>2 Sets of Documents are required</strong></p><p style=3D"lette=
+r-spacing:normal;margin-bottom: auto;margin-top: auto;"><strong>1st</stro=
+ng>&nbsp;Set (All Directors):-</p><p style=3D"letter-spacing:normal;margi=
+n-bottom: auto;margin-top: auto;">1) Pan card</p><p style=3D"letter-spaci=
+ng:normal;margin-bottom: auto;margin-top: auto;">2) ID Proof - Driving Li=
+cense/ Voter=E2=80=99s ID/ Passport copy</p><p style=3D"letter-spacing:no=
+rmal;margin-bottom: auto;margin-top: auto;">3) Address Proof - Bank State=
+ment/ Telephone Bill/ Mobile Bill/ Electricity Bill (Latest Month)</p><p =
+style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;">&nb=
+sp;</p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: =
+auto;"><strong>2nd</strong> Set for Office Registration.</p><p style=3D"l=
+etter-spacing:normal;margin-bottom: auto;margin-top: auto;">2) Latest Ele=
+ctricity Bill&nbsp;<strong>( Less than 30 days)</strong></p><p style=3D"l=
+etter-spacing:normal;margin-bottom: auto;margin-top: auto;">3) No Objecti=
+on Certificate from the owner of the Premises - We will send the format</=
+p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;=
+">&nbsp;</p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-=
+top: auto;"><strong>WHAT IS THE PRICE?</strong></p><p style=3D"letter-spa=
+cing:normal;margin-bottom: auto;margin-top: auto;"><strong>Actual Cost:</=
+strong></p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-t=
+op: auto;">Private Limited Registration Professional + Government fee is =
+Rs.9999/-(all inclusive)</p><p style=3D"letter-spacing:normal;margin-bott=
+om: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:normal;m=
+argin-bottom: auto;margin-top: auto;"><strong>Early Bird Offer:</strong><=
+/p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto=
+;">Get Private Limited + GST + Legal Agreements for just&nbsp;<strong>Rs.=
+ 6500/- [including All Govt. Fees and Taxes] valid only today.</strong></=
+p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;=
+">&nbsp;</p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-=
+top: auto;"><strong>Payment Method:</strong></p><p style=3D"letter-spacin=
+g:normal;margin-bottom: auto;margin-top: auto;"><strong>1st payment is Rs=
+.590/- ( initial payment to start the process)</strong></p><p style=3D"le=
+tter-spacing:normal;margin-bottom: auto;margin-top: auto;">2nd remaining =
+payment when we go to Private limited final form</p><p style=3D"letter-sp=
+acing:normal;margin-bottom: auto;margin-top: auto;"><i>The above-mentione=
+d cost may vary if your authorized capital is more than 1 lakh and if you=
+r place of registration is Kerala or Punjab or Madhya Pradesh</i></p><p s=
+tyle=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;">&nbs=
+p;</p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: a=
+uto;"><strong>WHAT IS INCLUDED IN THIS PACKAGE?&nbsp;</strong></p><p styl=
+e=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;">1. Dire=
+ctors Identification Number for 2 Directors</p><p style=3D"letter-spacing=
+:normal;margin-bottom: auto;margin-top: auto;">2. Digital Signature Certi=
+ficate for 2 Directors (If the shareholders are different from directors,=
+ then additional DSC is required for Shareholders)</p><p style=3D"letter-=
+spacing:normal;margin-bottom: auto;margin-top: auto;">3. Guidance for cho=
+osing the Company Name (Need Help in choosing your Company Name?&nbsp;<a =
+href=3D"https://docs.google.com/document/d/1ejbLKCIVtt8lQtNUwrDE6K5CXRHIo=
+CUVBij4gveeJgU/edit?pli=3D1">clickhere</a>&nbsp;to refer the Naming Guide=
+lines OR watch our Video by clicking here -&nbsp;<a href=3D"http://bit.ly=
+/1jD7tAX">http://bit.ly/1jD7tAX</a>)</p><p style=3D"letter-spacing:normal=
+;margin-bottom: auto;margin-top: auto;">4. PAN Number</p><p style=3D"lett=
+er-spacing:normal;margin-bottom: auto;margin-top: auto;">5. TAN Number</p=
+><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;"=
+>6. Final Registration Process includes - Drafting the Memorandum &amp; A=
+rticles of Association, RoC filing fees for an authorized capital, Govern=
+ment Stamp Duty and&nbsp;<strong>Certificate of Incorporation.</strong></=
+p><p style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;=
+">7. GST Registration</p><p style=3D"letter-spacing:normal;margin-bottom:=
+ auto;margin-top: auto;">8<strong>.&nbsp;&nbsp;DBS, Kotak Mahindra Bank o=
+r RBL&nbsp;Zero Balance Current Account</strong></p><p style=3D"letter-sp=
+acing:normal;margin-bottom: auto;margin-top: auto;">&nbsp;</p><p style=3D=
+"letter-spacing:normal;margin-bottom: auto;margin-top: auto;"><strong>HOW=
+ MUCH TIME WILL IT TAKE TO COMPLETE THE PROCESS?</strong></p><p style=3D"=
+letter-spacing:normal;margin-bottom: auto;margin-top: auto;">&nbsp;</p><p=
+ style=3D"letter-spacing:normal;margin-bottom: auto;margin-top: auto;">Us=
+ually, it takes around <strong>15-20</strong> <strong>business days</stro=
+ng> to complete the entire process.&nbsp;</p><p style=3D"letter-spacing:n=
+ormal;margin-bottom: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter=
+-spacing:normal;margin-bottom: auto;margin-top: auto;">&nbsp;</p><br/> <s=
+pan ><strong>Note: Please do not change the subject of the email while re=
+plying.</strong></span><br><br>------------------------------------------=
+---<br>Thanks,<br><b>Shashikala S</b><br>Business Advisor<br>Call: 720036=
+5365 Extn.3098<br />Direct Number: 9042004072<br /><b>WhatsApp: 904200407=
+2</b><br /><a href=3D"https://calendar.google.com/calendar/embed?src=3Dva=
+kilsearch.com_aas9v5jmkhmaidmpk9e72hjp6k%40group.calendar.google.com&ctz=3D=
+Asia%2FCalcutta" target=3D"_blank">Get tax payment and filing details on =
+your Google calendar</a><br>--------------------------------------------<=
+br>=0D
+    </p>=0D
+  </div>=0D
+</div>=0D
+=0D

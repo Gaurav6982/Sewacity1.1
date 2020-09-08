@@ -1,0 +1,210 @@
+Return-Path: <010201734fc5e570-d2a3de5b-552e-4db8-ab95-109bcc677156-000000@eu-west-1.amazonses.com>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id GOLAFFNHDl/55QsAtyEQ0w
+	(envelope-from <010201734fc5e570-d2a3de5b-552e-4db8-ab95-109bcc677156-000000@eu-west-1.amazonses.com>)
+	for <mayank.gupta@sewacity.com>; Tue, 14 Jul 2020 20:01:23 -0400
+Return-path: <010201734fc5e570-d2a3de5b-552e-4db8-ab95-109bcc677156-000000@eu-west-1.amazonses.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Tue, 14 Jul 2020 20:01:23 -0400
+Received: from a3-19.smtp-out.eu-west-1.amazonses.com ([54.240.3.19]:51272)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+	(Exim 4.93)
+	(envelope-from <010201734fc5e570-d2a3de5b-552e-4db8-ab95-109bcc677156-000000@eu-west-1.amazonses.com>)
+	id 1jvUrO-003FRl-EV
+	for mayank.gupta@sewacity.com; Tue, 14 Jul 2020 20:01:23 -0400
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=shh3fegwg5fppqsuzphvschd53n6ihuv; d=amazonses.com; t=1594771236;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=zzn/qWQLro0hJ/erUTzlleQ9n6DJIskQ8t0ti5Lvepw=;
+	b=zIalGW/k0LI+3JdxdHlqgbddtaXbC2Q22gLkTOdsqJrgOy1n1sfAL66hS+7PRGAs
+	TIheZRdLlUVpvAiinCJ3z6Mn3CJKhL3sv9pmM4L+Tps+uNXd1vAkeE+tc1EYuxRf+T1
+	i79ezC2HXPXvaQFAZhMRMk9Z5wUHCuOsQ8ujd5A8=
+Date: Wed, 15 Jul 2020 00:00:36 +0000
+From: Vakilsearch <sanjeev@vakilsearch.com>
+Reply-To: support@vakilsearch.com
+To: mayank.gupta@sewacity.com
+Message-ID: <010201734fc5e570-d2a3de5b-552e-4db8-ab95-109bcc677156-000000@eu-west-1.amazonses.com>
+Subject: Special offer on Company Incorporation!!!!
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_156174_687512409.1594771236142"
+X-WE-TRACKER-ID: V/Wunu9up3/x0CdTz331DDjeZw5C966REvAUFgjXhnZNheCrEQMbelB3Fl4oNFi/cpBXm+cTiwCpugIc9w66wtrIHWD0jeGiO71AOIbvlim7v5GxviRthxFApQrTRMfhqciWJoB94vY5Rx4Kd+/1QkknyUhkB1xubdfDfUOKaSrUfTQU7Bk9ytKsumtS30cGMeXg2eoFaxGDIRwY3tbRy4ByliZHLVEZbSOHLX36t80H3gOPoMcS7YbcBiKVyhS5vvwxRfKOY2npdxDpZTxAaVCGqdqHPnkd0v+9/XRgEUM=
+X-SES-Outgoing: 2020.07.15-54.240.3.19
+Feedback-ID: 1.eu-west-1.rU4ZKaXzATNwn3FE293w7iicuzfgVT0w+/o7lBkoPiI=:AmazonSES
+X-Spam-Status: No, score=1.3
+X-Spam-Score: 13
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  For any query reply to this email here. Also, avail services
+    hassle-free from Vakilsearch App Get in Touch 
+ Content analysis details:   (1.3 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: fonts.googleapis.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [54.240.3.19 listed in wl.mailspike.net]
+  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+                             mail domains are different
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_IMAGE_RATIO_02    BODY: HTML has a low ratio of text to image
+                             area
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  1.1 KAM_REALLYHUGEIMGSRC   RAW: Spam with image tags with ridiculously
+                              huge http urls
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+  0.2 KAM_HUGEIMGSRC         Message contains many image tags with huge http
+                             urls
+X-Spam-Flag: NO
+
+------=_Part_156174_687512409.1594771236142
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+ <head>=20
+  <title></title>=20
+  <link href=3D"https://fonts.googleapis.com/css?family=3DOpen+Sans" rel=3D=
+"stylesheet">=20
+ </head>=20
+ <body>=20
+  <p><span style=3D"display: none;">&nbsp;</span>&nbsp;</p>
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"background: #fff;" width=3D"600">
+   <tbody>
+    <tr>
+     <td align=3D"center" style=3D"padding: 20px 0 10px 0;"><span style=3D"=
+font-size: 14pt;"><strong><a href=3D"https://c.in.webengage.com/lw/g1.jpg?p=
+=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjYwMjY1YzJkNjc0ZWU0YTcz=
+OTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwiZSI=
+6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtYTExMi00NmI2LThmMjUtZT=
+dmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoif=
+jE4ZWM0YmJhIiwidG9VUkwiOiJodHRwczovL3Zha2lsc2VhcmNoLmNvbS8%2FdXRtX3NvdXJjZT=
+1uZXdzbGV0dGVyIn0%3D" we-wk-cta-id=3D"~18ec4bba"><img alt=3D"Vakilsearch" s=
+rc=3D"https://cdn-jp.gsecondscreen.com/static/clients/ec1472cc-6ee4-472f-9b=
+b7-f7680a4ad097/1554904159699235/mailer-new/images/vakilsearch-logo.png" wi=
+dth=3D"160"></a></strong></span></td>
+    </tr>
+    <tr>
+     <td>
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"border: 2px solid #fcd209; margin-top: 10px; padding: 20px;" w=
+idth=3D"100%">
+       <tbody>
+        <tr>
+         <td style=3D"font-family: 'Open Sans'; font-size: 14px; color: #00=
+0000;"><p><a href=3D"https://c.in.webengage.com/lw/g1.jpg?p=3DeyJsYyI6Imluf=
+n45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjYwMjY1YzJkNjc0ZWU0YTczOTIzZiIsImMiOiIx=
+MzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwiZSI6In5uNTlmZ3AiLCJ=
+2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtYTExMi00NmI2LThmMjUtZTdmMmM0ZjI5YzQzIi=
+wiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoiZmEwZTZiNmZmYzg0Y=
+2U1YmU2YzJhZjgwMjY2ZTQwNmUyNzE4MGQ0ZiIsInRvVVJMIjoiaHR0cHM6Ly92YWtpbHNlYXJj=
+aC5jb20vb25saW5lLWNvbXBhbnktcmVnaXN0cmF0aW9uP3V0bV9zb3VyY2U9VlMtV0UmdXRtX2N=
+hbXBhaWduPVZTLVdFLVB2dC1sdGQifQ%3D%3D"><img src=3D"https://vakilsearch.com/=
+advice/wp-content/uploads/2020/07/VS-emailersVSE2.jpg" alt width=3D"600" he=
+ight=3D"1079"></a><br></p><p dir=3D"ltr" style=3D"text-align: center;">&nbs=
+p;For any query reply to this email <a href=3D"mailto:support@vakilsearch.c=
+om" we-wk-cta-id=3D"3d762ad0">here</a>.</p></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+    <tr>
+     <td align=3D"center"><p style=3D"color: #000000; font-size: 18px; font=
+-weight: bold; font-family: 'Open Sans';">Also, avail services hassle-free =
+from Vakilsearch App</p><p style=3D"color: #000000; font-size: 18px; font-w=
+eight: bold; font-family: 'Open Sans';"><a href=3D"https://c.in.webengage.c=
+om/lw/g1.jpg?p=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjYwMjY1Yz=
+JkNjc0ZWU0YTczOTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2V3YWNpd=
+HkuY29tIiwiZSI6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtYTExMi00=
+NmI2LThmMjUtZTdmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWlsX2NsaWN=
+rIiwiY3RhIjoiNjNjOWM1ODkiLCJ0b1VSTCI6Imh0dHBzOi8vdmFraWxzZWFyY2guY29tL2FwcD=
+91dG1fc291cmNlPVZTLVdFJnV0bV9jYW1wYWlnbj1WUy1XRS1QdnQtbHRkIn0%3D" we-wk-cta=
+-id=3D"63c9c589"><img alt src=3D"http://sendy.legalissimple.com/sendy/uploa=
+ds/1592195824.png" style=3D"width: 150px; height: 23px;"></a></p><p style=
+=3D"color: #000000; font-size: 18px; font-weight: bold; font-family: 'Open =
+Sans';">Get in Touch</p><a href=3D"https://c.in.webengage.com/lw/g1.jpg?p=
+=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjYwMjY1YzJkNjc0ZWU0YTcz=
+OTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwiZSI=
+6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtYTExMi00NmI2LThmMjUtZT=
+dmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoif=
+jNlNTBlNjc0IiwidG9VUkwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vdmFraWxzZWFyY2gi=
+fQ%3D%3D" target=3D"_blank" rel=3D"noopener" we-wk-cta-id=3D"~3e50e674"><im=
+g src=3D"https://cdn-jp.gsecondscreen.com/static/clients/ec1472cc-6ee4-472f=
+-9bb7-f7680a4ad097/1554904159699235/mailer-new/images/icon-fb.png" style=3D=
+"width: 33px;"></a>&nbsp;&nbsp;&nbsp; <a href=3D"https://c.in.webengage.com=
+/lw/g1.jpg?p=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjYwMjY1YzJk=
+Njc0ZWU0YTczOTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2V3YWNpdHk=
+uY29tIiwiZSI6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtYTExMi00Nm=
+I2LThmMjUtZTdmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWlsX2NsaWNrI=
+iwiY3RhIjoifjMyODRiMzNiIiwidG9VUkwiOiJodHRwczovL3R3aXR0ZXIuY29tL0xldHN2YWtp=
+bHNlYXJjaCJ9" target=3D"_blank" rel=3D"noopener" we-wk-cta-id=3D"~3284b33b"=
+><img src=3D"https://cdn-jp.gsecondscreen.com/static/clients/ec1472cc-6ee4-=
+472f-9bb7-f7680a4ad097/1554904159699235/mailer-new/images/icon-twitter.png"=
+ style=3D"width: 33px;"></a>&nbsp;&nbsp;&nbsp; <a href=3D"https://c.in.webe=
+ngage.com/lw/g1.jpg?p=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjY=
+wMjY1YzJkNjc0ZWU0YTczOTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2=
+V3YWNpdHkuY29tIiwiZSI6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtY=
+TExMi00NmI2LThmMjUtZTdmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWls=
+X2NsaWNrIiwiY3RhIjoiNTcwZDkyNTEiLCJ0b1VSTCI6Imh0dHBzOi8vd3d3LnlvdXR1YmUuY29=
+tL3VzZXIvbGVnYWxzb2x1dGlvbnN2YWtpbCJ9" target=3D"_blank" rel=3D"noopener" w=
+e-wk-cta-id=3D"570d9251"><img src=3D"https://cdn-jp.gsecondscreen.com/stati=
+c/clients/ec1472cc-6ee4-472f-9bb7-f7680a4ad097/1554904159699235/mailer-new/=
+images/icon-youtube.png" style=3D"width: 33px;"></a>&nbsp;&nbsp;&nbsp; <a h=
+ref=3D"https://c.in.webengage.com/lw/g1.jpg?p=3DeyJsYyI6Imlufn45OTE5OTA4OSI=
+sImwiOiI1MGMxOWVmY2VhYjYwMjY1YzJkNjc0ZWU0YTczOTIzZiIsImMiOiIxMzY5ODk0IiwiZW=
+0iOiJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwiZSI6In5uNTlmZ3AiLCJ2IjoifjFubWU4c=
+GoiLCJzIjoiMTVkZDAyNjQtYTExMi00NmI2LThmMjUtZTdmMmM0ZjI5YzQzIiwiaiI6IjRsMmph=
+bTIiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoifjU3ZDg1Y2U1IiwidG9VUkwiOiJodHR=
+wczovL3d3dy5saW5rZWRpbi5jb20vY29tcGFueS92YWtpbHNlYXJjaC1jb20ifQ%3D%3D" targ=
+et=3D"_blank" rel=3D"noopener" we-wk-cta-id=3D"~57d85ce5"><img src=3D"https=
+://cdn-jp.gsecondscreen.com/static/clients/ec1472cc-6ee4-472f-9bb7-f7680a4a=
+d097/1554904159699235/mailer-new/images/icon-linkedin.png" style=3D"width: =
+33px;"></a><p style=3D"font-family: 'Open Sans'; font-size: 22px; border-to=
+p: 1px solid #d6d6d6; padding-top: 14px;">www.vakilsearch.com</p><p><span s=
+tyle=3D"font-size: 8pt;"><a href=3D"https://in.webengage.com/users/emails/u=
+nsubscribe.html?p=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY2VhYjYwMjY=
+1YzJkNjc0ZWU0YTczOTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3VwdGFAc2V3YW=
+NpdHkuY29tIiwiZSI6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDAyNjQtYTExM=
+i00NmI2LThmMjUtZTdmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6ImVtYWlsX3Vu=
+c3Vic2NyaWJlIiwiY3RhIjoifjRiMWMyOWFjIn0%3D" we-wk-cta-id=3D"~4b1c29ac">Unsu=
+bscribe here</a></span></p></td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   <gdiv></gdiv><br></p>
+  <p>
+   <gdiv></gdiv><br></p>
+  <p>
+   <gdiv></gdiv><br></p>
+  <p>
+   <gdiv></gdiv><br></p>
+  <p>
+   <gdiv></gdiv><br></p>
+  <p>
+   <gdiv></gdiv><br></p>
+  <gdiv></gdiv>  <img height=3D"0" width=3D"0" alt=3D" " src=3D"https://c.i=
+n.webengage.com/lw/g1.jpg?p=3DeyJsYyI6Imlufn45OTE5OTA4OSIsImwiOiI1MGMxOWVmY=
+2VhYjYwMjY1YzJkNjc0ZWU0YTczOTIzZiIsImMiOiIxMzY5ODk0IiwiZW0iOiJtYXlhbmsuZ3Vw=
+dGFAc2V3YWNpdHkuY29tIiwiZSI6In5uNTlmZ3AiLCJ2IjoifjFubWU4cGoiLCJzIjoiMTVkZDA=
+yNjQtYTExMi00NmI2LThmMjUtZTdmMmM0ZjI5YzQzIiwiaiI6IjRsMmphbTIiLCJldmVudCI6Im=
+VtYWlsX29wZW4ifQ%3D%3D">
+ </body>
+</html>
+------=_Part_156174_687512409.1594771236142--

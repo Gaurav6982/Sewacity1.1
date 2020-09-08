@@ -1,0 +1,151 @@
+Return-Path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id yOxjFLqVDV9zqQAAtyEQ0w
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	for <mayank.gupta@sewacity.com>; Tue, 14 Jul 2020 07:23:38 -0400
+Return-path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Tue, 14 Jul 2020 07:23:38 -0400
+Received: from so254-49.mailgun.net ([198.61.254.49]:22076)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	id 1jvJ26-000Rw4-96
+	for mayank.gupta@sewacity.com; Tue, 14 Jul 2020 07:23:38 -0400
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=vakilsearch.com; q=dns/txt;
+ s=smtp; t=1594725794; h=Content-Transfer-Encoding: Content-Type:
+ Mime-Version: Subject: Message-ID: To: Reply-To: From: Date: Sender;
+ bh=gBUsHZBsAAv0RUoKlhp//wvWBGbywUtIRMLlo48a3Sc=; b=C1oGpxRNHEN2YugEQKwC2hcEnT3iCnQVJloqfhiQiHvJJHxJVf8zQlbRmEmB8bmZ7Sp+yGkv
+ eFfSho0453Uib7m7UoqwKDRpjuyPcy0I2jb21f+W2pxdHyec5zmVgwqgR68vr95bbiEw9FIb
+ H32J50/G/fv9bn53l/H0ZaDeH0E=
+X-Mailgun-Sending-Ip: 198.61.254.49
+X-Mailgun-Sid: WyI4OGE1NyIsICJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwgImU0M2Q4Il0=
+Received: from mailgun.com (ec2-3-7-222-67.ap-south-1.compute.amazonaws.com
+ [3.7.222.67]) by smtp-out-n07.prod.us-west-2.postgun.com with SMTP id
+ 5f0d95782991e765cd318235 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 14 Jul 2020 11:22:32
+ GMT
+Sender: support@vakilsearch.com
+Date: Tue, 14 Jul 2020 11:22:31 +0000
+From: Vakilsearch support <support@vakilsearch.com>
+Reply-To: support@vakilsearch.com
+To: mayank.gupta@sewacity.com
+Message-ID: <5f0d9577892fe_158e4acdba03091488@prod-mobileapi-aws.mail>
+Subject: Re: [#1369874] Need Help with : Trademark Registration
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Dear Mayank Gupta, Thank you for choosing Vakilsearch to help
+    set up your new business! I tried calling you to discuss your requirement
+    further, but I wasn't able to reach you. Simply reply to this email and we
+    will revert to you immediately. 
+ Content analysis details:   (0.5 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: vakilsearch.com]
+  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [198.61.254.49 listed in wl.mailspike.net]
+  0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML
+                             tag
+X-Spam-Flag: NO
+
+<div class=3D"col-lg-6">
+  <div class=3D"span12">
+    <p>
+      <p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: =
+auto;">Dear Mayank Gupta,<br>Thank you for choosing Vakilsearch to help s=
+et up your new business!<br><br>I tried calling you to discuss your requi=
+rement further, but I&nbsp;wasn't able to reach you.&nbsp;Simply reply to=
+ this email and we will revert to you immediately.&nbsp;<br><br>It is gre=
+at to hear that you are applying for a Trademark for your business.<br><b=
+r>I,&nbsp;Anish Chiramal will be your point of contact to guide you throu=
+gh the process.&nbsp;<br>&nbsp;</p><p style=3D"letter-spacing:normal; mar=
+gin-bottom: auto;margin-top: auto;"><strong><u>To begin with we require&n=
+bsp;a few&nbsp;details for your Trademark Application&nbsp;which can be s=
+ubmitted by clicking the following Dashboard link:</u></strong><br><br><b=
+r>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &=
+nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbs=
+p; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href=3D"https://hel=
+pdesk.vakilsearch.com/login?magic_key=3Dc9c4c09636&amp;ticket_id=3D136987=
+4">Get started now</a><br>&nbsp;</p><p style=3D"letter-spacing:normal; ma=
+rgin-bottom: auto;margin-top: auto;">Based on your confirmation on the de=
+tails&nbsp;on the Dashboard, we will do a preliminary search on your bran=
+d name, logo or slogan.<br><br><strong><u>COST</u></strong><br>&nbsp;<br>=
+Our professional charges for filing your Trademark Application will be&nb=
+sp;<strong>Rs.1,999/-&nbsp;</strong>+ GST ( 18%).<br>&nbsp;<br>The govern=
+ment filing fees for one TM application will be&nbsp;<strong>Rs. 4,500/-<=
+/strong>&nbsp;per class for Individuals.<br>Please note that, for registr=
+ation in the name of the&nbsp;<strong>Company/ LLP/ Partnership firm/any =
+entity i.e. NON-Individual category</strong>, Government fee&nbsp;is&nbsp=
+;<strong>Rs. 9,000/-</strong>&nbsp;per class.<br>&nbsp;<br>Please find at=
+tached the proposal for Trademark&nbsp;Registration as well as Trademark&=
+nbsp;Watch Service&nbsp;(which offers all-round protection for your trade=
+mark against infringers).<br>&nbsp;<br>Please feel free to talk with us a=
+t +91 7200 365 365 for any further doubts or clarifications about your Tr=
+ademark Application. For more details on your Trademark registration proc=
+ess please refer to our attached Trademark Proposal.<br>&nbsp;<br>Looking=
+ forward to working with you soon.<br>&nbsp;<br>&nbsp;</p><br/> <span ><s=
+trong>Note: Please do not change the subject of the email while replying.=
+</strong></span><br><br>---------------------------------------------<br>=
+Thanks,<br><b>Anish Chiramal</b><br>Business Advisor<br>Call: 7200365365 =
+Extn.3132<br />Direct Number: 9360952068<br /><a href=3D"https://calendar=
+.google.com/calendar/embed?src=3Dvakilsearch.com_aas9v5jmkhmaidmpk9e72hjp=
+6k%40group.calendar.google.com&ctz=3DAsia%2FCalcutta" target=3D"_blank">G=
+et tax payment and filing details on your Google calendar</a><br>--------=
+------------------------------------<br>
+    </p>
+  </div>
+</div>
+        <div class=3D"col-lg-6">
+                <h3>Attachments</h3>
+          <div class=3D"span12">
+            <p>
+              <a href=3D"https://vs-webapp.s3.ap-south-1.amazonaws.com/pe=
+nyzcneg6tilz0z1va93u7zeel8?response-content-disposition=3Dinline%3B%20fil=
+ename%3D%22TRADEMARK_WATCH_SERVICES.pdf%22%3B%20filename%2A%3DUTF-8%27%27=
+TRADEMARK_WATCH_SERVICES.pdf&amp;response-content-type=3Dapplication%2Fpd=
+f&amp;X-Amz-Algorithm=3DAWS4-HMAC-SHA256&amp;X-Amz-Credential=3DAKIAIGAFH=
+TBW3NKUTDAQ%2F20200714%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=3D=
+20200714T112229Z&amp;X-Amz-Expires=3D3600&amp;X-Amz-SignedHeaders=3Dhost&=
+amp;X-Amz-Signature=3D3fb76489dfdded0000c3838eb9ffabdacc1fa746dccd5cb39a1=
+18cc99850b405">TRADEMARK_WATCH_SERVICES.pdf</a>
+            </p>
+            <p>
+              <a href=3D"https://vs-webapp.s3.ap-south-1.amazonaws.com/m2=
+unq3uvhfrkgtlooau6f3l5g6e9?response-content-disposition=3Dinline%3B%20fil=
+ename%3D%22TRADEMARK_PROPOSAL.pdf%22%3B%20filename%2A%3DUTF-8%27%27TRADEM=
+ARK_PROPOSAL.pdf&amp;response-content-type=3Dapplication%2Fpdf&amp;X-Amz-=
+Algorithm=3DAWS4-HMAC-SHA256&amp;X-Amz-Credential=3DAKIAIGAFHTBW3NKUTDAQ%=
+2F20200714%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=3D20200714T112=
+229Z&amp;X-Amz-Expires=3D3600&amp;X-Amz-SignedHeaders=3Dhost&amp;X-Amz-Si=
+gnature=3D6721bb5e97c4306d5d886291e64008bd77c826b362d393f94f19cbf8cac0683=
+e">TRADEMARK_PROPOSAL.pdf</a>
+            </p>
+    </div>
+        </div>
+

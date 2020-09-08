@@ -1,0 +1,110 @@
+Return-Path: <sewacityfbg@gmail.com>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id gCBwA6wUBl8TwQsAtyEQ0w
+	(envelope-from <sewacityfbg@gmail.com>)
+	for <mayank.gupta@sewacity.com>; Wed, 08 Jul 2020 14:47:08 -0400
+Return-path: <sewacityfbg@gmail.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Wed, 08 Jul 2020 14:47:08 -0400
+Received: from mail-oi1-f195.google.com ([209.85.167.195]:42229)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <sewacityfbg@gmail.com>)
+	id 1jtF5y-003Mgc-VG
+	for mayank.gupta@sewacity.com; Wed, 08 Jul 2020 14:47:08 -0400
+Received: by mail-oi1-f195.google.com with SMTP id t4so20832846oij.9
+        for <mayank.gupta@sewacity.com>; Wed, 08 Jul 2020 11:46:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=C8s60KxlCeS9JZ703gbp0D9g2bzTSb6n+1Nvj+Ehmrk=;
+        b=ZdvQGgpK/vD1yEvZXr2mFhoqgZ+cG4NqcY+wuR0U7vnGwcqjoDY1lv0I44EPp9C1vj
+         80p0CUs04bXSVWBth1Jpn3sj+LmyCTBF4ISz7VDBrV0ZgS24JgVuxHuK0BxRUNGrXQRQ
+         Dbs4w3pBJM55CDS6j+/OgfqpS/rLLq28leC+bTs04m4855srEg/lKHpUITx6zLSoFu4O
+         ihxzjluZa+3y/Iuk4cy53BGl8PhUD74GbULEVzZ/I/CJsOb5yqSIMXLKO2CwJn744A3/
+         F47K/bNluOXGcdgpozfcyQC+KNqsGGYnnv1JMISR7f+8BNw/VEdUwtB+JmHa/xShF9xe
+         skLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=C8s60KxlCeS9JZ703gbp0D9g2bzTSb6n+1Nvj+Ehmrk=;
+        b=Bh1j1h29J2gemj5YA4hvEkcjFOwrqSt1nsDhezYFvrRAkVyCMBBnZMfCZl0+kbGczX
+         p+AzBj0X+3yDEwpOlOBF5vYkQE1zF9QzzRh5Fi2JkUvghMZrQezJPLxobvHP8Pco/UAj
+         j/RQBKM8gPD4iTUvXPxLGPmvIaOSsE7/hJjBX5mw0dwyRds3YB3yeSbN435HkYSkf+hb
+         SzQ0ftHkg/dETAauMfrqgKORmfIQ8zgeK9DbuTHogCvh6u6tEwOt5R6fudwD8ZLKPLaz
+         SrzGod+0NtFTg/cCHJ7Dkr8H+jQOs+rnU6MerOxOtM77A4Phl2cCw5muLzsmtSd+SYFt
+         10hg==
+X-Gm-Message-State: AOAM533KiFnnFtw3D6PMu01f3BmWgWnCB9TE7fGSXCBjZFcUlgvEuaxE
+	7lQYpWHM3LP91UYyDNNhZXouyinqi8L34XThyxBKLPU0
+X-Google-Smtp-Source: ABdhPJz8oqQ3VIzsvwRafBVb9acRQlI1aaiPgkeXwSFViTnU4wXkWLM56+3IiHoTdyLaUgX4MhmF8XK7W5Ps77uJbxs=
+X-Received: by 2002:a05:6808:9aa:: with SMTP id e10mr8011685oig.74.1594233982000;
+ Wed, 08 Jul 2020 11:46:22 -0700 (PDT)
+MIME-Version: 1.0
+From: Sewa City <sewacityfbg@gmail.com>
+Date: Thu, 9 Jul 2020 00:16:12 +0530
+Message-ID: <CABhFSK6xrvw8FvCFTJJp+9aKLpw30+u_C09eYtk2DRf6Ba=EbA@mail.gmail.com>
+Subject: Founder
+To: mayank.gupta@sewacity.com
+Content-Type: multipart/alternative; boundary="0000000000002faf4605a9f28648"
+X-Spam-Status: No, score=1.6
+X-Spam-Score: 16
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  hello -- *Mayank Gupta|Founder* 
+ Content analysis details:   (1.6 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [209.85.167.195 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             [sewacityfbg[at]gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  1.8 HTML_IMAGE_ONLY_08     BODY: HTML: images with 400-800 bytes of
+                             words
+  0.0 HTML_IMAGE_RATIO_04    BODY: HTML has a low ratio of text to image
+                             area
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.0 TVD_SPACE_RATIO        No description available.
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+X-Spam-Flag: NO
+
+--0000000000002faf4605a9f28648
+Content-Type: text/plain; charset="UTF-8"
+
+hello
+
+-- 
+
+*Mayank Gupta|Founder*
+
+--0000000000002faf4605a9f28648
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">hello<br clear=3D"all"><div><br></div>-- <br><div dir=3D"l=
+tr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=
+=3D"ltr"><p class=3D"MsoNormal"><font face=3D"comic sans ms, sans-serif" si=
+ze=3D"4"><span style=3D"line-height:107%;color:rgb(0,32,96)"><b>Mayank
+Gupta|Founder</b></span></font></p><p class=3D"MsoNormal"><span style=3D"fo=
+nt-size:large;color:rgb(13,13,13)"><font face=3D"comic sans ms, sans-serif"=
+><img src=3D"https://drive.google.com/uc?id=3D1sexUMl4j5hvHxzlaKsVPYNZXvROc=
+0sxt&amp;export=3Ddownload" width=3D"200" height=3D"52"><br></font></span><=
+/p><table border=3D"1" cellspacing=3D"0" cellpadding=3D"0" width=3D"168" st=
+yle=3D"width:126.1pt;border-collapse:collapse;border:none"><tbody></tbody><=
+/table></div></div></div>
+
+--0000000000002faf4605a9f28648--
