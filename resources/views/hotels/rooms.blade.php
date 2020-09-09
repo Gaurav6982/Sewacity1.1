@@ -135,7 +135,7 @@ background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);" data-stella
           <img src="/storage/hotels/rest.jpeg" class="card-img-top" alt="..."style="height:375px;">
           <div class="card-body">
             <h5 class="card-title">Enjoy meals during your stay</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">If you are feeling hungry and want to eat  something then choose this option as it will be time and effort saving selection .We provide all kind of foods as mentioned in our menu while your stay in the hotel. These food service will be extra chargable  and are not included in your room charges.</p>
           </div>
         </div>
         <div class="card">
