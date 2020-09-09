@@ -204,7 +204,7 @@
             <ul>
               <li><i class="ri-check-double-line"></i>An easy way to fulfil your requirement without going to that specific place in the city.</li>
               <li><i class="ri-check-double-line"></i> You will save your time or effort and you can compare and can buy accordingly.</li>
-              <li><i class="ri-check-double-line"></i> It's always been difficult to know tha whether that product will be available or not if you go to a specific place but here you will find it easier to do.</li>
+              <li><i class="ri-check-double-line"></i> It's always been difficult to know the whether that product will be available or not if you go to a specific place but here you will find it easier to do.</li>
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
@@ -313,7 +313,7 @@
             <div class="icon-box">
               <i class="icofont">Food Services</i><br><br><br>
 
-              <p>This service is based on the  best food items present in the city and providing you the quality food with the help of renowned food sellers .There are several food items which are famous in the city and will give you a variety of options to choose and enjoy your meal. We provide you the same what you will get after going the respective restaurants or somewhere to eat.</p>
+              <p>This service is based on the  best food items present in the city and providing you the quality food with the help of renowned food sellers .There are several food items which are famous in the city and will give you a variety of options to choose and enjoy your meal. We provide you the same what you will get after going to the respective restaurants or somewhere to eat.</p>
             </div>
           </div>
           <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="300">
@@ -415,13 +415,13 @@
               <div class="member-info">
                 <h4>Mrinal Kumar
                 </h4>
-                <span>Accountant</span>
+                <span>Project Manager</span>
                 <p>Connect with us</p>
                 <div class="social">
-                  <a target="_blank" href=""><i class="ri-twitter-fill"></i></a>
-                  <a target="_blank" href=""><i class="ri-facebook-fill"></i></a>
-                  <a target="_blank" href=""><i class="ri-instagram-fill"></i></a>
-                  <a target="_blank" href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  <a target="_blank" href="https://twitter.com/MrinalK60416065?s=08"><i class="ri-twitter-fill"></i></a>
+                  <a target="_blank" href="https://www.facebook.com/mrinal.kumar.7921975"><i class="ri-facebook-fill"></i></a>
+                  <a target="_blank" href="https://instagram.com/mrinal_punkam?igshid=26svymiga83n"><i class="ri-instagram-fill"></i></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/mrinal-kumar-8308a31a3"> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -592,7 +592,7 @@
 
   <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
     <div class="member d-flex align-items-start">
-      <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+      <div class="pic"><img src="assets/img/team/prasoon.jpg" class="img-fluid" alt=""></div>
       <div class="member-info">
         <h4>Prasoon Kumar</h4>
         <span>HR</span>
@@ -726,9 +726,9 @@
     <div class="member d-flex align-items-start">
       <div class="pic"><img src="assets/img/team/harsita.jpeg" class="img-fluid" alt=""></div>
       <div class="member-info">
-        <h4>Harshita
+        <h4>Harsita
         </h4>
-        <span>Mange
+        <span>Accountant
         </span>
         <p>Connect with us</p>
         <div class="social">
@@ -757,7 +757,7 @@
         <p>Connect with us</p>
         <div class="social">
 
-          <a target="_blank" href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          <a target="_blank" href="https://www.linkedin.com/in/juhi-gupta-3ba010107/"> <i class="ri-linkedin-box-fill"></i> </a>
         </div>
       </div>
     </div>
@@ -783,22 +783,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </div>
-    </section><!-- End Team Section -->
+    </section> 
+
+  
+    <!-- End Team Section -->
 
 
 
