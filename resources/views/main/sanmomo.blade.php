@@ -55,7 +55,7 @@ padding:4px 0;
 
 "><span style="color: #b3cdd1;
  text-shadow: 2px 2px 4px #000;
-"> Delivery Charge- ₹ 5 to ₹20 </span></h4>
+"> Delivery Charge- ₹ 5 to ₹20 only </span></h4>
     <div class="row row-cols-1 row-cols-md-3">
       <div class="col mb-4">
         <div class="card">
