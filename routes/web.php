@@ -26,7 +26,7 @@ Route::group(['middleware'=>['admin','auth']],function(){
         return view('admin.dashboard');
     });
     // Route::get('/create','PostController@index');
-    // Route::get('/create','PostController@index');
+
     Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     Route::post('/manage-category','Admin\AdminController@manage_categories');
