@@ -663,7 +663,47 @@
 </div>
 
 <br>
+<div class="row">
 
+<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="member d-flex align-items-start">
+      <div class="pic"><img src="assets/img/team/jaha.png" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>jahnavi_kanth</h4>
+        <span>Corporate ambassador</span>
+        <p>Connect with us</p>
+        <div class="social">
+        
+          
+          <a target="_blank" href="https://www.instagram.com/p/B5-lSPSpNdD/?igshid=pqzpwdp3q7tj"><i class="ri-instagram-fill"></i></a>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="member d-flex align-items-start">
+      <div class="pic"><img src="assets/img/team/shiva.jpeg" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>Shiva</h4>
+        <span>Delivery Department</span>
+        <p>Connect with us</p>
+        <div class="social">
+        
+          
+          <a target="_blank" href="https://www.instagram.com/p/B5-lSPSpNdD/?igshid=pqzpwdp3q7tj"><i class="ri-instagram-fill"></i></a>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+  
+  
 <div class="row">
 
   <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -728,8 +768,7 @@
       <div class="member-info">
         <h4>Harsita
         </h4>
-        <span>Accountant
-        </span>
+        <span>Member</span>
         <p>Connect with us</p>
         <div class="social">
 
