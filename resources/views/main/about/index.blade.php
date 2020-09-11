@@ -109,7 +109,7 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Sewacity</span></h2>
-          <p class="animate__animated animate__fadeInUp">Sewacity is made to "serve the city"  in order to provide all the services in the city without any difficulty to everyone and make their work effortless . We are unique in our work  as it is first time that something is providing a  digital platform where you can fulfil your need from the same city where you live.We have a statement which clearify our working strategy i.e. "By The City And For The City".Our Logo make it clear that we are doing all the things with your support ❤️ and our effort.</p>
+          <p class="animate__animated animate__fadeInUp">Sewacity derives its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless. We are unique with our idea as we provide a digital platform where customers can get their services fulfilled from the local service providers efficiently. We work towards our motto " By the city and for the city" along with the logo depicting your support in our journey of "local for vocal".❤️ </p>
           <a target="_blank" href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
@@ -195,7 +195,7 @@
 
         <div class="section-title">
           <h2>About Us</h2>
-          <p>Sewacity offer to provide a digital platform to every business of city where every businessman can expand their businesses. The lack of an online advertising facilitiy is a hindrance to the businessman to get the attention of the possible clients, which we aim to bring down. Sewacity will help the customers too as it provides an easy way to learn about the availability and cost price of the products as well as comparing the options. Our intention is to establish ourselves as a bridge between the customers and sellers. It will work as a boon in development of the businessmen and the residents of City.</p>
+          <p>Sewacity offers a digital platform to connect local businesses and customers in a city.Online advertising is the most effective way to reach out to customers and gain their attention, and we aim to provide this facility.Sewacity gives a convenient and hassle-free experience to customers by providing the product's availability, cost price as well as show comparisons.We intend to establish ourselves as a bridge between the businesses and customers and work towards the growth of the service providers and giving customers a rich experience.</p>
         </div>
 
         <div class="row content">
@@ -649,7 +649,7 @@
     <div class="member d-flex align-items-start">
       <div class="pic"><img src="assets/img/team/sky.jpeg" class="img-fluid" alt=""></div>
       <div class="member-info">
-        <h4>Shristy Kumari
+        <h4>Shristy keshri
         </h4>
         <span>Marketing Coordinator
         </span>
@@ -669,13 +669,13 @@
     <div class="member d-flex align-items-start">
       <div class="pic"><img src="assets/img/team/jaha.png" class="img-fluid" alt=""></div>
       <div class="member-info">
-        <h4>jahnavi_kanth</h4>
+        <h4>Jahnavi kanth</h4>
         <span>Corporate ambassador</span>
         <p>Connect with us</p>
         <div class="social">
         
           
-          <a target="_blank" href="https://www.instagram.com/p/B5-lSPSpNdD/?igshid=pqzpwdp3q7tj"><i class="ri-instagram-fill"></i></a>
+          <a target="_blank" href="https://www.instagram.com/jahnavi_kanth/"><i class="ri-instagram-fill"></i></a>
        
         </div>
       </div>
@@ -686,13 +686,13 @@
     <div class="member d-flex align-items-start">
       <div class="pic"><img src="assets/img/team/shiva.jpeg" class="img-fluid" alt=""></div>
       <div class="member-info">
-        <h4>Shiva</h4>
-        <span>Delivery Department</span>
+        <h4>Shivanand Roy</h4>
+        <span>Delivery Department Manager</span>
         <p>Connect with us</p>
         <div class="social">
         
           
-          <a target="_blank" href="https://www.instagram.com/p/B5-lSPSpNdD/?igshid=pqzpwdp3q7tj"><i class="ri-instagram-fill"></i></a>
+          <a target="_blank" href="#"><i class="ri-instagram-fill"></i></a>
        
         </div>
       </div>
