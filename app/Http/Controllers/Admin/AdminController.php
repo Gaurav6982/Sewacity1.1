@@ -20,7 +20,7 @@ class AdminController extends Controller
         //return $city_id;
         $name=$request->input('name');
         $order=$request->input('order');
-        $category=Categories::where('category_name','=',$name)->first();
+        $category=Categories::where('category_name','=',$name)->where('city_id',$city_id)->first();
         if($category)
         {
             return "exist";

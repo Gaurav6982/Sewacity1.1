@@ -376,7 +376,7 @@
                     <li> <a href="/fbg">HOME</a> </li>
                     <li> <a  href="/about" target="_blank">ABOUT US</a></li>
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
-                    <li> <a  href="/food">FOOD SERVICE</a></li>
+                    <li> <a  href="/foodie">FOOD SERVICE</a></li>
                     <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li>
                     <li> <a  href="/safari">SEWACITY SAFARI</a></li>
                     <li><a  href="/shelters">SHELTERS</a></li>
@@ -469,7 +469,7 @@
                                     aria-expanded="false"> Our Services </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">HOME</a> --> <a class="dropdown-item"
-                                        href="/food">Food Service</a> <a class="dropdown-item"
+                                        href="/foodie">Food Service</a> <a class="dropdown-item"
                                         href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a><a
                                         class="dropdown-item" href="/safari">Sewacity Safari</a><a class="dropdown-item"
                                         href="/shelters">Shelters</a> </div>
@@ -630,7 +630,7 @@
                                 <p class="card-text">Food Service</p>
                             </div>
                             <div class="overlay">
-                                <div class="overlay-text"><a href="/food" class="btn btn-secondary">Wanna Eat
+                                <div class="overlay-text"><a href="/foodie" class="btn btn-secondary">Wanna Eat
                                         Something!</a></div>
                             </div>
                         </div>

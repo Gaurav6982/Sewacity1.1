@@ -160,7 +160,7 @@
 
             <p class="card-text">Here you get all your favorite customised cakes with a very decent price. The best part of this shop is that here you paid for the quality and also quantity. From here you can also get bakery biscuits,pizza, petties and many other things..</p>
 
-            <a href="/food/cake" class="btn btn-primary">Check Menu</a>
+            <a href="/foodie/cake" class="btn btn-primary">Check Menu</a>
 
           </div>
 
@@ -206,7 +206,7 @@
 
             <p class="card-text">Chinese ,North Indian(Please Order between 03:00 PM to 09:00 PM)</p>
 
-            <a href="/food/food-junction" class="btn btn-primary"><span>Check Menu</span><br>Call For Order-9117575868</a>
+            <a href="/foodie/food-junction" class="btn btn-primary"><span>Check Menu</span><br>Call For Order-9117575868</a>
 
           </div>
 
@@ -228,7 +228,7 @@
 
             <p class="card-text">Laziz Pizza™ – Place where taste never ends..(Please Order between 11:00 AM to 08:00 PM)</p>
 
-            <a href="/food/pizza" class="btn btn-primary"><span>Check Online</span><br>Call For Order-9117575868</a>
+            <a href="/foodie/pizza" class="btn btn-primary"><span>Check Online</span><br>Call For Order-9117575868</a>
 
           </div>
 

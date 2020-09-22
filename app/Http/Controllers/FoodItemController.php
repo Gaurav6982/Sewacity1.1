@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Restaurants;
 use App\Menu;
-class FoodController extends Controller
+class FoodItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $restaurants=Restaurants::where('city_id',1)->get();
-        return view('admin.food.index')->with('res',$restaurants);
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return "create";
+        //
     }
 
     /**
@@ -36,13 +34,13 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
-        $res=new Restaurants;
+        $res=new Menu;
         $res->name=$request->input('name');
-        $res->type=$request->input('type');
+        $res->price=$request->input('price');
         $res->desc=$request->input('desc');
-        $res->location=$request->input('loc');
-        $res->city_id=1;
+        $res->res_id=$request->input('res_id');
+        // $res->location=$request->input('loc');
+        // $res->city_id=1;
         if($request->hasFile('image'))
         {
             $file=$request->file('image')->getClientOriginalName();
@@ -53,11 +51,12 @@ class FoodController extends Controller
 
             $fileName=date("d-m-y")."_".time().".".$extention;
 
-            $path=$request->file('image')->storeAs('public/restaurants',$fileName);
+            $path=$request->file('image')->storeAs('public/restaurants/items',$fileName);
+            $res->image=$fileName;
         }
-        $res->image=$fileName;
+        
         if($res->save())
-        return back()->with('success','Restaurant Added');
+        return back()->with('success','Item Added');
         abort(500, 'Could not upload image :(');
     }
 
@@ -69,14 +68,7 @@ class FoodController extends Controller
      */
     public function show($id)
     {
-        $res=Restaurants::find($id);
-        $items=$res->items;
-        $data=[
-            'res'=>$res,
-            'items'=>$items
-        ];
-        // return $items;
-        return view('admin.food.show')->with($data);
+        //
     }
 
     /**
@@ -87,7 +79,7 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        return "waadw";
+        //
     }
 
     /**
@@ -99,12 +91,10 @@ class FoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $res=Restaurants::find($id);
+        $res=Menu::find($id);
         $res->name=$request->input('name');
-        $res->type=$request->input('type');
+        $res->price=$request->input('price');
         $res->desc=$request->input('desc');
-        $res->location=$request->input('loc');
-        $res->city_id=1;
         $fileName='';
         if($request->hasFile('image'))
         {
@@ -116,12 +106,12 @@ class FoodController extends Controller
 
             $fileName=date("d-m-y")."_".time().".".$extention;
 
-            $path=$request->file('image')->storeAs('public/restaurants',$fileName);
+            $path=$request->file('image')->storeAs('public/restaurants/items',$fileName);
         }
         if($res->image!=$fileName &&$fileName!='')
         $res->image=$fileName;
         if($res->save())
-        return back()->with('success','Restaurant Updated');
+        return back()->with('success','Item Updated');
         abort(500, 'Could not upload image :(');
     }
 
@@ -133,7 +123,6 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        return "delete";
+        //
     }
-    
 }

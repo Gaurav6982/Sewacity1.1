@@ -15,8 +15,7 @@ class CreatePatnaCartsTable extends Migration
     {
         Schema::create('patna_carts', function (Blueprint $table) {
             $table->id();
-            $table->id('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('user_id');
             $table->integer('item_id');
             $table->text('item_type')->nullable();
             $table->timestamps();
@@ -30,7 +29,6 @@ class CreatePatnaCartsTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign('patna_carts_user_id_foreign');
         Schema::dropIfExists('patna_carts');
     }
 }

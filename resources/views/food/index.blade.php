@@ -22,7 +22,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="/food/1">
+                        <a href="/foodie/1">
                         <div class="card">
                             <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                             <div class="card-body">

@@ -62,7 +62,7 @@
                     <a class="nav-link" href="/fbg">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/food">Food Service</a>
+                    <a class="nav-link" href="/foodie">Food Service</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/products?category=0&sort=latest&searchbox=">E-Commerce</a>

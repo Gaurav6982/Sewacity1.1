@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	<!-- favicon -->	<link rel = "icon" type = "image/png" href = "/storage/images/logo.png">    <!-- For apple devices -->    <link rel = "apple-touch-icon" type = "image/png" href = "/storage/images/logo.png"/>
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Scripts -->
     <!--<script src="{{ asset('js/app.js') }}" defer></script>-->
 
@@ -16,12 +16,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Styles -->
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -123,10 +121,8 @@ body {
 	text-transform: uppercase;
 }
 
-@yield('styles');
-
 </style>
-
+@yield('styles')
 <body>
 
     <div id="app">
@@ -151,7 +147,7 @@ body {
                     <ul class="navbar-nav mr-auto">
                         <ul class="navbar-nav">
                             <li class="nav-item active"><a href="/fbg"class="nav-link"><span class="custom hoverable" id="len1">HOME</span></a></li>
-                            <li class="nav-item hoverable" id="len2"><a href="/food"class="nav-link"><span class="custom">FOOD SERVICE</span></a></li>
+                            <li class="nav-item hoverable" id="len2"><a href="/foodie"class="nav-link"><span class="custom">FOOD SERVICE</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/products?category=0&sort=latest&searchbox="class="nav-link"><span class="custom">E-COMMERCE</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/safari"class="nav-link"><span class="custom">SEWACITY SAFARI</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/shelters"class="nav-link"><span class="custom">SHELTERS</span></a></li>
@@ -184,7 +180,7 @@ body {
                                     <a href="/manage-feedbacks" class="dropdown-item">Manage Feedbacks</a>
                                     @endif
                                     @if(Auth::user()->usertype=='admin' || Auth::user()->usertype=='special')
-                                    <a  class="dropdown-item" @if(Auth::user()->city_id==1) href="dashboard" @else href="patna-dashboard" @endif>Admin Panel</a>
+                                    <a  class="dropdown-item" @if(Auth::user()->city_id==1) href="/dashboard" @else href="/patna-dashboard" @endif>Admin Panel</a>
                                     <a href="/posts?category=0&searchbox=&page=1" class="dropdown-item">Manage Products</a>
                                     <a href="/users" class="dropdown-item">User Deatils</a>
                                     @endif
@@ -217,6 +213,10 @@ body {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
     $(function(){
   var str = '#len';

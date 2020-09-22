@@ -21,12 +21,16 @@ Route::get('/about',"Main@about");
 
 // Auth::routes(['verify'=>true]);
 Auth::routes();
+Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
+    Route::resource('food','FoodController');
+    Route::resource('food/item','FoodItemController');
+});
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
     });
     // Route::get('/create','PostController@index');
-
+    
     Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     Route::post('/manage-category','Admin\AdminController@manage_categories');
@@ -66,11 +70,12 @@ Route::get('/sanmomo',function(){
 Route::get('/privacy',function(){
     return view('others.privacy');
 });
-//Route::resource('/food','FoodController');
-Route::get('/food','Main@food');
-Route::get('/food/cake','Main@cake');
-Route::get('/food/pizza','Main@pizza');
-Route::get('/food/food-junction','Main@junction');
+Route::get('/foodie','UserFoodController@index');
+Route::get('/foodie/{id}','UserFoodController@show');
+// Route::get('/food','Main@food');
+Route::get('/foodie/cake','Main@cake');
+Route::get('/foodie/pizza','Main@pizza');
+Route::get('/foodie/food-junction','Main@junction');
 // Route::get('/products/cart','Main@cart');
 // Route::get('/products','Main@index');
 

@@ -23,7 +23,7 @@
                  <h4 style="color:white">Services</h4>
                  <hr style="height: 1px;background-color: white">
                  <ul> <!-- <li><a href="#">About Us</a></li> -->
-                 <li><a href="/food" class="font-15">Food</a></li>
+                 <li><a href="/foodie" class="font-15">Food</a></li>
                  <li><a href="/products?category=0&searchbox=&sort=latest&page=1" class="font-15">E-Commerce</a></li>
                  <li><a href="/safari" class="font-15">Safari</a></li>
                  <li><a href="/shelters" class="font-15">Hotels</a></li>
