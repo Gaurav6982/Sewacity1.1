@@ -1,5 +1,25 @@
 @extends('layouts.app')
-
+@section('styles')
+<style>
+    .ress{
+        position: relative;
+    }
+    .ress::after{
+        content: '';
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        height: 10px;
+        width: 0;
+        background-color:green;
+        z-index: 10;
+        transition: 0.5s ease;
+    }
+    .ress:hover::after{ 
+        width: 100%;
+    }
+</style>
+@endsection
 @section('content')
 <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
 <style>
@@ -17,46 +37,31 @@
     <div class="container food">
         <div class="card">
             <div class="card-header">
-                11 restaurants
+                {{count($res??[])}} restaurants
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-3">
-                        <a href="/foodie/1">
-                        <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Name<p style="font-size:15px;">type</p></h5>
+                    @foreach ($res as $r)
+                    
+                        <div class="col-md-3">
+                            
+                            <div class="card ress">
+                                <a href="/foodie/{{$r->id}}">
+                                <img class="card-img-top" @if($r->image)src="{{asset('storage/restaurants/'.$r->image)}}"@else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:200px;">
+                               
+                                <div class="card-body" style="min-height: 150px">
+                                    <h5 class="card-title">{{$r->name}} @if(isset($r->location))-{{$r->location}}@endif<p style="font-size:15px;">{{$r->type}}</p></h5>
 
-                            <p class="card-text">Desc</p>
+                                <p class="card-text">{{$r->desc}}</p>
+                                
+                            
+                                </div>
+                                 </a>
                             </div>
+                        
                         </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                            <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" >
-                            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                            <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-                            <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
+                   
+                    @endforeach
                 </div>
               {{-- <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>

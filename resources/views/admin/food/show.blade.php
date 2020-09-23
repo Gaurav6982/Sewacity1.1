@@ -1,7 +1,13 @@
 @extends('layouts.app')
+
 @section('styles')
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <style>
+      button{
+        -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+      }
       .lead{
         font-family: 'Balsamiq Sans', cursive;
       }
@@ -57,8 +63,8 @@
                     </div>
                     <div class="col-md-9">
                         <h3 >Restaurant: {{$res->name}}</h3>
-                        <p class="lead">{{$res->type}}</p>
                         <p class="lead">{{$res->location}}</p>
+                        <p class="lead">{{$res->type}}</p>
                         <p class="lead">{{$res->desc}}</p>
                     </div>
                 </div>
