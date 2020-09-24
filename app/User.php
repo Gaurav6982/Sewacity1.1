@@ -23,6 +23,9 @@ class User extends Authenticatable
     public function city(){
         return $this->belongsTo('App\City');
     }
+    public function foodcarts(){
+        return $this->hasMany('App\FoodCart','user_id','id');
+    }
 
     use Notifiable;
 

@@ -41,6 +41,7 @@
         display: flex;
         height: 0;
         overflow: hidden;
+        transition: 0.5s ease;
       }
     </style>
 @endsection
@@ -99,10 +100,30 @@
                                       </div>
                                   </div>
                                   <div class="float-right">
-                                    <div style="" class="quandiv">
-                                    <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                                    @guest
+                                    <div style="" class="quandiv" id="quandiv{{$item->id}}">
+                                      <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
                                     </div>
-                                    <a class="btn btn-primary add-cart">Add to Cart</a>
+                                    <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                                    @else
+                                    <?php $carts=Auth::user()->foodcarts;$done=false;?>
+                                    {{-- {{$carts}} --}}
+                                    @foreach ($carts as $cart)
+                                    {{-- {{$cart->food_id}}{{ $item->id}} --}}
+                                        @if ($cart->food_id==$item->id)
+                                          <div style="height:35px" class="quandiv" id="quandiv{{$item->id}}">
+                                            <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                                          </div>
+                                        <?php $done=true; break;?>
+                                        @endif
+                                    @endforeach
+                                    @if(!$done)
+                                    <div style="" class="quandiv" id="quandiv{{$item->id}}">
+                                      <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                                    </div>
+                                    <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                                    @endif
+                                    @endif
                                   </div>
                                 </div>
                                 
@@ -123,8 +144,63 @@
 @section('js')
     $(document).ready(function(){
       $('.add-cart').click(function(){
-        $(this).closest('div[class=quandiv]').css({"height": "100px"});;
-        console.log($(this).closest("div.quandiv"));
+        $res_id="{{$res->id}}";
+        $id=$(this).data("id");
+        {{-- console.log($id); --}}
+          $.ajax({
+            type:"post",
+            url:"/foodie/addToCart",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                "res_id":$res_id,
+                "item_id":$id,
+            },
+            success:function(data)
+            {
+              if(data.success)
+              {
+                $("#quandiv"+$id).css("height","40px");
+                $("#cart"+$id).hide();
+              }
+              else if(data.notauth)
+              {
+                Swal.fire(
+                        'Error!',
+                        'Please Login First!!',
+                        'warning'
+                    )
+              }
+              else
+              {
+                Swal.fire(
+                        'Error!',
+                        'Please Try Again!!',
+                        'error'
+                    )
+              }
+              
+            },
+            error:function(err){
+              if(err.status==401)
+              {
+
+                Swal.fire(
+                          'Error!',
+                          'Please Login To Add products to Cart',
+                          'warning'
+                      )
+              }
+              else
+              {
+                Swal.fire(
+                          'Error!',
+                          err.statusText,
+                          'error'
+                      )
+              }
+              
+            }
+        }); //ajax
       });
     })
 @endsection

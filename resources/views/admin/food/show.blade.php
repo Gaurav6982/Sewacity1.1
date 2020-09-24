@@ -99,9 +99,9 @@
                                   <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-toggle="modal" data-target="#menus">Edit</button></div>
                                 </div>
                               </div>
-                          </div>
+                          
                       @endforeach
-                        
+                      </div>
                     </div>
                   @else
                   <div class="my-4">

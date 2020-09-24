@@ -72,6 +72,7 @@ Route::get('/privacy',function(){
 });
 Route::get('/foodie','UserFoodController@index');
 Route::get('/foodie/{id}','UserFoodController@show');
+Route::post('/foodie/addToCart','UserFoodController@addToCart')->middleware('auth');
 // Route::get('/food','Main@food');
 Route::get('/foodie/cake','Main@cake');
 Route::get('/foodie/pizza','Main@pizza');

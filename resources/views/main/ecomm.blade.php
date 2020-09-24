@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('styles')
+<style>
     .login-alert{
         font-weight:500;
         color:red;
@@ -26,7 +27,7 @@
     #catselect,#soslt,#searchinput{
         transition:display 0.5s ease;
     }
-
+</style>
 @endsection
 @section('content')
 <?php if(!isset($_GET['page']))
