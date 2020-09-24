@@ -64,7 +64,7 @@ class UserFoodController extends Controller
     }
     public function show_cart(){
         $carts=FoodCart::where('user_id',Auth::user()->id)->get();
-        return $carts;
+        return view('food.cart')->with('carts',$carts);
     }
     public function del_all(Request $request){
         $carts=FoodCart::where('user_id',Auth::user()->id)->get();
