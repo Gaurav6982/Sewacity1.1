@@ -35,7 +35,14 @@
         0 20px 20px rgba(0,0,0,.15);
       }
       .quantity{
-        width: 40px;
+        width: 50px;
+        text-align: center
+      }
+      .sub{
+        border-top-left-radius: 20px;
+      }
+      .add{
+        border-bottom-right-radius: 20px;
       }
       .quandiv{
         display: flex;
@@ -51,7 +58,7 @@
         box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;border-radius:15px" >
             <div class="container-fluid">
               <div class="float-right">
-                <a href="" class="btn btn-dark"> Cart <img src="https://img.icons8.com/fluent/48/000000/favorite-cart.png"/></a>
+                <a href="/foodie/cart" class="btn btn-dark"> Cart <img src="https://img.icons8.com/fluent/48/000000/favorite-cart.png"/></a>
               </div>
                 <div class="row">
                     <div class="col-md-3">
@@ -111,15 +118,16 @@
                                     @foreach ($carts as $cart)
                                     {{-- {{$cart->food_id}}{{ $item->id}} --}}
                                         @if ($cart->food_id==$item->id)
+                                          <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}" style="display: none">Add to Cart</a>
                                           <div style="height:35px" class="quandiv" id="quandiv{{$item->id}}">
-                                            <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                                            <button class="btn btn-danger sub"id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="{{$cart->quantity}}" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
                                           </div>
                                         <?php $done=true; break;?>
                                         @endif
                                     @endforeach
                                     @if(!$done)
                                     <div style="" class="quandiv" id="quandiv{{$item->id}}">
-                                      <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                                      <button class="btn btn-danger sub" id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="1" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
                                     </div>
                                     <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
                                     @endif
@@ -169,6 +177,152 @@
                         'Please Login First!!',
                         'warning'
                     )
+              }
+              else
+              {
+                Swal.fire(
+                        'Error!',
+                        'Please Try Again!!',
+                        'error'
+                    )
+              }
+              
+            },
+            error:function(err){
+              if(err.responseJSON.askConfirm)
+              {
+                Swal.fire({
+                  title: 'Are you sure?',
+                  text: "You Cannot Add Items From Two Different Restaurants to Your Cart, Hit Yes to Remove Previous Items From Cart and Add This.!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete All!'
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    $.ajax({
+                      type:"post",
+                      url:"/foodie/deleteAll",
+                      data:{
+                          "_token": "{{ csrf_token() }}",
+                          "res_id":$res_id,
+                          "item_id":$id,
+                      },
+                      success:function(data)
+                      {
+                        if(data.success)
+                        {
+                          Swal.fire(
+                            'Deleted!',
+                            'Cart Updated!',
+                            'success'
+                          )
+                          $("#quandiv"+$id).css("height","40px");
+                          $("#cart"+$id).hide();
+                        }
+                      }     
+                  });
+                }
+              });
+              }
+              else if(err.status==401)
+              {
+
+                Swal.fire(
+                          'Error!',
+                          'Please Login To Add products to Cart',
+                          'warning'
+                      )
+              }
+              else
+              {
+                Swal.fire(
+                          'Error!',
+                          err.statusText,
+                          'error'
+                      )
+              }
+              
+            }
+        }); //ajax
+      });
+
+      //subtract
+        $('.sub').click(function(){
+          $id=$(this).data("id");
+          $.ajax({
+            type:"post",
+            url:"/foodie/subFromCart",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                "item_id":$id,
+            },
+            success:function(data)
+            {
+              if(data.delete)
+              {
+                $("#quandiv"+$id).css("height","0px");
+                $("#cart"+$id).show();
+              }
+              else if(data.success)
+              {
+                var val=parseInt($('#show'+$id).val());
+                val-=1;
+                $('#show'+$id).val(val);
+              }
+              else
+              {
+                Swal.fire(
+                        'Error!',
+                        'Please Try Again!!',
+                        'error'
+                    )
+              }
+              
+            },
+            error:function(err){
+              if(err.status==401)
+              {
+
+                Swal.fire(
+                          'Error!',
+                          'Please Login To Add products to Cart',
+                          'warning'
+                      )
+              }
+              else
+              {
+                Swal.fire(
+                          'Error!',
+                          err.statusText,
+                          'error'
+                      )
+              }
+              
+            }
+        }); //ajax
+      });
+
+
+      // add quanitity
+
+        $('.add').click(function(){
+          $id=$(this).data("id");
+          $.ajax({
+            type:"post",
+            url:"/foodie/addQuan",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                "item_id":$id,
+            },
+            success:function(data)
+            {
+              if(data.success)
+              {
+                var val=parseInt($('#show'+$id).val());
+                val+=1;
+                $('#show'+$id).val(val);
               }
               else
               {

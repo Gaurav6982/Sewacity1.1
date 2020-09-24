@@ -71,8 +71,13 @@ Route::get('/privacy',function(){
     return view('others.privacy');
 });
 Route::get('/foodie','UserFoodController@index');
+Route::get('/foodie/cart','UserFoodController@show_cart')->middleware('auth');
+Route::post('/foodie/deleteAll','UserFoodController@del_all')->middleware('auth');
 Route::get('/foodie/{id}','UserFoodController@show');
 Route::post('/foodie/addToCart','UserFoodController@addToCart')->middleware('auth');
+Route::post('/foodie/subFromCart','UserFoodController@SubQuan')->middleware('auth');
+Route::post('/foodie/addQuan','UserFoodController@AddQuan')->middleware('auth');
+
 // Route::get('/food','Main@food');
 Route::get('/foodie/cake','Main@cake');
 Route::get('/foodie/pizza','Main@pizza');
