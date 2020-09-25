@@ -7,6 +7,18 @@ use App\Restaurants;
 use App\Menu;
 use App\FoodCart;
 use Auth;
+use Illuminate\Support\Facades\Mail; 
+use App\Mail\SendFoodMail; 
+class item{
+    public $name;
+    public $price;
+    public $quantity;
+    public function __construct($name,$price,$qty){
+        $this->name=$name;
+        $this->price=$price;
+        $this->quantity=$qty;
+    }
+}
 class UserFoodController extends Controller
 {
     public function index(){
@@ -80,5 +92,65 @@ class UserFoodController extends Controller
         if($cart->save())
         return response()->json(['success'=>true],200);
         return response()->json(['success'=>false],400);
+    }
+    public function deleteitem($id){
+        $cart=FoodCart::find($id);
+        if($cart->delete())
+        return response()->json(['success',true],200);
+        return response()->json(['success',false],400);
+    }
+    public function sendMail(Request $request){
+        // return $request->all();
+        $quantities=$request->input('quantities');
+        $ids=$request->input('ids');
+        $phone=$request->input('phone');
+
+        
+        $carts=Auth::user()->foodcarts;
+        // return $carts;
+        foreach($carts as $i => $cart)
+        {
+            if($cart->id==$ids[$i])
+            $cart->quantity=$quantities[$i];
+            $cart->save();
+        }
+        // return $carts;
+        //return $items;
+        $user=Auth::user();
+        if($carts==null)
+        return back()->with('error','There might be Some Error');
+
+        if(isset($phone))
+        $contact=$phone;
+        else
+        $contact=Auth::user()->phone;
+        $items=[];
+        foreach($carts as $i=>$cart){
+            $item=Menu::where('id',$cart->food_id)->first();
+            $new_item=new item($item->name,intval($item->price),intval($cart->quantity));
+            array_push($items,$new_item);
+        }
+        $data=array(
+            'name'=>Auth::user()->name,
+            'phone'=>$contact,
+            'email'=>Auth::user()->email,
+            'city'=>$user->city()->first()->city_name,
+            'items'=>$items,
+        );
+
+        // return $data;
+        if($user->email!=null)
+        Mail::to($user->email)->send(new SendFoodMail($data));
+
+        Mail::to('sewacityfbg@gmail.com')->send(new SendFoodMail($data));
+
+        foreach ($carts as $cart) {
+            $cartitem=FoodCart::find($cart->id);
+            $cartitem->delete();
+        }
+        $user->no_of_requests=$user->no_of_requests+1;
+        $user->update();
+        if(Auth::user()->city_id==1)
+        return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
     }
 }

@@ -72,6 +72,8 @@ Route::get('/privacy',function(){
 });
 Route::get('/foodie','UserFoodController@index');
 Route::get('/foodie/cart','UserFoodController@show_cart')->middleware('auth');
+Route::post('/foodie/sendMail','UserFoodController@sendMail')->middleware('auth');
+Route::delete('/foodie/delete/{id}','UserFoodController@deleteitem')->middleware('auth');
 Route::post('/foodie/deleteAll','UserFoodController@del_all')->middleware('auth');
 Route::get('/foodie/{id}','UserFoodController@show');
 Route::post('/foodie/addToCart','UserFoodController@addToCart')->middleware('auth');

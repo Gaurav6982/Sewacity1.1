@@ -63,7 +63,8 @@
         </div>
         <div class="card-body">
             @if(count($carts??[])>0)
-            <form method="POST" onsubmit="event.preventDefault()">
+            <form method="POST" action="/foodie/sendMail" onsubmit="event.preventDefault()" id="cart-form">
+                {{ csrf_field() }}
                 <div class="table-responsive-sm">
                     <table class="table table-hover">
                         <thead>
@@ -87,11 +88,12 @@
                                     </td>
                                     <td style="display: flex">
                                         <button class="downbtn btn btn-secondary" data-id="{{$cart->id}}">-</button>
-                                        <input type="number" class="form-control inquan" min="1" max="10" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
+                                        <input type="hidden" name="ids[]" value="{{$cart->id}}">
+                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="10" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
                                         <button class="upbtn btn btn-secondary" data-id="{{$cart->id}}">+</button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm" data-id="{{$cart->id}}">Remove</button>
+                                        <button class="btn btn-sm remove-cart" data-id="{{$cart->id}}" >Remove</button>
                                     </td>
                                 </tr>
                                 {{-- {{$item}}-{{$cart->quantity}} --}}
@@ -99,17 +101,27 @@
                         </tbody>
                     </table>
                 </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <label for="phone">Enter Contact Number:</label>
+                        <input type="number" name="phone" class="form-control" id="phone">
+                        <p style="color: red" id="warning"></p>
+                    </div>
+                </div>
+                <hr>
+                <p style="opacity: 0.6;padding:0;font-size:12px;width:100%;text-align:center" >Leave it Empty if you want us to contact on your rgeistered mobile number only.</p>
             </form>
             @else
             <hr>
-            <h4><em>Bag is Empty.</em></h4>
+            <h4 class="text-center"><em>Bag is Empty.</em></h4>
             <hr>
             @endif
         
         </div>
         <div class="card-footer text-muted ">
         <p class="float-left">Total: Rs. <span id="total"></span> </p>
-        <button class="btn btn-primary float-right">Place Request</button>
+        <button class="btn btn-primary float-right" id="submit">Place Request</button>
         </div>
     </div>
 </div>
@@ -130,6 +142,9 @@
         }
         $('#total').text(total.toFixed(2));
     });
+
+
+    //updation
     $(document).ready(function(){
         $('.upbtn').click(function(){
             const id=$(this).data("id");
@@ -159,10 +174,10 @@
                 {{-- console.log($('#total').text()); --}}
                 $('#total').text((parseFloat($('#total').text())-parseFloat(price)).toFixed(2));
             }
-        })
-
+        })   
         $('.inquan').on("change",function(){
             var val=$(this).val();
+            console.log(val);
             if(val==0)
             $(this).val(1);
             else
@@ -173,8 +188,73 @@
             const price=$('#price'+id).data("value");
             $('#multiply'+id).text((newv*parseFloat(price)).toFixed(2));
             {{-- console.log($('#total').text()); --}}
-            $('#total').text((parseFloat($('#total').text())-parseFloat(price)).toFixed(2));
+            var total=0;
+            var inputs=$('.ids');
+            for(var i = 0; i < inputs.length; i++){
+                //update price
+                const val=$(inputs[i]).val();
+                const price=$('#price'+val).data("value");
+                const multi=parseInt($('#inquan'+val).val())*parseFloat(price);
+                total+=multi;
+            }
+            $('#total').text(total.toFixed(2));
+            {{-- $('#total').text((parseFloat($('#total').text())+parseFloat(price)).toFixed(2)); --}}
 
         });
     });
+
+    //remove item
+    $('.remove-cart').click(function(){
+        const id=$(this).data("id");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type:"post",
+                    url:'/foodie/delete/'+id,
+                    data:{
+                        "_token":"{{csrf_token()}}",
+                        "_method":"delete"
+                    },
+                    success:function(data){
+                        Swal.fire(
+                            'Deleted!',
+                            'Item Removed.',
+                            'success'
+                        )
+                        location.reload();
+                    },
+                    error:function(error){
+                        Swal.fire(
+                            'Error!',
+                            'There Might be Some Error.',
+                            'error'
+                        )
+                    }
+                }) //ajax
+              
+            }
+        });
+          
+    });
+    $('#submit').click(function(){
+        const p=$('#phone').val();
+        const phone=p.toString();
+        if(phone.length >10 || (phone.length > 0 && phone.length < 10 ))
+        {
+            $('#warning').text("Phone number should be of 10 digits only");
+            setTimeout(function(){
+                $('#warning').text("");
+            },3000);
+        }
+        else
+        $('#cart-form')[0].submit();
+      })
 @endsection

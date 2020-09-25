@@ -4,8 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Menu;
+use App\FoodCart;
+class item{
+    public $pname;
+    public $price;
+    public $quantity;
+    public $discount;
+    public function __construct($name,$price,$qty,$discount){
+        $this->pname=$name;
+        $this->price=$price;
+        $this->quantity=$qty;
+        $this->discount=$discount;
+    }
+}
 class FoodItemController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -123,6 +137,14 @@ class FoodItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $carts=FoodCart::where('food_id',$id)->get();
+        foreach($carts as $cart)
+        {
+            $cart->delete();
+        }
+        $item=Menu::find($id);
+        if($item->delete())
+        return response()->json(['success',true],200);
+        return response()->json(['success',false],400);
     }
 }

@@ -38,14 +38,14 @@
     <div class="container food">
         <div class="card">
             <div class="card-header">
-                {{count($res??[])}} restaurants
+                <span id="count-res">{{count($res??[])}}</span> restaurants
                 <button class="float-right btn btn-primary" data-toggle="modal" data-target="#add-res" id="add-res-button">Add</button>
             </div>
             <div class="card-body">
                 @if(count($res??[])>0)
                 <div class="row">
                     @foreach ($res as $r)
-                        <div class="col-md-3">
+                        <div class="col-md-3" id="divres{{$r->id}}">
                             
                             <div class="card ress">
                                 <img class="card-img-top" @if($r->image)src="{{asset('storage/restaurants/'.$r->image)}}"@else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:200px;">
@@ -58,7 +58,9 @@
                             
                                 </div> </a>
                                 <div class="m-4">
-                                <button class="float-right btn btn-primary edit-res" data-name="{{$r->name}}" data-type="{{$r->type}}" data-id="{{$r->id}}" data-desc="{{$r->desc}}" data-loc="{{$r->location}}"data-toggle="modal" data-target="#add-res">Edit</button></div>
+                                    <button class="float-right btn btn-primary edit-res" data-name="{{$r->name}}" data-type="{{$r->type}}" data-id="{{$r->id}}" data-desc="{{$r->desc}}" data-loc="{{$r->location}}"data-toggle="modal" data-target="#add-res">Edit</button>
+                                    <button class="float-right btn del-res" data-id="{{$r->id}}" style="padding: 0;margin-right:5px"><img src="https://img.icons8.com/cute-clipart/64/000000/delete-forever.png" style="width: 36px"/></button>
+                                </div>
                             </div>
                         
                         </div>
@@ -90,7 +92,7 @@ $(document).ready(function(){
                 if(name!='' && type!='' && desc!=''&& loc!='' &&image!=''){
                     $('#add-res #method').attr('name','');
                     $('#add-res #method').attr('value','');
-                    $('#add-res #res-form').attr('action','/food');
+                    $('#add-res #res-form').attr('action','/admin/food');
                     {{-- console.log($('#res-form')[0]); --}}
                     {{-- document.resform.submit(); --}}
                     {{-- $('#res-form')[0].submit(); --}}
@@ -135,7 +137,7 @@ $(document).ready(function(){
                 
                 console.log(id);
                 if(name!='' && type!='' && desc!=''&& loc!=''){
-                    $('#add-res #res-form').attr('action','/food/'+id);
+                    $('#add-res #res-form').attr('action','/admin/food/'+id);
                     $('#add-res #method').attr('name','_method');
                     $('#add-res #method').attr('value','PUT');
                     {{-- console.log($('#res-form')[0]); --}}
@@ -152,6 +154,53 @@ $(document).ready(function(){
                     },2000)
                 }
             })
+    })
+
+    $('.del-res').click(function(){
+        const id=$(this).data("id");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type:"post",
+                    url:'/admin/food/'+id,
+                    data:{
+                        "_token":"{{csrf_token()}}",
+                        "_method":"delete"
+                    },
+                    success:function(data){
+                        Swal.fire(
+                            'Deleted!',
+                            'Restaurant has been deleted.',
+                            'success'
+                        )
+                        $('#divres'+id).hide();
+                        var num_res=$('#count-res').text();
+                        num_res--;
+                        if(num_res==0)
+                        location.reload();
+                        else
+                        $('#count-res').text(num_res);
+
+                    },
+                    error:function(error){
+                        Swal.fire(
+                            'Error!',
+                            'There Might be Some Error.',
+                            'error'
+                        )
+                    }
+                })
+              
+            }
+          })
     })
 })
 @endsection

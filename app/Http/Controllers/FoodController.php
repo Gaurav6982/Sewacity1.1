@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Restaurants;
 use App\Menu;
+use App\FoodCart;
 class FoodController extends Controller
 {
     /**
@@ -133,7 +134,17 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        return "delete";
+        $menus=Menu::where('res_id',$id)->get();
+        foreach($menus as $menu)
+        $menu->delete();
+
+        $carts=FoodCart::where('res_id',$id)->get();
+        foreach($carts as $cart)
+        $cart->delete();
+        $res=Restaurants::find($id);
+        if($res->delete())
+        return response()->json(['success',true],200);
+        return response()->json(['success',false],400);
     }
     
 }

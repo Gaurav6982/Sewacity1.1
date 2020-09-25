@@ -75,11 +75,11 @@
 
           <div class="row" style="padding:10px;">
               <div class="card col-md-6 offset-md-3" style="border-radius: 10px;">
-                <h4 class="my-2">Menu ({{count($items??[])}} items)</h4>
+                <h4 class="my-2">Menu (<span id="count-res">{{count($items??[])}}</span> items)</h4>
                 @if(count($items??[])>0)
                     <div class="row">
                       @foreach ($items as $item)
-                          <div class="col-md-12 my-4">
+                          <div class="col-md-12 my-4" id="divres{{$item->id}}">
                             <div class="card">
                                 <div class="card-body">
                                   <div class="row">
@@ -97,7 +97,9 @@
                                   </div>
                                 </div>
                                 <div class="m-4">
-                                  <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-toggle="modal" data-target="#menus">Edit</button></div>
+                                  <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-toggle="modal" data-target="#menus">Edit</button>
+                                </div>
+                                  <button class="float-right btn del-res" data-id="{{$item->id}}" style="padding: 0;margin-right:5px"><img src="https://img.icons8.com/cute-clipart/64/000000/delete-forever.png" style="width: 36px"/></button>
                                 </div>
                               </div>
                           
@@ -193,5 +195,53 @@ $(document).ready(function(){
                 }
             })
     })
+
+    //del-item
+    $('.del-res').click(function(){
+      const id=$(this).data("id");
+      Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+              $.ajax({
+                  type:"post",
+                  url:'/admin/food/item/'+id,
+                  data:{
+                      "_token":"{{csrf_token()}}",
+                      "_method":"delete"
+                  },
+                  success:function(data){
+                      Swal.fire(
+                          'Deleted!',
+                          'Item has been deleted.',
+                          'success'
+                      )
+                      $('#divres'+id).hide();
+                      var num_res=$('#count-res').text();
+                      num_res--;
+                      if(num_res==0)
+                      location.reload();
+                      else
+                      $('#count-res').text(num_res);
+
+                  },
+                  error:function(error){
+                      Swal.fire(
+                          'Error!',
+                          'There Might be Some Error.',
+                          'error'
+                      )
+                  }
+              })
+            
+          }
+        })
+  })
 })
 @endsection
