@@ -309,6 +309,7 @@
 
         $('.add').click(function(){
           $id=$(this).data("id");
+          if(parseInt($('#show'+$id).val())<=10)
           $.ajax({
             type:"post",
             url:"/foodie/addQuan",
