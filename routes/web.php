@@ -19,7 +19,6 @@ Route::get('/', function () {
 Route::get('/fbg',"Main@index");
 Route::get('/about',"Main@about");
 
-// Auth::routes(['verify'=>true]);
 Auth::routes();
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
@@ -29,8 +28,6 @@ Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
     });
-    // Route::get('/create','PostController@index');
-    
     Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     Route::post('/manage-category','Admin\AdminController@manage_categories');
@@ -50,9 +47,6 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('/safari/book','SafariController@safariBook');
 });
 
-// Route::resources();
-// Route::get('/home', 'Main@index')->name('home');
-// Route::get('/hom',);
 Route::get('/products','Main@ecomm');
 Route::get('/patna/products','PatnaController@ecomm');
 Route::get('/tieup',function(){
@@ -79,13 +73,6 @@ Route::get('/foodie/{id}','UserFoodController@show');
 Route::post('/foodie/addToCart','UserFoodController@addToCart')->middleware('auth');
 Route::post('/foodie/subFromCart','UserFoodController@SubQuan')->middleware('auth');
 Route::post('/foodie/addQuan','UserFoodController@AddQuan')->middleware('auth');
-
-// Route::get('/food','Main@food');
-Route::get('/foodie/cake','Main@cake');
-Route::get('/foodie/pizza','Main@pizza');
-Route::get('/foodie/food-junction','Main@junction');
-// Route::get('/products/cart','Main@cart');
-// Route::get('/products','Main@index');
 
 // Auth::routes();
 Route::get('/terms-and-conditions',function(){
