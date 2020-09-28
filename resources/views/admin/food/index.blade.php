@@ -45,7 +45,7 @@
                 @if(count($res??[])>0)
                 <div class="row">
                     @foreach ($res as $r)
-                        <div class="col-md-3" id="divres{{$r->id}}">
+                        <div class="col-md-3 my-4" id="divres{{$r->id}}">
                             
                             <div class="card ress">
                                 <img class="card-img-top" @if($r->image)src="{{asset('storage/restaurants/'.$r->image)}}"@else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:200px;">

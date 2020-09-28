@@ -19,6 +19,10 @@
                 display: unset;
                 
             }
+            .item-img{
+            width: 100px;
+            height: 75px;
+            }
         }
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
@@ -50,7 +54,14 @@
             
         }
         .text{
-            font-size: 13px
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+        .text{
+            font-size: 10px;
+        }
+        .cont h5{
+            font-size: 12px;
         }
     </style>
 @endsection
@@ -81,7 +92,7 @@
                                 <input type="hidden" name="" class="ids" value="{{$cart->id}}">
                                 <tr>
                                     <td><img class="item-img" @if(isset($item->image)) src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif  alt=""></td>
-                                    <td>
+                                    <td class="cont">
                                         <h5>{{$item->name}}</h5>
                                         <p class="text">{{substr($item->desc,0,200)}} @if(strlen($item->price)>200)...@endif</p>
                                         <p class="text" >Rs. <span id="price{{$cart->id}}" data-value="{{$item->price}}">{{$item->price}}</span> X <span id="qshow{{$cart->id}}"></span> = <span id="multiply{{$cart->id}}"></span></p>

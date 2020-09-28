@@ -23,6 +23,7 @@
         font-family: 'Balsamiq Sans', cursive;
       }
       .stylish{
+        margin-bottom: 4px;
         color: black;
       font-size: 20px;
       font-weight: bold;
@@ -40,6 +41,22 @@
         0 5px 10px rgba(0,0,0,.25), 
         0 10px 10px rgba(0,0,0,.2), 
         0 20px 20px rgba(0,0,0,.15);
+      }
+      @media only screen and (max-width:600px)
+      {
+        .item-img{
+          width: 50%;
+          height: 70%;
+          margin:10px;
+        }
+        
+        .content{
+          width: 100%;
+          padding: 10px 20px;
+          font-size: 8px;
+          line-height: 25px;
+          word-wrap: break-word;
+        }
       }
     </style>
 @endsection
@@ -63,7 +80,7 @@
                         border-radius:25px;">
                     </div>
                     <div class="col-md-9">
-                        <h3 >Restaurant: {{$res->name}}</h3>
+                        <h3 >{{$res->name}}</h3>
                         <p class="lead">{{$res->location}}</p>
                         <p class="lead">{{$res->type}}</p>
                         <p class="lead">{{$res->desc}}</p>

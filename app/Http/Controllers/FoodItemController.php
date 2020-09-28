@@ -5,18 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Menu;
 use App\FoodCart;
-class item{
-    public $pname;
-    public $price;
-    public $quantity;
-    public $discount;
-    public function __construct($name,$price,$qty,$discount){
-        $this->pname=$name;
-        $this->price=$price;
-        $this->quantity=$qty;
-        $this->discount=$discount;
-    }
-}
+
 class FoodItemController extends Controller
 {
     

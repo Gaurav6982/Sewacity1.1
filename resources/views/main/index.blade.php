@@ -155,8 +155,9 @@
     }
 
     body {
-        background-color: #21d190;
-        background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
+        background-color: white;
+        /* background-color: #21d190; */
+        /* background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%); */
         background-size: cover;
         background-repeat: no-repeat;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -202,7 +203,7 @@
     }
 
     a.corona {
-        color: white;
+        color: black;
     }
 
     #banner-area .owl-carousel .item img {
@@ -215,7 +216,7 @@
       display: inline-block;
       cursor: pointer;
       position: fixed;
-      top: 30px;
+      top: 20px;
       right:10px;
       z-index: 99;
         display: none;
@@ -278,6 +279,10 @@
     }
     #search-form{
         display: none;
+        transition: 0.5s ease-in-out;
+    }
+    #search-form input{
+        background-color:#ffffe0;
     }
 
     @media only screen and (max-width: 1025px) {
@@ -290,12 +295,15 @@
         .font-15{
             font-size: 15px !important;
         }
+        
         #search-form{
-        display: block;
+            z-index: 95;
+            width: 100%;
+            display: block;
         }
         body{
-            background-color:#20bf55;
-            background-image:linear-gradient(105deg, #20bf55 0%, #01baef 74%);
+            background-color:white;
+            /* background-image:linear-gradient(105deg, #20bf55 0%, #01baef 74%); */
 
         }
         #first-nav{
@@ -314,7 +322,8 @@
         }
 
         a.corona {
-            color: white;
+            color: black;
+            /* color: white; */
             text-align: center;
             letter-spacing: 5px;
             font-size: 12px;
@@ -443,7 +452,8 @@
                     </div>
                 </div>
 
-            </div><form id="search-form">
+            </div>
+            <form id="search-form">
             <div style="margin-bottom: 20px;display:flex;position:relative" >
 
                 <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
@@ -886,7 +896,21 @@
                 // console.log(search);
                 window.location.href="/products?category=0&searchbox="+search+"&sort=latest&page=1";
             });
+            $(document).scroll(function(){
+                if($(document).scrollTop()>150)
+                {
+                    $("#search-form").css("position","fixed");
+                    $("#search-form").css("top","0");
+                    $(".navbar-ham").css("top","60px");
+                }
+                else{
+                    $("#search-form").css("position","relative");
+                    $(".navbar-ham").css("top","20px");
+                    // $("#search-form").css("display","block");
+                }
+            })
         });
+
     </script>
 
 </body>

@@ -6,6 +6,7 @@
         font-family: 'Balsamiq Sans', cursive;
       }
       .item-img{
+        width: 100%;
         box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
               10px 10px rgba(0, 98, 90, 0.3),
               15px 15px rgba(0, 98, 90, 0.2),
@@ -15,7 +16,11 @@
       h4{
         font-family: 'Balsamiq Sans', cursive;
       }
+      .content{
+        padding: 20px 10px 5px 10px;
+      }
       .stylish{
+        margin-bottom: 4px;
         color: black;
       font-size: 20px;
       font-weight: bold;
@@ -50,6 +55,22 @@
         overflow: hidden;
         transition: 0.5s ease;
       }
+      @media only screen and (max-width:600px)
+      {
+        .item-img{
+          width: 50%;
+          height: 70%;
+          margin:10px;
+        }
+        
+        .content{
+          width: 100%;
+          padding: 10px 20px;
+          font-size: 8px;
+          line-height: 25px;
+          word-wrap: break-word;
+        }
+      }
     </style>
 @endsection
 @section('content')
@@ -74,7 +95,7 @@
                         border-radius:25px;">
                     </div>
                     <div class="col-md-9">
-                        <h3 >Restaurant: {{$res->name}}</h3>
+                        <h3 >{{$res->name}}</h3>
                         <p class="lead">{{$res->location}}</p>
                         <p class="lead">{{$res->type}}</p>
                         <p class="lead">{{$res->desc}}</p>
@@ -92,18 +113,16 @@
                       @foreach ($items as $item)
                           <div class="col-md-12 my-4">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body" style="padding:5px">
                                   <div class="row">
-                                      <div class="col-md-4">
+                                      <div class="col-md-4 col-xs-4">
                                         <img class="card-img-top item-img"  @if($item->image)src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap">
                                       </div>
                                     
-                                      <div class="col-md-8">
-                                        <div style="padding: 20px 10px">
+                                      <div class="col-md-8 col-xs-8 content">
                                             <p class="stylish">Name : {{$item->name}}</p>
                                             <p class="stylish">Price :Rs. {{$item->price}}</p>
                                             <p class="stylish">{{$item->desc}}</p>
-                                        </div>
                                       </div>
                                   </div>
                                   <div class="float-right">

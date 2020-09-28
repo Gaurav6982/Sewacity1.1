@@ -43,7 +43,7 @@
                 <div class="row">
                     @foreach ($res as $r)
                     
-                        <div class="col-md-3">
+                        <div class="col-md-3 my-4">
                             
                             <div class="card ress">
                                 <a href="/foodie/{{$r->id}}">
