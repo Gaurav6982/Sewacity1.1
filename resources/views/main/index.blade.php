@@ -210,7 +210,15 @@
         height: 300px;
         border: 1px solid grey;
     }
-    .navbar-ham {
+    #search-bar{
+        display: none;
+        height: 40px;
+        z-index: 95;
+        position: relative;
+        background-color: #0aa903;
+        width: 100%;
+    }
+    /* .navbar-ham {
         background-color: black;
         padding: 0 4px;
       display: inline-block;
@@ -218,8 +226,19 @@
       position: fixed;
       top: 20px;
       right:10px;
+      width: auto;
+      
       z-index: 99;
         display: none;
+    } */
+    .navbar-ham{
+        background-color: white;
+        border-radius: 50%;
+        cursor: pointer;
+
+    }
+    .navbar-ham img{
+        width: 40px;
     }
 
     .bar1, .bar2, .bar3 {
@@ -278,6 +297,7 @@
         transform: translateX(-20px);
     }
     #search-form{
+        
         display: none;
         transition: 0.5s ease-in-out;
     }
@@ -290,15 +310,30 @@
             width: 60%;
         }
     }
-
+    #submit-search{
+        position:absolute;background:none;border:none;right:10px;top:50%;transform:translateY(-50%);
+    }
+    #submit-phone{
+        /* position:absolute;background:none;border:none;right:40px; */
+        background-color:white;
+        border-radius: 50%;
+        /* line-height: 10px */
+        padding:4px;
+        
+    }
+    #submit-phone img{
+        width:30px;
+    }
     @media only screen and (max-width: 500px) {
         .font-15{
             font-size: 15px !important;
         }
-        
+        #search-bar{
+            display: flex;
+        }
         #search-form{
             z-index: 95;
-            width: 100%;
+            width: 80%;
             display: block;
         }
         body{
@@ -351,9 +386,8 @@
         padding: 40px;
         height: 300px !important;
     }
-    #submit-search{
-        position:absolute;background:none;border:none;right:10px;top:50%;transform:translateY(-50%);
-    }
+    
+    
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 <body>
@@ -374,14 +408,15 @@
     </script>
     <!--End of Tawk.to Script-->
     <div class="bouter">
-        <div class="navbar-ham" onclick="navbar(this)">
+        {{-- <div class="navbar-ham" onclick="navbar(this)">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
-          </div>
+          </div> --}}
           <div id="second-nav">
               <div>
                 <ul>
+                    <div class="float-right" id="close-btn" onclick="navbarc(this)"><i class="fa fa-times" aria-hidden="true" style="font-size: 30px"></i></div>
                     <li> <a href="/fbg">HOME</a> </li>
                     <li> <a  href="/about" target="_blank">ABOUT US</a></li>
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
@@ -453,14 +488,25 @@
                 </div>
 
             </div>
-            <form id="search-form">
-            <div style="margin-bottom: 20px;display:flex;position:relative" >
-
-                <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
-                <button type="submit" id="submit-search"><i class="fa fa-search"></i></button>
-
+            <div id="search-bar">
+                <div class="navbar-ham" onclick="navbar(this)">
+                    <img src="https://img.icons8.com/nolan/64/menu.png"/>
+                </div>
+                {{-- <div class="navbar-ham" onclick="navbar(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div> --}}
+                  <form id="search-form">
+                    <div style="margin-bottom: 20px;display:flex;position:relative" >
+        
+                        <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
+                        <button type="submit" id="submit-search"><i class="fa fa-search"></i></button>
+                    </div>
+                    </form>
+                    <a href="tel:8676036607" id="submit-phone"><img src="https://img.icons8.com/wired/64/000000/phone-disconnected.png"/></a>
             </div>
-            </form>
+            
 
             <div class="container-fluid p-0" id="first-nav">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light"> <button class="navbar-toggler" type="button"
@@ -877,17 +923,20 @@
             });
         });
         function navbar(x) {
-            x.classList.toggle("change");
+            // x.classList.toggle("change");
             var width=document.getElementById("second-nav").getBoundingClientRect().width;
             if(width==0)
             {
-                document.getElementById("second-nav").style.width="80%";
+                document.getElementById("second-nav").style.width="75%";
             }
             else
             {
                 document.getElementById("second-nav").style.width="0";
             }
 
+        }
+        function navbarc(x) {
+            document.getElementById("second-nav").style.width="0";
         }
         $(document).ready(function(){
             $("#search-form").on('submit',function(e){
@@ -899,13 +948,13 @@
             $(document).scroll(function(){
                 if($(document).scrollTop()>150)
                 {
-                    $("#search-form").css("position","fixed");
-                    $("#search-form").css("top","0");
-                    $(".navbar-ham").css("top","60px");
+                    $("#search-bar").css("position","fixed");
+                    $("#search-bar").css("top","0");
+                    // $(".navbar-ham").css("top","60px");
                 }
                 else{
-                    $("#search-form").css("position","relative");
-                    $(".navbar-ham").css("top","20px");
+                    $("#search-bar").css("position","relative");
+                    // $(".navbar-ham").css("top","20px");
                     // $("#search-form").css("display","block");
                 }
             })
