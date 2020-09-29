@@ -122,6 +122,14 @@
                 </div>
                 <hr>
                 <p style="opacity: 0.6;padding:0;font-size:12px;width:100%;text-align:center" >Leave it Empty if you want us to contact on your rgeistered mobile number only.</p>
+                <small style="opacity: 0.6">
+                <p >Delivery Charges Info:</p>
+                <ul class="float-left">
+                    <li>Rs. 5 Above a Total of Rs.200</li>
+                    <li>Rs. 10 Above a Total Rs. 100 and Below Rs. 200</li>
+                    <li>Rs. 20 Below Rs. 100</li>
+                </ul>
+                </small>
             </form>
             @else
             <hr>
@@ -131,7 +139,7 @@
         
         </div>
         <div class="card-footer text-muted ">
-        <p class="float-left">Total: Rs. <span id="total"></span> </p>
+        <p class="float-left">Total: Rs. <span id="total"></span> <span id="del-charge"></span> </p>
         <button class="btn btn-primary float-right" id="submit">Place Request</button>
         </div>
     </div>
@@ -152,6 +160,12 @@
             total+=multi;
         }
         $('#total').text(total.toFixed(2));
+        if(parseInt(total) >= 200)
+        $('#del-charge').text("+ 5");
+        else if(parseInt(total) < 200 && parseInt(total) >= 100)
+        $('#del-charge').text("+ 10");
+        else if(parseInt(total) < 100 && parseInt(total) > 0)
+        $('#del-charge').text("+ 20");
     });
 
 
@@ -160,6 +174,7 @@
         $('.upbtn').click(function(){
             const id=$(this).data("id");
             var previous=$('#inquan'+id).val();
+            var total=0;
             if( previous < 10)
             {
                 const newv=parseInt(previous)+1;
@@ -168,13 +183,21 @@
                 const price=$('#price'+id).data("value");
                 $('#multiply'+id).text((newv*parseFloat(price)).toFixed(2));
                 {{-- console.log($('#total').text()); --}}
-                $('#total').text((parseFloat($('#total').text())+parseFloat(price)).toFixed(2));
+                total=(parseFloat($('#total').text())+parseFloat(price)).toFixed(2);
+                $('#total').text(total);
             }
+            if(parseInt(total) >= 200)
+            $('#del-charge').text("+ 5");
+            else if(parseInt(total) < 200 && parseInt(total) >= 100)
+            $('#del-charge').text("+ 10");
+            else if(parseInt(total) < 100 && parseInt(total) > 0)
+            $('#del-charge').text("+ 20");
         })
 
         $('.downbtn').click(function(){
             const id=$(this).data("id");
             var previous=$('#inquan'+id).val();
+            var total=0;
             if( previous > 1)
             {
                 const newv=parseInt(previous)-1;
@@ -183,8 +206,15 @@
                 const price=$('#price'+id).data("value");
                 $('#multiply'+id).text((newv*parseFloat(price)).toFixed(2));
                 {{-- console.log($('#total').text()); --}}
+                total=(parseFloat($('#total').text())-parseFloat(price)).toFixed(2);
                 $('#total').text((parseFloat($('#total').text())-parseFloat(price)).toFixed(2));
             }
+            if(parseInt(total) >= 200)
+            $('#del-charge').text("+ 5");
+            else if(parseInt(total) < 200 && parseInt(total) >= 100)
+            $('#del-charge').text("+ 10");
+            else if(parseInt(total) < 100 && parseInt(total) > 0)
+            $('#del-charge').text("+ 20");
         })   
         $('.inquan').on("change",function(){
             var val=$(this).val();
@@ -209,6 +239,7 @@
                 total+=multi;
             }
             $('#total').text(total.toFixed(2));
+            
             {{-- $('#total').text((parseFloat($('#total').text())+parseFloat(price)).toFixed(2)); --}}
 
         });

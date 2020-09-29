@@ -81,6 +81,13 @@
               <input type="number" name="price" id="price" placeholder="Enter Item Price" step="0.01" min="0" class="form-control" required>
             </div>
             <div>
+              <label for="type">Select Food Type:</label>
+              <select name="type" id="type" required class="form-control">
+                <option value="1">Veg</option>
+                <option value="0">Non-Veg</option>
+              </select>
+            </div>
+            <div>
               <label for="desc">Enter Desc:</label>
               <input type="text" name="desc" id="desc" placeholder="Enter Item Desc" class="form-control" required>
             </div>

@@ -93,6 +93,7 @@
 				<p>Registered Contact Number: {{$data['phone']}}</p>
                 <p>Registered Email: {{$data['email']}}</p>
                 <p>City: {{$data['city']}} </p>
+                <p>Restaurant: {{$data['res_name']}} </p>
 				<p>I want:</p>
 
 				<div style="margin:0;padding:0;text-align:center;">
@@ -118,11 +119,22 @@
                         			<?php $tot+=round($item->price)*$item->quantity?>
                         			<td style="border:2px solid white">Rs.{{round($item->price)*$item->quantity}}</td>
                         		</tr>
-                		    @endforeach
+							@endforeach
+							<tr>
+                    			<td></td>
+								<td  style="border:2px solid white" colspan="3">Sub-Total</td>
+                    			<td style="border:2px solid white">Rs. {{$tot}}</td>
+                    		</tr>
+							<tr>
+                    			<td></td>
+								<td  style="border:2px solid white" colspan="3">Delivery Charge</td>
+								<?php $del=0;if($tot>=200)$del=5;else if($tot<200 && $tot>=100)$del=10;else $del=20;?>
+                    			<td style="border:2px solid white">Rs. {{$del}}</td>
+                    		</tr>
                     		<tr>
                     			<td></td>
                     			<td  style="border:2px solid white" colspan="3">Total</td>
-                    			<td style="border:2px solid white">Rs. {{$tot}}</td>
+                    			<td style="border:2px solid white">Rs. {{$tot+$del}}</td>
                     		</tr>
                 		</tbody>
                 	</table>

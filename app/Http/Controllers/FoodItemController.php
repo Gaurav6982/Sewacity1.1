@@ -42,6 +42,7 @@ class FoodItemController extends Controller
         $res->price=$request->input('price');
         $res->desc=$request->input('desc');
         $res->res_id=$request->input('res_id');
+        $res->is_veg=$request->input('type');
         // $res->location=$request->input('loc');
         // $res->city_id=1;
         if($request->hasFile('image'))
@@ -98,6 +99,7 @@ class FoodItemController extends Controller
         $res->name=$request->input('name');
         $res->price=$request->input('price');
         $res->desc=$request->input('desc');
+        $res->is_veg=$request->input('type');
         $fileName='';
         if($request->hasFile('image'))
         {

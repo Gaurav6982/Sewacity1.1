@@ -99,13 +99,25 @@
                           <div class="col-md-12 my-4" id="divres{{$item->id}}">
                             <div class="card">
                                 <div class="card-body">
-                                  <div class="row">
+                                  <div class="row" style="position: relative;">
+                                      <p style="position:absolute;right:5px;top:5px">
+                                        @if(isset($item->is_veg))
+                                          @if($item->is_veg==1)
+                                          <img src="https://img.icons8.com/color/48/000000/vegetarian-food-symbol.png"/>
+                                          @else
+                                          <img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"/>
+                                          @endif
+                                        @else
+
+                                        @endif
+                                      </p>
                                       <div class="col-md-4">
                                         <img class="card-img-top item-img"  @if($item->image)src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap">
                                       </div>
                                     
                                       <div class="col-md-8">
-                                        <div style="padding: 20px 10px">
+                                        <div style="padding: 20px 10px;">
+                                            
                                             <p class="stylish">Name : {{$item->name}}</p>
                                             <p class="stylish">Price :Rs. {{$item->price}}</p>
                                             <p class="stylish">{{$item->desc}}</p>
@@ -114,7 +126,7 @@
                                   </div>
                                 </div>
                                 <div class="m-4">
-                                  <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-toggle="modal" data-target="#menus">Edit</button>
+                                  <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-type="{{$item->type}}" data-toggle="modal" data-target="#menus">Edit</button>
                                 </div>
                                   <button class="float-right btn del-res" data-id="{{$item->id}}" style="padding: 0;margin-right:5px"><img src="https://img.icons8.com/cute-clipart/64/000000/delete-forever.png" style="width: 36px"/></button>
                                 </div>
@@ -185,10 +197,15 @@ $(document).ready(function(){
         const name=$(this).data("name");
         const price=$(this).data("price");
         const desc=$(this).data("desc");
+        var type=$(this).data("type");
+        
+        if(type == '')
+        type=1;
         $('#menus .modal-title').text("Edit Item:");
             $('#menus #name').val(name);
             $('#menus #price').val(price);
             $('#menus #desc').val(desc);
+            $('#menus #type').val(type);
             $("#menus #image").removeAttr("required");
             $('#menus #submit').click(function(e){
                 {{-- e.preventDefault(); --}}

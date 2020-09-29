@@ -107,13 +107,19 @@ class UserFoodController extends Controller
 
         
         $carts=Auth::user()->foodcarts;
+        $res_id;
         // return $carts;
         foreach($carts as $i => $cart)
         {
+            $res_id=$cart->res_id;
             if($cart->id==$ids[$i])
             $cart->quantity=$quantities[$i];
             $cart->save();
         }
+        if(isset($res_id))
+        $res_name=Restaurants::find($res_id);
+        else
+        $res_name="NOT FOUND";
         // return $carts;
         //return $items;
         $user=Auth::user();
@@ -134,6 +140,7 @@ class UserFoodController extends Controller
             'name'=>Auth::user()->name,
             'phone'=>$contact,
             'email'=>Auth::user()->email,
+            'res_name'=>$res_name->name,
             'city'=>$user->city()->first()->city_name,
             'items'=>$items,
         );
