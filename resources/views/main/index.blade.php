@@ -212,7 +212,8 @@
     }
     #search-bar{
         display: none;
-        height: 40px;
+        height: 50px;
+        line-height: 50px;
         z-index: 95;
         position: relative;
         background-color: #0aa903;
@@ -232,14 +233,18 @@
         display: none;
     } */
     .navbar-ham{
-        background-color: white;
-        border-radius: 50%;
+        /* background-color: white; */
+        /* border-radius: 50%; */
         cursor: pointer;
+        margin-left: 10px
 
     }
-    .navbar-ham img{
-        width: 40px;
+    .navbar-ham i{
+        font-size: 20px;
     }
+    /* .navbar-ham img{
+        width: 40px;
+    } */
 
     .bar1, .bar2, .bar3 {
       width: 35px;
@@ -297,7 +302,8 @@
         transform: translateX(-20px);
     }
     #search-form{
-        
+        margin: 6px 4px 0 10px;
+        /* margin-top: 4px; */
         display: none;
         transition: 0.5s ease-in-out;
     }
@@ -317,12 +323,14 @@
         /* position:absolute;background:none;border:none;right:40px; */
         background-color:white;
         border-radius: 50%;
+        margin: 5px 6px;
         /* line-height: 10px */
-        padding:4px;
+        padding:0 6px;
         
     }
     #submit-phone img{
         width:30px;
+        margin-top:-8px;
     }
     @media only screen and (max-width: 500px) {
         .font-15{
@@ -490,7 +498,7 @@
             </div>
             <div id="search-bar">
                 <div class="navbar-ham" onclick="navbar(this)">
-                    <img src="https://img.icons8.com/nolan/64/menu.png"/>
+                    <i class="fa fa-bars" aria-hidden="true"></i>
                 </div>
                 {{-- <div class="navbar-ham" onclick="navbar(this)">
                     <div class="bar1"></div>
