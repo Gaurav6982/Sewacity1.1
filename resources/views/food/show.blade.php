@@ -115,6 +115,17 @@
                             <div class="card">
                                 <div class="card-body" style="padding:5px">
                                   <div class="row">
+                                    <p style="position:absolute;right:5px;top:5px">
+                                      @if(isset($item->is_veg))
+                                        @if($item->is_veg==1)
+                                        <img src="https://img.icons8.com/color/48/000000/vegetarian-food-symbol.png"/>
+                                        @else
+                                        <img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"/>
+                                        @endif
+                                      @else
+
+                                      @endif
+                                    </p>
                                       <div class="col-md-4 col-xs-4">
                                         <img class="card-img-top item-img"  @if($item->image)src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap">
                                       </div>
