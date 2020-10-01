@@ -17,13 +17,6 @@
     .scale:hover{
         transform:scale(1.25);
     }
-    <!--@media only screen and (max-width:1200px)-->
-    <!--{-->
-    <!--    .top-buttons button{-->
-    <!--        font-size:2px;-->
-    <!--        height:2px;-->
-    <!--    }-->
-    <!--}-->
     #catselect,#soslt,#searchinput{
         transition:display 0.5s ease;
     }
@@ -54,9 +47,11 @@
                                 <input type="radio" id="sort"name="choice" value="sort">Sort By
                             </div>
                         </div>
-                        <form action="/products" method="get">
+                        <form action="/products" method="get" id="filter-form">
                             <div class="row">
-
+                                @guest
+                                <input type="hidden" name="city" id="session_city"  value="">
+                                @endguest
                                     <div class="col-md-12 form-group"  id="categoryselect">
                                     <select class="form-control" name="category" id="catselect">
                                         <!-- <option value="-1">Select</option> -->
@@ -228,7 +223,23 @@
 @endsection
 
 @section('js')
-
+    @guest
+    $(function(){
+        {{-- console.log(city); --}}
+        
+       var cit= sessionStorage.getItem("city");
+       {{-- console.log(cit); --}}
+       $('#session_city').val(cit);
+       $('#select-dropdown select').on("change",function(){
+        var cit= sessionStorage.getItem("city");
+        {{-- console.log(cit); --}}
+        $('#session_city').val(cit);
+           $('#filter-form').submit();
+       })
+       
+        {{-- $('#select') --}}
+    });
+    @endguest
     function load($id)
     {
 

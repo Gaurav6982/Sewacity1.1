@@ -27,6 +27,36 @@
 
 </head>
 <style>
+#select-dropdown{
+    /* position: fixed; */
+    /* top: 60px; */
+    display: none;
+    margin-top: 10px;
+    /* height: 80px; */
+    z-index: 99;
+    /* background-color: white; */
+    width: 100%;
+}
+@media only screen and (max-width:600px)
+    {
+        #select-dropdown{
+            display: unset;
+            word-wrap:normal;
+            overflow: hidden;
+            appearance: none;
+        }
+        #select-dropdown select{
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+            outline: none;
+        }
+        #select-dropdown select option{
+            width: 80%;
+            overflow: hidden;
+        }
+
+    }
 .outerdiv {
 	position: relative;
 	overflow: hidden;
@@ -119,13 +149,18 @@ body {
 	font-family: 'Impact';
 	text-transform: uppercase;
 }
+main{
+    padding-top: 120px ;
 
+}
+
+    
 </style>
 @yield('styles')
 <body>
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#0AA903">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#0AA903;position:fixed;top:0;width:100%;z-index:99">
             <div class="container">
                 <a class="navbar-brand"  href="{{ url('/') }}">
 
@@ -199,12 +234,23 @@ body {
                     </ul>
                 </div>
             </div>
+            <div id="select-dropdown">
+                {{-- <label for="city">Choose City:</label> --}}
+                <?php $cities=App\City::all();?>
+                <select class="form-control" id="city" name="city">
+                    @foreach ($cities as $item)
+                        <option value="{{$item->id}}" @auth @if($item->id!=Auth::user()->city_id) disabled @else selected @endif @endauth >{{$item->city_name}}</option>
+                    @endforeach
+                  </select>
+                  {{-- <label class="mdb-main-label">Blue select</label> --}}
+            </div>
         </nav>
+        
         <nav>
             @yield('extra')
         </nav>
         @include('inc.messages')
-        <main class="py-4">
+        <main >
             @yield('content')
         </main>
     </div>
@@ -217,6 +263,7 @@ body {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> --}}
 <script type="text/javascript">
     $(function(){
   var str = '#len';
@@ -231,6 +278,29 @@ body {
       $('#len'+(i++)).toggleClass('bounce');
     }, 500)
   });
+});
+var city;
+$(function(){
+    @guest
+    <?php $_COOKIE["city"]=null;?>
+    $('#select-dropdown select').val(sessionStorage.getItem("city"));
+   
+    $('#select-dropdown select').on("change",function(){
+        var city_id=$('#select-dropdown select').val();
+        sessionStorage.setItem("city", city_id);
+        // document.cookie="city=1";
+        document.cookie = "city = "+city_id;
+        console.log(document.cookie);
+        setcookie('city', '', '', '/');
+        var x=<?php echo $_COOKIE["city"]." "?>;
+        console.log(x);    
+        // console.log(document.cookie);
+        
+        city=city_id;
+    })
+    
+    // alert($.cookie("city")); 
+    @endguest
 });
 
     @yield('js');

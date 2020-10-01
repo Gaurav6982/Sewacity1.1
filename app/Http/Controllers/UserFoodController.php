@@ -9,7 +9,8 @@ use App\FoodCart;
 use Auth;
 use Illuminate\Support\Facades\Mail; 
 use App\Mail\SendFoodMail; 
-class item{
+use Session;
+class itemaa{
     public $name;
     public $price;
     public $quantity;
@@ -22,6 +23,10 @@ class item{
 class UserFoodController extends Controller
 {
     public function index(){
+        if(Auth::check())
+        $city=Auth::user()->city_id;
+        else
+        $city = Session::get('city');
         $restaurants=Restaurants::where('city_id',1)->get();
         return view('food.index')->with('res',$restaurants);
     }
@@ -133,7 +138,7 @@ class UserFoodController extends Controller
         $items=[];
         foreach($carts as $i=>$cart){
             $item=Menu::where('id',$cart->food_id)->first();
-            $new_item=new item($item->name,intval($item->price),intval($cart->quantity));
+            $new_item=new itemaa($item->name,intval($item->price),intval($cart->quantity));
             array_push($items,$new_item);
         }
         $data=array(

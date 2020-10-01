@@ -70,3 +70,22 @@
           </div>
     </div>
 @endsection
+@section('js')
+@guest
+$(function(){
+    {{-- console.log(city); --}}
+    
+   var cit= sessionStorage.getItem("city");
+   {{-- console.log(cit); --}}
+   $('#session_city').val(cit);
+   $('#select-dropdown select').on("change",function(){
+    var cit= sessionStorage.getItem("city");
+    {{-- console.log(cit); --}}
+    $('#session_city').val(cit);
+       $('#filter-form').submit();
+   })
+   
+    {{-- $('#select') --}}
+});
+@endguest
+@endsection

@@ -23,6 +23,10 @@ class Main extends Controller
 
 
     public function ecomm(){
+        if(Auth::check())
+        $city=Auth::user()->city_id;
+        else
+        $city=$_GET['city']??1;
         if(!isset($_GET['searchbox']) || !isset($_GET['category']) || !isset($_GET['sort']))
             return redirect('/products?category=0&searchbox=&sort=latest&page=1')->with('error',"Please Don't Mess With Url's");
 
@@ -60,16 +64,16 @@ class Main extends Controller
             if($input!='')
             {
 
-                $posts=Posts::where('product_name','like','%'.$input.'%')->where('city_id','=',1)->orderBy($para1,$para2)->paginate(6);
-                $posts_temp=Posts::where('product_name','like','%'.$input.'%')->where('city_id','=',1)->get();
+                $posts=Posts::where('product_name','like','%'.$input.'%')->where('city_id','=',$city)->orderBy($para1,$para2)->paginate(6);
+                $posts_temp=Posts::where('product_name','like','%'.$input.'%')->where('city_id','=',$city)->get();
             $total=count($posts_temp);
             }
             else
                 {
                     $i1='product_name';
                     $i2='asc';
-                    $posts=Posts::where('city_id','=',1)->orderBy($i1,$i2)->paginate(6);
-                    $total=count(Posts::where('city_id','=',1)->get());
+                    $posts=Posts::where('city_id','=',$city)->orderBy($i1,$i2)->paginate(6);
+                    $total=count(Posts::where('city_id','=',$city)->get());
                 }
 
         }
@@ -77,8 +81,8 @@ class Main extends Controller
         {
             if($input!='')
             {
-                $posts=Posts::where('product_name','like','%'.$input.'%','and')->where('category_id','=',$category)->where('city_id','=',1)->orderBy($para1,$para2)->paginate(6);
-                $posts_temp=Posts::where('product_name','like','%'.$input.'%','and')->where('category_id','=',$category)->where('city_id','=',1)->get();
+                $posts=Posts::where('product_name','like','%'.$input.'%','and')->where('category_id','=',$category)->where('city_id','=',$city)->orderBy($para1,$para2)->paginate(6);
+                $posts_temp=Posts::where('product_name','like','%'.$input.'%','and')->where('category_id','=',$category)->where('city_id','=',$city)->get();
                 $total=count($posts_temp);
             }
             else
@@ -89,13 +93,13 @@ class Main extends Controller
 
                 // else
                     // $total=0;
-                 $posts=Posts::where('category_id','=',$category)->where('city_id','=',1)->orderBy($para1,$para2)->paginate(6);
-                 $posts_temp=Posts::where('category_id','=',$category)->where('city_id','=',1)->get();
+                 $posts=Posts::where('category_id','=',$category)->where('city_id','=',$city)->orderBy($para1,$para2)->paginate(6);
+                 $posts_temp=Posts::where('category_id','=',$category)->where('city_id','=',$city)->get();
                  $total= count($posts_temp);
             }
         }
 
-        $categories=Categories::where('city_id',1)->orderBy('order','asc')->get();
+        $categories=Categories::where('city_id',$city)->orderBy('order','asc')->get();
         if($total%6==0)
         $pages=$total/6;
         else

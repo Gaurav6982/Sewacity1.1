@@ -22,7 +22,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $city=Auth::user()->city_id;
+        return $_GET['city']; 
+        $city=$_GET['city']??1;
         if( !isset($_GET['searchbox']) || !isset($_GET['category']) )
             return redirect('/posts?category=0&searchbox=&page=1')->with('error',"Please Don't Mess With Url's");
         // if(!isset($_GET['page']))
