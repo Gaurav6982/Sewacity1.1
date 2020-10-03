@@ -55,6 +55,12 @@
             width: 80%;
             overflow: hidden;
         }
+        #messages{
+            
+            padding: 0;
+            margin:0;
+            padding-top: 120px;
+        }
 
     }
 .outerdiv {
@@ -150,7 +156,7 @@ body {
 	text-transform: uppercase;
 }
 main{
-    padding-top: 120px ;
+    
 
 }
 
@@ -234,22 +240,26 @@ main{
                     </ul>
                 </div>
             </div>
+            @if(!Auth::check() || Auth::user()->usertype=='normal')
             <div id="select-dropdown">
                 {{-- <label for="city">Choose City:</label> --}}
                 <?php $cities=App\City::all();?>
                 <select class="form-control" id="city" name="city">
                     @foreach ($cities as $item)
-                        <option value="{{$item->id}}" @auth @if($item->id!=Auth::user()->city_id) disabled @else selected @endif @endauth >{{$item->city_name}}</option>
+                        <option value="{{$item->id}}" @if(Auth::check() && Auth::user()->city_id!==$item->id) disabled @else selected @endif  >{{$item->city_name}}</option>
                     @endforeach
                   </select>
                   {{-- <label class="mdb-main-label">Blue select</label> --}}
             </div>
+            @endif
         </nav>
         
         <nav>
             @yield('extra')
         </nav>
-        @include('inc.messages')
+        <div id="messages">
+            @include('inc.messages')
+        </div>
         <main >
             @yield('content')
         </main>
@@ -282,19 +292,26 @@ main{
 var city;
 $(function(){
     @guest
-    <?php $_COOKIE["city"]=null;?>
     $('#select-dropdown select').val(sessionStorage.getItem("city"));
    
     $('#select-dropdown select').on("change",function(){
         var city_id=$('#select-dropdown select').val();
         sessionStorage.setItem("city", city_id);
-        // document.cookie="city=1";
-        document.cookie = "city = "+city_id;
-        console.log(document.cookie);
-        setcookie('city', '', '', '/');
-        var x=<?php echo $_COOKIE["city"]." "?>;
-        console.log(x);    
-        // console.log(document.cookie);
+        $.ajax({
+            url:'setSession',
+            method:"POST",
+            data:{
+                city:city_id,
+                _token:"{{csrf_token()}}",
+            },
+            success:function(data){
+                console.log("set");
+                location.reload();
+            },
+            error:function(error){
+                console.log("error");
+            }
+        })
         
         city=city_id;
     })

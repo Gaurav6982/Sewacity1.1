@@ -30,7 +30,7 @@
 ?>
     <div class="container bouter">
         <div class="card overflow-auto">
-            <div class="card-header">
+            <div class="card-header" > 
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                 <h5>Available Products</h5> </div>
@@ -49,9 +49,6 @@
                         </div>
                         <form action="/products" method="get" id="filter-form">
                             <div class="row">
-                                @guest
-                                <input type="hidden" name="city" id="session_city"  value="">
-                                @endguest
                                     <div class="col-md-12 form-group"  id="categoryselect">
                                     <select class="form-control" name="category" id="catselect">
                                         <!-- <option value="-1">Select</option> -->
@@ -230,12 +227,7 @@
        var cit= sessionStorage.getItem("city");
        {{-- console.log(cit); --}}
        $('#session_city').val(cit);
-       $('#select-dropdown select').on("change",function(){
-        var cit= sessionStorage.getItem("city");
-        {{-- console.log(cit); --}}
-        $('#session_city').val(cit);
-           $('#filter-form').submit();
-       })
+       
        
         {{-- $('#select') --}}
     });

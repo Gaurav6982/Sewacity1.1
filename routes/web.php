@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 Route::get('/fbg',"Main@index");
 Route::get('/about',"Main@about");
-
+Route::post('setSession','Main@setSession');
+Route::post('gettSession','Main@getSession');
 Auth::routes();
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');

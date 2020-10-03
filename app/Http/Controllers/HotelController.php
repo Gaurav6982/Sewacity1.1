@@ -8,11 +8,19 @@ use App\Hotel;
 use App\Room;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HotelMailer;
+use Auth;
+use Session;
 class HotelController extends Controller
 {
     public function index(){
-        $hotel_details=Hotel::where('is_active','=',1)->limit(3)->get();
-        
+        if(Auth::check())
+        $city=Auth::user()->city_id;
+        else
+        $city = Session::get('city')??1;
+        // return Session::get('city');
+        $hotel_details=Hotel::where('is_active','=',1)->where('city_id',$city)->get();
+        if(count($hotel_details)==0)
+        return back()->with('error','Coming Soon To your City');
         return view('hotels.index')->with('hotel_details',$hotel_details);
     }
     public function rooms($id)

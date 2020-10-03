@@ -32,7 +32,7 @@
 
   </style>
 @section('content')
-	
+	@if(Auth::user()->city_id==1)
 	<h1 class="col">Sewacity Presents</h1>
     <div class="container"><center>
         <img src="/storage/safari/logo.png"class="saf" alt="#" /></a>
@@ -82,5 +82,13 @@
 
 
 
-      </div>
+	  </div>
+	  @else
+	  <div class="card">
+		<div class="card-body">
+			Coming Soon to yor city
+		  {{-- This is some text within a card body. --}}
+		</div>
+	  </div>
+	  @endif
 @endsection

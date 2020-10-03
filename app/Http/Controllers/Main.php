@@ -8,6 +8,8 @@ use App\User;
 use App\Feedback;
 use Auth;
 use App\Categories;
+use Session;
+// session_start();
 class Main extends Controller
 {
     // public function __construct()
@@ -26,7 +28,7 @@ class Main extends Controller
         if(Auth::check())
         $city=Auth::user()->city_id;
         else
-        $city=$_GET['city']??1;
+        $city=Session::get('city')??1;
         if(!isset($_GET['searchbox']) || !isset($_GET['category']) || !isset($_GET['sort']))
             return redirect('/products?category=0&searchbox=&sort=latest&page=1')->with('error',"Please Don't Mess With Url's");
 
@@ -166,5 +168,12 @@ class Main extends Controller
 
     public function about(){
         return view('main.about.index');
+    }
+    public function setSession(Request $req){
+        $req->session()->put('city',$req->input('city'));
+    }
+    public function getSession(Request $req){
+        // $res->session()->put('city',$req->input('city'));
+        return $req->session()->get('city');
     }
 }

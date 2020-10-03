@@ -40,7 +40,9 @@
                 {{count($res??[])}} restaurants
             </div>
             <div class="card-body">
+                @if(count($res??[])>0)
                 <div class="row">
+                    
                     @foreach ($res as $r)
                     
                         <div class="col-md-3 my-4">
@@ -62,7 +64,11 @@
                         </div>
                    
                     @endforeach
+
                 </div>
+                @else
+                <p class="text-center">Coming Soon to Your City</p>
+                @endif
               {{-- <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary">Go somewhere</a> --}}
@@ -78,13 +84,7 @@ $(function(){
    var cit= sessionStorage.getItem("city");
    {{-- console.log(cit); --}}
    $('#session_city').val(cit);
-   $('#select-dropdown select').on("change",function(){
-    var cit= sessionStorage.getItem("city");
-    {{-- console.log(cit); --}}
-    $('#session_city').val(cit);
-       $('#filter-form').submit();
-   })
-   
+
     {{-- $('#select') --}}
 });
 @endguest

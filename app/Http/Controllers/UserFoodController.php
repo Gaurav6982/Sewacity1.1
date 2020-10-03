@@ -20,14 +20,17 @@ class itemaa{
         $this->quantity=$qty;
     }
 }
+session_start();
 class UserFoodController extends Controller
 {
     public function index(){
+        // return $_SESSION['city'];
         if(Auth::check())
         $city=Auth::user()->city_id;
         else
-        $city = Session::get('city');
-        $restaurants=Restaurants::where('city_id',1)->get();
+        $city = Session::get('city')??1;
+        // return $city."wadaw";
+        $restaurants=Restaurants::where('city_id',$city)->get();
         return view('food.index')->with('res',$restaurants);
     }
     public function show($id){
