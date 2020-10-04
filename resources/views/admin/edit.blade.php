@@ -1,4 +1,4 @@
-@extends(Auth::user()->city_id==1?'layouts.app':'patna.layouts.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -12,6 +12,14 @@
                 <div class="col-md-6">
                     {!! Form::open(['action' => ['PostController@update',$post->id],'method'=>'post','encType'=>'multipart/form-data']) !!}
                     {{csrf_field()}}
+                        <div class="form-group">
+                            {{Form::label('city','City Name:')}}
+                            <select name="city" id="city" class="form-control">
+                                @foreach ($cities as $item)
+                                    <option value="{{$item->id}}" @if($item->id==$post->city_id) selected @endif>{{$item->city_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             {{Form::label('name','Product Name:')}}
                             {{Form::text('name',$post->product_name,['class'=>'form-control','placeholder'=>'Product Name:'])}}

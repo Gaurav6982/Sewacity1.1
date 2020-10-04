@@ -220,6 +220,7 @@
 @endsection
 
 @section('js')
+
     @guest
     $(function(){
         {{-- console.log(city); --}}

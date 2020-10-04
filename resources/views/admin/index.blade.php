@@ -1,4 +1,4 @@
-@extends(Auth::user()->city_id==1?'layouts.app':'patna.layouts.app')
+@extends('layouts.app')
 @section('content')
 <?php if(!isset($_GET['page']))
         {
@@ -26,25 +26,23 @@
                             <div class="row">
 
                                     <div class="col-md-12 form-group"  id="categoryselect">
-                                    <select class="form-control" name="category" id="catselectEdit">
-                                        <!-- <option value="-1">Select</option> -->
-                                        <option value="0">All</option>
-                                        <option value="1">Electrical Appliances</option>
-                                        <option value="2">Essential Products</option>
-                                        <option value="3">Footwear</option>
-                                        <option value="4">Books</option>
-                                        <option value="5">Furniture</option>
-                                        <option value="6">Kitchen Needs</option>
-                                        <option value="7">Grocery</option>
-                                        <option value="8">Cosmetics</option>
-                                        <option value="9">Gift Item</option>
-                                        <option value="10">Electrical Parts</option>
-                                        <option value="11">Seasonal Items</option>
-                                    </select>
+                                        <select class="form-control" name="category" id="catselectEdit">
+                                            <option value="0">All</option>
+                                            @foreach ($categories as $item)
+                                                <option value="{{$item->id}}">{{$item->category_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 form-group"  id="categoryselect">
+                                        <select class="form-control" name="city" id="city">
+                                            @foreach ($cities as $item)
+                                                <option value="{{$item->id}}">{{$item->city_name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
                                      <div class="col-md-12 form-group" id="searchinputEdit">
-                                    <input type="text"  name="searchbox" placeholder="Enter Some Text" class="form-control">
+                                        <input type="text"  name="searchbox" placeholder="Enter Some Text" class="form-control">
                                     </div>
 
                             </div>
@@ -153,17 +151,25 @@
             @endif
             </section>
         </div>
-
-<script type="text/javascript">
-    var slt1=document.getElementById('catselectEdit');
-slt1.getElementsByTagName('option')[{{$page}}].setAttribute("selected", "selected");
-
-var slt3=document.getElementById('jumpEdit');
-function changeEdit($id)
- {
-    <?php $link=("/posts?category=".$page."&searchbox=".$input."&page=");?>
-    window.location.href="<?php echo $link;?>"+slt3.value;
-    // console.log("<?php echo $link;?>"+slt3.value);
- }
+<script>
+    var slt3=document.getElementById('jumpEdit');
+    function changeEdit($id)
+     {
+        <?php $link=("/posts?category=".$page."&searchbox=".$input."&page=");?>
+        window.location.href="<?php echo $link;?>"+slt3.value;
+     }
 </script>
+
+@endsection
+
+@section('js')
+
+    $(function(){
+        console.log("{{$page}}");
+        $('#catselectEdit').val({{$page}});
+        $('#city').val({{$city}});
+    });
+
+    
+
 @endsection

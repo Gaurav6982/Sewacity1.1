@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Posts;
 use App\User;
 use App\Feedback;
+use App\City;
 use Auth;
 use App\Categories;
 use Session;
@@ -19,8 +20,9 @@ class Main extends Controller
 
     public function index(){
         // $posts=POsts::all();
+        $cities=City::all();
         $feeds=Feedback::where('is_approved','=','1')->get();
-        return view('main.index')->with('feeds',$feeds);
+        return view('main.index')->with('feeds',$feeds)->with('cities',$cities);
     }
 
 
@@ -157,7 +159,7 @@ class Main extends Controller
             if(Auth::check())
             {
                 if(Auth::user()->city_id==1)
-                return redirect('/fbg')->with('success','Posted your feedback successfully!');
+                return redirect('/')->with('success','Posted your feedback successfully!');
                 else
                 return redirect('/patna')->with('success','Posted your feedback successfully!');
             }

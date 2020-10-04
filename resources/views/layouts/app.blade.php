@@ -27,6 +27,9 @@
 
 </head>
 <style>
+#messages{
+    padding-top: 65px;
+}
 #select-dropdown{
     /* position: fixed; */
     /* top: 60px; */
@@ -155,10 +158,7 @@ body {
 	font-family: 'Impact';
 	text-transform: uppercase;
 }
-main{
-    
 
-}
 
     
 </style>
@@ -186,7 +186,7 @@ main{
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <ul class="navbar-nav">
-                            <li class="nav-item active"><a href="/fbg"class="nav-link"><span class="custom hoverable" id="len1">HOME</span></a></li>
+                            <li class="nav-item active"><a href="/"class="nav-link"><span class="custom hoverable" id="len1">HOME</span></a></li>
                             <li class="nav-item hoverable" id="len2"><a href="/foodie"class="nav-link"><span class="custom">FOOD SERVICE</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/products?category=0&sort=latest&searchbox="class="nav-link"><span class="custom">E-COMMERCE</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/safari"class="nav-link"><span class="custom">SEWACITY SAFARI</span></a></li>

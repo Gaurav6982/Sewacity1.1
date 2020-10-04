@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main.choose');
-});
-Route::get('/fbg',"Main@index");
+// Route::get('/', function () {
+//     return view('main.choose');
+// });
+Route::get('/',"Main@index");
 Route::get('/about',"Main@about");
 Route::post('setSession','Main@setSession');
 Route::post('gettSession','Main@getSession');

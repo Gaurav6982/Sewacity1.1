@@ -108,7 +108,7 @@
 			<div class="options">
 				<h1 class="text-center">CHOOSE YOUR CITY</h1>
 				<div class="buttons">
-					<a href="/fbg"class="btn btn-block btn-primary">FORBESGANJ</a>
+					<a href="/"class="btn btn-block btn-primary">FORBESGANJ</a>
 					<a  href="/patna"class="btn btn-block btn-secondary"  title="PATNA" >PATNA</a>
 				</div>
 			</div>

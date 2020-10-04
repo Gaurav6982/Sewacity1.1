@@ -8,6 +8,7 @@ use App\Posts;
 use App\CartItem;
 use Auth;
 use App\Categories;
+use App\City;
 class PostController extends Controller
 {
     // public function __construct()
@@ -22,7 +23,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return $_GET['city']; 
+        // return $_GET['city']; 
         $city=$_GET['city']??1;
         if( !isset($_GET['searchbox']) || !isset($_GET['category']) )
             return redirect('/posts?category=0&searchbox=&page=1')->with('error',"Please Don't Mess With Url's");
@@ -81,7 +82,9 @@ class PostController extends Controller
             'page'=>$category,
             'input'=>$input,
             'pages'=>$pages,
-
+            'categories'=>Categories::where('city_id',$city)->get(),
+            'cities'=>City::where('is_active',1)->get(),
+            'city'=>$city
         );
         return view('admin.index')->with($data);
     }
@@ -93,8 +96,9 @@ class PostController extends Controller
      */
     public function create()
     {
+        $cities=City::where('is_active',1)->get();
         $categories=Categories::where('city_id',Auth::user()->city_id)->get();
-        return view('admin.create')->with('categories',$categories);
+        return view('admin.create')->with('categories',$categories)->with('cities',$cities);
     }
 
     /**
@@ -105,7 +109,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request,[
             'name' => 'required|string',
             'price' => 'required|min:0',
@@ -144,7 +147,7 @@ class PostController extends Controller
             $post->category_id=$request->input('category');
             $post->discount=$request->input('discount');
             $post->user_id=auth()->id();
-            $post->city_id=Auth::user()->city_id;
+            $post->city_id=$request->city;
             $post->image=$fileName;
             $post->save();
 
@@ -170,9 +173,15 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $cities=City::where('is_active',1)->get();
         $post=Posts::find($id);
         $categories=Categories::where('city_id',Auth::user()->city_id)->get();
-        return view('admin.edit')->with('post',$post)->with('categories',$categories);
+        $data=array(
+            'cities'=>$cities,
+            'post'=>$post,
+            'categories'=>$categories
+        );
+        return view('admin.edit')->with($data);
     }
 
     /**
@@ -226,6 +235,7 @@ class PostController extends Controller
             $post->discount=$request->input('discount');
             $post->valid=$request->input('valid');
             $post->product_quantity=$request->input('quantity');
+            $post->city_id=$request->input('city');
             // $post->user_id=auth()->id();
 
             $post->save();

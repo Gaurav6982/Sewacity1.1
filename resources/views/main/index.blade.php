@@ -310,7 +310,46 @@
     #search-form input{
         background-color:#ffffe0;
     }
+    #city-select{
+        
+        margin-top: 10px;
+        /* min-width: 100px; */
+        padding: 2px 25px 2px 6px;
+        height: 50px;
+        background-color:grey;
+        letter-spacing: 3px;
+        appearance: none;
+        position: relative;
+    }
+    #city-select-parent{
+        /* border:2px solid black; */
+        position: relative;
+        padding: 0;
+        margin: 0;
+        width: 140px;
+        display: flex;
+        /* border: 2px solid black; */
 
+    }
+    #city-select-parent #icon{
+        position: absolute;
+        /* display: none; */
+        /* right: 10px; */
+        left: 120px;
+        pointer-events: none;
+        width: 30px;
+        background-color: black;
+        height: 50px;
+        color:white;
+        font-size: 20px;
+        line-height: 50px;
+        justify-content: center;
+        text-align: center;
+        margin-top: 10px;
+    }
+    #navbar-outer{
+        position: relative;
+    }
     @media only screen and (max-width: 1025px) {
         .imag {
             width: 60%;
@@ -324,8 +363,10 @@
         background-color:white;
         border-radius: 50%;
         margin: 5px 6px;
+        padding: 3px 2px;
+        height: 40px;
         /* line-height: 10px */
-        padding:0 6px;
+        /* padding:0 6px; */
         
     }
     #submit-phone img{
@@ -337,11 +378,30 @@
             font-size: 15px !important;
         }
         #search-bar{
+            display: inline-block;
+            height: auto;
+        }
+        #search-bar .search-bar-child:nth-child(1){
             display: flex;
+            overflow: hidden;
+            /* border:2px solid black; */
+        }
+        #search-bar .search-bar-child:nth-child(2){
+            /* background-color: #0aa903; */
+            margin: 0;
+            padding: 10px;
+           
+            /* border:2px solid black; */
+        }
+        #search-bar .search-bar-child:nth-child(2) select{
+            height: 30px;
+            padding: 5px;
+            border-radius: 20px;
         }
         #search-form{
             z-index: 95;
             width: 80%;
+            height: 40px;
             display: block;
         }
         body{
@@ -382,6 +442,25 @@
             height: 180px !important;
             border: none;
             border-radius: 2px;
+        }
+        #city-select-parent{
+            width: 100%;
+            height: 50px;
+            display: none;
+        }
+        #city-select{
+            position: absolute;
+            margin:0;
+            top: 20%;
+            height: 42px;
+            padding: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #city-select1{
+            margin:0;
+            height: 42px;
+            padding: 0;
         }
     }
 
@@ -425,7 +504,7 @@
               <div>
                 <ul>
                     <div class="float-right" id="close-btn" onclick="navbarc(this)"><i class="fa fa-times" aria-hidden="true" style="font-size: 30px"></i></div>
-                    <li> <a href="/fbg">HOME</a> </li>
+                    <li> <a href="/">HOME</a> </li>
                     <li> <a  href="/about" target="_blank">ABOUT US</a></li>
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
                     <li> <a  href="/foodie">FOOD SERVICE</a></li>
@@ -448,8 +527,15 @@
         <header>
             @include('inc.messages') <div class="container">
 
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 "> </div>
+                <div class="row" id="navbar-outer">
+                    <div class="col-md-4 col-sm-12" id="city-select-parent">
+                        <select name="" id="city-select">
+                            @foreach ($cities as $item)
+                                <option value="{{$item->id}}" @auth @if(Auth::user()->city_id==$item->id)selected @else disabled @endif @endauth >{{$item->city_name}}</option>
+                            @endforeach
+                        </select>
+                        <div id="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                    </div>
                     <div class="col-md-4 col-sm-12 text-center">
                         <h2 class="my-md-3 site-title text-white">SEWACITY</h2>
                     </div>
@@ -497,22 +583,35 @@
 
             </div>
             <div id="search-bar">
-                <div class="navbar-ham" onclick="navbar(this)">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-                {{-- <div class="navbar-ham" onclick="navbar(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                  </div> --}}
-                  <form id="search-form">
-                    <div style="margin-bottom: 20px;display:flex;position:relative" >
-        
-                        <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
-                        <button type="submit" id="submit-search"><i class="fa fa-search"></i></button>
+                
+
+                <div class="search-bar-child">
+                    <div class="navbar-ham" onclick="navbar(this)">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
-                    </form>
-                    <a href="tel:8676036607" id="submit-phone"><img src="https://img.icons8.com/wired/64/000000/phone-disconnected.png"/></a>
+                    {{-- <div class="navbar-ham" onclick="navbar(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div> --}}
+                    <form id="search-form">
+                        <div style="margin-bottom: 20px;display:flex;position:relative" >
+            
+                            <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
+                            <button type="submit" id="submit-search"><i class="fa fa-search"></i></button>
+                        </div>
+                        </form>
+                        <a href="tel:8676036607" id="submit-phone"><img src="https://img.icons8.com/wired/64/000000/phone-disconnected.png"/></a>
+                    </div>
+                    <div class="search-bar-child">
+                        <select name="" id="city-select1" class="form-control">
+                            @foreach ($cities as $item)
+                                <option value="{{$item->id}}" @auth @if(Auth::user()->city_id==$item->id)selected @else disabled @endif @endauth >{{$item->city_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    
+                    
             </div>
             
 
@@ -524,7 +623,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active"> <a class="nav-link" href="/fbg">Home <span
+                            <li class="nav-item active"> <a class="nav-link" href="/">Home <span
                                         class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/tieup">Want To Join Us?</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/about" target="_blank">About Us</a> </li>
@@ -832,24 +931,20 @@
         @include('inc.footer')
 
     </div> <!-- /footer -->
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
-    <!-- owl carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
-        integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+        
 
 
     <script src="./js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+        integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
     <!-- <script src="./js/main.js"></script> -->
     <!-- Initialize Swiper -->
@@ -967,7 +1062,84 @@
                 }
             })
         });
-
+        @guest
+            var value=sessionStorage.getItem("city");
+            // console.log("awdaw"+value);
+            if(value==null)
+            {
+                value=1;
+                city_id=value;
+                sessionStorage.setItem("city", city_id);
+                $.ajax({
+                    url:'setSession',
+                    method:"POST",
+                    data:{
+                        city:city_id,
+                        _token:"{{csrf_token()}}",
+                    },
+                    success:function(data){
+                        $('#city-select').val(city_id);
+                        // console.log("set");
+                        // location.reload();
+                    },
+                    error:function(error){
+                        console.log("error");
+                    }
+                });
+            }
+            // console.log("awdaw"+value);
+            $('#city-select').val(value);
+            $('#city-select1').val(value);
+        
+            $('#city-select').on("change",function(){
+                var city_id=$('#city-select').val();
+                sessionStorage.setItem("city", city_id);
+                $.ajax({
+                    url:'setSession',
+                    method:"POST",
+                    data:{
+                        city:city_id,
+                        _token:"{{csrf_token()}}",
+                    },
+                    success:function(data){
+                        $('#city-select').val(city_id);
+                        // console.log("set");
+                        // location.reload();
+                    },
+                    error:function(error){
+                        console.log("error");
+                    }
+                })
+                
+                city=city_id;
+            });
+            $('#city-select1').on("change",function(){
+                var city_id=$('#city-select1').val();
+                sessionStorage.setItem("city", city_id);
+                $.ajax({
+                    url:'setSession',
+                    method:"POST",
+                    data:{
+                        city:city_id,
+                        _token:"{{csrf_token()}}",
+                    },
+                    success:function(data){
+                        $('#city-select1').val(city_id);
+                        // console.log("set");
+                        // location.reload();
+                    },
+                    error:function(error){
+                        console.log("error");
+                    }
+                })
+                
+                city=city_id;
+            });
+            $(function(){
+                var cit= sessionStorage.getItem("city");
+                $('#session_city').val(cit);
+            });
+        @endguest
     </script>
 
 </body>

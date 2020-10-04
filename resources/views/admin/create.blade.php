@@ -42,6 +42,15 @@
                     {!! Form::open(['action' => 'PostController@store','method'=>'post','encType'=>'multipart/form-data']) !!}
                     {{csrf_field()}}
                         <div class="form-group">
+                            {{Form::label('city','City Name:')}}
+                            <select name="city" id="city" class="form-control">
+                                @foreach ($cities as $item)
+                            <option value="{{$item->id}}">{{$item->city_name}}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
+                        <div class="form-group">
                             {{Form::label('name','Product Name:')}}
                             {{Form::text('name','',['class'=>'form-control','placeholder'=>'Product Name:'])}}
                         </div>
