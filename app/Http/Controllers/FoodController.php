@@ -15,7 +15,7 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $restaurants=Restaurants::where('city_id',1)->get();
+        $restaurants=Restaurants::all();
         return view('admin.food.index')->with('res',$restaurants);
     }
 
@@ -40,10 +40,10 @@ class FoodController extends Controller
         // return $request->all();
         $res=new Restaurants;
         $res->name=$request->input('name');
+        $res->city_id=$request->input('city');
         $res->type=$request->input('type');
         $res->desc=$request->input('desc');
         $res->location=$request->input('loc');
-        $res->city_id=1;
         if($request->hasFile('image'))
         {
             $file=$request->file('image')->getClientOriginalName();

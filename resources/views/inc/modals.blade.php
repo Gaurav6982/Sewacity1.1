@@ -18,6 +18,14 @@
           <form id="res-form" name="resform" method="POST" enctype="multipart/form-data" >
             @csrf
             <input type="hidden" id="method">
+            <div>
+              <label for="city">Select City:</label>
+              <select name="city" id="city" class="form-control" required>
+                @foreach (App\City::where('is_active',1)->get() as $item)
+                    <option value="{{$item->id}}">{{$item->city_name}}</option>
+                @endforeach
+              </select>
+            </div>
             <div class="my-4">
                 <label for="name">Enter Name:</label>
                 <input type="text" name="name" id="name" placeholder="Enter Restaurant Name:" class="form-control" required>
@@ -72,6 +80,7 @@
             {{ csrf_field() }}
             <input type="hidden" name="res_id" id="res_id">
             <input type="hidden" name="" id="method">
+            
             <div>
               <label for="name">Enter Name:</label>
               <input type="text" name="name" id="name" placeholder="Enter Item Name" class="form-control" required>
@@ -103,6 +112,37 @@
           </form>
         </div>
         
+      </div>
+    </div>
+  </div>
+
+
+  {{-- ***************City Modal************ --}}
+  <div class="modal fade" id="editCityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Category: <span id="category_name"></span></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="name">Category Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+                <p style="color: red" id="warning-text-name"></p>
+            </div>
+            <div class="form-group">
+                <label for="order">Category Order:</label>
+                <input type="number" min="0" class="form-control" id="order" name="order" required>
+                <p style="color: red"  id="warning-text-order"></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="edit-submit">Save changes</button>
+        </div>
       </div>
     </div>
   </div>

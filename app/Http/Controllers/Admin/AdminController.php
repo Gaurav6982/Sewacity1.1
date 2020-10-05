@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Categories;
 use App\Posts;
+use App\City;
+
 class AdminController extends Controller
 {
     public function manage_categories(Request $request){
@@ -65,5 +67,9 @@ class AdminController extends Controller
         if($category->delete())
         return "success";
         return "fail";
+    }
+    public function manage_cities(){
+        $cities=City::where('is_active',1)->get();
+       return view('admin.cities')->with('cities',$cities);
     }
 }

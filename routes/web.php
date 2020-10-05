@@ -23,6 +23,7 @@ Route::post('gettSession','Main@getSession');
 Auth::routes();
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
+    Route::get('/city','Admin\AdminController@manage_cities');
     Route::resource('food/item','FoodItemController');
 });
 Route::group(['middleware'=>['admin','auth']],function(){
@@ -31,6 +32,7 @@ Route::group(['middleware'=>['admin','auth']],function(){
     });
     Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
+    
     Route::post('/manage-category','Admin\AdminController@manage_categories');
     Route::post('/add-category','Admin\AdminController@add_category');
     Route::post('/edit-category','Admin\AdminController@edit_category');

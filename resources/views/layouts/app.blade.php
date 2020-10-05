@@ -143,11 +143,19 @@
 body {
 	/*background-image:url('./assets/bg.jpg');*/
 	/*background-color: #21d190;*/
-	background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%) !important;
-	background-color: #21d190;
+    background-color: #7f53ac;
+background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+	/* background-image: linear-gradient(135deg, #21d190 0%, #d65bca 74%) !important; */
+	/* background-color: #21d190; */
 	font-weight: 600;
 }
+#app nav{
+    background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 
+
+
+}
 .page-title {
 	opacity: .75 !important;
 }
@@ -166,7 +174,7 @@ body {
 <body>
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#0AA903;position:fixed;top:0;width:100%;z-index:99">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="position:fixed;top:0;width:100%;z-index:99">
             <div class="container">
                 <a class="navbar-brand"  href="{{ url('/') }}">
 

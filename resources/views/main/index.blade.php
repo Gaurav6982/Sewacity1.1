@@ -216,7 +216,8 @@
         line-height: 50px;
         z-index: 95;
         position: relative;
-        background-color: #0aa903;
+        background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         width: 100%;
     }
     /* .navbar-ham {
