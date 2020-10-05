@@ -7,7 +7,7 @@
             Manage Cities
             <div class="float-right">
                 <button class="btn btn-primary" id="add_city" data-toggle="modal" data-target="#editCityModal">Add a City</button>
-            </div>
+            </div> 
         </div>
         <div class="card-body">
             <div class="table-responsive p-2">
@@ -42,4 +42,173 @@
     </div>
 </div>
 @include('inc.modals')
+@endsection
+
+@section('js')
+$(document).ready(function(){
+    $('#add_category').click(function(){
+        $('.modal-title').text("Add Category:");
+        $('#name').val("");
+        $('#order').val("");
+        $('#edit-submit').click(function(){
+            name=$('#name').val();
+            order=$('#order').val();
+            if(name!='' && order!=''){
+                $.ajax({
+                    type:"post",
+                    url:"/add-category",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        "name":name,
+                        "order":order,
+                        "city_id":$('#city_id').val(),
+                    },
+                    success:function(data)
+                    {
+                        if(data=="save"){
+                            $('#name').val("");
+                            Swal.fire(
+                                'Success!',
+                                'Category Added!',
+                                'success'
+                            )
+                            setTimeout(function(){
+                                location.reload();
+                            },800);
+                        }
+                        else if(data=="exist")
+                        {
+                            Swal.fire(
+                                'Error!',
+                                'Name Already Exist',
+                                'error'
+                            )
+                        }
+                        else
+                        {
+                            Swal.fire(
+                                'Error!',
+                                'There is Some Error!!!',
+                                'error'
+                            )
+                        }
+                    },
+                }); //ajax
+            }
+            else
+            {
+                if(name=='')
+                $('#warning-text-name').text("This Field can't be empty!");
+                else
+                $('#warning-text-order').text("This Field can't be empty!");
+                setTimeout(function(){
+                    $('#warning-text-name').text("");
+                    $('#warning-text-order').text("");
+                },2000);
+            }
+        }); //button click
+    });
+    $('#add_category_submit').click(function(e){
+        e.preventDefault();
+        const value=$('#category_name').val();
+        if(value=='')
+        {
+            $('#category_name').css("border","1px solid red");
+        }
+        else
+        {
+            $.ajax({
+                type:"post",
+                url:"/add-category",
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                    "name":value,
+                    "city_id":$('#city_id').val(),
+                },
+                success:function(data)
+                {
+                    if(data=="save"){
+                        $('#category_name').val("");
+                        Swal.fire(
+                            'Success!',
+                            'Category Added!',
+                            'success'
+                        )
+                        setTimeout(function(){
+                            location.reload();
+                        },500);
+                    }
+                    else if(data=="exist")
+                    {
+                        Swal.fire(
+                            'Error!',
+                            'Name Already Exist',
+                            'error'
+                        )
+                    }
+                    else
+                    {
+                        Swal.fire(
+                            'Error!',
+                            'There is Some Error!!!',
+                            'error'
+                        )
+                    }
+                },
+            });
+        }
+    });
+    //**************** Edit form**************
+    $('.edit').on('click',function(){
+        const cat_id=$(this).closest('td').find("input[name='category_id']").val();
+        var name=$(this).closest('td').find("input[name='category_name']").val();
+        var order=$(this).closest('td').find("input[name='category_order']").val();
+        $('#name').val(name);
+        $('#order').val(order);
+        $('.modal-title').text("Edit Category:");
+        $('#edit-submit').click(function(){
+            name=$('#name').val();
+            order=$('#order').val();
+            $.ajax({
+                type:"post",
+                url:"/edit-category",
+                data:{
+                    "_token": "{{ csrf_token() }}","_token": "{{ csrf_token() }}",
+                    "name":name,
+                    "order":order,
+                    "category_id":cat_id,
+                },
+                success:function(data)
+                {
+                    console.log(data);
+                    if(data=="save"){
+                        Swal.fire(
+                            'Success!',
+                            'Category Updated!',
+                            'success'
+                        )
+                        setTimeout(function(){
+                            location.reload();
+                        },500);
+                    }
+                    else if(data=="exist")
+                    {
+                        Swal.fire(
+                            'Error!',
+                            'This Combination Exist',
+                            'error'
+                        )
+                    }
+                    else
+                    {
+                        Swal.fire(
+                            'Error!',
+                            'There is Some Error!!!',
+                            'error'
+                        )
+                    }
+                },
+            });
+        }); //button click
+    });
 @endsection
