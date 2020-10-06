@@ -36,6 +36,8 @@ Route::group(['middleware'=>['admin','auth']],function(){
     Route::post('/manage-category','Admin\AdminController@manage_categories');
     Route::post('/add-category','Admin\AdminController@add_category');
     Route::post('/edit-category','Admin\AdminController@edit_category');
+    Route::post('/add-city','Admin\AdminController@add_city');
+    Route::post('/edit-city','Admin\AdminController@edit_city');
     Route::post('/delete-category','Admin\AdminController@delete_category');
 });
 Route::group(['middleware'=>['auth']],function(){

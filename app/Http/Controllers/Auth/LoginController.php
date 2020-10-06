@@ -31,15 +31,9 @@ class LoginController extends Controller
     {
         if(Auth::user()->usertype=='admin'||Auth::user()->usertype=='special')
         {
-            if(Auth::user()->city_id==1)
             return 'dashboard';
-            else if(Auth::user()->city_id==2)
-            return 'patna-dashboard';
         }
-        else if(Auth::user()->city_id==1)
-        return 'fbg';
-        else if(Auth::user()->city_id==2)
-        return 'patna';
+        return '';
 
     }
     /**

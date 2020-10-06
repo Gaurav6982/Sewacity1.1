@@ -24,10 +24,10 @@
                         @foreach ($cities as $item)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$item->city_name}}</td>
+                                <td><span @if($item->is_active==0) style="color:grey" @endif>{{$item->city_name}}</span></td>
                                 <td style="display: flex">
                                     <input type="hidden" name="city_id" value="{{$item->id}}">
-                                    <input type="hidden" name="city_name" value="{{$item->item_name}}">
+                                    <input type="hidden" name="city_name" value="{{$item->city_name}}">
                                     <input type="hidden" name="city_status" value="{{$item->is_active}}">
                                     <button class="btn btn-info ml-2 edit btn-sm" data-toggle="modal" data-target="#editCityModal"><img src="https://img.icons8.com/material/20/000000/edit--v1.png"/></button >
                                     {{-- <button class="btn btn-danger ml-2 delete btn-sm" data-id="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button> --}}
@@ -46,30 +46,29 @@
 
 @section('js')
 $(document).ready(function(){
-    $('#add_category').click(function(){
-        $('.modal-title').text("Add Category:");
-        $('#name').val("");
-        $('#order').val("");
-        $('#edit-submit').click(function(){
-            name=$('#name').val();
-            order=$('#order').val();
-            if(name!='' && order!=''){
+    $('#add_city').click(function(){
+        $('#editCityModal .modal-title').text("Add City:");
+        $('#editCityModal #name').val("");
+        $('#editCityModal #status').val("0");
+        $('#editCityModal #edit-submit').click(function(){
+            name=$('#editCityModal #name').val();
+            status=$('#editCityModal #status').val();
+            if(name!='' && status!=''){
                 $.ajax({
                     type:"post",
-                    url:"/add-category",
+                    url:"/add-city",
                     data:{
                         "_token": "{{ csrf_token() }}",
                         "name":name,
-                        "order":order,
-                        "city_id":$('#city_id').val(),
+                        "status":status,
                     },
                     success:function(data)
                     {
                         if(data=="save"){
-                            $('#name').val("");
+                            $('#editCityModal #name').val("");
                             Swal.fire(
                                 'Success!',
-                                'Category Added!',
+                                'City Added!',
                                 'success'
                             )
                             setTimeout(function(){
@@ -108,75 +107,26 @@ $(document).ready(function(){
             }
         }); //button click
     });
-    $('#add_category_submit').click(function(e){
-        e.preventDefault();
-        const value=$('#category_name').val();
-        if(value=='')
-        {
-            $('#category_name').css("border","1px solid red");
-        }
-        else
-        {
-            $.ajax({
-                type:"post",
-                url:"/add-category",
-                data:{
-                    "_token": "{{ csrf_token() }}",
-                    "name":value,
-                    "city_id":$('#city_id').val(),
-                },
-                success:function(data)
-                {
-                    if(data=="save"){
-                        $('#category_name').val("");
-                        Swal.fire(
-                            'Success!',
-                            'Category Added!',
-                            'success'
-                        )
-                        setTimeout(function(){
-                            location.reload();
-                        },500);
-                    }
-                    else if(data=="exist")
-                    {
-                        Swal.fire(
-                            'Error!',
-                            'Name Already Exist',
-                            'error'
-                        )
-                    }
-                    else
-                    {
-                        Swal.fire(
-                            'Error!',
-                            'There is Some Error!!!',
-                            'error'
-                        )
-                    }
-                },
-            });
-        }
-    });
+    
     //**************** Edit form**************
     $('.edit').on('click',function(){
-        const cat_id=$(this).closest('td').find("input[name='category_id']").val();
-        var name=$(this).closest('td').find("input[name='category_name']").val();
-        var order=$(this).closest('td').find("input[name='category_order']").val();
-        $('#name').val(name);
-        $('#order').val(order);
-        $('.modal-title').text("Edit Category:");
-        $('#edit-submit').click(function(){
-            name=$('#name').val();
-            order=$('#order').val();
+        const city_id=$(this).closest('td').find("input[name='city_id']").val();
+        var name=$(this).closest('td').find("input[name='city_name']").val();
+        var status=$(this).closest('td').find("input[name='city_status']").val();
+        $('#editCityModal #name').val(name);
+        $('#editCityModal #status').val(status);
+        $('#editCityModal .modal-title').text("Edit City:");
+        $('#editCityModal #edit-submit').click(function(){
+            name=$('#editCityModal #name').val();
+            status=$('#editCityModal #status').val();
             $.ajax({
                 type:"post",
-                url:"/edit-category",
+                url:"/edit-city",
                 data:{
-                    "_token": "{{ csrf_token() }}","_token": "{{ csrf_token() }}",
+                    "_token": "{{ csrf_token() }}",
                     "name":name,
-                    "order":order,
-                    "category_id":cat_id,
+                    "status":status,
+                    "city_id":city_id,
                 },
                 success:function(data)
                 {
@@ -184,7 +134,7 @@ $(document).ready(function(){
                     if(data=="save"){
                         Swal.fire(
                             'Success!',
-                            'Category Updated!',
+                            'City Updated!',
                             'success'
                         )
                         setTimeout(function(){
@@ -211,4 +161,6 @@ $(document).ready(function(){
             });
         }); //button click
     });
+
+});
 @endsection

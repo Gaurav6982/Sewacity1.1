@@ -36,10 +36,7 @@ class RegisterController extends Controller
         // return 'dashboard';
         // else
         //return Auth::user()->city();
-        if(Auth::user()->city_id==1)
-        return 'fbg';
-        else if(Auth::user()->city_id==2)
-        return 'patna';
+        return '';
     }
     /**
      * Create a new controller instance.

@@ -1,4 +1,4 @@
-@extends($id==1?'layouts.app':'patna.layouts.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container mt-4">

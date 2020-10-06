@@ -1,4 +1,4 @@
-@extends(Auth::user()->city_id==1?'layouts.app':'patna.layouts.app')
+@extends('layouts.app')
 @section('content')
     <div class="container table-responsive">
         <h4 class="text-center">Manage Feedbacks</h4>

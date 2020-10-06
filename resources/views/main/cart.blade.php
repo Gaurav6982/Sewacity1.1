@@ -1,4 +1,4 @@
-@extends(Auth::user()->city_id==1?'layouts.app':'patna.layouts.app')
+@extends('layouts.app')
 @section('styles')
 
 @endsection

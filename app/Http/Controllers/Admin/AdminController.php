@@ -69,7 +69,45 @@ class AdminController extends Controller
         return "fail";
     }
     public function manage_cities(){
-        $cities=City::where('is_active',1)->get();
+        $cities=City::all();
        return view('admin.cities')->with('cities',$cities);
+    }
+
+    public function add_city(Request $request)
+    {
+        $name=$request->input('name');
+        $status=$request->input('status');
+        $category=City::where('city_name',$name)->first();
+        if($category)
+        {
+            return "exist";
+        }
+        $city=new City;
+        $city->city_name=$name;
+        $city->is_active=$status;
+        if($city->save())
+        return response()->json(["save"],200);
+        return response()->json(["fail"],400);
+        //return back()->with('id',$city_id)->with('categories',$categories)->with('success','Category Added Successfully!');
+        //else
+        //return back()->with('id',$city_id)->with('categories',$categories)->with('error','There Might be Some Error!!');
+
+    }
+    public function edit_city(Request $request){
+        
+        $city=City::find($request->input('city_id'));
+        $name=$request->input('name');
+        $status=$request->input('status');
+        $check_exist=City::where('city_name','=',$name)->where('is_active',$status)->first();
+        if($check_exist)
+        {
+            return "exist";
+        }
+        $city->city_name=$name;
+        $city->is_active=$status;
+        if($city->save())
+        return response()->json(["save"],200);
+        return response()->json(["fail"],400);
+
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\City;
 class ProfileController extends Controller
 {
 // 	public function __construct()
@@ -11,8 +12,9 @@ class ProfileController extends Controller
 //          $this->middleware(['auth'=>'verified']);
 //      }
     public function index(){
-    	$user=Auth::user();
-        return view('profile.index')->with('user',$user);
+		$user=Auth::user();
+		$cities=City::where('is_active',1)->get();
+        return view('profile.index')->with('user',$user)->with('cities',$cities);
     }
     public function update(Request $request){
     	$this->validate($request,[
@@ -23,6 +25,7 @@ class ProfileController extends Controller
     	$user=Auth::user();
     	$user->name=$request->input('name');
     	$user->email=$request->input('email');
+    	$user->city_id=$request->input('city');
     	$user->update();
     	return back()->with('success','Profile Updated');
     }

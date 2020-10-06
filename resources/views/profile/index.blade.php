@@ -1,4 +1,4 @@
-@extends(Auth::user()->city_id==1?'layouts.app':'patna.layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -28,7 +28,15 @@
                         </div>
                         <div class="form-group">
                             {{Form::label('email','Email Address:')}}
-                            {{Form::text('email',$user->email,['class'=>'form-control','placeholder'=>'Enter Email Address:','required'])}}
+                            {{Form::text('email',$user->email,['class'=>'form-control','placeholder'=>'Enter Email Address:'])}}
+                        </div>
+                        <div class="form-group">
+                            {{Form::label('city','Select City:')}}
+                            <select name="city" id="city" class="form-control">
+                                @foreach ($cities as $item)
+                                    <option value="{{$item->id}}"@if(Auth::user()->city_id==$item->id) selected @endif>{{$item->city_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!-- <div class="form-group">
                             {{Form::label('image','Email Address:')}}

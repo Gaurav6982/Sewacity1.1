@@ -122,20 +122,24 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Category: <span id="category_name"></span></h5>
+          <h5 class="modal-title" id="exampleModalLabel">Edit City: <span id="city_name"></span></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="name">Category Name:</label>
+                <label for="name">City Name:</label>
                 <input type="text" class="form-control" id="name" name="name" required>
                 <p style="color: red" id="warning-text-name"></p>
             </div>
             <div class="form-group">
-                <label for="order">Category Order:</label>
-                <input type="number" min="0" class="form-control" id="order" name="order" required>
+                <label for="status">City Status:</label>
+                <select name="status" id="status" class="form-control">
+                  <option value="0">Not Active</option>
+                  <option value="1">Active</option>
+                </select>
+                
                 <p style="color: red"  id="warning-text-order"></p>
             </div>
         </div>

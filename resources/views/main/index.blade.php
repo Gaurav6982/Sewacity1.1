@@ -220,6 +220,11 @@
 background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         width: 100%;
     }
+    header{
+        background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    }
+    
     /* .navbar-ham {
         background-color: black;
         padding: 0 4px;
