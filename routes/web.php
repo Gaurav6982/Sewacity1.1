@@ -53,7 +53,6 @@ Route::group(['middleware'=>['auth']],function(){
 });
 
 Route::get('/products','Main@ecomm');
-Route::get('/patna/products','PatnaController@ecomm');
 Route::get('/tieup',function(){
     return view('main.tieup');
 });
@@ -90,24 +89,3 @@ Route::get('/shelters','HotelController@index');
 Route::get('/shelters/rooms/{id}','HotelController@rooms');
 Route::get('/shelters/rooms/{id}/form','HotelController@show_form');
 Route::post('/shelters/rooms/{id}/submit','HotelController@submit');
-
-
-//PATNA ROUTES
-Route::get('/patna','PatnaController@index');
-Route::get('/patna/tieup',function(){
-    return view('patna.main.tieup');
-});
-Route::get('/patna/food','PatnaController@food');
-Route::get('/patna/{type}/{id}','Patna\FoodController@add_to_cart');
-Route::get('/patna/food/cart','Patna\FoodController@view_cart');
-Route::get('/patna/food/remove/{id}','Patna\FoodController@remove_from_cart');
-Route::post('/patna/send','Patna\FoodController@send_request');
-Route::get('/patna/profile','PatnaController@ShowProfile');
-
-
-Route::group(['middleware'=>['admin','auth']],function(){
-    Route::get('/patna-dashboard','PatnaController@admin');
-    Route::resource('patna-products', 'Patna\PostController1');
-    //Route::get('/users','Main@users');
-});
-

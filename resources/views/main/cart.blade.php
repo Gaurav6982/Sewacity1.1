@@ -52,17 +52,13 @@
                 </table>
                 <p class="text-center"><em>Contact Number Through which we can Confirm your Order.</em></p>
             <input type="text" name="contact" placeholder="Enter Here" class="form-control" style="width:30%;margin:auto" onkeypress="return onlyNumberKey(event)"><br>
-                <center><input type="submit" class="btn btn-success" value="Place a Request."></center><br>
+                <center><input type="submit" class="btn btn-success" id="submit" value="Place a Request."></center><br>
             </form>
                 </div>
 
 				@else
                     <p class="m-auto">No Items Added Yet.</p>
-                    @if (Auth::user()->city_id==1)
-                    <center><a href="/products?category=0&searchbox=&sort=latest&page=1" class="btn btn-primary">Go to E-commerce</a></center>
-                    @else
-                    <center><a href="/patna/products?category=0&searchbox=&sort=latest&page=1" class="btn btn-primary">Go to E-commerce</a></center>
-                    @endif
+                    <center><a href="/products?category=0&searchbox=&sort=latest&page=1" class="btn btn-primary">Go to E-commerce</a></center>    
 			<br>
 				@endif
 				<!-- </div> -->
@@ -81,3 +77,4 @@ if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
 return true;
 }
 </script>
+

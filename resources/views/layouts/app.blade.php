@@ -148,6 +148,7 @@ background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 	/* background-image: linear-gradient(135deg, #21d190 0%, #d65bca 74%) !important; */
 	/* background-color: #21d190; */
 	font-weight: 600;
+    position: relative;
 }
 #app nav{
     background-color: #2a2a72;
@@ -167,12 +168,30 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 	text-transform: uppercase;
 }
 
+#preloader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+}
+#preloader img{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: rgba(255, 255, 255, 0.35); */
 
+}
     
 </style>
 @yield('styles')
 <body>
-
+    <div id="preloader">
+        <img src="/storage/preload/126.gif" alt="">
+    </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="position:fixed;top:0;width:100%;z-index:99">
             <div class="container">
@@ -284,6 +303,11 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> --}}
 <script type="text/javascript">
     $(function(){
+        $('#preloader').css('display','none');
+
+        $('#submit').click(function(){
+		    $('#preloader').css('display','unset');
+	    });
   var str = '#len';
   $(document).ready(function(){
     var i, stop;
