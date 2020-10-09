@@ -20,7 +20,7 @@ class Main extends Controller
 
     public function index(){
         // $posts=POsts::all();
-        $cities=City::all();
+        $cities=City::where('is_active',1)->get();
         $feeds=Feedback::where('is_approved','=','1')->get();
         return view('main.index')->with('feeds',$feeds)->with('cities',$cities);
     }

@@ -213,11 +213,11 @@
                                     <a href="/manage-feedbacks" class="dropdown-item">Manage Feedbacks</a>
                                     @endif
                                     @if(Auth::user()->usertype=='admin' || Auth::user()->usertype=='special')
-                                    <a  class="dropdown-item" @if(Auth::user()->city_id==1) href="dashboard" @else href="patna-dashboard" @endif>Admin Panel</a>
+                                    <a  class="dropdown-item" href="dashboard">Admin Panel</a>
                                     <a href="/posts?category=0&searchbox=&page=1" class="dropdown-item">Manage Products</a>
                                     {{-- <a href="/users" class="dropdown-item">User Deatils</a> --}}
                                     @endif
-                                    <a href="/patna/profile" class="dropdown-item">Profile Settings</a>
+                                    {{-- <a href="/patna/profile" class="dropdown-item">Profile Settings</a> --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

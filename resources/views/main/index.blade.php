@@ -566,7 +566,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                                     <a href="/manage-feedbacks" class="dropdown-item">Manage Feedbacks</a>
                                     @endif
                                     @if(Auth::user()->usertype=='admin' || Auth::user()->usertype=='special')
-                                    <a  class="dropdown-item" @if(Auth::user()->city_id==1) href="dashboard" @else href="patna-dashboard" @endif>Admin Panel</a>
+                                    <a  class="dropdown-item" href="dashboard">Admin Panel</a>
                                     <a href="/posts?category=0&searchbox=page=1"
                                             class="dropdown-item">Manage Products</a>
                                             <a href="/users"
@@ -697,7 +697,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         <a data-container="body" data-toggle="popover-hover" data-placement="top"
                             data-content="Coming Soon!">
 
-                            <a href="https://sewacity.com/patna">
+                            <a >
                             <img src="/storage/banner/banpatna.webp" alt="Banner5"></a></a>
                     </div>
                    <!-- <div class="item">
@@ -1073,7 +1073,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
             // console.log("awdaw"+value);
             if(value==null)
             {
-                value=1;
+                value={{$cities[0]->id}};
                 city_id=value;
                 sessionStorage.setItem("city", city_id);
                 $.ajax({
@@ -1084,6 +1084,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         _token:"{{csrf_token()}}",
                     },
                     success:function(data){
+                        
                         $('#city-select').val(city_id);
                         // console.log("set");
                         // location.reload();
