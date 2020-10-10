@@ -77,6 +77,7 @@ class AdminController extends Controller
     {
         $name=$request->input('name');
         $status=$request->input('status');
+        $order=$request->input('order')+1;
         $category=City::where('city_name',$name)->first();
         if($category)
         {
@@ -85,6 +86,7 @@ class AdminController extends Controller
         $city=new City;
         $city->city_name=$name;
         $city->is_active=$status;
+        $city->order=$order;
         if($city->save())
         return response()->json(["save"],200);
         return response()->json(["fail"],400);
@@ -98,13 +100,18 @@ class AdminController extends Controller
         $city=City::find($request->input('city_id'));
         $name=$request->input('name');
         $status=$request->input('status');
-        $check_exist=City::where('city_name','=',$name)->where('is_active',$status)->first();
+        $order=intval($request->input('order'))+1;
+
+        // return $order;
+        $check_exist=City::where('city_name','=',$name)->where('is_active',$status)->where('order',$order)->first();
+        // return $check_exist;
         if($check_exist)
         {
             return "exist";
         }
         $city->city_name=$name;
         $city->is_active=$status;
+        $city->order=$order;
         if($city->save())
         return response()->json(["save"],200);
         return response()->json(["fail"],400);

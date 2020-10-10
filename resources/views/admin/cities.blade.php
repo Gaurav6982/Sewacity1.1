@@ -29,6 +29,7 @@
                                     <input type="hidden" name="city_id" value="{{$item->id}}">
                                     <input type="hidden" name="city_name" value="{{$item->city_name}}">
                                     <input type="hidden" name="city_status" value="{{$item->is_active}}">
+                                    <input type="hidden" name="city_order" value="{{$item->order}}">
                                     <button class="btn btn-info ml-2 edit btn-sm" data-toggle="modal" data-target="#editCityModal"><img src="https://img.icons8.com/material/20/000000/edit--v1.png"/></button >
                                     {{-- <button class="btn btn-danger ml-2 delete btn-sm" data-id="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button> --}}
                                 </td>
@@ -46,13 +47,25 @@
 
 @section('js')
 $(document).ready(function(){
+    
+
     $('#add_city').click(function(){
         $('#editCityModal .modal-title').text("Add City:");
         $('#editCityModal #name').val("");
         $('#editCityModal #status').val("0");
+
+        var options='<option value="0">On Top</option>';
+        @foreach ($cities as $key=>$item)
+                @if($item->is_active==1)
+                    options+='<option value="{{$item->id}}" @if($key==0) selected @endif>{{$item->city_name}}</option>';
+                @endif
+        @endforeach
+        $('#editCityModal #order').html(options);
+
         $('#editCityModal #edit-submit').click(function(){
             name=$('#editCityModal #name').val();
             status=$('#editCityModal #status').val();
+            order=$('#editCityModal #order').val();
             if(name!='' && status!=''){
                 $.ajax({
                     type:"post",
@@ -61,6 +74,7 @@ $(document).ready(function(){
                         "_token": "{{ csrf_token() }}",
                         "name":name,
                         "status":status,
+                        "order":order,
                     },
                     success:function(data)
                     {
@@ -110,15 +124,28 @@ $(document).ready(function(){
     
     //**************** Edit form**************
     $('.edit').on('click',function(){
+
         const city_id=$(this).closest('td').find("input[name='city_id']").val();
+        var options='<option value="0">On Top</option>';
+        @foreach ($cities as $key=>$item)
+                @if($item->is_active==1)
+                    options+='<option value="{{$item->id}}" >{{$item->city_name}}</option>';
+                @endif
+        @endforeach
+        $('#editCityModal #order').html(options);
+
+        
         var name=$(this).closest('td').find("input[name='city_name']").val();
         var status=$(this).closest('td').find("input[name='city_status']").val();
+        var order=parseInt($(this).closest('td').find("input[name='city_order']").val())-1;
         $('#editCityModal #name').val(name);
         $('#editCityModal #status').val(status);
+        $('#editCityModal #order').val(order);
         $('#editCityModal .modal-title').text("Edit City:");
         $('#editCityModal #edit-submit').click(function(){
             name=$('#editCityModal #name').val();
             status=$('#editCityModal #status').val();
+            order=$('#editCityModal #order').val();
             $.ajax({
                 type:"post",
                 url:"/edit-city",
@@ -127,6 +154,7 @@ $(document).ready(function(){
                     "name":name,
                     "status":status,
                     "city_id":city_id,
+                    "order":order,
                 },
                 success:function(data)
                 {

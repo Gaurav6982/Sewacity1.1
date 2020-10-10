@@ -21,7 +21,7 @@
             <div>
               <label for="city">Select City:</label>
               <select name="city" id="city" class="form-control" required>
-                @foreach (App\City::where('is_active',1)->get() as $item)
+                @foreach (App\City::where('is_active',1)->orderBy('order')->get() as $item)
                     <option value="{{$item->id}}">{{$item->city_name}}</option>
                 @endforeach
               </select>
@@ -133,6 +133,14 @@
                 <input type="text" class="form-control" id="name" name="name" required>
                 <p style="color: red" id="warning-text-name"></p>
             </div>
+            <div class="form-group">
+              <label for="order">Position:</label>
+              <select name="order" id="order" class="form-control">
+                
+              </select>
+              
+              <p style="color: red"  id="warning-text-order"></p>
+          </div>
             <div class="form-group">
                 <label for="status">City Status:</label>
                 <select name="status" id="status" class="form-control">

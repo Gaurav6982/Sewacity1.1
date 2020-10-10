@@ -77,7 +77,7 @@
                                         <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Select Your City') }}</label>
 
                                         <div class="col-md-6">
-                                            <?php $cities=App\City::where('is_active',1)->get()?>
+                                            <?php $cities=App\City::where('is_active',1)->orderBy('order')->get()?>
                                             <select name="city" id="city" class="form-control @error('city') is-invalid @enderror" required>
                                                 {{-- <option >Select your City</option> --}}
                                                 @foreach ($cities as $city)

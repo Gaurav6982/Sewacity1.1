@@ -270,7 +270,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
             @if(!Auth::check() || Auth::user()->usertype=='normal')
             <div id="select-dropdown">
                 {{-- <label for="city">Choose City:</label> --}}
-                <?php $cities=App\City::where('is_active',1)->get();?>
+                <?php $cities=App\City::where('is_active',1)->orderBy('order')->get();?>
                 <select class="form-control" id="city" name="city">
                     @foreach ($cities as $item)
                         <option value="{{$item->id}}" @if(Auth::check() && Auth::user()->city_id!==$item->id) disabled @else selected @endif  >{{$item->city_name}}</option>

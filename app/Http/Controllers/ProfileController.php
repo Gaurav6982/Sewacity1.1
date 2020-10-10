@@ -13,13 +13,13 @@ class ProfileController extends Controller
 //      }
     public function index(){
 		$user=Auth::user();
-		$cities=City::where('is_active',1)->get();
+		$cities=City::where('is_active',1)->orderBy('order')->get();
         return view('profile.index')->with('user',$user)->with('cities',$cities);
     }
     public function update(Request $request){
     	$this->validate($request,[
     		'name'=>'required',
-    		'email'=>'required|string|email|max:255',
+    		'email'=>'string|email|max:255',
     	]);
 
     	$user=Auth::user();

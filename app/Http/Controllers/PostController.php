@@ -83,7 +83,7 @@ class PostController extends Controller
             'input'=>$input,
             'pages'=>$pages,
             'categories'=>Categories::where('city_id',$city)->get(),
-            'cities'=>City::where('is_active',1)->get(),
+            'cities'=>City::where('is_active',1)->orderBy('order')->get(),
             'city'=>$city
         );
         return view('admin.index')->with($data);
@@ -96,7 +96,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $cities=City::where('is_active',1)->get();
+        $cities=City::where('is_active',1)->orderBy('order')->get();
         $categories=Categories::where('city_id',Auth::user()->city_id)->get();
         return view('admin.create')->with('categories',$categories)->with('cities',$cities);
     }
@@ -173,7 +173,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $cities=City::where('is_active',1)->get();
+        $cities=City::where('is_active',1)->orderBy('order')->get();
         $post=Posts::find($id);
         $categories=Categories::where('city_id',Auth::user()->city_id)->get();
         $data=array(
