@@ -104,7 +104,7 @@ class AdminController extends Controller
 
         // return $order;
         $check_exist=City::where('city_name','=',$name)->where('is_active',$status)->where('order',$order)->first();
-        // return $check_exist;
+        // return $check_exist; 
         if($check_exist)
         {
             return "exist";
