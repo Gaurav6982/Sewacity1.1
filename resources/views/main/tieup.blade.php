@@ -236,7 +236,7 @@
         &copy; 2020 Sewacity.com  &nbsp;, All rights reserved | Privacy Policy | Terms and Conditions
     </b>  </footer> --}}
    <!-- The core Firebase JS SDK is always required and must be listed first -->
-   @include('patna.inc.footer')
+   @include('inc.footer')
 @endsection
 
 @section('js')
