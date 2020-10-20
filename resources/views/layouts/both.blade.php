@@ -179,7 +179,7 @@
                                     href="/patna/products?category=0&sort=latest&searchbox=" class="nav-link"><span
                                         class="custom">E-COMMERCE</span></a></li> --}}
                             {{-- <li class="nav-item hoverable" id="len3"><a href="/safari" class="nav-link"><span
-                                        class="custom">SEWACITY SAFARI</span></a></li>
+                                        class="custom">LOCOMO</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/shelters" class="nav-link"><span
                                         class="custom">SHELTERS</span></a></li> --}}
                             <!--<li class="nav-item hoverable"id="len4"><a href="#"class="nav-link"><span class="custom">CITY's MERCHANT</span></a></li>-->

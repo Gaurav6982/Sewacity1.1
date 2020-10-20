@@ -204,7 +204,7 @@
             <ul>
               <li><i class="ri-check-double-line"></i>An easy way to fulfil your requirement without going to that specific place in the city.</li>
               <li><i class="ri-check-double-line"></i> You will save your time or effort and you can compare and can buy accordingly.</li>
-              <li><i class="ri-check-double-line"></i> It's always been difficult to know the whether that product will be available or not if you go to a specific place but here you will find it easier to do.</li>
+              <li><i class="ri-check-double-line"></i> It's always been difficult to know whether that product will be available or not if you go to a specific place but here you will find it easier to do.</li>
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
@@ -474,7 +474,7 @@
               <div class="member-info">
                 <h4>Amulya Verma
                 </h4>
-                <span>Legal Consultant
+                <span>Administrator
                 </span>
                 <p>Connect with us</p>
                 <div class="social">
@@ -684,15 +684,15 @@
 
   <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
     <div class="member d-flex align-items-start">
-      <div class="pic"><img src="assets/img/team/shiva.jpeg" class="img-fluid" alt=""></div>
+      <div class="pic"><img src="assets/img/team/hrithik.jpg" class="img-fluid" alt=""></div>
       <div class="member-info">
-        <h4>Shivanand Roy</h4>
-        <span>Delivery Department Manager</span>
+        <h4>Hrithik Srivastava</h4>
+        <span>HR & Recruiter</span>
         <p>Connect with us</p>
         <div class="social">
         
           
-          <a target="_blank" href="#"><i class="ri-instagram-fill"></i></a>
+          <a target="_blank" href="https://www.instagram.com/hrithiksrivastava03/?hl=en"><i class="ri-instagram-fill"></i></a>
        
         </div>
       </div>
@@ -989,7 +989,7 @@
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>About Sewacity</h3>
-            <p>Sewacity offer to provide a digital platform to every business of Forbesganj city where every businessman can expand their businesses. The lack of an online advertising facilitiy is a hindrance to the businessman to get the attention of the possible clients, which we aim to bring down.</p>
+            <p>Sewacity offer to provide a digital platform to every business of a city where every businessman can expand their businesses. The lack of an online advertising facilitiy is a hindrance to the businessman to get the attention of the possible clients, which we aim to bring down.</p>
             <div class="social-links mt-3">
               <a target="_blank" href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a target="_blank" href="https://www.facebook.com/Sewacity-106406674413541/" class="facebook"><i class="bx bxl-facebook"></i></a>

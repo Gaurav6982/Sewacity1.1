@@ -515,16 +515,14 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
                     <li> <a  href="/foodie">FOOD SERVICE</a></li>
                     <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li>
-                    <li> <a  href="/safari">SEWACITY SAFARI</a></li>
+                    <li> <a  href="/safari">LOCOMO</a></li>
                     <li><a  href="/shelters">SHELTERS</a></li>
                     </li>
                 </ul>
             </div>
         </div>
         <marquee>
-            <h11>Sewacity is made by the people of Forbesganj for the help of all the people of this city in all the
-                possible ways.You can ask anything you want to know for your convenience . Please contact us on +91
-                9117575868 for the service you need from sewacity.com</h11>
+            <h11>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</h11>
         </marquee> @guest<div class="banner">
                 <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times" id="cross"
                         style="font-size: 30px"></i> </div>
@@ -640,7 +638,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                                     <!-- <a class="dropdown-item" href="#">HOME</a> --> <a class="dropdown-item"
                                         href="/foodie">Food Service</a> <a class="dropdown-item"
                                         href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a><a
-                                        class="dropdown-item" href="/safari">Sewacity Safari</a><a class="dropdown-item"
+                                        class="dropdown-item" href="/safari">LOCOMO</a><a class="dropdown-item"
                                         href="/shelters">Shelters</a> </div>
                             </li>
                         </ul>
@@ -657,38 +655,26 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         <main style="overflow:hidden">
 
 
-            <div class="row flash">
-                <div class="col-sm-6 offset-sm-3 text-center">
-                    <p>Are you looking for something which is not Available Yet.</p>
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 flashing_effect">
-                            <a href="https://docs.google.com/forms/d/1MRKozptoMTtp5f2QhErAh7CjLnAE8hfq_3pm6v2TVF8/edit"
-                                class="btn">Let Us Know Here.</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <br>
+           
             <hr>
 
             <!-- First Slider -->
             <div class="coronabtn"><a href="https://www.covid19india.org/state/BR" class="corona pull-right">
                     <span></span> <span></span> <span></span> <span></span> Corona Update </a></div>
+                    <br>
 
             <section id="banner-area">
                 <div class="owl-carousel">
                     <div class="item">
-                        <a href="/products?category=11&searchbox=&sort=latest&page=1"><img
-                                src="/storage/banner/drinks.webp" alt="Banner1"></a>
+                        <a href="https://sewacity.com/foodie"><img
+                                src="/storage/banner/del11.webp" alt="Banner1"></a>
                     </div>
                     <div class="item">
-                        <a href="/safari"><img src="/storage/banner/ban3.webp" alt="Banner2"></a>
+                        <a href="/safari"><img src="/storage/banner/locomo.webp" alt="Banner2"></a>
                     </div>
                     <div class="item">
                         <a href="/products?category=0&searchbox=&sort=latest&page=1"><img
-                                src="/storage/banner/ban4.webp" alt="Banner3"></a>
+                                src="/storage/banner/forbesganj.webp" alt="Banner3"></a>
                     </div>
                     <div class="item">
                         <a href="https://sewacity.com/shelters"><img src="/storage/banner/shelterho.webp" alt="Banner4"></a>
@@ -914,18 +900,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
-                    <div class="card part-img">
-                        <br><br>
-                        <img src="/assets/citylive.jpeg" class="card-img-top ig2" alt="...">
-                        <div class="card-body">
-                            <br><br>
-                            <h5 class="card-title badge badge-danger text-wrap"
-                                style="width: 14rem; font-size: large; ">www.city24live.in</h5>
-                            <p class="card-text">Sewacity is highly obliged to its media partner city24live for its
-                                speedy and factual delivery of news and publicizing sewacity in the region.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
             <!--div.-->

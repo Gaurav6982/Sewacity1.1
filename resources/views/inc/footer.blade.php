@@ -36,6 +36,9 @@
                   <ul class="icons">
                   <li><a href="https://www.facebook.com/sewacity.sewacity" target="blank"><i class="fab fa-facebook-f"></i></a></li>
                   <li><a href="https://twitter.com/mayankguptajii?s=09" target="blank"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/sewacity_/?hl=en" target="blank"><i class="fab fa-instagram"></i></a></li>
+
+                  
                   <!--Developed By:<li><a href="https://www.instagram.com/28_gaurav_07/" target="blank"><i class="fab fa-instagram"></i></a></li>--> <!-- <li><i></i></li> -->
 
                 </ul>
