@@ -15,7 +15,7 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $restaurants=Restaurants::all();
+        $restaurants=Restaurants::where('is_active',1)->get();
         return view('admin.food.index')->with('res',$restaurants);
     }
 

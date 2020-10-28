@@ -36,7 +36,7 @@
 					 					<div class="col-md-8 col-sm-10">
 
 					 					    {{-- @if($product->category!='Grocery') --}}
-										        <input type="number" name="quantity[]" max="10" min="1"value="{{$product->quantity}}" class="form-control" required>
+										        <input type="number" name="quantity[]" max="30" min="1"value="{{$product->quantity}}" class="form-control" required>
 										    {{-- @else --}}
 										        {{-- <input type="number" name="quantity[]" step="0.5" max="10" min="1"value="{{$product->quantity}}" class="form-control"> --}}
 										    {{-- @endif --}}

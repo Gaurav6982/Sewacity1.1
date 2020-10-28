@@ -32,7 +32,7 @@ class UserFoodController extends Controller
         $city = Session::get('city')??1;
         // return $city."wadaw";
         // return $city;
-        $restaurants=Restaurants::where('city_id',$city)->get();
+        $restaurants=Restaurants::where('city_id',$city)->where('is_active',1)->get();
         return view('food.index')->with('res',$restaurants);
     }
     public function show($id){

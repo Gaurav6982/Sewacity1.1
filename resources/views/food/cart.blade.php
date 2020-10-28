@@ -100,7 +100,7 @@
                                     <td style="display: flex">
                                         <button class="downbtn btn btn-secondary" data-id="{{$cart->id}}">-</button>
                                         <input type="hidden" name="ids[]" value="{{$cart->id}}">
-                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="10" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
+                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="30" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
                                         <button class="upbtn btn btn-secondary" data-id="{{$cart->id}}">+</button>
                                     </td>
                                     <td>
