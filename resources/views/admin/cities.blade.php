@@ -158,7 +158,7 @@ $(document).ready(function(){
                 },
                 success:function(data)
                 {
-                    console.log(data);
+                    
                     if(data=="save"){
                         Swal.fire(
                             'Success!',
