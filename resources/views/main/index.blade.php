@@ -4,6 +4,7 @@
 <head>
     <meta name="google-site-verification" content="qf7YT88kyzp5VVimsMWRfSyshmyNcjjk2DUvOSlSiQc" />
     <title>Home Page</title>
+    <meta name="description" content="Sewacity is a digital Platform which derive its motivation from Serve the City which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services,Hotels Booking & Vehicle Services. We work towards our motto By the city and for the city.The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com."></head>
     <!-- favicon -->
     <link rel="icon" type="image/png" href="/storage/images/logo.png"> <!-- For apple devices -->
     <link rel="apple-touch-icon" type="image/png" href="/storage/images/logo.png" />
@@ -37,6 +38,7 @@
         gtag('config', 'UA-166801585-1');
 
     </script>
+    <script data-ad-client="ca-pub-7017377304327800" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
 <style type="text/css">

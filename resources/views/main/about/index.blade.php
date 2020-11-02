@@ -684,7 +684,7 @@
 
   <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
     <div class="member d-flex align-items-start">
-      <div class="pic"><img src="assets/img/team/hrithik.jpg" class="img-fluid" alt=""></div>
+      <div class="pic"><img src="assets/img/team/hrithiksri.webp" class="img-fluid" alt=""></div>
       <div class="member-info">
         <h4>Hrithik Srivastava</h4>
         <span>HR & Recruiter</span>
@@ -733,10 +733,10 @@
         <span> Market Research</span>
         <p>Connect with us</p>
         <div class="social">
-          <a target="_blank" href=""><i class="ri-twitter-fill"></i></a>
-          <a target="_blank" href=""><i class="ri-facebook-fill"></i></a>
-          <a target="_blank" href=""><i class="ri-instagram-fill"></i></a>
-          <a target="_blank" href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          <a target="_blank" href="https://twitter.com/22Aryachaurasia?s=08"><i class="ri-twitter-fill"></i></a>
+          <a target="_blank" href="https://www.facebook.com/kumar.gulshan.3785"><i class="ri-facebook-fill"></i></a>
+          <a target="_blank" href="https://www.instagram.com/a.y.c.a.r.s.a/"><i class="ri-instagram-fill"></i></a>
+          
         </div>
       </div>
     </div>
