@@ -58,7 +58,7 @@
                             
                                 </div> </a>
                                 <div class="m-4">
-                                    <button class="float-right btn btn-primary edit-res" data-name="{{$r->name}}" data-type="{{$r->type}}" data-id="{{$r->id}}" data-desc="{{$r->desc}}" data-loc="{{$r->location}}"data-toggle="modal" data-target="#add-res">Edit</button>
+                                    <button class="float-right btn btn-primary edit-res" data-name="{{$r->name}}" data-city="{{$r->city_id}}" data-type="{{$r->type}}" data-id="{{$r->id}}" data-desc="{{$r->desc}}" data-loc="{{$r->location}}"data-toggle="modal" data-target="#add-res">Edit</button>
                                     <button class="float-right btn del-res" data-id="{{$r->id}}" style="padding: 0;margin-right:5px"><img src="https://img.icons8.com/cute-clipart/64/000000/delete-forever.png" style="width: 36px"/></button>
                                 </div>
                             </div>
@@ -77,10 +77,10 @@
 $(document).ready(function(){
     $('#add-res-button').click(function(){
         $('#add-res .modal-title').text("Add Restaurant:");
-            $('#name').val("");
-            $('#type').val("");
-            $('#desc').val("");
-            $('#loc').val("");
+            $('#add-res #name').val("");
+            $('#add-res #type').val("");
+            $('#add-res #desc').val("");
+            $('#add-res #loc').val("");
             $('#add-res #submit').click(function(e){
                 {{-- e.preventDefault(); --}}
                 const name=$('#name').val();
@@ -88,6 +88,7 @@ $(document).ready(function(){
                 const desc=$('#desc').val();
                 const image=$('#image').val();
                 const loc=$('#loc').val();
+                {{-- const city_id=$('#city').val(); --}}
                 
                 if(name!='' && type!='' && desc!=''&& loc!='' &&image!=''){
                     $('#add-res #method').attr('name','');
@@ -120,12 +121,14 @@ $(document).ready(function(){
         const type=$(this).data("type");
         const desc=$(this).data("desc");
         const loc=$(this).data("loc");
+        const city_id=$(this).data("city");
         {{-- const id=$(this).data("id"); --}}
         $('#add-res .modal-title').text("Edit Restaurant:");
             $('#name').val(name);
             $('#type').val(type);
             $('#desc').val(desc);
             $('#loc').val(loc);
+            $('#city').val(city_id);
             $("#image").removeAttr("required");
             $('#add-res #submit').click(function(e){
                 {{-- e.preventDefault(); --}}
@@ -135,7 +138,6 @@ $(document).ready(function(){
                 const image=$('#image').val();
                 const loc=$('#loc').val();
                 
-                console.log(id);
                 if(name!='' && type!='' && desc!=''&& loc!=''){
                     $('#add-res #res-form').attr('action','/admin/food/'+id);
                     $('#add-res #method').attr('name','_method');
