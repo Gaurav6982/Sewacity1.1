@@ -32,6 +32,8 @@ class SpecialAccessController extends Controller
 
     }
     public function delete(Request $request){
+        if(Auth::user()->usertype!='special')
+        return response()->json(['fail'],400);
         $id = $request->input('id');
         $feed=Feedback::find($id);
         if(!$feed)

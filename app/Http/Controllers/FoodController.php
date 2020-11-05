@@ -134,6 +134,8 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->usertype!='special')
+        return response()->json(['fail'],400);
         $menus=Menu::where('res_id',$id)->get();
         foreach($menus as $menu)
         $menu->delete();

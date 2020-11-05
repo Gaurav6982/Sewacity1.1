@@ -128,6 +128,8 @@ class FoodItemController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->usertype!='special')
+        return response()->json(['fail'],400);
         $carts=FoodCart::where('food_id',$id)->get();
         foreach($carts as $cart)
         {

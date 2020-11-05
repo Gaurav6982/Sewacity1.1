@@ -251,6 +251,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->usertype!='special')
+        return response()->json(['fail'],400);
         $post=Posts::find($id);
         // return $forms;
         if($post->image != 'noimage.jpg')

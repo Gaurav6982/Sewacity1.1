@@ -59,6 +59,8 @@ class AdminController extends Controller
 
     }
     public function delete_category(Request $request){
+        if(Auth::user()->usertype=='normal')
+        return response()->json(['fail'],400);
         $id=$request->input("id");
         $category=Categories::find($id);
         $posts=Posts::where('category_id',$id)->get();
