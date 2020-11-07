@@ -58,7 +58,17 @@
                             
                                 </div> </a>
                                 <div class="m-4">
-                                    <button class="float-right btn btn-primary edit-res" data-name="{{$r->name}}" data-city="{{$r->city_id}}" data-type="{{$r->type}}" data-id="{{$r->id}}" data-desc="{{$r->desc}}" data-loc="{{$r->location}}"data-toggle="modal" data-target="#add-res">Edit</button>
+                                    <button class="float-right btn btn-primary edit-res"
+                                     data-name="{{$r->name}}"
+                                      data-city="{{$r->city_id}}" 
+                                      data-type="{{$r->type}}" 
+                                      data-id="{{$r->id}}" 
+                                      data-desc="{{$r->desc}}" 
+                                      data-loc="{{$r->location}}" 
+                                      data-open_time="{{$r->open_time}}" 
+                                      data-close_time="{{$r->close_time}}" 
+                                      data-toggle="modal" data-target="#add-res"
+                                    >Edit</button>
                                     <button class="float-right btn del-res" data-id="{{$r->id}}" style="padding: 0;margin-right:5px"><img src="https://img.icons8.com/cute-clipart/64/000000/delete-forever.png" style="width: 36px"/></button>
                                 </div>
                             </div>
@@ -81,13 +91,17 @@ $(document).ready(function(){
             $('#add-res #type').val("");
             $('#add-res #desc').val("");
             $('#add-res #loc').val("");
+            $('#add-res #open_time').val("");
+            $('#add-res #close_time').val("");
             $('#add-res #submit').click(function(e){
                 {{-- e.preventDefault(); --}}
-                const name=$('#name').val();
-                const type=$('#type').val();
-                const desc=$('#desc').val();
-                const image=$('#image').val();
-                const loc=$('#loc').val();
+                const name=$('#add-res #name').val();
+                const type=$('#add-res #type').val();
+                const desc=$('#add-res #desc').val();
+                const image=$('#add-res #image').val();
+                const open_time=$('#add-res #open_time').val();
+                const close_time=$('#add-res #close_time').val();
+                const loc=$('#add-res #loc').val();
                 {{-- const city_id=$('#city').val(); --}}
                 
                 if(name!='' && type!='' && desc!=''&& loc!='' &&image!=''){
@@ -122,14 +136,18 @@ $(document).ready(function(){
         const desc=$(this).data("desc");
         const loc=$(this).data("loc");
         const city_id=$(this).data("city");
+        const open_time=$(this).data("open_time");
+        const close_time=$(this).data("close_time");
         {{-- const id=$(this).data("id"); --}}
         $('#add-res .modal-title').text("Edit Restaurant:");
-            $('#name').val(name);
-            $('#type').val(type);
-            $('#desc').val(desc);
-            $('#loc').val(loc);
-            $('#city').val(city_id);
-            $("#image").removeAttr("required");
+            $('#add-res #name').val(name);
+            $('#add-res #type').val(type);
+            $('#add-res #desc').val(desc);
+            $('#add-res #loc').val(loc);
+            $('#add-res #open_time').val(open_time);
+            $('#add-res #close_time').val(close_time);
+            $('#add-res #city').val(city_id);
+            $("#add-res #image").removeAttr("required");
             $('#add-res #submit').click(function(e){
                 {{-- e.preventDefault(); --}}
                 const name=$('#name').val();

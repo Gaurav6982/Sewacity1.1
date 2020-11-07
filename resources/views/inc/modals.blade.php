@@ -41,7 +41,15 @@
             <div class="my-4">
               <label for="loc">Enter Address:</label>
               <input type="text" name="loc" id="loc" placeholder="Enter Restaurant Address:" class="form-control" required>
-          </div>
+            </div>
+            <div class="my-4">
+              <label for="open_time">Select Open Time:</label>
+              <input type="time" name="open_time" id="open_time" class="form-control" required>
+            </div>
+            <div class="my-4">
+              <label for="close_time">Select Close Time:</label>
+              <input type="time" name="close_time" id="close_time" class="form-control" required>
+            </div>
             {{-- <div>
                 <label for="city">Select City:</label>
                 <select name="" id=""></select>

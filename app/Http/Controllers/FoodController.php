@@ -43,6 +43,8 @@ class FoodController extends Controller
         $res->city_id=$request->input('city');
         $res->type=$request->input('type');
         $res->desc=$request->input('desc');
+        $res->open_time=$request->input('open_time');
+        $res->close_time=$request->input('close_time');
         $res->location=$request->input('loc');
         if($request->hasFile('image'))
         {
@@ -106,6 +108,8 @@ class FoodController extends Controller
         $res->desc=$request->input('desc');
         $res->location=$request->input('loc');
         $res->city_id=$request->input('city');
+        $res->open_time=$request->input('open_time');
+        $res->close_time=$request->input('close_time');
         $fileName='';
         if($request->hasFile('image'))
         {
