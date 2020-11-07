@@ -37,6 +37,8 @@ class UserFoodController extends Controller
     }
     public function show($id){
         $res=Restaurants::find($id);
+        if(time()>=strtotime($res->close_time))
+        return back()->with('error','Restaurant Closed!');
         $items=$res->items;
         $data=[
             'res'=>$res,

@@ -30,6 +30,12 @@
         text-decoration: none !important;
         color: black
     }
+    #closed-img{
+        opacity: 0.7;
+        width: 100%;
+        position: absolute;
+        height: 100%
+    }
     /* .col-md-3 .card{
         cursor: pointer;
     } */
@@ -48,6 +54,9 @@
                         <div class="col-md-3 my-4">
                             
                             <div class="card ress">
+                                <div class="banner">
+                                    @if(time()>=strtotime($r->close_time))<img src="{{asset('storage/images/closed.jpg')}}" alt="Closed" id="closed-img">@endif
+                                </div>
                                 <a href="/foodie/{{$r->id}}">
                                 <img class="card-img-top" @if($r->image)src="{{asset('storage/restaurants/'.$r->image)}}"@else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:200px;">
                                

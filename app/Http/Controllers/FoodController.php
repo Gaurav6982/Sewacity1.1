@@ -38,6 +38,7 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
+        // return date('H:i:s');
         $res=new Restaurants;
         $res->name=$request->input('name');
         $res->city_id=$request->input('city');
