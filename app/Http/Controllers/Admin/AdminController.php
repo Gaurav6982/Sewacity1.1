@@ -12,8 +12,9 @@ class AdminController extends Controller
 {
     public function manage_categories(Request $request){
         $id=$request->input('city_id');
+        $city=City::where('id',$id)->first();
         $categories=Categories::where('city_id','=',$id)->get();
-        return view('admin.manage_category')->with('id',$id)->with('categories',$categories);
+        return view('admin.manage_category')->with('city',$city)->with('id',$id)->with('categories',$categories);
     }
     
     public function add_category(Request $request)

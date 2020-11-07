@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header">Manage Categories in E-Commerce</div>
             <div class="card-body">
-                <div class="card-title text-success ">City : @if($id==1) <span> Forbesganj</span> @else <span>Patna</span> @endif</div>
+                <div class="card-title text-success ">City : {{$city->city_name}}</div>
                 <button class="btn btn-success" id="add_category" data-toggle="modal" data-target="#editModal">Add a Category</button>
                 <input type="hidden" name="city_id" id="city_id" value="{{$id}}">
                 {{-- <div id="toggle-form" class="mt-4">

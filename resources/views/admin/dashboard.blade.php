@@ -22,8 +22,10 @@
                             <div class="col-md-4">
                                 <select name="manage-category" id="manage-category" class="form-control" style="width:90%">
                                     <option value="">Select City</option>
-                                    <option value="1">Forbesganj</option>
-                                    <option value="2">Patna</option>
+                                    <?php $cities=App\City::where('is_active',1)->get()?>
+                                    @foreach ($cities as $city)
+                                    <option value="{{$city->id}}">{{$city->city_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
