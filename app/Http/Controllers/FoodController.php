@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Restaurants;
 use App\Menu;
 use App\FoodCart;
+use DateTimeZone;use DateTime;
 class FoodController extends Controller
 {
     /**
@@ -39,6 +40,7 @@ class FoodController extends Controller
     {
         // return $request->all();
         // return date('H:i:s');
+        // return gmdate('H:i:s')." ".date('H:i:s')." ".$myDateTime->format('H:i:s');
         $res=new Restaurants;
         $res->name=$request->input('name');
         $res->city_id=$request->input('city');

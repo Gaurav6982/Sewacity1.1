@@ -31,7 +31,7 @@
         color: black
     }
     #closed-img{
-        opacity: 0.7;
+        opacity: 0.8;
         width: 100%;
         position: absolute;
         height: 100%
@@ -55,7 +55,7 @@
                             
                             <div class="card ress">
                                 <div class="banner">
-                                    @if(time()>=strtotime($r->close_time))<img src="{{asset('storage/images/closed.jpg')}}" alt="Closed" id="closed-img">@endif
+                                    @if($time_now>=strtotime($r->close_time) || $time_now<=strtotime($r->open_time))<img src="{{asset('storage/images/closed.jpg')}}" alt="Closed" id="closed-img">@endif
                                 </div>
                                 <a href="/foodie/{{$r->id}}">
                                 <img class="card-img-top" @if($r->image)src="{{asset('storage/restaurants/'.$r->image)}}"@else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:200px;">
@@ -86,6 +86,17 @@
     </div>
 @endsection
 @section('js')
+$.ajax({
+    type:"get",
+    url:'http://worldtimeapi.org/api/timezone/Asia/Kolkata',
+    success:function(data){
+      
+
+    },
+    error:function(error){
+        {{-- document.write(error); --}}
+    }
+})
 @guest
 $(function(){
     {{-- console.log(city); --}}

@@ -25,7 +25,11 @@ class UserFoodController extends Controller
 {
     public function index(){
         // return $_SESSION['city'];
-        
+        $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
+        $obj=json_decode($response);
+        $arr=explode('T',$obj->datetime);
+        $time=explode('+',$arr[1]);
+        $time_now=strtotime($time[0]);
         if(Auth::check())
         $city=Auth::user()->city_id;
         else
@@ -33,16 +37,22 @@ class UserFoodController extends Controller
         // return $city."wadaw";
         // return $city;
         $restaurants=Restaurants::where('city_id',$city)->where('is_active',1)->get();
-        return view('food.index')->with('res',$restaurants);
+        return view('food.index')->with('res',$restaurants)->with('time_now',$time_now);
     }
     public function show($id){
         $res=Restaurants::find($id);
-        if(time()>=strtotime($res->close_time))
+        
+        $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
+        $obj=json_decode($response);
+        $arr=explode('T',$obj->datetime);
+        $time=explode('+',$arr[1]);
+        $time_now=strtotime($time[0]);
+        if($time_now>=strtotime($res->close_time) || $time_now<=strtotime($res->open_time))
         return back()->with('error','Restaurant Closed!');
         $items=$res->items;
         $data=[
             'res'=>$res,
-            'items'=>$items
+            'items'=>$items,
         ];
         // return $items;
         return view('food.show')->with($data);
