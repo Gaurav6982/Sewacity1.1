@@ -25,11 +25,12 @@ class UserFoodController extends Controller
 {
     public function index(){
         // return $_SESSION['city'];
-        $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
-        $obj=json_decode($response);
-        $arr=explode('T',$obj->datetime);
-        $time=explode('+',$arr[1]);
-        $time_now=strtotime($time[0]);
+        // $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
+        // $obj=json_decode($response);
+        // $arr=explode('T',$obj->datetime);
+        // $time=explode('+',$arr[1]);
+        // $time_now=strtotime($time[0]);
+        $time_now=time();
         if(Auth::check())
         $city=Auth::user()->city_id;
         else
@@ -42,12 +43,25 @@ class UserFoodController extends Controller
     public function show($id){
         $res=Restaurants::find($id);
         
-        $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
-        $obj=json_decode($response);
-        $arr=explode('T',$obj->datetime);
-        $time=explode('+',$arr[1]);
-        $time_now=strtotime($time[0]);
-        if($time_now>=strtotime($res->close_time) || $time_now<=strtotime($res->open_time))
+        // $response =file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
+        // $obj=json_decode($response);
+        // $arr=explode('T',$obj->datetime);
+        // $time=explode('+',$arr[1]);
+        // $time_now=strtotime($time[0]);
+        $time_now=time();
+        if(
+            (
+                ( intval(date('H',strtotime($res->open_time))) <= intval(date('H',strtotime($res->close_time))) ) 
+                && 
+                (! (time()>=strtotime($res->open_time)&& time()<=strtotime($res->close_time)) )
+            )
+            ||
+            (
+                ( intval(date('H',strtotime($res->open_time))) > intval(date('H',strtotime($res->close_time))) )
+                &&
+                ( (time()>=strtotime($res->close_time)&& time()<=strtotime($res->open_time)))
+            )
+        )
         return back()->with('error','Restaurant Closed!');
         $items=$res->items;
         $data=[

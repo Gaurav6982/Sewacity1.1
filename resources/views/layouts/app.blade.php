@@ -196,7 +196,6 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="position:fixed;top:0;width:100%;z-index:99">
             <div class="container">
                 <a class="navbar-brand"  href="{{ url('/') }}">
-
                    <div>
                      <div class="logo">
                     <img src="/storage/images/logo.png" height="40" alt="Logo"> <span class="comname">{{ config('app.name', 'Laravel') }}

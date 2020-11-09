@@ -55,7 +55,22 @@
                             
                             <div class="card ress">
                                 <div class="banner">
-                                    @if($time_now>=strtotime($r->close_time) || $time_now<=strtotime($r->open_time))<img src="{{asset('storage/images/closed.jpg')}}" alt="Closed" id="closed-img">@endif
+                                    {{-- {{intval(date('H',strtotime($r->open_time)))}} --}}
+                                    @if( 
+                                            (
+                                                ( intval(date('H',strtotime($r->open_time))) < intval(date('H',strtotime($r->close_time))) ) 
+                                                && 
+                                                (! (time()>=strtotime($r->open_time)&& time()<=strtotime($r->close_time)) )
+                                            )
+                                            ||
+                                            (
+                                                ( intval(date('H',strtotime($r->open_time))) > intval(date('H',strtotime($r->close_time))) )
+                                                &&
+                                                ( (time()>=strtotime($r->close_time)&& time()<=strtotime($r->open_time)) )
+                                            )
+                                        )
+                                        <img src="{{asset('storage/images/closed.jpg')}}" alt="Closed" id="closed-img">
+                                    @endif
                                 </div>
                                 <a href="/foodie/{{$r->id}}">
                                 <img class="card-img-top" @if($r->image)src="{{asset('storage/restaurants/'.$r->image)}}"@else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:200px;">
@@ -86,17 +101,6 @@
     </div>
 @endsection
 @section('js')
-$.ajax({
-    type:"get",
-    url:'http://worldtimeapi.org/api/timezone/Asia/Kolkata',
-    success:function(data){
-      
-
-    },
-    error:function(error){
-        {{-- document.write(error); --}}
-    }
-})
 @guest
 $(function(){
     {{-- console.log(city); --}}
