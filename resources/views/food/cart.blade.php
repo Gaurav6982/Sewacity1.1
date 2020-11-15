@@ -100,7 +100,7 @@
                                     <td style="display: flex">
                                         <button class="downbtn btn btn-secondary" data-id="{{$cart->id}}">-</button>
                                         <input type="hidden" name="ids[]" value="{{$cart->id}}">
-                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="30" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
+                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
                                         <button class="upbtn btn btn-secondary" data-id="{{$cart->id}}">+</button>
                                     </td>
                                     <td>
@@ -175,7 +175,7 @@
             const id=$(this).data("id");
             var previous=$('#inquan'+id).val();
             var total=0;
-            if( previous < 10)
+            if( previous < 20)
             {
                 const newv=parseInt(previous)+1;
                 $('#inquan'+id).val(newv);

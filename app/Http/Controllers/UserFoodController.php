@@ -104,6 +104,8 @@ class UserFoodController extends Controller
     }
     public function AddQuan(Request $request){
         $cart=FoodCart::where('food_id',$request->input('item_id'))->where('user_id',Auth::user()->id)->first();
+        if($cart->quantity>19)
+        return response()->json(['success'=>false],400);
         $quan=$cart->quantity+1;
         $cart->quantity=$quan;
         if($cart->save())
