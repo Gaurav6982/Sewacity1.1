@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFrontPageSliderTable extends Migration
+class CreateSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateFrontPageSliderTable extends Migration
      */
     public function up()
     {
-        Schema::create('front_page_slider', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->id();
+            $table->string('slider_name');
+            $table->integer('is_active')->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateFrontPageSliderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('front_page_slider');
+        Schema::dropIfExists('sliders');
     }
 }

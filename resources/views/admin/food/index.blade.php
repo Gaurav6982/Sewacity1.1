@@ -195,7 +195,7 @@ $(document).ready(function(){
                     url:'/admin/food/'+id,
                     data:{
                         "_token":"{{csrf_token()}}",
-                        "_method":"delete"
+                        "_method":"delete",
                     },
                     success:function(data){
                         Swal.fire(
@@ -213,6 +213,7 @@ $(document).ready(function(){
 
                     },
                     error:function(error){
+                       {{-- console.log(error); --}}
                         Swal.fire(
                             'Error!',
                             'There Might be Some Error.',

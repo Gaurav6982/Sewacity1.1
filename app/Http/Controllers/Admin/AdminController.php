@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Categories;
 use App\Posts;
 use App\City;
+use App\Sliders;
 
 class AdminController extends Controller
 {
@@ -120,4 +121,5 @@ class AdminController extends Controller
         return response()->json(["fail"],400);
 
     }
+   
 }

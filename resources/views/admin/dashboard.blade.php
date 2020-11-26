@@ -2,6 +2,7 @@
 <style>
     ul li{
         margin:5px 0;
+        list-style: none;
     }
 </style>
 @section('content')
@@ -9,8 +10,8 @@
     	<div class="card">
     		<div class="card-header"><center>Welcome Admin</center></div>
     		<br>
-
-    		<ul>
+            
+    		<ul >
                 <li>
                     <form id="category_form" method="POST">
                         {{csrf_field()}}
@@ -39,6 +40,7 @@
                 <li><a href="/admin/food" class="btn btn-primary">Go to Food Panel!</a></li>
                 @auth @if(Auth::user()->usertype=='special')
                 <li><a href="/admin/city" class="btn btn-primary">Go to City Panel!</a></li>
+                <li><a href="/admin/sliders" class="btn btn-primary">Front Page Slider!</a></li>
                 @endif @endauth
     		</ul>
     	</div>

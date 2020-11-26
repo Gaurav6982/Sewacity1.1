@@ -26,6 +26,10 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::get('/city','Admin\AdminController@manage_cities');
     Route::resource('food/item','FoodItemController');
 });
+Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
+    Route::resource('sliders','SlidersController');
+    Route::post('sliders/addSlide/{id}','SlidersController@addSlide');
+});
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');

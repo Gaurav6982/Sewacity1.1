@@ -166,3 +166,87 @@
       </div>
     </div>
   </div>
+
+  {{-- ********************Front Slider Modal************************** --}}
+
+  <div class="modal fade" id="sliderModal" tabindex="-1" role="dialog" aria-labelledby="sliderModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="sliderModalTitle">Add Slider</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="slider_name">Slider Name:</label>
+              <input type="text" name="slider_name" id="slider_name" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="slider_name">Slider Status:</label>
+              <select name="slider_status" id="slider_status" class="form-control">
+                <option value="0">InActive</option>
+                <option value="1">Active</option>
+              </select>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary submit" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   {{-- ********************Add a Slide Modal************************** --}}
+
+   <div class="modal fade" id="slideModal" tabindex="-1" role="dialog" aria-labelledby="slideModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="slideModalTitle">Add Slider</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="form-group">
+              <label for="slide_name">Slide Name:</label>
+              <input type="text" name="slide_name" id="slide_name" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="slide_status">Slide Status:</label>
+              <select name="slide_status" id="slide_status" class="form-control">
+                <option value="0">InActive</option>
+                <option value="1">Active</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="slide_url">Slide URL:</label>
+              <input type="text" name="slide_url" id="slide_url" class="form-control" placeholder="https://sewacity.com/example">
+            </div>
+
+            <div class="form-group">
+              <label for="slide_img">Slide Image:</label>
+              <input type="file" name="slide_img" id="slide_img" class="form-control">
+            </div>
+            
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary submit" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

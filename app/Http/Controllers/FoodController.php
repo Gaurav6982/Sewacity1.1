@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Restaurants;
 use App\Menu;
 use App\FoodCart;
+use Auth;
 use DateTimeZone;use DateTime;
 class FoodController extends Controller
 {
