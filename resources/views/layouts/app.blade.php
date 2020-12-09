@@ -289,6 +289,9 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         <main >
             @yield('content')
         </main>
+
+        {{-- Modal --}}
+        @include('inc.modals')
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
