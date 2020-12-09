@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Menu;
 use App\FoodCart;
-
+use Auth;
 class FoodItemController extends Controller
 {
     

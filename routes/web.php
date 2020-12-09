@@ -93,3 +93,7 @@ Route::get('/shelters','HotelController@index');
 Route::get('/shelters/rooms/{id}','HotelController@rooms');
 Route::get('/shelters/rooms/{id}/form','HotelController@show_form');
 Route::post('/shelters/rooms/{id}/submit','HotelController@submit');
+
+Route::get('/blogs',function(){
+    return view('blogs');
+});

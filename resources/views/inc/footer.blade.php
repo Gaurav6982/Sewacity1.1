@@ -17,6 +17,7 @@
                 </li>
 
                 <li><a href="/feedback" class="font-15">FeedBack</a></li>
+                <li><a href="/blogs" class="font-15">Blogs</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
