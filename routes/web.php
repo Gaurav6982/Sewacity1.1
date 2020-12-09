@@ -97,3 +97,10 @@ Route::post('/shelters/rooms/{id}/submit','HotelController@submit');
 Route::get('/blogs',function(){
     return view('blogs');
 });
+
+//RazorPay Routes
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('payment-success','PayController@success');
+    Route::post('pay','PayController@pay');
+    Route::post('payment','PayController@payment');
+});

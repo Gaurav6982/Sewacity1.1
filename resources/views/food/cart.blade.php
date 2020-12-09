@@ -140,7 +140,8 @@
         </div>
         <div class="card-footer text-muted ">
         <p class="float-left">Total: Rs. <span id="total"></span> <span id="del-charge"></span> </p>
-        <button class="btn btn-primary float-right" id="submit">Place Request</button>
+
+        <button class="btn btn-primary float-right" id="pay-btn" data-toggle="modal" data-target="#confirmModal">Place Request</button>
         </div>
     </div>
 </div>
@@ -218,7 +219,6 @@
         })   
         $('.inquan').on("change",function(){
             var val=$(this).val();
-            console.log(val);
             if(val==0)
             $(this).val(1);
             else
@@ -299,4 +299,28 @@
         else
         $('#cart-form')[0].submit();
       })
+    $('#pay-btn').click(function(){
+        let total=parseInt($('#total').text());
+        if(total >= 200)
+        total+=5;
+        else if(total < 200 && total >= 100)
+        total+=10;
+        else if(total < 100 && total > 0)
+        total+=20;
+        localStorage.setItem('total',total);
+        $.ajax({
+            url:'/payment',
+            type:'POST',
+            data:{
+                'amount':total,
+                '_token':"{{ csrf_token() }}"
+            },
+            success:function(data){
+                if(data.success)
+                {
+                    localStorage.setItem('orderId',data.order_id);
+                }
+            }
+        })      
+    })
 @endsection

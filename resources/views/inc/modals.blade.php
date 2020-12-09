@@ -250,3 +250,93 @@
       </div>
     </div>
   </div>
+
+  {{-- Confirm BUtton modal --}}
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Please Confirm</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <button class="btn btn-primary " id="rzp-button1">Confirm Payment</button>
+          </div>
+          <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+          // console.log(to);
+            console.log(localStorage.getItem('amount'));
+            console.log(localStorage.getItem('order_id'));
+        var options = {
+            "key": "{{env('RAZORPAY_KEY_ID')}}", // Enter the Key ID generated from the Dashboard
+            "amount": localStorage.getItem('amount'), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "SewaCity",
+            "description": "Test Transaction",
+            "image": "{{url('/assets/sewacitylogo.png')}}",
+            "order_id": localStorage.getItem('order_id'), //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response){
+                // alert(response.razorpay_payment_id);
+                // alert(response.razorpay_order_id);
+                // alert(response.razorpay_signature)
+                $.ajax({
+                  url:'/pay',
+                  type:"post",
+                  data:{
+                    "_method":"{{csrf_token()}}",
+                    "razorpay_payment_id":response.razorpay_payment_id,
+                    "razorpay_payment_id":response.razorpay_payment_id,
+                    "razorpay_signature":response.razorpay_signature,
+                  },
+                  success:function(data){
+                    alert(data);
+                    // Swal.fire(
+                    //         'Success!',
+                    //         'Payment Successful.',
+                    //         'success'
+                    //     )
+                    //     location.reload();
+                  },
+                  error:function(data){
+                    // Swal.fire(
+                    //         'Error!',
+                    //         'Something Went Wrong!',
+                    //         'error'
+                    //     )
+                    //     location.reload();
+                  }
+                })
+            },
+            "prefill": {
+                "name": "{{Auth::user()->name}}",
+                @if(Auth::user()->email!=null)
+                "email": "{{Auth::user()->email}}",
+                @endif
+                "contact": "{{Auth::user()->phone}}"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response){
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+        });
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+        </script>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

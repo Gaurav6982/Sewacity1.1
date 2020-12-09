@@ -110,7 +110,7 @@ $(document).ready(function(){
                     $('#add-res #method').attr('name','');
                     $('#add-res #method').attr('value','');
                     $('#add-res #res-form').attr('action','/admin/food');
-                    {{-- console.log($('#res-form')[0]); --}}
+                  
                     {{-- document.resform.submit(); --}}
                     {{-- $('#res-form')[0].submit(); --}}
                 }

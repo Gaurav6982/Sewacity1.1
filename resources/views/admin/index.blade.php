@@ -165,7 +165,6 @@
 @section('js')
 
     $(function(){
-        console.log("{{$page}}");
         $('#catselectEdit').val({{$page}});
         $('#city').val({{$city}});
     });
