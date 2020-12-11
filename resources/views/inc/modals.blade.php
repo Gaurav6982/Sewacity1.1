@@ -308,11 +308,17 @@
                 })
             },
             "prefill": {
-                "name": "{{Auth::user()->name}}",
+                @guest
+                "name": "",
+                "email": "",
+                "phone":""
+                @else
                 @if(Auth::user()->email!=null)
                 "email": "{{Auth::user()->email}}",
                 @endif
+                "name": "{{Auth::user()->name}}",
                 "contact": "{{Auth::user()->phone}}"
+                @endguest
             },
             "theme": {
                 "color": "#3399cc"
