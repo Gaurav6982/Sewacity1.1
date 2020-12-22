@@ -195,7 +195,7 @@ class UserFoodController extends Controller
         }
         $user->no_of_requests=$user->no_of_requests+1;
         $user->update();
-        if(Auth::user()->city_id==1)
+        // if(Auth::user()->city_id==1)
         return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
     }
 }

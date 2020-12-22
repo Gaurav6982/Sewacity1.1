@@ -265,8 +265,8 @@
           <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script>
           // console.log(to);
-            console.log(localStorage.getItem('amount'));
-            console.log(localStorage.getItem('order_id'));
+            // console.log(localStorage.getItem('amount'));
+            // console.log(localStorage.getItem('order_id'));
         var options = {
             "key": "{{env('RAZORPAY_KEY_ID')}}", // Enter the Key ID generated from the Dashboard
             "amount": localStorage.getItem('amount'), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise

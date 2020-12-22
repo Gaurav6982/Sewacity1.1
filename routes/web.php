@@ -101,6 +101,7 @@ Route::get('/blogs',function(){
 //RazorPay Routes
 Route::group(['middleware'=>'auth'],function(){
     Route::get('payment-success','PayController@success');
-    Route::post('pay','PayController@pay');
     Route::post('payment','PayController@payment');
+    Route::post('pay','PayController@pay');
+    Route::post('set-amount','PayController@set_amount');
 });
