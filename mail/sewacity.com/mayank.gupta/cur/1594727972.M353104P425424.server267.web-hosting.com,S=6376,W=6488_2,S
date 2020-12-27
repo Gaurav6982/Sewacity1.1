@@ -1,0 +1,112 @@
+Return-Path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id +NH4FCSeDV/QfQYAtyEQ0w
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	for <mayank.gupta@sewacity.com>; Tue, 14 Jul 2020 07:59:32 -0400
+Return-path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Tue, 14 Jul 2020 07:59:32 -0400
+Received: from so254-49.mailgun.net ([198.61.254.49]:40206)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	id 1jvJap-001loF-7o
+	for mayank.gupta@sewacity.com; Tue, 14 Jul 2020 07:59:32 -0400
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=vakilsearch.com; q=dns/txt;
+ s=smtp; t=1594727946; h=Content-Transfer-Encoding: Content-Type:
+ Mime-Version: Subject: Message-ID: To: Reply-To: From: Date: Sender;
+ bh=C/t4shir17k05Km3STppw6Hr2KKXyy7+EzOweahkV6U=; b=dzVIUjyKqTa8HIxIA2YGM8E2k3mljxJEQTu+CCb1YyDwDulU38QBxtyscut5CvCKwZ4fiX09
+ Jrzmi9dqjmeOBWUCX/E5x41tfmr4plVZ0J5atJ9nvBmycDbARhUieyD9jgTBfbj75v8PG9lw
+ M8HW9h5cwMYnRf3sF3XcU2O3uEE=
+X-Mailgun-Sending-Ip: 198.61.254.49
+X-Mailgun-Sid: WyI4OGE1NyIsICJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwgImU0M2Q4Il0=
+Received: from mailgun.com (ec2-3-7-222-67.ap-south-1.compute.amazonaws.com
+ [3.7.222.67]) by smtp-out-n19.prod.us-west-2.postgun.com with SMTP id
+ 5f0d9de1ee6926bb4f31a42f (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 14 Jul 2020 11:58:25
+ GMT
+Sender: support@vakilsearch.com
+Date: Tue, 14 Jul 2020 11:58:24 +0000
+From: Vakilsearch support <support@vakilsearch.com>
+Reply-To: support@vakilsearch.com
+To: mayank.gupta@sewacity.com
+Message-ID: <5f0d9de0bcb22_158e4d4cafc3132993@prod-mobileapi-aws.mail>
+Subject: Re: [#1369874] Need Help with : Trademark Registration
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Dear Mayank Gupta, We have done the trademark search for the
+    brand name given and I am glad to inform you that the brand name is available
+    for registration. Please check the details below and confirm to initiate
+   the pro [...] 
+ Content analysis details:   (0.5 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: vakilsearch.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [198.61.254.49 listed in wl.mailspike.net]
+  0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML
+                             tag
+X-Spam-Flag: NO
+
+<div class=3D"col-lg-6">
+  <div class=3D"span12">
+    <p>
+      <p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: =
+auto;">Dear Mayank Gupta,<br>&nbsp;</p><p style=3D"letter-spacing:normal;=
+ margin-bottom: auto;margin-top: auto;">We have done the trademark search=
+ for the brand name given and I am glad to inform you that the brand name=
+ is available for registration. Please check the details below and confir=
+m to initiate the process.</p><p style=3D"letter-spacing:normal; margin-b=
+ottom: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:norma=
+l; margin-bottom: auto;margin-top: auto;">Brand Name SRI VASTAVA and CO</=
+p><p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: auto=
+;"><strong>Class 45</strong></p><p style=3D"letter-spacing:normal; margin=
+-bottom: auto;margin-top: auto;">&nbsp;</p><p style=3D"letter-spacing:nor=
+mal; margin-bottom: auto;margin-top: auto;">Legal services; security serv=
+ices for the physical protection of tangible property and individuals; pe=
+rsonal and social services rendered by others to meet the needs of indivi=
+duals.</p><p style=3D"letter-spacing:normal; margin-bottom: auto;margin-t=
+op: auto;">&nbsp;</p><p style=3D"letter-spacing:normal; margin-bottom: au=
+to;margin-top: auto;"><strong>Please note that the above trademark detail=
+s are confirmed only based on the preliminary search. The final approval =
+of the Trademark is in the hands of the Registrar.</strong></p><p style=3D=
+"letter-spacing:normal; margin-bottom: auto;margin-top: auto;">&nbsp;</p>=
+<p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: auto;"=
+>&nbsp;</p><br/> <span ><strong>Note: Please do not change the subject of=
+ the email while replying.</strong></span><br><br>-----------------------=
+----------------------<br>Thanks,<br><b>Anish Chiramal</b><br>Business Ad=
+visor<br>Call: 7200365365 Extn.3132<br />Direct Number: 9360952068<br /><=
+a href=3D"https://calendar.google.com/calendar/embed?src=3Dvakilsearch.co=
+m_aas9v5jmkhmaidmpk9e72hjp6k%40group.calendar.google.com&ctz=3DAsia%2FCal=
+cutta" target=3D"_blank">Get tax payment and filing details on your Googl=
+e calendar</a><br>--------------------------------------------<br>
+    </p>
+  </div>
+</div>
+

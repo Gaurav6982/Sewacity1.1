@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Gugi&family=Monoton&family=Piedra&family=Metal+Mania&family=Shadows+Into+Light&display=swap');
+:root{
+	--primary-color:#0AA903;
+	--secondary-color:#1FFF01;
+	--gugi:'Gugi', cursive;
+	--Monoton:'Monoton', cursive;
+	--MARKET:'Chelsea Market', cursive;
+	--piedra:'Piedra', cursive;
+	--flower:'Indie Flower', cursive;
+	--shadow:'Shadows Into Light', cursive;
+};
+
+.primary-color{
+	/* color:var(--primary-color); */
+	background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+.text-white{
+	color: white;
+}
+/*carousel-item*/
+
+.carousel-item img{
+	height: 500px;
+	border-radius: 40px;
+}
+/*footer*/
+footer{
+	background-color: black;
+	height: auto;
+	color: white;
+	margin-top: 0px;
+}
+footer .row{
+	padding: 20px;
+	margin:0 !important;
+	width:auto;
+}
+footer .container-fluid .col-md-4 h4{
+	font-size: 15px;
+}
+footer .container-fluid .col-md-4 ul li a{
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+footer .container-fluid .col-md-4 ul li a:hover{
+	color:var(--primary-color);
+}
+.seperate{
+	height: 30px;
+	width: 30px;
+	background-color: white;
+}
+/*header*/
+header{
+	background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+header .site-title{
+	font-family:var(--Monoton);
+}
+
+.header-links a{
+	font-size: 0.9em;
+	text-decoration: none;
+	color: white;
+}
+
+.ImgBx{
+	width: 300px;
+	height: 250px;
+	overflow: hidden;
+}
+.ImgBx img{
+	width: 100%;
+	height: 100%;
+}
+.ImgDetails{
+	background-color: white;
+	text-align: center;
+	color: black;
+	font-style: italic;
+	width: 300px;
+	letter-spacing: 5px;
+	font-weight: 700;
+}
+/*a.navbar-brand{
+	font-family: var(--MARKET);
+	font-size: 25px;
+}*/
+.head1{
+	width: 230px;
+	position: relative;
+	overflow: hidden;
+}
+.head1 p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 20px;
+	font-family: var(--gugi);
+	transform: translate(-50%,-50%);
+}
+.head1 img{
+	width: 100%;
+}
+.navbar-nav .nav-item .nav-link{
+	font-family:var(--piedra);
+	font-size: 17px;
+	padding: 0 1.6em !important;
+	transition: all 0.3s ease;
+}
+.navbar-nav{
+	padding: 0.1em 0em;
+}
+.navbar-nav a{
+	cursor: pointer;
+}
+.navbar-nav a:hover{
+	background-color: var(--primary-color);
+}
+.form-inline .btn{
+	margin-right: 2em !important;
+}
+.navbar-nav .nav-item .nav-link:hover{
+	border-radius: 20px;
+	transform: scale(1.1);
+}
+header .header-links{
+	font-family: var(--gugi);
+}
+header .header-links a:nth-child(1):after{
+	position: absolute;
+	content: '';
+	width: 5px;
+	margin-left: 5px;
+	height: 25px;
+	background-color:white;
+}
+/*icons*/
+ul.icons{
+ list-style-type: none;
+}
+ul.icons{
+	display: inline-flex;
+}
+ul.icons li{
+	margin: 5px 20px;
+}
+ul.icons li i{
+	font-size: 30px;
+	cursor: pointer;
+}
+/*overlay*/
+.hover-over .card-body{
+    	text-align: center;
+    	letter-spacing: 5px;
+    	font-weight: 800;
+    	font-family: var(--shadow);
+    }
+.card{
+		position: relative !important;
+		overflow: hidden;
+		height:auto !important;
+	}
+	.card .overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 100%;
+		background: rgba(255,255,255,0.1);
+		transition: all 0.5s ease;
+	}
+	.overlay-text{
+		color: white;
+		display: none;
+		  font-size: 20px;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  white-space: nowrap;
+	}
+	.card:hover .overlay{
+		width: 100%;
+	}
+	.card:hover .overlay-text{
+		display: block;
+	}
+
+/* media */
+@media only screen and (max-width: 415px) {
+	.form-inline .btn{
+	margin-right: 0.5em !important;
+	}
+	.form-inline{
+		position: absolute;
+		right: 10px;
+		top: -8px;
+	}
+	.nav-item{
+		margin-bottom: 20px;
+	}
+	footer{
+		height: auto !important;
+		overflow: hidden;
+	}
+	footer .container-fluid .col-md-4 ul li a{
+	font-size: 9px;
+	}
+	footer .container-fluid .col-md-4 h4{
+		font-size: 12px;
+		text-align: center;
+	}
+	.card img{
+		height: 150px;
+	}
+
+
+}
+/*corona update and media query*/
+
+
+    a.corona{
+        position:absolute;
+        left:50%;
+        color:white;
+        transform:translateX(-50%);
+        text-decoration:none !important;
+        overflow:hidden;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        padding:15px 20px;
+        letter-spacing:4px;
+    }
+    a.corona:before{
+        content:'';
+        position:absolute;
+        /*background:rgba(255,255,255,0.3) !important;*/
+        width:50%;
+        top:2px;
+        left:2px;
+        bottom:2px;
+        background:black;
+        transition:all 1s;
+    }
+    a.corona:hover:before{
+        transform:translateX(100%);
+    }
+    a.corona span:nth-child(1)
+    {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:2px;
+        background:linear-gradient(to right,#0c002a,#1779fe);
+        animation: animate1 linear 2s infinite;
+    }
+    @keyframes animate1{
+        0%{
+            transform:translateX(-100%);
+        }
+        100%{
+            transform:translateX(100%);
+        }
+    }
+    a.corona span:nth-child(2)
+    {
+        position:absolute;
+        top:0;
+        right:0;
+        height:100%;
+        width:2px;
+        background:linear-gradient(to bottom,#0c002b,#1779ff);
+        animation: animate2 linear 2s infinite;
+    }
+    @keyframes animate2{
+        0%{
+            transform:translateY(100%);
+        }
+        100%{
+            transform:translateY(-100%);
+        }
+    }
+    a.corona span:nth-child(3)
+    {
+        position:absolute;
+        left:0;
+        bottom:0;
+        width:100%;
+        height:2px;
+        background:linear-gradient(to left,#0c002b,#1779ff);
+        animation: animate3 linear 2s infinite;
+    }
+    @keyframes animate3{
+        0%{
+            transform:translateX(100%);
+        }
+        100%{
+            transform:translateX(-100%);
+        }
+    }
+    a.corona span:nth-child(4)
+    {
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:2px;
+        background:linear-gradient(to top,#0c002a,#1779fe);
+        animation: animate4 linear 2s infinite;
+    }
+    @keyframes animate4{
+        0%{
+            transform:translateY(-100%);
+        }
+        100%{
+            transform:translateY(100%);
+        }
+    }
+    .coronabtn{
+    width: 100%;position: relative;height: 80px;
+    }
+
+
+/*Some Extas*/
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/

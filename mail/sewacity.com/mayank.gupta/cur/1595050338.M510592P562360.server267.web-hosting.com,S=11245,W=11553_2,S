@@ -1,0 +1,308 @@
+Return-Path: <dsn@mta.tawk.to>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id cIm2HWKJEl+4lAgAtyEQ0w
+	(envelope-from <dsn@mta.tawk.to>)
+	for <mayank.gupta@sewacity.com>; Sat, 18 Jul 2020 01:32:18 -0400
+Return-path: <dsn@mta.tawk.to>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Sat, 18 Jul 2020 01:32:18 -0400
+Received: from mx4.mta.tawk.to ([174.138.34.240]:37443)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <dsn@mta.tawk.to>)
+	id 1jwfSH-002MJu-Jx
+	for mayank.gupta@sewacity.com; Sat, 18 Jul 2020 01:32:18 -0400
+Received: from [127.0.0.1] ([104.154.63.59] 59.63.154.104.bc.googleusercontent.com)
+ (Authenticated sender: tawkto)
+ by mx4.mta.tawk.to (ZoneMTA) with ESMTPSA id 1736063babf0003e28.001
+ for <mayank.gupta@sewacity.com>
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256);
+ Sat, 18 Jul 2020 05:26:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mta.tawk.to;
+ q=dns/txt; s=tawk1; bh=5jRKy7WroRJnRiNmDBmqMpXEe5V4V9yxpqYBILDsK3I=;
+ h=from:reply-to:subject:date:message-id:to:mime-version:content-type:in-reply-to:references;
+ b=rdQg1pSyH6Cfy86KSvdEqgsYVssq6yZcvMZvwSq09uCRpBvwf6zmtDjnb7UMa2mb/oXN57g3H
+ 6NHp2Q5Zpt8p+KZxoIR0QYp/xXvgjwRv/f0k9OE78TqvVSClK2d3wk3rj5yAXarV181e2YUfy8e
+ F6BPgy+7Zort0bn+Ktug+aulrtY8Pq6eG0dRDwKsO9Q9tTCrwDeHgLhZGwKKceW0XaDNAPMrZZn
+ 2MiMr+X5F55YskiV8NBY3hlGvjbiKOVtlJP0DLCN3lMQDs9cRa/SzHqKxBL1aCPQMHtoCIfJngc
+ YP++fZCZSeA6bPN3NiK3QP9hOul8QM4tVkJUhYAuL4Mg==
+Content-Type: multipart/alternative;
+ boundary="--_NmP-bd9bf2ef749e05ec-Part_1"
+References:
+ <ticket-89096890bed811ea9dd90755b930e84d-ec693670-c8b7-11ea-a805-d953888759e6@tickets.tawk.to>
+In-Reply-To:
+ <ticket-89096890bed811ea9dd90755b930e84d-ec693670-c8b7-11ea-a805-d953888759e6@tickets.tawk.to>
+X-Auto-Response-Suppress: All
+Auto-Submitted: auto-generated
+X-Mailer: Tawk.to Mailer
+X-Tawk-Propertyid: 5f01f8ec760b2b560e6fc6f6
+From: Sewacity <89096890bed811ea9dd90755b930e84d@tickets.tawk.to>
+To: Arsha <mayank.gupta@sewacity.com>
+Reply-To: Sewacity
+ <89096890bed811ea9dd90755b930e84dec693670c8b711eaa805d953888759e6@tickets.tawk.to>
+Subject: [#1] Reply
+Message-ID:
+ <001001736067eff3-0300-b7977853-f655-484b-b9dc-7ccafd0dc42e-89096890bed811ea9dd90755b930e84d-ec693670-c8b7-11ea-a805-d953888759e6@mta.tawk.to>
+Date: Sat, 18 Jul 2020 05:31:31 +0000
+MIME-Version: 1.0
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  ##- Please type your reply above this line -## Yes....Go to
+    the website click the button let us know here(uppet portion) fill your requirement.
+    =========================================================== 
+ Content analysis details:   (0.9 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.6 FROM_STARTS_WITH_NUMS  From: starts with several numbers
+  0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: tawk.to]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [174.138.34.240 listed in wl.mailspike.net]
+  0.0 KAM_SHORT              Use of a URL Shortener for very short URL
+X-Spam-Flag: NO
+
+----_NmP-bd9bf2ef749e05ec-Part_1
+Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
+
+##- Please type your reply above this line -##
+
+
+
+		Yes....Go to the =
+website click the button let us know here(uppet portion) fill your =
+requirement.
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+	This service is provided by =
+tawk.to live chat.
+
+----_NmP-bd9bf2ef749e05ec-Part_1
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3=
+.org/1999/xhtml">
+<head>
+<meta http-equiv=3D"Content-Type" =
+content=3D"text/html; charset=3D3DUTF-8">
+	<style type=3D"text/css" =
+data-premailer=3D"ignore">
+	/* styles in here will not be inlined. Use for =
+media queries etc */
+	/* force Outlook to provide a "view in browser" menu =
+link. */
+	#outlook a {padding:0;}
+	/* prevent Webkit and Windows Mobile =
+platforms from changing default font sizes.*/
+	body{width:100% !important; =
+-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; =
+padding:0;}
+	/* force Hotmail to display emails at full width */
+	.ExternalClass {width:100%;}
+	/* force Hotmail to display normal line =
+spacing. http://www.emailonacid.com/forum/viewthread/43/ */
+	.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font=
+, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+	/* fix a padding issue on Outlook 07, 10 */
+	table td {border-collapse: =
+collapse;}
+
+	@media only screen and (max-width: 480px)
+	{
+		br.hidden { display: block !important; }
+		td.padding_cell { display: =
+none !important; }
+		table.message_footer_table td {
+			font-size: 11px !important;
+		}
+	}
+	@media only screen and =
+(max-device-width: 480px)
+	{
+		br.hidden { display: block !important; }
+		td.padding_cell { display: none !important; }
+		table.=
+message_footer_table td {
+			font-size: 11px !important;
+		}
+	}
+</style>
+
+<!--[if (mso 12)|(mso 14)|(mso 15)]>
+<style>
+#innerTable {
+	width: 600px;
+}
+</style>
+<![endif]-->
+
+	<style type=3D"text/css" data-premailer=3D"ignore">
+	/* styles in here will not be inlined. Use for media queries etc */
+	/* force Outlook to provide a "view in browser" menu link. */
+	#outlook a {padding:0;}
+	/* prevent Webkit and Windows Mobile platforms =
+from changing default font sizes.*/
+	body{width:100% !important; =
+-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; =
+padding:0;}
+	/* force Hotmail to display emails at full width */
+	.ExternalClass {width:100%;}
+	/* force Hotmail to display normal line =
+spacing. http://www.emailonacid.com/forum/viewthread/43/ */
+	.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font=
+, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+	/* fix a padding issue on Outlook 07, 10 */
+	table td {border-collapse: =
+collapse;}
+
+	@media only screen and (max-width: 480px)
+	{
+		br.hidden { display: block !important; }
+		td.padding_cell { display: =
+none !important; }
+		table.message_footer_table td {
+			font-size: 11px !important;
+		}
+	}
+	@media only screen and =
+(max-device-width: 480px)
+	{
+		br.hidden { display: block !important; }
+		td.padding_cell { display: none !important; }
+		table.=
+message_footer_table td {
+			font-size: 11px !important;
+		}
+	}
+</style>
+
+<!--[if (mso 12)|(mso 14)|(mso 15)]>
+<style>
+#innerTable {
+	width: 600px;
+}
+</style>
+<![endif]-->
+
+</head>
+<body>
+	<style type=3D"text/css">
+	#backgroundTable {
+		margin: 0; padding: 0; width: 100% !important; =
+line-height: 100% !important;
+	}
+	img {
+		outline: none; text-decoration: =
+none; -ms-interpolation-mode: bicubic; max-width: 100%;
+	}
+	#backgroundTable {
+		margin: 0; padding: 0; width: 100% !important; =
+line-height: 100% !important;
+	}
+	img {
+		outline: none; text-decoration: =
+none; -ms-interpolation-mode: bicubic; max-width: 100%;
+	}
+	</style>
+	<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bgtc" =
+align=3D"center" style=3D"margin: auto; max-width: 700px; min-width: 320px;=
+ border-collapse: collapse; line-height: 100% !important; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; padding: 0; width: 100% !important">
+		<tr>
+			<td style=3D"color: #666; padding : 15px 0">##- Please type your reply =
+above this line -##</td>
+		</tr>
+		<tr>
+			<td>
+				<table =
+style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt; background: #f5f5f5; width: 100%;">
+					<tr>
+						<td valign=3D"top" class=3D"main_wrapper" style=3D"padding: 0px =
+20px;">
+							<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+class=3D"comment_wrapper_table admin_comment" align=3D"center" =
+style=3D"-webkit-background-clip: padding-box; background-clip: =
+padding-box; border-collapse: collapse; color: #545454; font-family: =
+'Helvetica Neue',Arial,sans-serif; font-size: 14px; line-height: 20px; =
+margin: 0 auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%">
+								<tr>
+									<td valign=3D"top" class=3D"comment_wrapper_td">
+										<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+class=3D"comment_body" style=3D"-webkit-background-clip: padding-box; =
+background-clip: padding-box; border-collapse: separate; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; width: 100%; background: #fff; =
+-webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: =
+3px; -o-border-radius: 3px; border-radius: 3px;margin-top: 20px; =
+padding-bottom: 20px;">
+											<tr>
+												<td =
+class=3D"comment_body_td" style=3D"overflow: hidden; padding: 15px 20px">
+															<div>
+
+																<div style=3D"font-size: 14px; =
+line-height: 22px; margin: 15px 0;">
+																	Yes....Go to the =
+website click the button let us know here(uppet portion) fill your =
+requirement.
+																</div>
+																<div =
+style=3D"font-size: 14px; line-height: 22px; margin: 15px 0;">
+																</div>
+															</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<table cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" class=3D"message_footer_table" align=3D"center" =
+style=3D"border-collapse: collapse; color: #545454; font-family: 'Helvetica=
+ Neue',Arial,sans-serif; font-size: 13px; line-height: 20px; margin: 0 =
+auto; max-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:=
+ 100%">
+								<tr>
+									<td style=3D"padding : 20px; color : #8b8b8b;=
+ text-align: center;">
+										Message your customers with <a =
+href=3D"https://www.tawk.to/?utm_source=3Dticketing&utm_medium=3Demail&utm_=
+campaign=3Dticket-link"  style=3D"color: #8b8b8b;text-decoration: =
+underline;">tawk.to</a>&nbsp;-&nbsp;it=E2=80=99s Free!
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+----_NmP-bd9bf2ef749e05ec-Part_1--
