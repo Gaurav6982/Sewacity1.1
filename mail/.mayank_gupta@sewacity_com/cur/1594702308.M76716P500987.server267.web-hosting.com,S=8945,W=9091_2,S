@@ -1,0 +1,146 @@
+Return-Path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id sIiBBOQ5DV/7pAcAtyEQ0w
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	for <mayank.gupta@sewacity.com>; Tue, 14 Jul 2020 00:51:48 -0400
+Return-path: <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Tue, 14 Jul 2020 00:51:48 -0400
+Received: from so254-49.mailgun.net ([198.61.254.49]:20969)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <bounce+e94248.e43d8-mayank.gupta=sewacity.com@vakilsearch.com>)
+	id 1jvCuq-002Jfh-Uq
+	for mayank.gupta@sewacity.com; Tue, 14 Jul 2020 00:51:48 -0400
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=vakilsearch.com; q=dns/txt;
+ s=smtp; t=1594702281; h=Content-Transfer-Encoding: Content-Type:
+ Mime-Version: Subject: Message-ID: To: Reply-To: From: Date: Sender;
+ bh=Yc0CVQ2IQ+Ue+o4AKotq5/8Up+l1FFwTdfD0lhXynNY=; b=qf80+vi6TnsXi9I2kdVcDjmEEABPu3E942vGdaNCBdflyu9AYc/F+VD/u/Ei4ntgmVYTMz2j
+ 6h1PXNCwFqWAcvz3k5kX5LKN5b/ppaq4pXWiDmKLNwpjc1j+AnXYdrY4ON9surOel40I2qZD
+ EHEUvkGiq0uewImGQYa0eVrvWiU=
+X-Mailgun-Sending-Ip: 198.61.254.49
+X-Mailgun-Sid: WyI4OGE1NyIsICJtYXlhbmsuZ3VwdGFAc2V3YWNpdHkuY29tIiwgImU0M2Q4Il0=
+Received: from mailgun.com (ec2-3-7-222-67.ap-south-1.compute.amazonaws.com
+ [3.7.222.67]) by smtp-out-n02.prod.us-east-1.postgun.com with SMTP id
+ 5f0d399f65270fa595f2f7b2 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 14 Jul 2020 04:50:39
+ GMT
+Sender: support@vakilsearch.com
+Date: Tue, 14 Jul 2020 04:50:38 +0000
+From: Vakilsearch support <support@vakilsearch.com>
+Reply-To: support@vakilsearch.com
+To: mayank.gupta@sewacity.com
+Message-ID: <5f0d399e454fd_158e3fb7ef5dc924278527d@prod-mobileapi-aws.mail>
+Subject: Re: [#1369894] Need Help with : Private Limited Company Registration
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Dear Mayank Gupta, Thank you for contacting vakilsearch.com.
+    It brings a great pleasure to work with you on forming your new One Person
+    Company in India. 
+ Content analysis details:   (0.5 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+                             blocked.  See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URIs: bit.ly]
+  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [198.61.254.49 listed in wl.mailspike.net]
+  0.0 KAM_SHORT              Use of a URL Shortener for very short URL
+  0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML
+                             tag
+X-Spam-Flag: NO
+
+<div class=3D"col-lg-6">=0D
+  <div class=3D"span12">=0D
+    <p>=0D
+      <p style=3D"letter-spacing:normal; margin-bottom: auto;margin-top: =
+auto;">Dear Mayank Gupta,<br>&nbsp;</p><p style=3D"letter-spacing:normal;=
+ margin-bottom: auto;margin-top: auto;">Thank you for contacting&nbsp;<a =
+href=3D"http://vakilsearch.com/">vakilsearch.com</a>.<br><br>It brings a =
+great pleasure to work with you&nbsp;on&nbsp;forming your new One Person =
+Company in India.&nbsp;<br><br>To begin with, we would require some basic=
+ set of documents from the members to start the process, such as,<br><br>=
+<strong>2 Sets of Documents are required.</strong><br>&nbsp;<br><strong>1=
+st</strong> Set (All Director):-<br>&nbsp;<br>1) Pan card<br>2) ID Proof =
+- Driving License/ Voter=E2=80=99s ID/ Passport copy<br>3) Address Proof =
+- Bank Statement/ Telephone Bill/ Mobile Bill/ Electricity Bill (Latest M=
+onth)<br>&nbsp;<br><strong>2nd</strong> Set for Office Registration.<br>&=
+nbsp;<br>1) Latest Electricity Bill<br>2) No Objection Certificate from t=
+he owner of the Premises - (Attached)<br><br><strong>WHAT IS THE PRICE?</=
+strong><br>&nbsp;<br><strong>Actual Cost:</strong><br>One Person Company =
+Registration Professional + Government fee is Rs.6999/-(all-inclusive)<br=
+>&nbsp;<br><strong>Early Bird Offer:</strong><br>Get One Person Company +=
+ GST for just <strong>Rs. 3900/- [including All Govt. Fees and Taxes] val=
+id only today.</strong><br>&nbsp;<br><strong>Payment Method:</strong><br>=
+1st payment is Rs.295/-&nbsp;(&nbsp;initial payment to start the process)=
+<br>2nd remaining payment when we go to OPC final form<br>&nbsp;<br><i>Th=
+e above-mentioned cost may vary if your authorized capital is more than 1=
+&nbsp;lakh&nbsp;and if your place of registration is Kerala or Punjab or =
+Madhya Pradesh</i><br><br><strong>WHAT IS INCLUDED IN THIS PACKAGE?&nbsp;=
+</strong><br><br>1. Directors Identification&nbsp;Number for 1 Director<b=
+r>2. Digital Signature Certificate&nbsp;for 1 Director (If the shareholde=
+rs are different from directors, then additional DSC is required for Shar=
+eholders)<br>3. Guidance for choosing the Company Name&nbsp;(Need Help in=
+ choosing your Company Name?&nbsp;<a href=3D"https://docs.google.com/docu=
+ment/d/1ejbLKCIVtt8lQtNUwrDE6K5CXRHIoCUVBij4gveeJgU/edit?pli=3D1">clickhe=
+re</a>&nbsp;to refer the Naming Guidelines OR watch our Video by clicking=
+ here -&nbsp;<a href=3D"http://bit.ly/1jD7tAX">http://bit.ly/1jD7tAX</a>)=
+<br>4. PAN Number<br>5. TAN Number<br>6. Final Registration Process inclu=
+des -&nbsp;Drafting the Memorandum &amp; Articles of Association, RoC fil=
+ing fees for an authorized capital, Government Stamp Duty and&nbsp;<stron=
+g>Certificate of Incorporation.</strong><br>7. Name Approval Certificate.=
+<br>8.GST Registration.<br>9.PF Registration.<br>10.ESI Registration.<br>=
+12.&nbsp;<strong>Kotak Mahindra&nbsp;</strong> &nbsp;Zero Balance Current=
+ Account<strong> [Powered by Vakilsearch]</strong><br><br><strong>HOW MUC=
+H TIME WILL IT TAKE TO COMPLETE THE PROCESS?</strong><br><br>Usually it t=
+akes around&nbsp;<strong>15-20</strong>&nbsp;<strong>business days</stron=
+g>&nbsp;to complete the entire process.&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;<br>If you have any queries, please don't hesitate to=
+ reach out to me. You can call me on +91 8939823953 or whatsapp me on <st=
+rong>+91 8939823953.</strong><br>&nbsp;</p><br/> <span ><strong>Note: Ple=
+ase do not change the subject of the email while replying.</strong></span=
+><br><br>---------------------------------------------<br>Thanks,<br><b>S=
+hashikala S</b><br>Business Advisor<br>Call: 7200365365 Extn.3098<br />Di=
+rect Number: 9042004072<br /><b>WhatsApp: 9042004072</b><br /><a href=3D"=
+https://calendar.google.com/calendar/embed?src=3Dvakilsearch.com_aas9v5jm=
+khmaidmpk9e72hjp6k%40group.calendar.google.com&ctz=3DAsia%2FCalcutta" tar=
+get=3D"_blank">Get tax payment and filing details on your Google calendar=
+</a><br>--------------------------------------------<br>=0D
+    </p>=0D
+  </div>=0D
+</div>=0D
+=0D

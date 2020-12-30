@@ -1,0 +1,127 @@
+Return-Path: <office@plurals.org>
+Delivered-To: mayank.gupta@sewacity.com
+Received: from server267.web-hosting.com
+	by server267.web-hosting.com with LMTP
+	id eFv2CD0vC190OAQAtyEQ0w
+	(envelope-from <office@plurals.org>)
+	for <mayank.gupta@sewacity.com>; Sun, 12 Jul 2020 11:41:49 -0400
+Return-path: <office@plurals.org>
+Envelope-to: mayank.gupta@sewacity.com
+Delivery-date: Sun, 12 Jul 2020 11:41:49 -0400
+Received: from gateway2.unifiedlayer.com ([74.220.192.215]:41502)
+	by server267.web-hosting.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.93)
+	(envelope-from <office@plurals.org>)
+	id 1jue6q-001JQj-Fq
+	for mayank.gupta@sewacity.com; Sun, 12 Jul 2020 11:41:49 -0400
+Received: from cm1.websitewelcome.com (unknown [192.185.0.102])
+	by gateway2.unifiedlayer.com (Postfix) with ESMTP id 21ADB200A3024
+	for <mayank.gupta@sewacity.com>; Sun, 12 Jul 2020 10:41:01 -0500 (CDT)
+Received: from stats.jasmine.arvixe.com ([23.91.70.100])
+	by cmsmtp with SMTP
+	id ue68j7Xg7wLnQue68jSqJV; Sun, 12 Jul 2020 10:41:01 -0500
+X-Authority-Reason: nr=8
+Received: from JASMINE (JASMINE.htx.arvixe.com [143.95.251.7]) by stats.jasmine.arvixe.com
+ with ESMTPA ; Sun, 12 Jul 2020 10:40:52 -0500
+Message-ID: <4AB18BDC-E058-4D70-9906-C683E71C1E7B@stats.jasmine.arvixe.com>
+X-AuthUser: office@plurals.org
+MIME-Version: 1.0
+From: office@plurals.org
+To: mayank.gupta@sewacity.com
+Date: 12 Jul 2020 10:40:52 -0500
+Subject: Team Plurals
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-Source-IP: 143.95.251.7
+X-Exim-ID: 4AB18BDC-E058-4D70-9906-C683E71C1E7B
+X-Sender-Auth: office@plurals.org
+X-Local-Domain: plurals.org
+X-Source-Sender: (JASMINE.htx.arvixe.com) [143.95.251.7]:
+X-Source-Cap: b2ZmaWNlO29mZmljZTtwbHVyYWxzLm9yZw==
+X-Spam-Status: No, score=1.1
+X-Spam-Score: 11
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "server267.web-hosting.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Plurals Membership confirmation We acknowledge receipt of
+   your submission. Thank you for contacting the office of Plurals and offering
+    your service as volunteer. We will put your submission before the appropriate
+    authority and you will be suitably informed about the way forward. 
+ Content analysis details:   (1.1 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [74.220.192.215 listed in wl.mailspike.net]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  1.0 KAM_LAZY_DOMAIN_SECURITY Sending domain does not have any
+                             anti-forgery methods
+X-Spam-Flag: NO
+
+<!doctype html><html><head><meta name=3D'viewport' content=3D'wid=
+th=3Ddevice-width'><meta http-equiv=3D'Content-Type' content=3D't=
+ext/html; charset=3DUTF-8'><title>Plurals Membership confirmation=
+</title><style>@media only screen and (max-width: 620px){table[cl=
+ass=3Dbody] h1{font-size:28px !important;margin-bottom:10px !impo=
+rtant}table[class=3Dbody] p, table[class=3Dbody] ul, table[class=3D=
+body] ol, table[class=3Dbody] td, table[class=3Dbody] span, table=
+[class=3Dbody] a{font-size:16px !important}table[class=3Dbody] .w=
+rapper, table[class=3Dbody] .article{padding:10px !important}tabl=
+e[class=3Dbody] .content{padding:0 !important}table[class=3Dbody]=
+ .container{padding:0 !important;width:100% !important}table[clas=
+s=3Dbody] .main{border-left-width:0 !important;border-radius:0 !i=
+mportant;border-right-width:0 !important}table[class=3Dbody] .btn=
+ table{width:100% !important}table[class=3Dbody] .btn a{width:100=
+% !important}table[class=3Dbody] .img-responsive{height:auto !imp=
+ortant;max-width:100% !important;width:auto !important}}@media al=
+l{.ExternalClass{width:100%}.ExternalClass, .ExternalClass p, .Ex=
+ternalClass span, .ExternalClass font, .ExternalClass td, .Extern=
+alClass div{line-height:100%}.apple-link a{color:inherit !importa=
+nt;font-family:inherit !important;font-size:inherit !important;fo=
+nt-weight:inherit !important;line-height:inherit !important;text-=
+decoration:none !important}#MessageViewBody a{color:inherit;text-=
+decoration:none;font-size:inherit;font-family:inherit;font-weight=
+:inherit;line-height:inherit}.btn-primary table td:hover{backgrou=
+nd-color:#34495e !important}.btn-primary a:hover{background-color=
+:#34495e !important;border-color:#34495e !important}}</style></he=
+ad><body class=3D'' style=3D'background-color: #f6f6f6; font-fami=
+ly: sans-serif; -webkit-font-smoothing: antialiased; font-size: 1=
+4px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;'><table border=3D'0' cel=
+lpadding=3D'0' cellspacing=3D'0' class=3D'body' style=3D'border-c=
+ollapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; =
+width: 100%; background-color: #f6f6f6;'><tr><td style=3D'font-fa=
+mily: sans-serif; font-size: 14px; vertical-align: top;'>&nbsp;</=
+td><td class=3D'container' style=3D'font-family: sans-serif; font=
+-size: 14px; vertical-align: top; display: block; Margin: 0 auto;=
+ max-width: 580px; padding: 10px; width: 580px;'><div class=3D'co=
+ntent' style=3D'box-sizing: border-box; display: block; Margin: 0=
+ auto; max-width: 580px; padding: 10px;'><table class=3D'main' st=
+yle=3D'border-collapse: separate; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3=
+px;'><tr><td class=3D'wrapper' style=3D'font-family: sans-serif; =
+font-size: 14px; vertical-align: top; box-sizing: border-box; pad=
+ding: 20px;'><table border=3D'0' cellpadding=3D'0' cellspacing=3D=
+'0' style=3D'border-collapse: separate; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; width: 100%;'><tr><td style=3D'font-family: =
+sans-serif; font-size: 14px; vertical-align: top;'><p style=3D'fo=
+nt-family: sans-serif; font-size: 14px; font-weight: normal; marg=
+in: 0; Margin-bottom: 15px;'>We acknowledge receipt of your submi=
+ssion. Thank you for contacting the office of Plurals and offerin=
+g your service as volunteer.</p><p style=3D'font-family: sans-ser=
+if; font-size: 14px; font-weight: normal; margin: 0; Margin-botto=
+m: 15px;'>We will put your submission before the appropriate auth=
+ority and you will be suitably informed about the way forward.</p=
+> <br ><p style=3D'font-family: sans-serif; font-size: 14px; font=
+-weight: normal; margin: 0; Margin-bottom: 15px;'>Regards.</p><p =
+style=3D'font-family: sans-serif; font-size: 14px; font-weight: n=
+ormal; margin: 0; Margin-bottom: 15px;'>Manager (HR & Admin)<br /=
+>Plurals<br /><a href=3D'mailto:office@plurals.org' target=3D'_to=
+p'>office@plurals.org<a/></p></td></tr></table></td></tr></table>=
+</div></td><td style=3D'font-family: sans-serif; font-size: 14px;=
+ vertical-align: top;'>&nbsp;</td></tr></table></body></html>
+
+
