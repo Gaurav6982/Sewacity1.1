@@ -76,6 +76,7 @@
             @if(count($carts??[])>0)
             <form method="POST" action="/foodie/sendMail" onsubmit="event.preventDefault()" id="cart-form">
                 {{ csrf_field() }}
+
                 <div class="table-responsive-sm">
                     <table class="table table-hover">
                         <thead>
@@ -94,13 +95,13 @@
                                     <td><img class="item-img" @if(isset($item->image)) src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif  alt=""></td>
                                     <td class="cont">
                                         <h5>{{$item->name}}</h5>
-                                        <p class="text">{{substr($item->desc,0,200)}} @if(strlen($item->price)>200)...@endif</p>
+                                        <p class="text">{{substr($item->desc,0,200)}} @if(strlen($item->desc)>200)...@endif</p>
                                         <p class="text" >Rs. <span id="price{{$cart->id}}" data-value="{{$item->price}}">{{$item->price}}</span> X <span id="qshow{{$cart->id}}"></span> = <span id="multiply{{$cart->id}}"></span></p>
                                     </td>
                                     <td style="display: flex">
                                         <button class="downbtn btn btn-secondary" data-id="{{$cart->id}}">-</button>
                                         <input type="hidden" name="ids[]" value="{{$cart->id}}">
-                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}">
+                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}" readonly>
                                         <button class="upbtn btn btn-secondary" data-id="{{$cart->id}}">+</button>
                                     </td>
                                     <td>
@@ -140,8 +141,13 @@
         </div>
         <div class="card-footer text-muted ">
         <p class="float-left">Total: Rs. <span id="total"></span> <span id="del-charge"></span> </p>
-
-        <button class="btn btn-primary float-right" id="pay-btn" data-toggle="modal" data-target="#confirmModal">Place Request</button>
+            <div class="float-right d-flex" >
+                <button class="btn btn-primary " id="submit">Place Request</button>
+                <div style="padding-top:4px">&nbsp; OR &nbsp;</div>
+                <input type="hidden" id="amount-input"  value="">
+                <button class="btn btn-primary " id="pay-btn">Pay Online</button>
+                
+            </div>
         </div>
     </div>
 </div>
@@ -161,12 +167,25 @@
             total+=multi;
         }
         $('#total').text(total.toFixed(2));
+        let extra=0;
         if(parseInt(total) >= 200)
-        $('#del-charge').text("+ 5");
+        {
+            $('#del-charge').text("+ 5");
+            extra=5;
+        }
         else if(parseInt(total) < 200 && parseInt(total) >= 100)
-        $('#del-charge').text("+ 10");
+        {
+            $('#del-charge').text("+ 10");
+            extra=10;
+        }
         else if(parseInt(total) < 100 && parseInt(total) > 0)
-        $('#del-charge').text("+ 20");
+        {
+            $('#del-charge').text("+ 20");
+            extra=20;
+        }
+
+        {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+        {{-- $('#amount-input').val(parseInt(total.toFixed(2))+parseInt(extra)); --}}
     });
 
 
@@ -187,12 +206,25 @@
                 total=(parseFloat($('#total').text())+parseFloat(price)).toFixed(2);
                 $('#total').text(total);
             }
+            let extra=0;
             if(parseInt(total) >= 200)
-            $('#del-charge').text("+ 5");
+            {
+                $('#del-charge').text("+ 5");
+                extra=5;
+            }
             else if(parseInt(total) < 200 && parseInt(total) >= 100)
-            $('#del-charge').text("+ 10");
+            {
+                $('#del-charge').text("+ 10");
+                extra=10;
+            }
             else if(parseInt(total) < 100 && parseInt(total) > 0)
-            $('#del-charge').text("+ 20");
+            {
+                $('#del-charge').text("+ 20");
+                extra=20;
+            }
+            {{-- if(total!==0 && extra!==0) --}}
+            {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+            {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
         })
 
         $('.downbtn').click(function(){
@@ -210,12 +242,26 @@
                 total=(parseFloat($('#total').text())-parseFloat(price)).toFixed(2);
                 $('#total').text((parseFloat($('#total').text())-parseFloat(price)).toFixed(2));
             }
+            let extra=0;
             if(parseInt(total) >= 200)
-            $('#del-charge').text("+ 5");
+            {
+                $('#del-charge').text("+ 5");
+                extra=5;
+            }
             else if(parseInt(total) < 200 && parseInt(total) >= 100)
-            $('#del-charge').text("+ 10");
+            {
+                $('#del-charge').text("+ 10");
+                extra=10;
+            }
             else if(parseInt(total) < 100 && parseInt(total) > 0)
-            $('#del-charge').text("+ 20");
+            {
+                $('#del-charge').text("+ 20");
+                extra=20;
+            }
+            
+            {{-- if(total!==0 && extra!==0)
+            $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+            {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
         })   
         $('.inquan').on("change",function(){
             var val=$(this).val();
@@ -284,7 +330,16 @@
               
             }
         });
-          
+        let total=0;
+        total=$('#total').text();
+        let extra=0;
+        if(parseInt(total) >= 200)
+            extra=5;
+        else if(parseInt(total) < 200 && parseInt(total) >= 100)
+            extra=10;
+        else if(parseInt(total) < 100 && parseInt(total) > 0)
+            extra=20;
+        {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
     });
     $('#submit').click(function(){
         const p=$('#phone').val();
@@ -299,28 +354,108 @@
         else
         $('#cart-form')[0].submit();
       })
-    $('#pay-btn').click(function(){
-        let total=parseInt($('#total').text());
-        if(total >= 200)
-        total+=5;
-        else if(total < 200 && total >= 100)
-        total+=10;
-        else if(total < 100 && total > 0)
-        total+=20;
-        localStorage.setItem('total',total);
+
+
+      //Directly Pay Online
+      $('#pay-btn').click(function(){
+        let total=0;
+        total=$('#total').text();
+        let extra=0;
+        if(parseInt(total) >= 200)
+            extra=5;
+        else if(parseInt(total) < 200 && parseInt(total) >= 100)
+            extra=10;
+        else if(parseInt(total) < 100 && parseInt(total) > 0)
+            extra=20;
+            total=parseInt(total)+parseInt(extra);
+        $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":total} });
         $.ajax({
-            url:'/payment',
-            type:'POST',
+            type:"POST",
+            url:"/payment",
+            async:false,
             data:{
-                'amount':total,
-                '_token':"{{ csrf_token() }}"
+                {{-- "amount":"{{Session::get('amount')}}", --}}
+                "_token":"{{ csrf_token() }}",
             },
             success:function(data){
-                if(data.success)
-                {
-                    localStorage.setItem('orderId',data.order_id);
-                }
+                {{-- alert(JSON.stringify(data)); --}}
+                
+                var options = {
+                    "key": "{{env('RAZORPAY_KEY_ID')}}", // Enter the Key ID generated from the Dashboard
+                    "amount":data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "SewaCity",
+                    "description": "Test Transaction",
+                    "image": "{{url('/assets/sewacitylogo.png')}}",
+                    "order_id": data.order_id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    "handler": function (response){
+                        // alert(response.razorpay_payment_id);
+                        // alert(response.razorpay_order_id);
+                        // alert(response.razorpay_signature)
+            
+                        $.ajax({
+                        type:"post",
+                        url:'/pay',
+                        async:false,
+                        data:{
+                            "razorpay_payment_id":response.razorpay_payment_id,
+                            "razorpay_order_id":response.razorpay_order_id,
+                            "razorpay_signature":response.razorpay_signature,
+                        },
+                        success:function(data){
+                            {{-- alert(JSON.stringify(data)); --}}
+                            if(data==='success')
+                            {
+                                $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","done":"true"} });
+                                $('#cart-form')[0].submit();
+                            }
+                            // Swal.fire(
+                            //         'Success!',
+                            //         'Payment Successful.',
+                            //         'success'
+                            //     )
+                            //     location.reload();
+                        },
+                        error:function(data){
+                            alert(JSON.stringify(data));
+                            // Swal.fire(
+                            //         'Error!',
+                            //         'Something Went Wrong!',
+                            //         'error'
+                            //     )
+                            //     location.reload();
+                        }
+                        })
+                    },
+                    "prefill": {
+                       
+                        @if(Auth::user()->email!=null)
+                        "email": "{{Auth::user()->email}}",
+                        @endif
+                        "name": "{{Auth::user()->name}}",
+                        "contact": "{{Auth::user()->phone}}"
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function (response){
+                        alert(response.error.code);
+                        alert(response.error.description);
+                        alert(response.error.source);
+                        alert(response.error.step);
+                        alert(response.error.reason);
+                        alert(response.error.metadata.order_id);
+                        alert(response.error.metadata.payment_id);
+                });
+                rzp1.open();
+            },
+            error:function(err)
+            {
+                alert(JSON.stringify(err));
             }
-        })      
-    })
+        })
+      });
+
 @endsection

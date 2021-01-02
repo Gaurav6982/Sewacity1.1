@@ -59,15 +59,20 @@
 			background-color: #424242;
 			z-index: -2;">
 		<div class="card">
+			<div style="
+				text-align:center
+			">
+			
 			<img src="https://i.ibb.co/x6ZwVX0/logo.png" alt="logo" border="0" class="img" style="position: absolute;
-			width: 100%;
-			height: 100%;
+			width: 50%;
+			height: 50%;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%,-50%);
 			z-index: -1;
 			opacity: 50%;
 			">
+			</div>
 			<div class="card-header" style="background-color: #E6E6E6;
 			color: black;
 			font-weight: 500;
@@ -93,13 +98,14 @@
 				<p>Registered Contact Number: {{$data['phone']}}</p>
                 <p>Registered Email: {{$data['email']}}</p>
                 <p>City: {{$data['city']}} </p>
-                <p>Restaurant: {{$data['res_name']}} </p>
+				<p>Restaurant: {{$data['res_name']}} </p>
+				<p>Payment Status: @if($data['paid']==true) Paid @else Not Done @endif</p>
 				<p>I want:</p>
 
 				<div style="margin:0;padding:0;text-align:center;">
                 	<table style="width:100%;">
                 		<thead >
-                		<tr>
+                		<tr style="color: white">
                 			<th style="border:2px solid white">No.</th>
                 			<th style="border:2px solid white">Name:</th>
                 			<th style="border:2px solid white">Price:</th>
@@ -107,10 +113,10 @@
                 			<th style="border:2px solid white">Total:</th>
                 		</tr>
                 		</thead>
-                		<tbody>
+                		<tbody style="color: white">
                 		    <?php $num=0;$sub=0;$tot=0;?>
                 		    @foreach($data['items'] as $item)
-                		        <tr>
+                		        <tr style="color: white">
                         			<td style="border:2px solid white"><?php echo ++$num;?></td>
                         			<td style="border:2px solid white">{{$item->name}}</td>
                         			<?php $sub+=$item->price*$item->quantity?>
@@ -120,18 +126,18 @@
                         			<td style="border:2px solid white">Rs.{{round($item->price)*$item->quantity}}</td>
                         		</tr>
 							@endforeach
-							<tr>
+							<tr style="color: white">
                     			<td></td>
 								<td  style="border:2px solid white" colspan="3">Sub-Total</td>
                     			<td style="border:2px solid white">Rs. {{$tot}}</td>
                     		</tr>
-							<tr>
+							<tr style="color: white">
                     			<td></td>
 								<td  style="border:2px solid white" colspan="3">Delivery Charge</td>
 								<?php $del=0;if($tot>=200)$del=5;else if($tot<200 && $tot>=100)$del=10;else $del=20;?>
                     			<td style="border:2px solid white">Rs. {{$del}}</td>
                     		</tr>
-                    		<tr>
+                    		<tr style="color: white">
                     			<td></td>
                     			<td  style="border:2px solid white" colspan="3">Total</td>
                     			<td style="border:2px solid white">Rs. {{$tot+$del}}</td>

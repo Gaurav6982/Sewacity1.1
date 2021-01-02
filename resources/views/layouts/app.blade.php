@@ -303,6 +303,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> --}}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script type="text/javascript">
     $(function(){
         $('#preloader').css('display','none');
@@ -353,7 +354,7 @@ $(function(){
     // alert($.cookie("city")); 
     @endguest
 });
-
+    
     @yield('js');
 </script>
 </html>
