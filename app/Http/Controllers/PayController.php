@@ -13,68 +13,22 @@ use App\Mail\SendFoodMail;
 class PayController extends Controller
 {
     public function pay(Request $request){
-        return response()->json($request->all());
-        $payment=Payment::where('user_id',Auth::user()->id)->where('order_id',$request->razorpay_order_id)->first();
-        $payment->razorpay_payment_id=1;
-        $payment->save();
-        $quantities=$request->input('quantities');
-        $ids=$request->input('ids');
-        $phone=$request->input('phone');
-
-        
-        $carts=Auth::user()->foodcarts;
-        $res_id;
-        // return $carts;
-        foreach($carts as $i => $cart)
+        // return response()->json($request->razorpay_order_id);
+        $api = new Api(env('RAZORPAY_KEY_ID'), env('RAZORPAY_KEY_SECRET'));
+        $attributes  = array('razorpay_signature'  => $request->razorpay_signature,  'razorpay_payment_id'  => $request->razorpay_payment_id ,  'razorpay_order_id' => $request->razorpay_order_id);
+        $order  = $api->utility->verifyPaymentSignature($attributes);
+        // return response()->json($order);
+        if(is_null($order))
         {
-            $res_id=$cart->res_id;
-            if($cart->id==$ids[$i])
-            $cart->quantity=$quantities[$i];
-            $cart->save();
+            $pay=Payment::where('order_id',$request->razorpay_order_id)->first();
+            $pay->success=1;
+            $pay->razorpay_id=$request->razorpay_payment_id;
+            $pay->save();
+
+            return response()->json('success');
         }
-        if(isset($res_id))
-        $res_name=Restaurants::find($res_id);
         else
-        $res_name="NOT FOUND";
-        // return $carts;
-        //return $items;
-        $user=Auth::user();
-        if($carts==null)
-        return back()->with('error','There might be Some Error');
-
-        if(isset($phone))
-        $contact=$phone;
-        else
-        $contact=Auth::user()->phone;
-        $items=[];
-        foreach($carts as $i=>$cart){
-            $item=Menu::where('id',$cart->food_id)->first();
-            $new_item=new itemaa($item->name,intval($item->price),intval($cart->quantity));
-            array_push($items,$new_item);
-        }
-        $data=array(
-            'name'=>Auth::user()->name,
-            'phone'=>$contact,
-            'email'=>Auth::user()->email,
-            'res_name'=>$res_name->name,
-            'city'=>$user->city()->first()->city_name,
-            'items'=>$items,
-        );
-
-        // return $data;
-        if($user->email!=null)
-        Mail::to($user->email)->send(new SendFoodMail($data));
-
-        Mail::to('sewacityfbg@gmail.com')->send(new SendFoodMail($data));
-
-        foreach ($carts as $cart) {
-            $cartitem=FoodCart::find($cart->id);
-            $cartitem->delete();
-        }
-        $user->no_of_requests=$user->no_of_requests+1;
-        $user->update();
-        // if(Auth::user()->city_id==1)
-        return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        return response()->json('Something Went Wrong!',400);
     }
     public function payment(Request $request){
         $user=Auth::user()->id;
@@ -104,6 +58,15 @@ class PayController extends Controller
     public function set_amount(Request $request)
     {
         Session::put('amount',$request->amount);
+    }
+    public function set_success(Request $request)
+    {
+        if($request->done=="true")
+        {
+            Session::put('payDone',true);
+            return;
+        }
+        return;
     }
     public function success(){
         return view('success');

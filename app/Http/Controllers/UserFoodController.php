@@ -178,6 +178,7 @@ class UserFoodController extends Controller
             'name'=>Auth::user()->name,
             'phone'=>$contact,
             'email'=>Auth::user()->email,
+            'paid'=>Session::get('payDone')??false,
             'res_name'=>$res_name->name,
             'city'=>$user->city()->first()->city_name,
             'items'=>$items,

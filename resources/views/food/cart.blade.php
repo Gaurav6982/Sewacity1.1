@@ -76,6 +76,7 @@
             @if(count($carts??[])>0)
             <form method="POST" action="/foodie/sendMail" onsubmit="event.preventDefault()" id="cart-form">
                 {{ csrf_field() }}
+
                 <div class="table-responsive-sm">
                     <table class="table table-hover">
                         <thead>
@@ -100,7 +101,7 @@
                                     <td style="display: flex">
                                         <button class="downbtn btn btn-secondary" data-id="{{$cart->id}}">-</button>
                                         <input type="hidden" name="ids[]" value="{{$cart->id}}">
-                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}" disabled>
+                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}" readonly>
                                         <button class="upbtn btn btn-secondary" data-id="{{$cart->id}}">+</button>
                                     </td>
                                     <td>
@@ -402,7 +403,12 @@
                             "razorpay_signature":response.razorpay_signature,
                         },
                         success:function(data){
-                            alert(JSON.stringify(data));
+                            {{-- alert(JSON.stringify(data)); --}}
+                            if(data==='success')
+                            {
+                                $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","done":"true"} });
+                                $('#cart-form')[0].submit();
+                            }
                             // Swal.fire(
                             //         'Success!',
                             //         'Payment Successful.',
@@ -411,6 +417,7 @@
                             //     location.reload();
                         },
                         error:function(data){
+                            alert(JSON.stringify(data));
                             // Swal.fire(
                             //         'Error!',
                             //         'Something Went Wrong!',
