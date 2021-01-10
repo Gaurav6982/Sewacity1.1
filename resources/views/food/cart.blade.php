@@ -202,7 +202,6 @@
                 $('#qshow'+id).text(newv);
                 const price=$('#price'+id).data("value");
                 $('#multiply'+id).text((newv*parseFloat(price)).toFixed(2));
-                {{-- console.log($('#total').text()); --}}
                 total=(parseFloat($('#total').text())+parseFloat(price)).toFixed(2);
                 $('#total').text(total);
             }
@@ -385,14 +384,11 @@
                     "amount":data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
                     "name": "SewaCity",
-                    "description": "Test Transaction",
+                    "description": "Food Payment",
                     "image": "{{url('/assets/sewacitylogo.png')}}",
                     "order_id": data.order_id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     "handler": function (response){
-                        // alert(response.razorpay_payment_id);
-                        // alert(response.razorpay_order_id);
-                        // alert(response.razorpay_signature)
-            
+                        //to Save this order sync
                         $.ajax({
                         type:"post",
                         url:'/pay',
@@ -404,26 +400,27 @@
                         },
                         success:function(data){
                             {{-- alert(JSON.stringify(data)); --}}
+                            Swal.fire(
+                                     'Success!',
+                                     'Payment Successful.',
+                                        'success'
+                             );
                             if(data==='success')
                             {
                                 $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","done":"true"} });
                                 $('#cart-form')[0].submit();
                             }
-                            // Swal.fire(
-                            //         'Success!',
-                            //         'Payment Successful.',
-                            //         'success'
-                            //     )
+                            
                             //     location.reload();
                         },
                         error:function(data){
-                            alert(JSON.stringify(data));
-                            // Swal.fire(
-                            //         'Error!',
-                            //         'Something Went Wrong!',
-                            //         'error'
-                            //     )
-                            //     location.reload();
+                            <!--alert(JSON.stringify(data));-->
+                             Swal.fire(
+                                     'Error!',
+                                     'Something Went Wrong!',
+                                     'error'
+                                 )
+                                 location.reload();
                         }
                         })
                     },
@@ -441,19 +438,26 @@
                 };
                 var rzp1 = new Razorpay(options);
                 rzp1.on('payment.failed', function (response){
-                        alert(response.error.code);
-                        alert(response.error.description);
-                        alert(response.error.source);
-                        alert(response.error.step);
-                        alert(response.error.reason);
-                        alert(response.error.metadata.order_id);
-                        alert(response.error.metadata.payment_id);
+                        <!--alert("Payment Failed");-->
+                        Swal.fire(
+                             'Error!',
+                             'Something Went Wrong!',
+                             'error'
+                         )
+                         location.reload();
                 });
                 rzp1.open();
             },
             error:function(err)
             {
-                alert(JSON.stringify(err));
+                <!--alert("Error");-->
+                Swal.fire(
+                                     'Error!',
+                                     'Something Went Wrong!',
+                                     'error'
+                                 )
+                                 location.reload();
+                <!--alert(JSON.stringify(err));-->
             }
         })
       });
