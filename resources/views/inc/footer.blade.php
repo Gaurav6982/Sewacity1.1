@@ -53,7 +53,7 @@
                 </div> --}}
               </div>
               <hr style="background-color: white">
-              <b> &copy; 2020 Sewacity.com &nbsp;, All rights reserved | <a href='/privacy'>Privacy Policy</a> | <a href="/terms-and-conditions">Terms and Conditions</a> </b> </div>
+              <b> &copy; 2021 Sewacity.com &nbsp;, All rights reserved | <a href='/privacy'>Privacy Policy</a> | <a href="/terms-and-conditions">Terms and Conditions</a> </b> </div>
 
  </div>
 
