@@ -134,7 +134,7 @@
 							<tr style="color: white">
                     			<td></td>
 								<td  style="border:2px solid white" colspan="3">Delivery Charge</td>
-								<?php $del=0;if($tot>=200)$del=5;else if($tot<200 && $tot>=100)$del=10;else $del=20;?>
+								<?php $del=0;if($tot>=100)$del=10;else $del=20;?>
                     			<td style="border:2px solid white">Rs. {{$del}}</td>
                     		</tr>
                     		<tr style="color: white">
@@ -146,20 +146,13 @@
                 	</table>
             	</div>
 
-            	<div class="container">
-        	        <p style="color:white;">Dear Customer,
-
-Our Country Bharat, is going through challenging times. Due to the current circumstances in Covid-19, product availability may take some time. We will get back to you within the next 12 hours. Thank You for giving a chance to Indian Brands Focused startup -Sewacity.</p>
-        	        <p style="color:#00ff00;">हमारा देश, भारत,आज एक चुनौतीपूर्ण दौर से गुजर रहा है | कोविद -19 में वर्तमान परिस्थितियों के कारण, प्रोडक्ट्स की उपलब्धता में थोड़ा समय लग सकता है | अतः आर्डर की पुष्टि आपको अगले 12 घंटो में दे दी जायेगी  | भारतीय ब्रांड्स पर केंद्रित स्टार्टअप - सेवासिटी  , का साथ देने के लिए सदा आपके आभारी रहेंगे |</p>
-        	    </div>
-
-				Thank You for Using Our Website.!
+				Thank You for Using Our Website.! See You Soon !
 			</div>
 		</div>
 
 	</div>
 	<footer>
-		<center>@SewaCity 2020</center>
+		<center>@SewaCity 2021</center>
 	</footer>
 </body>
 </html>

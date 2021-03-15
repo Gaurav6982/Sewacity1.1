@@ -117,12 +117,12 @@ class CartController extends Controller
         }
         $user->no_of_requests=$user->no_of_requests+1;
         $user->update();
-        if(Auth::user()->city_id==1)
+        // if(Auth::user()->city_id==1)
         return redirect('/products?category=0&searchbox=&sort=latest&page=1')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
-        else
-        {
-            return redirect('/patna/products?category=0&searchbox=&sort=latest&page=1')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
-        }
+        // else
+        // {
+        //     return redirect('/patna/products?category=0&searchbox=&sort=latest&page=1')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        // }
 
     }
     public function update(Request $request,$id)

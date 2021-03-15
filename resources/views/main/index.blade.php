@@ -321,12 +321,14 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     #city-select{
         
         margin-top: 10px;
+        width:45%;
+        /* overflow: hidden; */
         /* min-width: 100px; */
         padding: 2px 25px 2px 6px;
         height: 50px;
         background-color:grey;
         letter-spacing: 3px;
-        appearance: none;
+        /* appearance: none; */
         position: relative;
     }
     #city-select-parent{
@@ -339,11 +341,12 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         /* border: 2px solid black; */
 
     }
-    #city-select-parent #icon{
+    #city-select #icon{
         position: absolute;
         /* display: none; */
         /* right: 10px; */
-        left: 120px;
+        right: 0px;
+        z-index: 9999;
         pointer-events: none;
         width: 30px;
         background-color: black;
@@ -536,11 +539,13 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 <div class="row" id="navbar-outer">
                     <div class="col-md-4 col-sm-12" id="city-select-parent">
                         <select name="" id="city-select">
+                            {{-- <div id="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>ww --}}
                             @foreach ($cities as $item)
                                 <option value="{{$item->id}}" @auth @if(Auth::user()->city_id==$item->id)selected @else disabled @endif @endauth >{{$item->city_name}}</option>
                             @endforeach
+                            
                         </select>
-                        <div id="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                        
                     </div>
                     <div class="col-md-4 col-sm-12 text-center">
                         <h2 class="my-md-3 site-title text-white">SEWACITY</h2>

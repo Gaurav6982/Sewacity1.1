@@ -126,8 +126,8 @@
                 <small style="opacity: 0.6">
                 <p >Delivery Charges Info:</p>
                 <ul class="float-left">
-                    <li>Rs. 5 Above a Total of Rs.200</li>
-                    <li>Rs. 10 Above a Total Rs. 100 and Below Rs. 200</li>
+                    {{-- <li>Rs. 5 Above a Total of Rs.200</li> --}}
+                    <li>Rs. 10 Above a Total Rs. 100</li>
                     <li>Rs. 20 Below Rs. 100</li>
                 </ul>
                 </small>
@@ -168,12 +168,7 @@
         }
         $('#total').text(total.toFixed(2));
         let extra=0;
-        if(parseInt(total) >= 200)
-        {
-            $('#del-charge').text("+ 5");
-            extra=5;
-        }
-        else if(parseInt(total) < 200 && parseInt(total) >= 100)
+        if(parseInt(total) >= 100)
         {
             $('#del-charge').text("+ 10");
             extra=10;
@@ -206,12 +201,7 @@
                 $('#total').text(total);
             }
             let extra=0;
-            if(parseInt(total) >= 200)
-            {
-                $('#del-charge').text("+ 5");
-                extra=5;
-            }
-            else if(parseInt(total) < 200 && parseInt(total) >= 100)
+            if(parseInt(total) >= 100)
             {
                 $('#del-charge').text("+ 10");
                 extra=10;
@@ -242,12 +232,7 @@
                 $('#total').text((parseFloat($('#total').text())-parseFloat(price)).toFixed(2));
             }
             let extra=0;
-            if(parseInt(total) >= 200)
-            {
-                $('#del-charge').text("+ 5");
-                extra=5;
-            }
-            else if(parseInt(total) < 200 && parseInt(total) >= 100)
+            if(parseInt(total) >= 100)
             {
                 $('#del-charge').text("+ 10");
                 extra=10;
@@ -332,9 +317,7 @@
         let total=0;
         total=$('#total').text();
         let extra=0;
-        if(parseInt(total) >= 200)
-            extra=5;
-        else if(parseInt(total) < 200 && parseInt(total) >= 100)
+        if(parseInt(total) >= 100)
             extra=10;
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
@@ -351,7 +334,10 @@
             },3000);
         }
         else
-        $('#cart-form')[0].submit();
+        {
+            $.ajax({url:"/set-fail",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}"} });
+            $('#cart-form')[0].submit();
+        }
       })
 
 
@@ -360,9 +346,7 @@
         let total=0;
         total=$('#total').text();
         let extra=0;
-        if(parseInt(total) >= 200)
-            extra=5;
-        else if(parseInt(total) < 200 && parseInt(total) >= 100)
+        if(parseInt(total) >= 100)
             extra=10;
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
@@ -407,7 +391,7 @@
                              );
                             if(data==='success')
                             {
-                                $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","done":"true"} });
+                                $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}"} });
                                 $('#cart-form')[0].submit();
                             }
                             

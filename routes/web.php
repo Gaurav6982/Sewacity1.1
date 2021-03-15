@@ -105,4 +105,5 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('pay','PayController@pay');
     Route::post('set-amount','PayController@set_amount');
     Route::post('set-success','PayController@set_success');
+    Route::post('set-fail','PayController@set_fail');
 });

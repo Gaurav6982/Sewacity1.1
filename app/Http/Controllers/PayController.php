@@ -61,11 +61,12 @@ class PayController extends Controller
     }
     public function set_success(Request $request)
     {
-        if($request->done=="true")
-        {
-            Session::put('payDone',true);
-            return;
-        }
+        Session::put("payDone",true);
+        return;
+    }
+    public function set_fail(Request $request)
+    {
+        Session::put("payDone",false);
         return;
     }
     public function success(){
