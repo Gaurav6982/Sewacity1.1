@@ -709,6 +709,14 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         <div class="swiper-slide">
                             <div class="ImgBx">
 
+                                <a href="{{url('/products?category=58&sort=latest&searchbox=')}}">
+
+                                 <img src="./assets/holi-special.webp"> </div>
+                            <div class="ImgDetails"> Buy Now </div> </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="ImgBx">
+
                                 <a href="https://sewacity.com/products?category=8&sort=latest&searchbox=">
 
                                  <img src="./assets/cosban1.webp"> </div>
@@ -762,13 +770,13 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 </div> <br>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card hover-over"> <a href=""><img class="card-img-top" src="{{asset('/assets/holi-special.jpeg')}}"
+                        <div class="card hover-over"> <a href=""><img class="card-img-top" src="{{asset('/assets/E-Commerce.jpg')}}"
                                     alt="Card image cap"></a>
                             <div class="card-body">
                                 <p class="card-text">E-Commerce</p>
                             </div>
                             <div class="overlay">
-                                <div class="overlay-text"><a href="https://sewacity.com/products?category=58&sort=latest&searchbox="
+                                <div class="overlay-text"><a href="https://sewacity.com/products?"
                                         class="btn btn-secondary">Go Shopping!</a></div>
                             </div>
                         </div>
