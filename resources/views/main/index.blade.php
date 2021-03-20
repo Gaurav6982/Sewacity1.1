@@ -762,13 +762,13 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 </div> <br>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card hover-over"> <a href=""><img class="card-img-top" src="./assets/E-C0mmerce.jpg"
+                        <div class="card hover-over"> <a href=""><img class="card-img-top" src="{{asset('/assets/holi-special.jpeg')}}"
                                     alt="Card image cap"></a>
                             <div class="card-body">
                                 <p class="card-text">E-Commerce</p>
                             </div>
                             <div class="overlay">
-                                <div class="overlay-text"><a href="/products?category=0&searchbox=&sort=latest&page=1"
+                                <div class="overlay-text"><a href="https://sewacity.com/products?category=58&sort=latest&searchbox="
                                         class="btn btn-secondary">Go Shopping!</a></div>
                             </div>
                         </div>

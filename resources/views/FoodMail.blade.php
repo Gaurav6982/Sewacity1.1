@@ -146,7 +146,9 @@
                 	</table>
             	</div>
 
-				Thank You for Using Our Website.! See You Soon !
+				Dear {{$data['name']}},<br>
+				We have received your order and will begin processing it soon.<br>
+				Thank you for giving a chance to Indian brand focused Startup Sewacity.
 			</div>
 		</div>
 
