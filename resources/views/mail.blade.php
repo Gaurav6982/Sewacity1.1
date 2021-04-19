@@ -91,6 +91,7 @@
 			z-index: 2">
 						<p>Hello, This is {{$data['name']}}</p>
 				<p>Registered Contact Number: {{$data['phone']}}</p>
+				{{-- <p>Delivery Address: {{$data['address']}}</p> --}}
                 <p>Registered Email: {{$data['email']}}</p>
                 <p>City: {{$data['city']}} </p>
 				<p>I want:</p>

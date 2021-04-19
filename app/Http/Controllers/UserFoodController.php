@@ -142,7 +142,8 @@ class UserFoodController extends Controller
         $quantities=$request->input('quantities');
         $ids=$request->input('ids');
         $phone=$request->input('phone');
-
+        $address=$request->input('address');
+        $set_default_address=$request->input('default_address');
         
         $carts=Auth::user()->foodcarts;
         $res_id;
@@ -177,13 +178,14 @@ class UserFoodController extends Controller
         $data=array(
             'name'=>Auth::user()->name,
             'phone'=>$contact,
+            'address'=>$address,
             'email'=>Auth::user()->email,
             'paid'=>Session::get('payDone')??false,
             'res_name'=>$res_name->name,
             'city'=>$user->city()->first()->city_name,
             'items'=>$items,
         );
-
+        Session::pull('payDone');
         // return $data;
         if($user->email!=null)
         Mail::to($user->email)->send(new SendFoodMail($data));
@@ -195,6 +197,8 @@ class UserFoodController extends Controller
             $cartitem->delete();
         }
         $user->no_of_requests=$user->no_of_requests+1;
+        if($set_default_address=="on")
+        $user->address=$address;
         $user->update();
         // if(Auth::user()->city_id==1)
         return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');

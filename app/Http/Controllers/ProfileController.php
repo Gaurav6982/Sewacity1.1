@@ -25,6 +25,7 @@ class ProfileController extends Controller
     	$user=Auth::user();
     	$user->name=$request->input('name');
     	$user->email=$request->input('email');
+    	$user->address=$request->input('address');
     	$user->city_id=$request->input('city');
     	$user->update();
     	return back()->with('success','Profile Updated');

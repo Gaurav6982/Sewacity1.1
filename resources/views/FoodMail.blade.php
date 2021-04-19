@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sewa city</title>
+	<title>SewaCity</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,42 +11,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
-	<style type="text/css">
-		.container{
-			border: 1px solid grey;
-			border-radius: 20px;
-			position: relative;
-		}
-		.card{
-			/*position: relative;*/
-		}
-		.card-header{
-			background-color: #E6E6E6;
-			color: black;
-			font-weight: 500;
-			/*padding: 0.1px;*/
-			border-radius: 20px;
-			border: 1px solid grey;
-			border-bottom: 2px solid black;
-		}
-		.card-body{
-			/*margin-left: 40%;*/
-			border: 2px solid #F2F2F2;
-			border-radius: 5px;
-			margin-left:35%;
-			margin-right: 25%;
-			padding: 20px;
-		}
-		th,tr,td{
-		    border:2px solid white !important;
-		}
-		@media only screen and (max-width:450px)
-		{
-		    tr{
-		        font-size:10px;
-		    }
-		}
-	</style>
+	
 <body>
 	<div class="container" style="
 			border: 1px solid grey;
@@ -56,7 +21,7 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
-			background-color: #424242;
+			background-color: white;
 			z-index: -2;">
 		<div class="card">
 			<div style="
@@ -91,12 +56,13 @@
 			/*margin-left:35%;*/
 			/*margin-right: 25%;*/
 			padding:2px;
-			color: white;
+			color: black;
 			border: 2px solid #F2F2F2;
 			z-index: 2">
 						<p>Hello, This is {{$data['name']}}</p>
 				<p>Registered Contact Number: {{$data['phone']}}</p>
                 <p>Registered Email: {{$data['email']}}</p>
+				<p>Delivery Address: {{$data['address']}}</p>
                 <p>City: {{$data['city']}} </p>
 				<p>Restaurant: {{$data['res_name']}} </p>
 				<p>Payment Status: @if($data['paid']==true) Paid @else Not Done @endif</p>
@@ -105,42 +71,42 @@
 				<div style="margin:0;padding:0;text-align:center;">
                 	<table style="width:100%;">
                 		<thead >
-                		<tr style="color: white">
-                			<th style="border:2px solid white">No.</th>
-                			<th style="border:2px solid white">Name:</th>
-                			<th style="border:2px solid white">Price:</th>
-                			<th style="border:2px solid white">Qty:</th>
-                			<th style="border:2px solid white">Total:</th>
+                		<tr style="color: black">
+                			<th style="border:2px solid black">No.</th>
+                			<th style="border:2px solid black">Name:</th>
+                			<th style="border:2px solid black">Price:</th>
+                			<th style="border:2px solid black">Qty:</th>
+                			<th style="border:2px solid black">Total:</th>
                 		</tr>
                 		</thead>
-                		<tbody style="color: white">
+                		<tbody style="color: black">
                 		    <?php $num=0;$sub=0;$tot=0;?>
                 		    @foreach($data['items'] as $item)
-                		        <tr style="color: white">
-                        			<td style="border:2px solid white"><?php echo ++$num;?></td>
-                        			<td style="border:2px solid white">{{$item->name}}</td>
+                		        <tr style="color: black">
+                        			<td style="border:2px solid black"><?php echo ++$num;?></td>
+                        			<td style="border:2px solid black">{{$item->name}}</td>
                         			<?php $sub+=$item->price*$item->quantity?>
-                        			<td style="border:2px solid white">Rs. {{$item->price}}</td>
-                        			<td style="border:2px solid white">{{$item->quantity}}</td>
+                        			<td style="border:2px solid black">Rs. {{$item->price}}</td>
+                        			<td style="border:2px solid black">{{$item->quantity}}</td>
                         			<?php $tot+=round($item->price)*$item->quantity?>
-                        			<td style="border:2px solid white">Rs.{{round($item->price)*$item->quantity}}</td>
+                        			<td style="border:2px solid black">Rs.{{round($item->price)*$item->quantity}}</td>
                         		</tr>
 							@endforeach
-							<tr style="color: white">
+							<tr style="color: black">
                     			<td></td>
-								<td  style="border:2px solid white" colspan="3">Sub-Total</td>
-                    			<td style="border:2px solid white">Rs. {{$tot}}</td>
+								<td  style="border:2px solid black" colspan="3">Sub-Total</td>
+                    			<td style="border:2px solid black">Rs. {{$tot}}</td>
                     		</tr>
-							<tr style="color: white">
+							<tr style="color: black">
                     			<td></td>
-								<td  style="border:2px solid white" colspan="3">Delivery Charge</td>
+								<td  style="border:2px solid black" colspan="3">Delivery Charge</td>
 								<?php $del=0;if($tot>=100)$del=10;else $del=20;?>
-                    			<td style="border:2px solid white">Rs. {{$del}}</td>
+                    			<td style="border:2px solid black">Rs. {{$del}}</td>
                     		</tr>
-                    		<tr style="color: white">
+                    		<tr style="color: black">
                     			<td></td>
-                    			<td  style="border:2px solid white" colspan="3">Total</td>
-                    			<td style="border:2px solid white">Rs. {{$tot+$del}}</td>
+                    			<td  style="border:2px solid black" colspan="3">Total</td>
+                    			<td style="border:2px solid black">Rs. {{$tot+$del}}</td>
                     		</tr>
                 		</tbody>
                 	</table>

@@ -115,14 +115,20 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-md-4 offset-md-4">
+                    <div class="col-md-4 offset-md-2">
                         <label for="phone">Enter Contact Number:</label>
                         <input type="number" name="phone" class="form-control" id="phone">
                         <p style="color: red" id="warning"></p>
                     </div>
+                    <div class="col-md-4">
+                        <label for="address">Enter Delivery Address:</label>
+                        <input type="text" name="address" class="form-control" id="address" value="{{Auth::user()->address??''}}">
+                        <p style="color: red" id="warning-address"></p>
+                        <input type="checkbox" name="default_address" id="default_address">&nbsp;<span>Set as Default Address</span>
+                    </div>
                 </div>
                 <hr>
-                <p style="opacity: 0.6;padding:0;font-size:12px;width:100%;text-align:center" >Leave it Empty if you want us to contact on your rgeistered mobile number only.</p>
+                <p style="opacity: 0.6;padding:0;font-size:12px;width:100%;text-align:center" >Leave it Empty if you want us to contact on your registered mobile number only.</p>
                 <small style="opacity: 0.6">
                 <p >Delivery Charges Info:</p>
                 <ul class="float-left">
@@ -140,7 +146,9 @@
         
         </div>
         <div class="card-footer text-muted ">
-        <p class="float-left">Total: Rs. <span id="total"></span> <span id="del-charge"></span> </p>
+            
+            <p class="float-left">Total: Rs. <span id="total"></span> <span id="del-charge"></span> </p>
+            @if(count($carts??[])>0)
             <div class="float-right d-flex" >
                 <button class="btn btn-primary " id="submit">Place Request</button>
                 <div style="padding-top:4px">&nbsp; OR &nbsp;</div>
@@ -148,6 +156,7 @@
                 <button class="btn btn-primary " id="pay-btn">Pay Online</button>
                 
             </div>
+            @endif
         </div>
     </div>
 </div>
@@ -335,6 +344,7 @@
         }
         else
         {
+            $('#preloader').css('display','unset');
             $.ajax({url:"/set-fail",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}"} });
             $('#cart-form')[0].submit();
         }

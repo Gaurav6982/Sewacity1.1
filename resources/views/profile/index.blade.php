@@ -38,6 +38,10 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="form-group">
+                            {{Form::label('address','Address:')}}
+                            {{Form::text('address',$user->address??'',['class'=>'form-control','placeholder'=>'Enter Address:'])}}
+                        </div>
                         <!-- <div class="form-group">
                             {{Form::label('image','Email Address:')}}
                             {{Form::text('email',$user->email,['class'=>'form-control','placeholder'=>'Enter Email Address:','disabled'])}}

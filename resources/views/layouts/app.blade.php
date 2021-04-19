@@ -248,7 +248,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                                     @if(Auth::user()->usertype=='admin' || Auth::user()->usertype=='special')
                                     <a  class="dropdown-item" href="/dashboard" >Admin Panel</a>
                                     <a href="/posts?category=0&searchbox=&page=1" class="dropdown-item">Manage Products</a>
-                                    <a href="/users" class="dropdown-item">User Deatils</a>
+                                    <a href="/users" class="dropdown-item">User Details</a>
                                     @endif
                                     <a href="/profile" class="dropdown-item">Profile Settings</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -308,9 +308,9 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     $(function(){
         $('#preloader').css('display','none');
 
-        $('#submit').click(function(){
-		    $('#preloader').css('display','unset');
-	    });
+        // $('#submit').click(function(){
+		//     $('#preloader').css('display','unset');
+	    // });
   var str = '#len';
   $(document).ready(function(){
     var i, stop;
