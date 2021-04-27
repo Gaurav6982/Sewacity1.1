@@ -203,4 +203,136 @@ class UserFoodController extends Controller
         // if(Auth::user()->city_id==1)
         return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
     }
+    public function filterInRes(Request $request,$res_id)
+    {
+        if($request->input('query')=='')
+        {
+            $items=Menu::where('res_id',$res_id)->get();
+        }
+        else{
+            $inc=$request->input('selected')==1?'inc':'desc';
+            $items=Menu::where('res_id',$res_id)->where('name','like',$query.'%')->orderBy('price',$inc)->get();
+        }
+        $data='<h4 class="my-2">Menu ('.count($items??[]).' items)</h4>';
+        if(count($items??[])>0){
+            $data.='<div class="row">';
+              
+            foreach($items as $item){
+                $data.='<div class="col-md-12 my-4">
+                <div class="card">
+                    <div class="card-body" style="padding:5px">
+                    <div class="row">
+                        <p style="position:absolute;right:5px;top:5px">';
+                if(isset($item->is_veg)){
+                    if($item->is_veg==1){
+                        $data.='<img src="https://img.icons8.com/color/48/000000/vegetarian-food-symbol.png"/>';
+                    }
+                    else{
+                        $data.='<img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"/>';
+                    }
+                }
+                $data.='</p>
+                <div class="col-md-4 col-xs-4">
+                <img class="card-img-top item-img" ';
+                if($item->image)
+                    $data.='src="{{asset('.'storage/restaurants/items/'.$item->image.')}}"';
+                else 
+                    $data.='src="https://via.placeholder.com/150"';
+                $data.='alt="Card image cap">
+                </div> 
+                <div class="col-md-8 col-xs-8 content">';
+                $data.='<p class="stylish">Name : '.$item->name.'</p>';
+                $data.='<p class="stylish">Price : '.$item->price.'</p>';
+                $data.='<p class="stylish"> '.$item->desc.'</p>';
+                $data.='                              </div>
+                </div>
+                <div class="float-right">';
+                //if guest
+                if(!Auth::user())
+                {
+                    $data.='<div style="" class="quandiv" id="quandiv'.$item->id.'">';
+                    $data.='<button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                    </div>
+                    <a class="btn btn-primary add-cart" data-id="'.$item->id.'" id="cart'.$item->id.'">Add to Cart</a>';
+                }
+                else{
+                    $carts=Auth::user()->foodcarts;
+                    $done=false;
+                }
+
+            }//end foreach
+        }
+            
+        $data.='';
+        return response()->json($data);
+        // return response()->json(["data"=>$request->all()." ".$res_id]);
+    }
 }
+
+
+<h4 class="my-2">Menu ({{count($items??[])}} items)</h4>
+@if(count($items??[])>0)
+    <div class="row">
+      @foreach ($items as $item)
+          <div class="col-md-12 my-4">
+            <div class="card">
+                <div class="card-body" style="padding:5px">
+                  <div class="row">
+                    <p style="position:absolute;right:5px;top:5px">
+                      @if(isset($item->is_veg))
+                        @if($item->is_veg==1)
+                        <img src="https://img.icons8.com/color/48/000000/vegetarian-food-symbol.png"/>
+                        @else
+                        <img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"/>
+                        @endif
+                      @else
+
+                      @endif
+                    </p>
+                      <div class="col-md-4 col-xs-4">
+                        <img class="card-img-top item-img"  @if($item->image)src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap">
+                      </div>
+                    
+                      <div class="col-md-8 col-xs-8 content">
+                            <p class="stylish">Name : {{$item->name}}</p>
+                            <p class="stylish">Price :Rs. {{$item->price}}</p>
+                            <p class="stylish">{{$item->desc}}</p>
+                      </div>
+                  </div>
+                  <div class="float-right">
+                    @guest
+                    <div style="" class="quandiv" id="quandiv{{$item->id}}">
+                      <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                    </div>
+                    <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                    @else
+                    <?php $carts=Auth::user()->foodcarts;$done=false;?>
+                    @foreach ($carts as $cart)
+                        @if ($cart->food_id==$item->id)
+                          <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}" style="display: none">Add to Cart</a>
+                          <div style="height:35px" class="quandiv" id="quandiv{{$item->id}}">
+                            <button class="btn btn-danger sub"id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="{{$cart->quantity}}" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
+                          </div>
+                        <?php $done=true; break;?>
+                        @endif
+                    @endforeach
+                    @if(!$done)
+                    <div style="" class="quandiv" id="quandiv{{$item->id}}">
+                      <button class="btn btn-danger sub" id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="1" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
+                    </div>
+                    <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                    @endif
+                    @endif
+                  </div>
+                </div>
+                
+              </div>
+          </div>
+      @endforeach
+        
+    </div>
+  @else
+  <div class="my-4">
+    No Items Found
+  </div>
+  @endif

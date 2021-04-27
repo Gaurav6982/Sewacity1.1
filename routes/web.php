@@ -29,6 +29,8 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');
     Route::post('sliders/addSlide/{id}','SlidersController@addSlide');
+    Route::post('sliders/{slider_id}/editSlide/{slide_id}','SlidersController@editSlide');
+    Route::delete('sliders/{slider_id}/delete/{slide_id}','SlidersController@deleteSlide');
 });
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
@@ -73,6 +75,7 @@ Route::get('/privacy',function(){
     return view('others.privacy');
 });
 Route::get('/foodie','UserFoodController@index');
+Route::post('/foodie/{res_id}/filter','UserFoodController@filterInRes');
 Route::get('/foodie/cart','UserFoodController@show_cart')->middleware('auth');
 Route::post('/foodie/sendMail','UserFoodController@sendMail')->middleware('auth');
 Route::delete('/foodie/delete/{id}','UserFoodController@deleteitem')->middleware('auth');

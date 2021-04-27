@@ -9,6 +9,8 @@ use App\Feedback;
 use App\City;
 use Auth;
 use App\Categories;
+use App\Sliders;
+use App\FrontPageSliders;
 use Session;
 // session_start();
 class Main extends Controller
@@ -22,7 +24,22 @@ class Main extends Controller
         // $posts=POsts::all();
         $cities=City::where('is_active',1)->orderBy('order')->get();
         $feeds=Feedback::where('is_approved','=','1')->get();
-        return view('main.index')->with('feeds',$feeds)->with('cities',$cities);
+        $sliders=Sliders::where('is_active',1)->get();
+        $slides=[];
+        foreach($sliders as $slider){
+            $slds=FrontPageSliders::where('slider_id',$slider->id)->where('is_active',1)->get();
+            $slides[$slider->id]=$slds;
+        }
+        $data=array(
+            'feeds'=>$feeds,
+            'cities'=>$cities,
+            'sliders'=>$sliders,
+            'slides'=>$slides
+        );
+        // return $slides;
+        // dd($sliders);
+        // dd($slides);
+        return view('main.index')->with($data);
     }
 
 

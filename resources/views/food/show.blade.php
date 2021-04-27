@@ -55,7 +55,61 @@
         overflow: hidden;
         transition: 0.5s ease;
       }
-      @media only screen and (max-width:600px)
+      
+      .search {
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px
+}
+
+.search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 20px;
+    transition: width 0.4s linear
+}
+
+.search .search-input {
+    padding: 0 10px;
+    width: 100%;
+    caret-color: #536bf6;
+    font-size: 19px;
+    font-weight: 300;
+    color: black;
+    transition: width 0.4s linear
+}
+
+.search-icon {
+    height: 34px;
+    width: 34px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #536bf6;
+    font-size: 10px;
+    bottom: 30px;
+    position: relative;
+    border-radius: 5px
+}
+
+.search-icon:hover {
+    color: #fff !important
+}
+.px-6{
+  padding: 0 4rem;
+}
+@media only screen and (max-width:600px)
       {
         .item-img{
           width: 50%;
@@ -75,14 +129,16 @@
 @endsection
 @section('content')
     <div class="container-fluid">
-        <div class="jumbotron jumbotron-fluid" style="color: green;padding:20px 3px;
-        box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;border-radius:15px" >
+      <div class="row">
+        <div class="col-md-6 my-2">
+        <div class="jumbotron jumbotron-fluid m-2 order-sm-2" style="color: green;padding:20px 3px;
+        box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;border-radius:15px;height:100%" >
             <div class="container-fluid">
               <div class="float-right">
                 <a href="/foodie/cart" class="btn btn-dark"> Cart <img src="https://img.icons8.com/fluent/48/000000/favorite-cart.png"/></a>
               </div>
-                <div class="row">
-                    <div class="col-md-3">
+                <div class="row" style="">
+                    <div class="col-md-5">
                       {{-- {{$res->image}}wajdkawk --}}
                         <img class="card-img-top" @if(isset($res->image)) src="{{asset('storage/restaurants/'.$res->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap" style="height:100%;padding:10px;
                         border:2px solid #fff;
@@ -92,9 +148,11 @@
                         box-shadow: 10px 10px 5px #ccc;
                         -moz-border-radius:25px;
                         -webkit-border-radius:25px;
-                        border-radius:25px;">
+                        border-radius:25px;
+                        
+                        ">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-7">
                         <h3 >{{$res->name}}</h3>
                         <p class="lead">{{$res->location}}</p>
                         <p class="lead">{{$res->type}}</p>
@@ -104,9 +162,32 @@
 
             </div>
           </div>
-
+        </div>
+        <div class="col-md-6 my-2">
+          <div class="jumbotron jumbotron-fluid order-sm-1 m-2" style="color: green;padding:20px 3px;
+          box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;border-radius:15px;height:100%" >
+          
+                    <div class=" ">
+                        <h3 class="heading mt-5 text-center">Try Typing Here...</h3>
+                        <div class="d-flex justify-content-center px-5">
+                            <div class="search"> <input type="text" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
+                        </div>
+                        <div class="d-flex justify-content-between m-1 px-4">
+                            <div class="form-group ">
+                              <input type="radio" name="sort_by" value="1">
+                              <label for="sort_by">Sort by Price (more to less)</label>
+                            </div>
+                            <div class="form-group ">
+                              <input type="radio" name="sort_by" value="0">
+                              <label for="sort_by">Sort by Price (less to more)</label>
+                            </div>
+                        </div>
+                    </div>
+          </div>
+        </div>
+      </div>
           <div class="row" style="padding:10px;">
-              <div class="card col-md-6 offset-md-3" style="border-radius: 10px;">
+              <div class="card col-md-6 offset-md-3" id="dynamic_items" style="border-radius: 10px;">
                 <h4 class="my-2">Menu ({{count($items??[])}} items)</h4>
                 @if(count($items??[])>0)
                     <div class="row">
@@ -387,5 +468,31 @@
             }
         }); //ajax
       });
+
+
+      //Search
+      function filterRecords(query=''){
+        $.ajax({
+          url:'/foodie/'+{{$res->id}}+'/filter',
+          type:'POST',
+          data:{
+            '_token':"{{ csrf_token() }}",
+            'query':query,
+            'selected':$("input[type='radio'][name='sort_by']:checked").val(),
+          },
+          success:function(data){
+            console.log(data.data);
+            console.log(data);
+          },
+          error:function(data){
+
+          }
+
+        })
+      }
+      $('.search .search-input').on('keyup',function(){
+        filterRecords($(this).val());
+      })
     })
+    
 @endsection

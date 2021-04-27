@@ -706,14 +706,14 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         </div>
                     </center> <br>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <div class="ImgBx">
 
                                 <a href="{{url('/products?category=58&sort=latest&searchbox=')}}">
 
                                  <img src="./assets/holi-special.jpeg"> </div>
                             <div class="ImgDetails"> Buy Now </div> </a>
-                        </div>
+                        </div> --}}
                         <div class="swiper-slide">
                             <div class="ImgBx">
 
@@ -752,6 +752,27 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                     <div class="swiper-pagination"></div>
                 </div>
             </div> <!-- /First Slider -->
+            @if(count($sliders??[])>0)
+            <div id="customSliders" class="container">
+                <center>
+                    <div class="head1"> <img src="{{asset('assets/back4.jpg')}}" style="height: 80px">
+                        <p class="text-white">Popular in the city</p>
+                    </div>
+                </center> <br>
+                @foreach ($sliders as $slider)
+                <br>
+                <br>
+                <div class="custom-carousel owl-carousel owl-theme">
+                    @foreach ($slides[$slider->id] as $item)
+                        <div class="item"><a @if($item->url!=null) href="{{$item->url}}" @endif><img src="{{asset('/storage/frontSliders/'.$slider->id.'/'.$item->image)}}" alt=""></a></div>
+                    @endforeach
+                    
+                </div>
+                <br><br>
+                @endforeach
+                
+            </div>
+            @endif
             <!-- Services -->
             <div class="container"> <br>
                 <div class="row">
@@ -945,6 +966,25 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     <!-- <script src="./js/main.js"></script> -->
     <!-- Initialize Swiper -->
     <script>
+        $('.custom-carousel').owlCarousel({
+            loop:false,
+            dots:true,
+            stagePadding: 20,
+            center:true,
+            margin:10,
+            nav:false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
         $('.slider').slick({
             dots: true,
             infinite: false,
