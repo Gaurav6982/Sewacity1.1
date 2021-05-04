@@ -529,9 +529,13 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         <marquee>
             <h11>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</h11>
         </marquee> @guest<div class="banner">
-                <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times" id="cross"
+                <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times cross"
                         style="font-size: 30px"></i> </div>
         </div> @endguest
+        <div class="banner">
+            <div class="imag"> <img src="/storage/images/notice.webp" class="sticky"> <i class="fa fa-times cross" 
+                    style="font-size: 30px"></i> </div>
+        </div>
         <!-- header -->
         <header>
             @include('inc.messages') <div class="container">
@@ -1039,8 +1043,9 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 el: '.swiper-pagination',
             },
         });
-        $('#cross').click(function() {
-            $('.banner').css('display', 'none');
+        $('.cross').click(function() {
+            // console.log($(this).parent().parent());
+            $(this).parent().parent().css('display', 'none');
         });
         $('document').ready(function() {
             $("#banner-area .owl-carousel").owlCarousel({

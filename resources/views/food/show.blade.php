@@ -170,11 +170,11 @@
                     <div class=" ">
                         <h3 class="heading mt-5 text-center">Try Typing Here...</h3>
                         <div class="d-flex justify-content-center px-5">
-                            <div class="search"> <input type="text" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
+                            <div class="search"> <input type="text" class="search-input" placeholder="Search..." name=""> <a href="#" style="pointer-events: none" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
                         </div>
                         <div class="d-flex justify-content-between m-1 px-4">
                             <div class="form-group ">
-                              <input type="radio" name="sort_by" value="1">
+                              <input type="radio" name="sort_by" value="1" checked>
                               <label for="sort_by">Sort by Price (more to less)</label>
                             </div>
                             <div class="form-group ">
@@ -242,7 +242,7 @@
                                     </div>
                                     <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
                                     @endif
-                                    @endif
+                                    @endguest
                                   </div>
                                 </div>
                                 
@@ -261,10 +261,11 @@
     </div>
 @endsection
 @section('js')
+
     $(document).ready(function(){
-      $('.add-cart').click(function(){
+      function addToCart(obj){
         $res_id="{{$res->id}}";
-        $id=$(this).data("id");
+        $id=obj.data("id");
         {{-- console.log($id); --}}
           $.ajax({
             type:"post",
@@ -357,8 +358,10 @@
               
             }
         }); //ajax
+      }
+      $(document).on('click','#dynamic_items .add-cart',function(){
+        addToCart($(this));
       });
-
       //subtract
         $('.sub').click(function(){
           $id=$(this).data("id");
@@ -481,15 +484,19 @@
             'selected':$("input[type='radio'][name='sort_by']:checked").val(),
           },
           success:function(data){
-            console.log(data.data);
+            console.log("success");
             console.log(data);
+            $('#dynamic_items').html(data);
           },
           error:function(data){
-
+            console.log("Error");
           }
 
         })
       }
+      $('.search .search-input').on('keyup',function(){
+        filterRecords($(this).val());
+      })
       $('.search .search-input').on('keyup',function(){
         filterRecords($(this).val());
       })
