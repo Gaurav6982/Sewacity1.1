@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Restaurants;
 use App\Menu;
 use App\FoodCart;
+use App\DeliveryAvailable;
 use Auth;
 use Illuminate\Support\Facades\Mail; 
 use App\Mail\SendFoodMail; 
@@ -114,7 +115,10 @@ class UserFoodController extends Controller
     }
     public function show_cart(){
         $carts=FoodCart::where('user_id',Auth::user()->id)->get();
-        return view('food.cart')->with('carts',$carts);
+        $status=DeliveryAvailable::all()->last();
+        if(isset($status)) $status=$status->status;
+        else $status="Available";
+        return view('food.cart')->with('carts',$carts)->with('status',$status);
     }
     public function del_all(Request $request){
         $carts=FoodCart::where('user_id',Auth::user()->id)->get();

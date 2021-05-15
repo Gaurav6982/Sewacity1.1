@@ -67,8 +67,8 @@
                                 <div class="banner">
                                     {{-- {{intval(date('H',strtotime($r->open_time)))}} --}}
                                     @if( 
-                                            (
-                                                ( intval(date('H',strtotime($r->open_time))) < intval(date('H',strtotime($r->close_time))) ) 
+                                           (
+                                                ( intval(date('H',strtotime($r->open_time))) <= intval(date('H',strtotime($r->close_time))) ) 
                                                 && 
                                                 (! (time()>=strtotime($r->open_time)&& time()<=strtotime($r->close_time)) )
                                             )
@@ -76,7 +76,7 @@
                                             (
                                                 ( intval(date('H',strtotime($r->open_time))) > intval(date('H',strtotime($r->close_time))) )
                                                 &&
-                                                ( (time()>=strtotime($r->close_time)&& time()<=strtotime($r->open_time)) )
+                                                ( (time()>=strtotime($r->close_time)&& time()<=strtotime($r->open_time)))
                                             )
                                         )
                                         <img src="{{asset('storage/images/closed.jpg')}}" alt="Closed" id="closed-img">

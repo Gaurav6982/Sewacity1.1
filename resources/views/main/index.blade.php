@@ -219,12 +219,12 @@
         z-index: 95;
         position: relative;
         background-color: #2a2a72;
-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.33%, #ff3858 50%, #f00053 66.67%, #e40052 83.33%, #d90054 100%);
         width: 100%;
     }
     header{
         background-color: #2a2a72;
-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.33%, #ff3858 50%, #f00053 66.67%, #e40052 83.33%, #d90054 100%);
     }
     
     /* .navbar-ham {
@@ -519,7 +519,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                     <li> <a  href="/about" target="_blank">ABOUT US</a></li>
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
                     <li> <a  href="/foodie">FOOD SERVICE</a></li>
-                    <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li>
+                    {{-- <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li> --}}
                     <li> <a  href="/safari">LOCOMO</a></li>
                     <li><a  href="/shelters">SHELTERS</a></li>
                     </li>
@@ -527,7 +527,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
             </div>
         </div>
         <marquee>
-            <h11>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</h11>
+            <span>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</span>
         </marquee> @guest<div class="banner">
                 <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times cross"
                         style="font-size: 30px"></i> </div>
@@ -647,8 +647,10 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                                     aria-expanded="false"> Our Services </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">HOME</a> --> <a class="dropdown-item"
-                                        href="/foodie">Food Service</a> <a class="dropdown-item"
-                                        href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a><a
+                                        href="/foodie">Food Service</a> 
+                                        
+                                        {{-- <a class="dropdown-item"href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a> --}}
+                                        <a
                                         class="dropdown-item" href="/safari">LOCOMO</a><a class="dropdown-item"
                                         href="/shelters">Shelters</a> </div>
                             </li>
@@ -673,7 +675,31 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
             <div class="coronabtn"><a href="https://www.covid19india.org/state/BR" class="corona pull-right">
                     <span></span> <span></span> <span></span> <span></span> Corona Update </a></div>
                     <br>
-
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header text-center" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                              Aapka Shehar Aapki madad
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body text-center">
+                              <strong>प्रिय शहरवासियों
+                                  सेवासिटी चाहती है कि उन जरुरतमंदो की मदद हो सके जो अपने शहर से है और मदद की जरूरत है क्योंकि इस महामारी से उनको विकट परिस्थितियों का सामना करना पड़ रहा है, इसमें सबकोई अपना योगदान दे सकते है चाहे वो सेवासिटी के सेलर हो या ग्राहक या खुद टीम के सदस्य।।
+                                  <br>
+                                  अतः सबसे यही अपेक्षा है कि अपने शहर के मदद में अपना हाथ आगे बढ़ाए एवं दिए गए लिंक पर क्लिक पर आप ₹1 से ₹10,000 तक का योगदान दे सकते हैं!!
+                                 
+                      
+                                  <div class="d-grid gap-2 text-center mx-auto">
+                                      <br>
+                                      <a href="https://rzp.io/l/R8bBbujdzW"> <button class="btn btn-primary" type="button">Donate Now</button></a>
+                                   
+                                    </div>
+                                    <br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
             <section id="banner-area">
                 <div class="owl-carousel">
                     <div class="item">
@@ -702,6 +728,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                     </div> -->
                 </div>
             </section>
+            
             <div class="container-fluid">
                 <div class="swiper-container">
                     <center>
@@ -957,7 +984,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn+.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
         
 

@@ -12,6 +12,7 @@ use App\Categories;
 use App\Sliders;
 use App\FrontPageSliders;
 use Session;
+use App\DeliveryAvailable;
 // session_start();
 class Main extends Controller
 {
@@ -195,4 +196,26 @@ class Main extends Controller
         // $res->session()->put('city',$req->input('city'));
         return $req->session()->get('city');
     }
+    public function deliveryStatus(){
+        $status=DeliveryAvailable::all()->last();
+        if(!isset($status))
+        $status="Available";
+        else
+        $status=$status->status;
+
+        return view('admin.delivery_status',compact('status'));
+        
+    }
+    public function setDeliveryStatus(Request $request){
+        $status=DeliveryAvailable::all()->last();
+        if(!isset($status))
+        $status="Available";
+        else
+        $status=$status->status;
+        $s=new DeliveryAvailable;
+        $s->status=$status=="Busy"?"Available":"Busy";
+        $s->save();
+        return back();
+    }
+
 }

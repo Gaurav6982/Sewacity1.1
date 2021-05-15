@@ -100,8 +100,8 @@
 							<tr style="color: black">
                     			<td></td>
 								<td  style="border:2px solid black" colspan="3">Delivery Charge</td>
-								<?php $del=0;if($tot>=100)$del=10;else $del=20;?>
-                    			<td style="border:2px solid black">Rs. {{$del}}</td>
+								<?php $del=0;if($tot>=100)$del=15;else $del=20;?>
+                    			<td style="border:2px solid black">R  s. {{$del}}</td>
                     		</tr>
                     		<tr style="color: black">
                     			<td></td>

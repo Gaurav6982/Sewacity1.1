@@ -63,10 +63,75 @@
         .cont h5{
             font-size: 12px;
         }
+    /* .bouter{
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        border:10px solid black
+    } */
+    .banner {
+       /* border: 10px solid blaack; */
+       /* overflow: hidden; */
+       top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: grey;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1111;
+    }
+
+    .imag {
+        border: 5px solid #31BB01;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        width: 420px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* overflow: hidden; */
+        height: 80%;
+    }
+
+    .imag img {
+        width: 100%;
+        height: 100%;
+    }
+    i.fa-times {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #BB2201;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    i.fa-times:hover {
+        transform: scale(1.3);
+    }
+    @media only screen and (max-width: 500px) {
+        /* .bouter{
+            overflow: hidden;
+        } */
+        .imag {
+            width: 90%;
+            height: 70%;
+        }
+    }
     </style>
 @endsection
 @section('content')
+<div class="bouter" id="deliveryStatus">
+    @if($status=="Busy")
+    <div class="banner">
+        <div class="imag"> <img src="/storage/images/deliveryNotAvailable.webp" class="sticky"> <i class="fa fa-times cross" 
+                style="font-size: 30px"></i> </div>
+    </div>
+    @endif
+</div>
 <div class="container">
+    
     <div class="card">
         <div class="card-header">
         <p>Items in your Bag</p>
@@ -133,7 +198,7 @@
                 <p >Delivery Charges Info:</p>
                 <ul class="float-left">
                     {{-- <li>Rs. 5 Above a Total of Rs.200</li> --}}
-                    <li>Rs. 10 Above a Total Rs. 100</li>
+                    <li>Rs. 15 Above a Total Rs. 100</li>
                     <li>Rs. 20 Below Rs. 100</li>
                 </ul>
                 </small>
@@ -149,13 +214,15 @@
             
             <p class="float-left">Total: Rs. <span id="total"></span> <span id="del-charge"></span> </p>
             @if(count($carts??[])>0)
-            <div class="float-right d-flex" >
-                <button class="btn btn-primary " id="submit">Place Request</button>
-                <div style="padding-top:4px">&nbsp; OR &nbsp;</div>
-                <input type="hidden" id="amount-input"  value="">
-                <button class="btn btn-primary " id="pay-btn">Pay Online</button>
-                
-            </div>
+            @if($status!="Busy")
+                <div class="float-right d-flex" >
+                    <button class="btn btn-primary " id="submit">Place Request</button>
+                    <div style="padding-top:4px">&nbsp; OR &nbsp;</div>
+                    <input type="hidden" id="amount-input"  value="">
+                    <button class="btn btn-primary " id="pay-btn">Pay Online</button>
+                    
+                </div>
+            @endif
             @endif
         </div>
     </div>
@@ -179,8 +246,8 @@
         let extra=0;
         if(parseInt(total) >= 100)
         {
-            $('#del-charge').text("+ 10");
-            extra=10;
+            $('#del-charge').text("+ 15");
+            extra=15;
         }
         else if(parseInt(total) < 100 && parseInt(total) > 0)
         {
@@ -212,8 +279,8 @@
             let extra=0;
             if(parseInt(total) >= 100)
             {
-                $('#del-charge').text("+ 10");
-                extra=10;
+                $('#del-charge').text("+ 15");
+                extra=15;
             }
             else if(parseInt(total) < 100 && parseInt(total) > 0)
             {
@@ -243,8 +310,8 @@
             let extra=0;
             if(parseInt(total) >= 100)
             {
-                $('#del-charge').text("+ 10");
-                extra=10;
+                $('#del-charge').text("+ 15");
+                extra=15;
             }
             else if(parseInt(total) < 100 && parseInt(total) > 0)
             {
@@ -327,7 +394,7 @@
         total=$('#total').text();
         let extra=0;
         if(parseInt(total) >= 100)
-            extra=10;
+            extra=15;
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
         {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
@@ -357,7 +424,7 @@
         total=$('#total').text();
         let extra=0;
         if(parseInt(total) >= 100)
-            extra=10;
+            extra=15;
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
             total=parseInt(total)+parseInt(extra);
@@ -455,5 +522,8 @@
             }
         })
       });
-
+      $('.cross').click(function() {
+        // console.log($(this).parent().parent());
+        $(this).parent().parent().css('display', 'none');
+    });
 @endsection

@@ -41,6 +41,7 @@
                 @auth @if(Auth::user()->usertype=='special')
                 <li><a href="/admin/city" class="btn btn-primary">Go to City Panel!</a></li>
                 <li><a href="/admin/sliders" class="btn btn-primary">Front Page Slider!</a></li>
+                <li><a href="/admin/delivery-status" class="btn btn-primary">Change Delivery Status</a></li>
                 @endif @endauth
     		</ul>
     	</div>

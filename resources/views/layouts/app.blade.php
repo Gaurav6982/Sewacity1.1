@@ -190,6 +190,8 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 </style>
 @yield('styles')
 <body>
+    
+    
     <div id="preloader">
         <img src="/storage/preload/126.gif" alt="">
     </div>
@@ -215,7 +217,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         <ul class="navbar-nav">
                             <li class="nav-item active"><a href="/"class="nav-link"><span class="custom hoverable" id="len1">HOME</span></a></li>
                             <li class="nav-item hoverable" id="len2"><a href="/foodie"class="nav-link"><span class="custom">FOOD SERVICE</span></a></li>
-                            <li class="nav-item hoverable" id="len3"><a href="/products?category=0&sort=latest&searchbox="class="nav-link"><span class="custom">E-COMMERCE</span></a></li>
+                            {{-- <li class="nav-item hoverable" id="len3"><a href="/products?category=0&sort=latest&searchbox="class="nav-link"><span class="custom">E-COMMERCE</span></a></li> --}}
                             <li class="nav-item hoverable" id="len3"><a href="/safari"class="nav-link"><span class="custom">LOCOMO</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/shelters"class="nav-link"><span class="custom">SHELTERS</span></a></li>
                             <!--<li class="nav-item hoverable"id="len4"><a href="#"class="nav-link"><span class="custom">CITY's MERCHANT</span></a></li>-->
@@ -287,6 +289,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         <div id="messages">
             @include('inc.messages')
         </div>
+        
         <main >
             @yield('content')
         </main>

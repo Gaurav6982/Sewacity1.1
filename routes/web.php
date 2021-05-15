@@ -28,6 +28,8 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');
+    Route::get('delivery-status','Main@deliveryStatus');
+    Route::post('set-delivery-status','Main@setDeliveryStatus');
     Route::post('sliders/addSlide/{id}','SlidersController@addSlide');
     Route::post('sliders/{slider_id}/editSlide/{slide_id}','SlidersController@editSlide');
     Route::delete('sliders/{slider_id}/delete/{slide_id}','SlidersController@deleteSlide');
@@ -58,7 +60,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('/safari/book','SafariController@safariBook');
 });
 
-Route::get('/products','Main@ecomm');
+// Route::get('/products','Main@ecomm');
 Route::get('/tieup',function(){
     return view('main.tieup');
 });
