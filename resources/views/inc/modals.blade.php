@@ -109,6 +109,13 @@
               <input type="text" name="desc" id="desc" placeholder="Enter Item Desc" class="form-control" required>
             </div>
             <div>
+              <label for="status">Select Status:</label>
+              <select name="status" id="status" required class="form-control">
+                <option value="0">Available</option>
+                <option value="1">Sold Out</option>
+              </select>
+            </div>
+            <div>
               <label for="name">Choose Image:</label>
               <input type="file" name="image" id="image" placeholder="Enter Item Image" class="form-control" required>
             </div>

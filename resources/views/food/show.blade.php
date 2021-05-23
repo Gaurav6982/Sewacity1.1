@@ -125,6 +125,18 @@
           word-wrap: break-word;
         }
       }
+      .image-outer{
+        position: relative
+      }
+      .overlay-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        opacity: 0.6;
+      }
     </style>
 @endsection
 @section('content')
@@ -207,7 +219,10 @@
 
                                       @endif
                                     </p>
-                                      <div class="col-md-4 col-xs-4">
+                                      <div class="col-md-4 col-xs-4" class="image-outer">
+                                        @if($item->sold_out)
+                                        <img src="{{asset('/storage/images/sold.jpg')}}" alt="" class="overlay-img" >
+                                        @endif
                                         <img class="card-img-top item-img"  @if($item->image)src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap">
                                       </div>
                                     

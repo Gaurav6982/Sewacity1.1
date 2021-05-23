@@ -58,6 +58,18 @@
           word-wrap: break-word;
         }
       }
+      .image-outer{
+        position: relative
+      }
+      .overlay-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        opacity: 0.6;
+      }
     </style>
 @endsection
 @section('content')
@@ -111,7 +123,10 @@
 
                                         @endif
                                       </p>
-                                      <div class="col-md-4">
+                                      <div class="col-md-4 image-outer">
+                                        @if($item->sold_out)
+                                        <img src="{{asset('/storage/images/sold.jpg')}}" alt="" class="overlay-img" >
+                                        @endif
                                         <img class="card-img-top item-img"  @if($item->image)src="{{asset('storage/restaurants/items/'.$item->image)}}" @else src="https://via.placeholder.com/150" @endif alt="Card image cap">
                                       </div>
                                     
@@ -126,7 +141,7 @@
                                   </div>
                                 </div>
                                 <div class="m-4">
-                                  <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-type="{{$item->type}}" data-toggle="modal" data-target="#menus">Edit</button>
+                                  <button class="float-right btn btn-primary edit-item" data-name="{{$item->name}}" data-price="{{$item->price}}" data-id="{{$item->id}}" data-desc="{{$item->desc}}" data-type="{{$item->type}}" data-status="{{$item->sold_out}}" data-toggle="modal" data-target="#menus">Edit</button>
                                 </div>
                                   <button class="float-right btn del-res" data-id="{{$item->id}}" style="padding: 0;margin-right:5px"><img src="https://img.icons8.com/cute-clipart/64/000000/delete-forever.png" style="width: 36px"/></button>
                                 </div>
@@ -161,6 +176,7 @@ $(document).ready(function(){
                 const price=$('#menus #price').val();
                 const desc=$('#menus #desc').val();
                 const image=$('#menus #image').val();
+                const status=$('#menus #status').val();
                 const res={{$res->id}};
                 // {{-- const loc=$('#loc').val(); --}}
                 // {{-- console.log(name+price+desc+image+res); --}}
@@ -171,9 +187,9 @@ $(document).ready(function(){
                 $('#menus #method').attr('value','');
                 $('#menus #res_id').attr('value',res);
                 $('#menus #menu-form').attr('action','/admin/food/item');
-                    {{-- console.log(); --}}
-                    {{-- ($('#menus #menu-form')[0]).submit(); --}}
-                    {{-- $('#menus #menu-form').submit(); --}}
+                    // {{-- console.log(); --}}
+                    // {{-- ($('#menus #menu-form')[0]).submit(); --}}
+                    // {{-- $('#menus #menu-form').submit(); --}}
                 }
                 else
                 {
@@ -199,6 +215,7 @@ $(document).ready(function(){
         const price=$(this).data("price");
         const desc=$(this).data("desc");
         var type=$(this).data("type");
+        var status=$(this).data("status");
         
         if(type == '')
         type=1;
@@ -207,6 +224,7 @@ $(document).ready(function(){
             $('#menus #price').val(price);
             $('#menus #desc').val(desc);
             $('#menus #type').val(type);
+            $('#menus #status').val(status);
             $("#menus #image").removeAttr("required");
             $('#menus #submit').click(function(e){
                 // {{-- e.preventDefault(); --}}
