@@ -230,6 +230,7 @@
   {{-- {{$carts}} --}}
 @endsection
 @section('js')
+<script>
     $(document).ready(function(){
         var inputs=$('.ids');
         var total=0;
@@ -255,8 +256,8 @@
             extra=20;
         }
 
-        {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
-        {{-- $('#amount-input').val(parseInt(total.toFixed(2))+parseInt(extra)); --}}
+        // {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+        // {{-- $('#amount-input').val(parseInt(total.toFixed(2))+parseInt(extra)); --}}
     });
 
 
@@ -287,9 +288,9 @@
                 $('#del-charge').text("+ 20");
                 extra=20;
             }
-            {{-- if(total!==0 && extra!==0) --}}
-            {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
-            {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
+            // {{-- if(total!==0 && extra!==0) --}}
+            // {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+            // {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
         })
 
         $('.downbtn').click(function(){
@@ -319,9 +320,9 @@
                 extra=20;
             }
             
-            {{-- if(total!==0 && extra!==0)
+            // {{-- if(total!==0 && extra!==0)
             $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
-            {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
+            // {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
         })   
         $('.inquan').on("change",function(){
             var val=$(this).val();
@@ -346,7 +347,7 @@
             }
             $('#total').text(total.toFixed(2));
             
-            {{-- $('#total').text((parseFloat($('#total').text())+parseFloat(price)).toFixed(2)); --}}
+            // {{-- $('#total').text((parseFloat($('#total').text())+parseFloat(price)).toFixed(2)); --}}
 
         });
     });
@@ -397,7 +398,7 @@
             extra=15;
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
-        {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+        // {{-- $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
     });
     $('#submit').click(function(){
         const p=$('#phone').val();
@@ -438,7 +439,7 @@
                 "_token":"{{ csrf_token() }}",
             },
             success:function(data){
-                {{-- alert(JSON.stringify(data)); --}}
+                // {{-- alert(JSON.stringify(data)); --}}
                 
                 var options = {
                     "key": "{{env('RAZORPAY_KEY_ID')}}", // Enter the Key ID generated from the Dashboard
@@ -460,7 +461,7 @@
                             "razorpay_signature":response.razorpay_signature,
                         },
                         success:function(data){
-                            {{-- alert(JSON.stringify(data)); --}}
+                            // {{-- alert(JSON.stringify(data)); --}}
                             Swal.fire(
                                      'Success!',
                                      'Payment Successful.',
@@ -475,7 +476,7 @@
                             //     location.reload();
                         },
                         error:function(data){
-                            <!--alert(JSON.stringify(data));-->
+                            // <!--alert(JSON.stringify(data));-->
                              Swal.fire(
                                      'Error!',
                                      'Something Went Wrong!',
@@ -511,14 +512,14 @@
             },
             error:function(err)
             {
-                <!--alert("Error");-->
+                // <!--alert("Error");-->
                 Swal.fire(
                                      'Error!',
                                      'Something Went Wrong!',
                                      'error'
                                  )
                                  location.reload();
-                <!--alert(JSON.stringify(err));-->
+                // <!--alert(JSON.stringify(err));-->
             }
         })
       });
@@ -526,4 +527,5 @@
         // console.log($(this).parent().parent());
         $(this).parent().parent().css('display', 'none');
     });
+</script>
 @endsection

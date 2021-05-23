@@ -51,6 +51,7 @@
     </div>
 @endsection
 @section('js')
+<script>
     $(document).ready(function(){
         $('#manage-category').on("change",function(){
             if($(this).val()=='')
@@ -66,4 +67,5 @@
             }
         });
     });
+</script>
 @endsection

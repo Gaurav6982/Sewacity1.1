@@ -89,6 +89,7 @@
       </div>
 @endsection
 @section('js')
+<script>
     $(document).ready(function(){
         $('#add_category').click(function(){
             $('.modal-title').text("Add Category:");
@@ -320,4 +321,5 @@
               });//sweet alert
         });
     })
+</script>
 @endsection

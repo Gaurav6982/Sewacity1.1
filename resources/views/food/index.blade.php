@@ -110,16 +110,18 @@
           </div>
     </div>
 @endsection
-@section('js')
 @guest
+@section('js')
+<script>
 $(function(){
-    {{-- console.log(city); --}}
+    // {{-- console.log(city); --}}
     
    var cit= sessionStorage.getItem("city");
-   {{-- console.log(cit); --}}
+//    {{-- console.log(cit); --}}
    $('#session_city').val(cit);
 
-    {{-- $('#select') --}}
+    // {{-- $('#select') --}}
 });
-@endguest
 @endsection
+</script>
+@endguest

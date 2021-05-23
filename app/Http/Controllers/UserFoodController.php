@@ -25,12 +25,7 @@ session_start();
 class UserFoodController extends Controller
 {
     public function index(){
-        // return $_SESSION['city'];
-        // $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
-        // $obj=json_decode($response);
-        // $arr=explode('T',$obj->datetime);
-        // $time=explode('+',$arr[1]);
-        // $time_now=strtotime($time[0]);
+      
         $time_now=time();
         if(Auth::check())
         $city=Auth::user()->city_id;

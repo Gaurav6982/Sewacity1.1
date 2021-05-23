@@ -276,8 +276,8 @@
         });
     });
 
-    @yield('js');
 
 </script>
+    @yield('js');
 
 </html>

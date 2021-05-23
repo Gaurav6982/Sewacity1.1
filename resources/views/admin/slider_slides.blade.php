@@ -69,6 +69,7 @@
     @include('inc.modals')
 @endsection
 @section('js')
+<script>
   $('#openSlideModal').click(function(){
         $('#slideModal #slide_name').val('');
         $('#slideModal #slide_status').val(0);
@@ -144,4 +145,5 @@
       })
       
   })
+</script>
 @endsection

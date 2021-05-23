@@ -359,6 +359,7 @@ $(function(){
     @endguest
 });
     
-    @yield('js');
+    
 </script>
+@yield('js');
 </html>

@@ -85,7 +85,7 @@
     @include('inc.modals')
 @endsection
 @section('js')
-
+<script>
 $(document).ready(function(){
     $('#add-res-button').click(function(){
         $('#add-res .modal-title').text("Add Restaurant:");
@@ -96,7 +96,7 @@ $(document).ready(function(){
             $('#add-res #open_time').val("");
             $('#add-res #close_time').val("");
             $('#add-res #submit').click(function(e){
-                {{-- e.preventDefault(); --}}
+                // {{-- e.preventDefault(); --}}
                 const name=$('#add-res #name').val();
                 const type=$('#add-res #type').val();
                 const desc=$('#add-res #desc').val();
@@ -104,15 +104,15 @@ $(document).ready(function(){
                 const open_time=$('#add-res #open_time').val();
                 const close_time=$('#add-res #close_time').val();
                 const loc=$('#add-res #loc').val();
-                {{-- const city_id=$('#city').val(); --}}
+                // {{-- const city_id=$('#city').val(); --}}
                 
                 if(name!='' && type!='' && desc!=''&& loc!='' &&image!=''){
                     $('#add-res #method').attr('name','');
                     $('#add-res #method').attr('value','');
                     $('#add-res #res-form').attr('action','/admin/food');
                   
-                    {{-- document.resform.submit(); --}}
-                    {{-- $('#res-form')[0].submit(); --}}
+                    // {{-- document.resform.submit(); --}}
+                    // {{-- $('#res-form')[0].submit(); --}}
                 }
                 else
                 {
@@ -129,7 +129,7 @@ $(document).ready(function(){
     })
 
 
-    {{-- Edit --}}
+    // {{-- Edit --}}
 
     $('.edit-res').click(function(){
         const id=$(this).data("id");
@@ -162,9 +162,9 @@ $(document).ready(function(){
                     $('#add-res #res-form').attr('action','/admin/food/'+id);
                     $('#add-res #method').attr('name','_method');
                     $('#add-res #method').attr('value','PUT');
-                    {{-- console.log($('#res-form')[0]); --}}
-                    {{-- document.resform.submit(); --}}
-                    {{-- $('#res-form')[0].submit(); --}}
+                    // {{-- console.log($('#res-form')[0]); --}}
+                    // {{-- document.resform.submit(); --}}
+                    // {{-- $('#res-form')[0].submit(); --}}
                 }
                 else
                 {
@@ -226,4 +226,5 @@ $(document).ready(function(){
           })
     })
 })
+</script>
 @endsection

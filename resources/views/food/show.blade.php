@@ -261,12 +261,12 @@
     </div>
 @endsection
 @section('js')
-
+<script>
     $(document).ready(function(){
       function addToCart(obj){
         $res_id="{{$res->id}}";
         $id=obj.data("id");
-        {{-- console.log($id); --}}
+        // {{-- console.log($id); --}}
           $.ajax({
             type:"post",
             url:"/foodie/addToCart",
@@ -501,5 +501,5 @@
         filterRecords($(this).val());
       })
     })
-    
+  </script>  
 @endsection

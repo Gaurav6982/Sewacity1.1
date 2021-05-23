@@ -146,23 +146,24 @@
     @include('inc.modals')
 @endsection
 @section('js')
+<script>
 $(document).ready(function(){
     $('#add-menu-btn').click(function(){
         $('#menus .modal-title').text("Add Item:");
             $('#menus #name').val("");
             $('#menus #price').val("");
             $('#menus #desc').val("");
-            {{-- $('#loc').val(""); --}}
+            // {{-- $('#loc').val(""); --}}
             $('#menus #submit').on('click',function(e){
-              {{-- console.log("clicked"); --}}
-                {{-- e.preventDefault(); --}}
+              // {{-- console.log("clicked"); --}}
+                // {{-- e.preventDefault(); --}}
                 const name=$('#menus #name').val();
                 const price=$('#menus #price').val();
                 const desc=$('#menus #desc').val();
                 const image=$('#menus #image').val();
                 const res={{$res->id}};
-                {{-- const loc=$('#loc').val(); --}}
-                {{-- console.log(name+price+desc+image+res); --}}
+                // {{-- const loc=$('#loc').val(); --}}
+                // {{-- console.log(name+price+desc+image+res); --}}
                 
                 if(name!='' && price!='' && desc!=''&&image!=''){
                     
@@ -190,7 +191,7 @@ $(document).ready(function(){
     })
 
 
-    {{-- Edit --}}
+    // {{-- Edit --}}
 
     $('.edit-item').click(function(){
         const id=$(this).data("id");
@@ -208,7 +209,7 @@ $(document).ready(function(){
             $('#menus #type').val(type);
             $("#menus #image").removeAttr("required");
             $('#menus #submit').click(function(e){
-                {{-- e.preventDefault(); --}}
+                // {{-- e.preventDefault(); --}}
                 const name=$('#menus #name').val();
                 const price=$('#price').val();
                 const desc=$('#menus #desc').val();
@@ -278,4 +279,5 @@ $(document).ready(function(){
         })
   })
 })
+</script>
 @endsection
