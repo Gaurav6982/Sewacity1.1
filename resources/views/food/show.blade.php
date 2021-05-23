@@ -237,25 +237,29 @@
                                     <div style="" class="quandiv" id="quandiv{{$item->id}}">
                                       <button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
                                     </div>
-                                    <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                                      @if(!$item->sold_out)
+                                        <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}" @if($item->sold_out) disabled @endif>Add to Cart</a>
+                                      @endif
                                     @else
-                                    <?php $carts=Auth::user()->foodcarts;$done=false;?>
-                                    {{-- {{$carts}} --}}
-                                    @foreach ($carts as $cart)
-                                    {{-- {{$cart->food_id}}{{ $item->id}} --}}
-                                        @if ($cart->food_id==$item->id)
-                                          <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}" style="display: none">Add to Cart</a>
-                                          <div style="height:35px" class="quandiv" id="quandiv{{$item->id}}">
-                                            <button class="btn btn-danger sub"id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="{{$cart->quantity}}" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
-                                          </div>
-                                        <?php $done=true; break;?>
-                                        @endif
-                                    @endforeach
-                                    @if(!$done)
-                                    <div style="" class="quandiv" id="quandiv{{$item->id}}">
-                                      <button class="btn btn-danger sub" id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="1" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
-                                    </div>
-                                    <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                                      @if(!$item->sold_out)
+                                      <?php $carts=Auth::user()->foodcarts;$done=false;?>
+                                      {{-- {{$carts}} --}}
+                                      @foreach ($carts as $cart)
+                                      {{-- {{$cart->food_id}}{{ $item->id}} --}}
+                                          @if ($cart->food_id==$item->id)
+                                            <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}" style="display: none">Add to Cart</a>
+                                            <div style="height:35px" class="quandiv" id="quandiv{{$item->id}}">
+                                              <button class="btn btn-danger sub"id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="{{$cart->quantity}}" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
+                                            </div>
+                                          <?php $done=true; break;?>
+                                          @endif
+                                      @endforeach
+                                      @if(!$done)
+                                      <div style="" class="quandiv" id="quandiv{{$item->id}}">
+                                        <button class="btn btn-danger sub" id="sub{{$item->id}}" data-id="{{$item->id}}">-</button><input type="text" class="form-control quantity" value="1" disabled id="show{{$item->id}}"> <button class="btn btn-info add" data-id="{{$item->id}}" id="add{{$item->id}}">+</button>
+                                      </div>
+                                      <a class="btn btn-primary add-cart" data-id="{{$item->id}}" id="cart{{$item->id}}">Add to Cart</a>
+                                      @endif
                                     @endif
                                     @endguest
                                   </div>

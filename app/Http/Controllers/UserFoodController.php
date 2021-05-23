@@ -232,8 +232,16 @@ class UserFoodController extends Controller
                     }
                 }
                 $data.='</p>
-                <div class="col-md-4 col-xs-4">
-                <img class="card-img-top item-img" ';
+                <div class="col-md-4 col-xs-4 image-outer">';
+                if($item->sold_out)
+                {
+                    $data.='<img src="';
+                    $data.=asset("/storage/images/sold.jpg");
+                    $data.='" alt="Sold Out" class="overlay-img" >';
+
+                }
+
+                $data.='<img class="card-img-top item-img" ';
                 if($item->image)
                     $data.='src="'.asset("storage/restaurants/items/".$item->image).'"';
                 else 
@@ -253,32 +261,34 @@ class UserFoodController extends Controller
                     
                     $data.='<div style="" class="quandiv" id="quandiv'.$id.'">';
                     $data.='<button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
-                    </div>
+                    </div>';
+                    if(!$item->sold_out)
+                    $data.='
                     <a class="btn btn-primary add-cart" data-id="'.$id.'" id="cart'.$id.'">Add to Cart</a>';
                 }
                 //not guest
                 else{
-                    
-                    $carts=Auth::user()->foodcarts;
-                    $done=false;
-                    foreach ($carts as $cart){
-                        if ($cart->food_id==$id){
-                            $data.='<a class="btn btn-primary add-cart"  data-id="'.$id.'" id="cart'.$id.'" style="display: none">Add to Cart</a>
-                            <div style="height:35px" class="quandiv" id="quandiv'.$id.'">
-                              <button class="btn btn-danger sub"id="sub'.$id.'" data-id="'.$id.'">-</button><input type="text" class="form-control quantity" value="'.$cart->quantity.'" disabled id="show'.$id.'"> <button class="btn btn-info add" data-id="'.$id.'" id="add'.$id.'">+</button>
-                            </div>';
-                          $done=true;
-                          break;
-                        }
-                    }//inner foreach
+                    if(!$item->sold_out){
+                        $carts=Auth::user()->foodcarts;
+                        $done=false;
+                        foreach ($carts as $cart){
+                            if ($cart->food_id==$id){
+                                $data.='<a class="btn btn-primary add-cart"  data-id="'.$id.'" id="cart'.$id.'" style="display: none">Add to Cart</a>
+                                <div style="height:35px" class="quandiv" id="quandiv'.$id.'">
+                                <button class="btn btn-danger sub"id="sub'.$id.'" data-id="'.$id.'">-</button><input type="text" class="form-control quantity" value="'.$cart->quantity.'" disabled id="show'.$id.'"> <button class="btn btn-info add" data-id="'.$id.'" id="add'.$id.'">+</button>
+                                </div>';
+                            $done=true;
+                            break;
+                            }
+                        }//inner foreach
 
-                    if(!$done){
-                        $data.='<div style="" class="quandiv" id="quandiv'.$id.'">
-                        <button class="btn btn-danger sub" id="sub'.$id.'" data-id="'.$id.'">-</button><input type="text" class="form-control quantity" value="1" disabled id="show'.$id.'"> <button class="btn btn-info add" data-id="'.$id.'" id="add'.$id.'">+</button>
-                      </div>
-                      <a class="btn btn-primary add-cart"  data-id="'.$id.'" id="cart'.$id.'">Add to Cart</a>';
+                        if(!$done){
+                            $data.='<div style="" class="quandiv" id="quandiv'.$id.'">
+                            <button class="btn btn-danger sub" id="sub'.$id.'" data-id="'.$id.'">-</button><input type="text" class="form-control quantity" value="1" disabled id="show'.$id.'"> <button class="btn btn-info add" data-id="'.$id.'" id="add'.$id.'">+</button>
+                        </div>
+                        <a class="btn btn-primary add-cart"  data-id="'.$id.'" id="cart'.$id.'">Add to Cart</a>';
+                        }
                     }
-                    
 
                 }//end logged in user
                 $data.='</div></div></div></div>';
