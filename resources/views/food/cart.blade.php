@@ -429,13 +429,13 @@
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
             total=parseInt(total)+parseInt(extra);
-        $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":total} });
+        $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":total},err:function(err){console.log("set-amount error")} });
         $.ajax({
             type:"POST",
             url:"/payment",
             async:false,
             data:{
-                {{-- "amount":"{{Session::get('amount')}}", --}}
+                // {{-- "amount":"{{Session::get('amount')}}", --}}
                 "_token":"{{ csrf_token() }}",
             },
             success:function(data){
@@ -462,13 +462,14 @@
                         },
                         success:function(data){
                             // {{-- alert(JSON.stringify(data)); --}}
-                            Swal.fire(
+                           
+                            if(data==='success')
+                            {
+                                Swal.fire(
                                      'Success!',
                                      'Payment Successful.',
                                         'success'
-                             );
-                            if(data==='success')
-                            {
+                                );
                                 $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}"} });
                                 $('#cart-form')[0].submit();
                             }
@@ -482,15 +483,16 @@
                                      'Something Went Wrong!',
                                      'error'
                                  )
-                                 location.reload();
+                                 console.log("Error Payment");
+                                //  location.reload();
                         }
                         })
                     },
                     "prefill": {
                        
-                        @if(Auth::user()->email!=null)
+                        // @if(Auth::user()->email!=null)
                         "email": "{{Auth::user()->email}}",
-                        @endif
+                        // @endif
                         "name": "{{Auth::user()->name}}",
                         "contact": "{{Auth::user()->phone}}"
                     },
@@ -500,13 +502,14 @@
                 };
                 var rzp1 = new Razorpay(options);
                 rzp1.on('payment.failed', function (response){
-                        <!--alert("Payment Failed");-->
+                        // <!--alert("Payment Failed");-->
                         Swal.fire(
                              'Error!',
                              'Something Went Wrong!',
                              'error'
                          )
-                         location.reload();
+                        //  location.reload();
+                        console.log("payment.failed")
                 });
                 rzp1.open();
             },
@@ -518,7 +521,8 @@
                                      'Something Went Wrong!',
                                      'error'
                                  )
-                                 location.reload();
+                                 console.log("/payment failed")
+                                //  location.reload();
                 // <!--alert(JSON.stringify(err));-->
             }
         })
