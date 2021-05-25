@@ -102,6 +102,12 @@ class FoodItemController extends Controller
         $res->desc=$request->input('desc');
         $res->is_veg=$request->input('type');
         $res->sold_out=$request->input('status');
+
+        //Remove From Carts if any
+        $carts=FoodCart::where('food_id',$id)->get();
+        foreach($carts as $cart){
+            $cart->delete();
+        }
         $fileName='';
         if($request->hasFile('image'))
         {
