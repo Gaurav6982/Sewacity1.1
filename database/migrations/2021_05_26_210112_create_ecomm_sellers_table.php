@@ -19,6 +19,7 @@ class CreateEcommSellersTable extends Migration
             $table->string('shop_name');
             $table->boolean('is_active');
             $table->string('shop_image');
+            $table->double('delivery_charge');
             $table->integer('city_id');
             // $table->index('city_id');
             // $table->foreign('city_id')->references('id')->on('cities');

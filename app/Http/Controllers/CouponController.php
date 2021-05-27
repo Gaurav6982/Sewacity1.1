@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Coupon;
+use Auth;
+use Illuminate\Support\Facades\Validator;
 class CouponController extends Controller
 {
     /**
@@ -13,8 +15,9 @@ class CouponController extends Controller
      */
     public function index()
     {
-        $coupons=Coupon::all();
-        return view('admin.coupons.index',compact($coupons));
+        $coupons=Coupon::where('city_id',Auth::user()->city_id)->get();
+        // dd($coupons);
+        return view('admin.coupons.index',compact('coupons'));
     }
 
     /**
@@ -35,6 +38,19 @@ class CouponController extends Controller
      */
     public function store(Request $request)
     {
+        $validator=Validator::make($request->all(),[
+            'name'=>'required',
+            'status'=>'required',
+            'type'=>'required',
+            'value'=>'required|numeric'
+        ]);
+        if($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+        $coupon=Coupon::where('coupon_code',$request->name)->where('city_id',Auth::user()->city_id)->first();
+        // dd($coupon);
+        if(isset($coupon)) return back()->with('error','Coupon Already Exist');
+        if($request->type=="percent" && $request->value>100) return back()->with('error','Percent Value Cant be greater than 100');
         $coupon=new Coupon;
         $coupon->coupon_code=$request->name;
         $coupon->is_active=$request->status;
@@ -79,6 +95,16 @@ class CouponController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator=Validator::make($request->all(),[
+            'name'=>'required',
+            'status'=>'required',
+            'type'=>'required',
+            'value'=>'required'
+        ]);
+        if($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+        if($request->type=="percent" && $request->value>100) return back()->with('error','Percent Value Cant be greater than 100');
         $coupon=Coupon::find($id);
         $coupon->coupon_code=$request->name;
         $coupon->is_active=$request->status;
@@ -86,7 +112,10 @@ class CouponController extends Controller
         $coupon->value=$request->value;
         $coupon->city_id=Auth::user()->city_id;
         if($coupon->save())
-        return back()->with('success','Coupon Updated');
+        {
+            $coupons=Coupon::where('city_id',Auth::user()->city_id)->get();
+            return view('admin.coupons.index',compact('coupons'))->with('success','Coupon Updated');
+        }
         return back()->with('error','Something Went Wrong!');
     }
 

@@ -25,6 +25,13 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
     Route::get('/city','Admin\AdminController@manage_cities');
     Route::resource('food/item','FoodItemController');
+    //coupons Route
+    Route::get('/coupons','CouponController@index')->name('coupons');;
+    Route::get('/coupons/create','CouponController@create')->name('create_coupon');
+    Route::get('/coupons/edit/{id}','CouponController@edit')->name('edit_coupon');
+    Route::post('/coupons/store','CouponController@store')->name('store_coupon');
+    Route::put('/coupons/update/{id}','CouponController@update')->name('update_coupon');
+    Route::delete('/coupons/delete/{id}','CouponController@destroy')->name('delete_coupon');
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');
@@ -37,7 +44,7 @@ Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
-    });
+    })->name('admin');
     Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     
