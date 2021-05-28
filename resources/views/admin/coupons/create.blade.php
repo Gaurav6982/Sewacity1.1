@@ -5,12 +5,13 @@
         <div class="card">
             <div class="card-header d-flex">
                 <div>
-                Coupon   
+                  
                 @isset($coupon)
                 Edit
                 @else
                 Create
                 @endif
+                Coupon 
                 </div>
                 <div class="text-right w-100">
                     <a  href="{{route('coupons')}}"class="btn btn-sm btn-secondary">back</a>
@@ -22,11 +23,10 @@
                         @isset($coupon)
                         <form action="{{route('update_coupon',['id'=>$coupon->id])}}" method="POST">
                             {{method_field('PUT')}}
-                            {{ csrf_field() }}
                         @else
                         <form action="{{route('store_coupon')}}" method="POST">
-                            {{csrf_field()}}
                         @endif
+                            {{csrf_field()}}
                         <div class="form-group">
                             <label for="coupon_code">Coupon Code*</label>
                             <input type="text" name="name" id="coupon_code" value="{{$coupon->coupon_code??''}}" class="form-control" placeholder="Enter Coupon Code">

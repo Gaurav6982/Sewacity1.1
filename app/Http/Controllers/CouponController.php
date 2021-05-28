@@ -113,8 +113,8 @@ class CouponController extends Controller
         $coupon->city_id=Auth::user()->city_id;
         if($coupon->save())
         {
-            $coupons=Coupon::where('city_id',Auth::user()->city_id)->get();
-            return view('admin.coupons.index',compact('coupons'))->with('success','Coupon Updated');
+            // $coupons=Coupon::where('city_id',Auth::user()->city_id)->get();
+            return back()->with('success','Coupon Updated');
         }
         return back()->with('error','Something Went Wrong!');
     }

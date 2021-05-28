@@ -26,12 +26,23 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::get('/city','Admin\AdminController@manage_cities');
     Route::resource('food/item','FoodItemController');
     //coupons Route
-    Route::get('/coupons','CouponController@index')->name('coupons');;
+    Route::get('/coupons','CouponController@index')->name('coupons');
     Route::get('/coupons/create','CouponController@create')->name('create_coupon');
     Route::get('/coupons/edit/{id}','CouponController@edit')->name('edit_coupon');
     Route::post('/coupons/store','CouponController@store')->name('store_coupon');
     Route::put('/coupons/update/{id}','CouponController@update')->name('update_coupon');
     Route::delete('/coupons/delete/{id}','CouponController@destroy')->name('delete_coupon');
+
+    //Sellers Routes
+    Route::get('/ecomm-sellers','AdminEcommController@sellers')->name('sellers');
+    Route::get('/ecomm-sellers/create','AdminEcommController@createSeller')->name('create_seller');
+    Route::get('/ecomm-sellers/edit/{id}','AdminEcommController@editSeller')->name('edit_seller');
+    Route::post('/ecomm-sellers/store','AdminEcommController@storeSeller')->name('store_seller');
+    Route::put('/ecomm-sellers/update/{id}','AdminEcommController@updateSeller')->name('update_seller');
+    Route::delete('/ecomm-sellers/delete/{id}','AdminEcommController@deleteSeller')->name('delete_seller');
+    
+    //products
+    Route::get('/ecomm-products/{shop_name}/{id}','AdminEcommController@showProducts')->name('show_products');
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');

@@ -43,7 +43,7 @@
                 <li><a href="/admin/sliders" class="btn btn-primary">Front Page Slider!</a></li>
                 <li><a href="/admin/delivery-status" class="btn btn-primary">Change Delivery Status</a></li>
                 <li><a href="/admin/coupons" class="btn btn-primary">Coupons</a></li>
-                <li><a href="/admin/sellers" class="btn btn-primary">E-Commerce</a></li>
+                <li><a href="{{route('sellers')}}" class="btn btn-primary">E-Commerce</a></li>
                 @endif @endauth
     		</ul>
     	</div>
