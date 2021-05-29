@@ -42,7 +42,12 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::delete('/ecomm-sellers/delete/{id}','AdminEcommController@deleteSeller')->name('delete_seller');
     
     //products
-    Route::get('/ecomm-products/{shop_name}/{id}','AdminEcommController@showProducts')->name('show_products');
+    Route::get('/ecomm-products/{id}','AdminEcommController@showProducts')->name('show_products');
+    Route::get('/ecomm-products/{seller_id}/create','AdminEcommController@createProduct')->name('create_product');
+    Route::get('/ecomm-products/edit/{id}','AdminEcommController@editProduct')->name('edit_product');
+    Route::post('/ecomm-products/{seller_id}/store','AdminEcommController@storeProduct')->name('store_product');
+    Route::put('/ecomm-products/update/{id}','AdminEcommController@updateProduct')->name('update_product');
+    Route::delete('/ecomm-products/delete/{id}','AdminEcommController@deleteProduct')->name('delete_product');
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');

@@ -32,7 +32,8 @@
                                         <td>{!!$coupon->is_active==1?'<button class="btn btn-success btn-sm" disabled>Active</button>':'<button disabled class="btn btn-danger btn-sm">Expired</button>'!!}</td>
                                         <td>{{ucfirst($coupon->discount_type)}}</td>
                                         <td>{{$coupon->value}}</td>
-                                        <td>
+                                        <td class="w-100 d-flex justify-content-around">
+                                            <a href="{{route('edit_coupon',['id'=>$coupon->id])}}"  class="btn btn-sm btn-inline-block btn-warning edit_seller_btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             <form action="{{route('delete_coupon',['id'=>$coupon->id])}}" method="POST">
                                                 {{method_field('DELETE')}}
                                                 {{ csrf_field() }}

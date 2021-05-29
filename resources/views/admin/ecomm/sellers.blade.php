@@ -27,13 +27,13 @@
                             @if(count($sellers??[])>0)
                                 @foreach ($sellers as $k=>$seller)
                                     <tr data-url="{{route('show_products',['id'=>$seller->id,'shop_name'=>$seller->shop_name])}}">
-                                        <td>{{$k+1}}</td>
-                                        <td><a href="{{url('/').$seller->shop_image}}" target="_blank"><img style="width: 100px;height:50px" src="{{$seller->shop_image}}" alt="Shop Image"></a></td>
+                                        <td>{{$k+1}} </td>
+                                        <td><a href="{{url($seller->shop_image)}}" target="_blank" class="img-btn"><img style="width: 100px;height:50px" src="{{asset($seller->shop_image)}}" alt="Shop Image"></a></td>
                                         <td>{{$seller->shop_name}} ( {{$seller->seller_name}} )</td>
                                         <td>{!!$seller->is_active==1?'<button class="btn btn-sm btn-success" disabled>Active</button>':'<button class="btn btn-sm btn-danger" disabled>InActive</button>';!!}</td>
                                         <td>{{$seller->delivery_charge}}</td>
                                         <td class="d-flex w-100 justify-content-around">
-                                            <a href="{{route('edit_seller',['id'=>$seller->id])}}" type="submit" class="btn btn-sm btn-inline-block btn-warning edit_seller_btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a href="{{route('edit_seller',['id'=>$seller->id])}}"  class="btn btn-sm btn-inline-block btn-warning edit_seller_btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             <form action="{{route('delete_seller',['id'=>$seller->id])}}" method="POST">
                                                 {{method_field('DELETE')}}
                                                 {{ csrf_field() }}
@@ -69,7 +69,7 @@
                 // console.log(url);
                 window.location.href=url;
             });
-            $('.edit_seller_btn').click(function(e){
+            $('.edit_seller_btn,.img-btn').click(function(e){
                 e.stopPropagation();
             });
             $('.delete_seller_btn').click(function(e){

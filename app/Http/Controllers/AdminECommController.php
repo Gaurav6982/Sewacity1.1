@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\EcommSeller;
+use App\EcommProduct;
 use Auth;
+use App\Categories;
 use Illuminate\Support\Facades\Validator;
 class AdminECommController extends Controller
 {
@@ -39,7 +41,7 @@ class AdminECommController extends Controller
         if($validator->fails()){
             return back()->withErrors($validator);
         }
-        $path="";
+        $path="/storage/images/slogo.png";
         if($request->has('shop_image')){
             $file=$request->file('shop_image');
             $fileName=$request->shop_name."_".$request->seller_name.".".$file->getClientOriginalExtension();
@@ -103,7 +105,64 @@ class AdminECommController extends Controller
     }
 
 
-    public function showProducts($shop_name,$id){
+    public function showProducts($id){
+        $seller=EcommSeller::find($id);
+        if(!isset($seller))
+        return back()->with('error','No Seller Found');
+        $products=EcommProduct::where('seller_id',$id)->get();
+        return view('admin.ecomm.products',compact('products','seller'));
+    }
 
+
+    public function editProduct($id){
+        $product=EcommProduct::find($id);
+        return view('admin.ecomm.create_sellers',compact('product'));
+    }
+
+    public function createProduct($seller_id){
+        $seller=EcommSeller::find($seller_id);
+        if(!isset($seller)) return back()->with('error','Seller Not Found');
+        $categories=Categories::where('city_id',Auth::user()->city_id)->get();
+        return view('admin.ecomm.create_products',compact('seller','categories'));
+    }
+
+    public function storeProduct(Request $request, $seller_id){
+        $seller=EcommSeller::find($seller_id);
+        if(!isset($seller)) return back()->with('error','Seller Not Found');
+        $validator=Validator::make($request->all(),[
+            
+        ]);
+        if($validator->fails()){
+            return back()->withErrors($validator);
+        }
+        
+        if($product->save())
+        {
+            return back()->with('success','Product Added!');
+        }
+        return back()->with('error','Something Went Wrong!');
+    }
+
+    public function updateProduct(Request $request,$id){
+        $validator=Validator::make($request->all(),[
+           
+        ]);
+        if($validator->fails()){
+            return back()->withErrors($validator);
+        }
+        
+        
+        if($product->save())
+        {
+            return back()->with('success','Seller Updated!');
+        }
+        return back()->with('error','Something Went Wrong!');
+    }
+
+    public function deleteProduct($id){
+        $product=EcommProduct::find($id);
+        if($seller->delete())
+        return back()->with('success','Product Deleted');
+        return back()->with('error','Something Went Wrong!');
     }
 }
