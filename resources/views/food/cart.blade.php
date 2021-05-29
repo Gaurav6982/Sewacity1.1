@@ -442,7 +442,7 @@
                 // {{-- alert(JSON.stringify(data)); --}}
                 
                 var options = {
-                    "key": "{{env('RAZORPAY_KEY_ID')}}", // Enter the Key ID generated from the Dashboard
+                    "key": "{{config('services.razorpay.RAZORPAY_KEY_ID')}}", // Enter the Key ID generated from the Dashboard
                     "amount":data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
                     "name": "SewaCity",
@@ -471,6 +471,7 @@
                                         'success'
                                 );
                                 $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}"} });
+                                $('#preloader').css('display','unset');
                                 $('#cart-form')[0].submit();
                             }
                             
@@ -484,7 +485,7 @@
                                      'error'
                                  )
                                  console.log("Error Payment");
-                                //  location.reload();
+                                 location.reload();
                         }
                         })
                     },
@@ -508,7 +509,7 @@
                              'Something Went Wrong!',
                              'error'
                          )
-                        //  location.reload();
+                         location.reload();
                         console.log("payment.failed")
                 });
                 rzp1.open();
@@ -521,8 +522,8 @@
                                      'Something Went Wrong!',
                                      'error'
                                  )
-                                 console.log("/payment failed")
-                                //  location.reload();
+                                //  console.log("/payment failed")
+                                 location.reload();
                 // <!--alert(JSON.stringify(err));-->
             }
         })

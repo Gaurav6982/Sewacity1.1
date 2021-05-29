@@ -14,7 +14,7 @@ class PayController extends Controller
 {
     public function pay(Request $request){
         // return response()->json($request->razorpay_order_id);
-        $api = new Api(env('RAZORPAY_KEY_ID'), env('RAZORPAY_KEY_SECRET'));
+        $api = new Api(config('services.razorpay.RAZORPAY_KEY_ID'), config('services.razorpay.RAZORPAY_KEY_SECRET'));
         $attributes  = array('razorpay_signature'  => $request->razorpay_signature,  'razorpay_payment_id'  => $request->razorpay_payment_id ,  'razorpay_order_id' => $request->razorpay_order_id);
         $order  = $api->utility->verifyPaymentSignature($attributes);
         // return response()->json($order);
@@ -39,7 +39,7 @@ class PayController extends Controller
         $pay_id=1;
         else
         $pay_id=$pay_id->id+1;
-        $api = new Api(env('RAZORPAY_KEY_ID'), env('RAZORPAY_KEY_SECRET'));
+        $api = new Api(config('services.razorpay.RAZORPAY_KEY_ID'), config('services.razorpay.RAZORPAY_KEY_SECRET'));
         // Orders
         $order  = $api->order->create(array('receipt' => $pay_id, 'amount' => $amount, 'currency' => 'INR')); // Creates order
         $orderId = $order['id']; // Get the created Order ID
@@ -57,15 +57,18 @@ class PayController extends Controller
     }
     public function set_amount(Request $request)
     {
+        Session::forget("amount");
         Session::put('amount',$request->amount);
     }
     public function set_success(Request $request)
     {
+        Session::forget("payDone");
         Session::put("payDone",true);
         return;
     }
     public function set_fail(Request $request)
     {
+        Session::forget("payDone");
         Session::put("payDone",false);
         return;
     }
