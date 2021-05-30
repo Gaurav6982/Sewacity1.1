@@ -7,6 +7,9 @@ use App\EcommSeller;
 use App\EcommProduct;
 use Auth;
 use App\Categories;
+use Storage;
+use File;
+use App\EcommProductImage;
 use Illuminate\Support\Facades\Validator;
 class AdminECommController extends Controller
 {
@@ -99,6 +102,11 @@ class AdminECommController extends Controller
 
     public function deleteSeller($id){
         $seller=EcommSeller::find($id);
+        // dd(File::delete(public_path($seller->shop_image)));
+        if($seller->shop_image!='/storage/images/slogo.png')
+        File::delete(public_path($seller->shop_image));
+
+        foreach($seller->products??[] as $product) $product->delete();
         if($seller->delete())
         return back()->with('success','Seller Deleted');
         return back()->with('error','Something Went Wrong!');
@@ -116,7 +124,9 @@ class AdminECommController extends Controller
 
     public function editProduct($id){
         $product=EcommProduct::find($id);
-        return view('admin.ecomm.create_sellers',compact('product'));
+        $seller=$product->seller;
+        $categories=Categories::where('city_id',Auth::user()->city_id)->get();
+        return view('admin.ecomm.create_products',compact('product','seller','categories'));
     }
 
     public function createProduct($seller_id){
@@ -125,43 +135,135 @@ class AdminECommController extends Controller
         $categories=Categories::where('city_id',Auth::user()->city_id)->get();
         return view('admin.ecomm.create_products',compact('seller','categories'));
     }
-
+    public function validateImages($images){
+        $formats=['jpg','jpeg','png','webp'];
+        foreach($images as $image){
+            if(!in_array($image->getClientOriginalExtension(),$formats))
+            return false;
+        }
+        return true;
+    }
     public function storeProduct(Request $request, $seller_id){
         $seller=EcommSeller::find($seller_id);
         if(!isset($seller)) return back()->with('error','Seller Not Found');
         $validator=Validator::make($request->all(),[
-            
+            'product_name'=>'required',
+            'specs'=>'required',
+            'category_id'=>'required',
+            'status'=>'required',
+            'price'=>'required',
+            'discount'=>'required|numeric|max:100',
+            'description'=>'required',
+            // 'images'=>'sometimes|nullable|mimes:jpg,jpeg,png'
         ]);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
-        
+        if(EcommProduct::where('product_name',$request->input('product_name'))->where('category_id',$request->input('category_id'))->where('seller_id',$seller_id)->exists()) return back()->with('error','Duplicate Name Found!');
+        // dd($request->images);
+        if($request->has('images') && !$this->validateImages($request->images)) return back()->with('error','Invalid Format!');
+        // dd($request->all());
+        $product=new EcommProduct;
+        $product->product_name=$request->input('product_name');
+        $product->specs=$request->input('specs');
+        $product->offers=$request->input('offers');
+        $product->price=$request->input('price');
+        $product->seller_id=$seller_id;
+        $product->discount=$request->input('discount');
+        $product->is_active=$request->input('status');
+        $product->category_id=$request->input('category_id');
+        $product->description=$request->input('description');
+        $product->images=$request->has('images')?count($request->images):0;
         if($product->save())
         {
+            if($request->has('images')){
+                // $category_name=$product->category->category_name;
+                $p='storage/ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
+                $path=public_path($p);
+                foreach($request->images as $k=>$file){
+                    $image=new EcommProductImage;
+                    $image->image_name=$product->product_name.($k+1);
+                    $image->image_size=filesize($file);
+                    $image->image_extension=$file->getClientOriginalExtension();
+                    $image->product_id=$product->id;
+                    $image->file_path=$p.'/'.$image->image_name.'.'.$image->image_extension;
+                    $file->move($path,$image->image_name.'.'.$image->image_extension);
+                    $image->save();
+                }
+            }
             return back()->with('success','Product Added!');
         }
         return back()->with('error','Something Went Wrong!');
     }
 
     public function updateProduct(Request $request,$id){
+        // dd($request->all());
+        $seller=EcommSeller::find($request->input('seller_id'));
+        if(!isset($seller)) return back()->with('error','Seller Not Found');
         $validator=Validator::make($request->all(),[
-           
+            'product_name'=>'required',
+            'specs'=>'required',
+            'category_id'=>'required',
+            'status'=>'required',
+            'price'=>'required',
+            'discount'=>'required|numeric|max:100',
+            'description'=>'required',
         ]);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
+        if(EcommProduct::where('product_name',$request->input('product_name'))->where('category_id',$request->input('category_id'))->where('seller_id',$request->input('seller_id'))->count()>1) return back()->with('error','Duplicate Name Found!');
+        if($request->has('images') && !$this->validateImages($request->images)) return back()->with('error','Invalid Format!');
         
-        
+
+        $product=EcommProduct::find($id);
+        $product->product_name=$request->input('product_name');
+        $product->specs=$request->input('specs');
+        $product->offers=$request->input('offers');
+        $product->price=$request->input('price');
+        $product->discount=$request->input('discount');
+        $product->is_active=$request->input('status');
+        $product->category_id=$request->input('category_id');
+        $product->description=$request->input('description');
+        $product->images=$request->has('images')?($product->images-count($request->input('removed_images')??[])+count($request->images)):$product->images-count($request->input('removed_images'));
         if($product->save())
         {
-            return back()->with('success','Seller Updated!');
+            foreach($request->input('removed_images')??[] as $img){
+                $image=EcommProductImage::find($img);
+                File::delete(public_path($image->file_path));
+                $image->delete();
+            }
+            if($request->has('images')){
+                // $category_name=$product->category->category_name;
+                $p='storage/ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
+                $path=public_path($p);
+                $count=$product->images;
+                foreach($request->images as $k=>$file){
+                    $image=new EcommProductImage;
+                    $image->image_name=$product->product_name.($count--);
+                    $image->image_size=filesize($file);
+                    $image->image_extension=$file->getClientOriginalExtension();
+                    $image->product_id=$product->id;
+                    $image->file_path=$p.'/'.$image->image_name.'.'.$image->image_extension;
+                    $file->move($path,$image->image_name.'.'.$image->image_extension);
+                    $image->save();
+                }
+            }
+            return back()->with('success','Product Updated!');
         }
         return back()->with('error','Something Went Wrong!');
     }
 
     public function deleteProduct($id){
         $product=EcommProduct::find($id);
-        if($seller->delete())
+        // dd($product->uploaded_images);
+        foreach($product->uploaded_images??[] as $image){
+            File::delete(public_path($image->file_path));
+            $image->delete();
+            
+        }
+        // dd("ad");
+        if($product->delete())
         return back()->with('success','Product Deleted');
         return back()->with('error','Something Went Wrong!');
     }

@@ -26,7 +26,7 @@
                         <tbody>
                             @if(count($sellers??[])>0)
                                 @foreach ($sellers as $k=>$seller)
-                                    <tr data-url="{{route('show_products',['id'=>$seller->id,'shop_name'=>$seller->shop_name])}}">
+                                    <tr class="clickable-rows" data-url="{{route('show_products',['id'=>$seller->id,'shop_name'=>$seller->shop_name])}}">
                                         <td>{{$k+1}} </td>
                                         <td><a href="{{url($seller->shop_image)}}" target="_blank" class="img-btn"><img style="width: 100px;height:50px" src="{{asset($seller->shop_image)}}" alt="Shop Image"></a></td>
                                         <td>{{$seller->shop_name}} ( {{$seller->seller_name}} )</td>
@@ -63,8 +63,10 @@
 @section('js')
     <script>
         $(document).ready(function(){
-            $('tr').click(function(){
+            $('table').DataTable();
+            $('tr.clickable-rows').click(function(){
                 var url=$(this).data("url");
+                // if(url=="header") return false;
                 // var url="{{route('edit_coupon',['id'=>"+id+"])}}";
                 // console.log(url);
                 window.location.href=url;

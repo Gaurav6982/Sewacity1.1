@@ -26,7 +26,7 @@
                         <tbody>
                             @if(count($coupons??[])>0)
                                 @foreach ($coupons as $k=>$coupon)
-                                    <tr data-url="{{route('edit_coupon',['id'=>$coupon->id])}}">
+                                    <tr data-url="{{route('edit_coupon',['id'=>$coupon->id])}}" class="clickable-row">
                                         <td>{{$k+1}}</td>
                                         <td>{{$coupon->coupon_code}}</td>
                                         <td>{!!$coupon->is_active==1?'<button class="btn btn-success btn-sm" disabled>Active</button>':'<button disabled class="btn btn-danger btn-sm">Expired</button>'!!}</td>
@@ -63,7 +63,8 @@
 @section('js')
     <script>
         $(document).ready(function(){
-            $('tr').click(function(){
+            $('table').DataTable();
+            $('.clickable-row').click(function(){
                 var url=$(this).data("url");
                 // var url="{{route('edit_coupon',['id'=>"+id+"])}}";
                 // console.log(url);
