@@ -1,0 +1,117 @@
+/* ------------------------------------------------
+  ** Product name - Makerobos widget
+  ** Author - GL Kumawat 
+  ** version - 1.1 
+---------------------------------------------------*/
+.makerobos_containerMain iframe { border: none; }
+.makerobos_GlassMain div, ._mkosModelGallery, ._mkosModelGalleryIn, .makerobos_GlassMain p, .makerobos_GlassMain iframe, .makerobos_GlassMain span, .mkosBTNContainer div, .mkosBTNContainer span, .mkosBTNContainer applet, .mkosBTNContainer object, .mkosBTNContainer iframe, .mkosBTNContainer h1, .mkosBTNContainer h2, .mkosBTNContainer h3, .mkosBTNContainer h4, .mkosBTNContainer h5, .mkosBTNContainer h6, .mkosBTNContainer p, .mkosBTNContainer blockquote, .mkosBTNContainer pre, .mkosBTNContainer a, .mkosBTNContainer abbr, .mkosBTNContainer acronym, .mkosBTNContainer address, .mkosBTNContainer big, .mkosBTNContainer cite, .mkosBTNContainer code, .mkosBTNContainer del, .mkosBTNContainer dfn, .mkosBTNContainer em, .mkosBTNContainer img, .mkosBTNContainer ins, .mkosBTNContainer kbd, .mkosBTNContainer q, .mkosBTNContainer s, .mkosBTNContainer samp, .mkosBTNContainer small, .mkosBTNContainer strike, .mkosBTNContainer strong, .mkosBTNContainer sub, .mkosBTNContainer sup, .mkosBTNContainer tt, .mkosBTNContainer var, .mkosBTNContainer b, .mkosBTNContainer u, .mkosBTNContainer i, .mkosBTNContainer center, .mkosBTNContainer dl, .mkosBTNContainer dt, .mkosBTNContainer dd, .mkosBTNContainer ol, .mkosBTNContainer ul, .mkosBTNContainer li, .mkosBTNContainer fieldset, .mkosBTNContainer form, .mkosBTNContainer div.form, .mkosBTNContainer label, .mkosBTNContainer legend, .mkosBTNContainer table, .mkosBTNContainer caption, .mkosBTNContainer tbody, .mkosBTNContainer tfoot, .mkosBTNContainer thead, .mkosBTNContainer tr, .mkosBTNContainer th, .mkosBTNContainer td, .mkosBTNContainer article, .mkosBTNContainer aside, .mkosBTNContainer canvas, .mkosBTNContainer details, .mkosBTNContainer figcaption, .mkosBTNContainer figure, .mkosBTNContainer footer, .mkosBTNContainer header, .mkosBTNContainer hgroup, .mkosBTNContainer menu, .mkosBTNContainer nav, .mkosBTNContainer section, .mkosBTNContainer summary, .mkosBTNContainer time, .mkosBTNContainer mark, .mkosBTNContainer audio, .mkosBTNContainer video, .mkosBTNContainer button, .mkosBTNContainer textarea, .mkosBTNContainer input, .mkosBTNContainer input[type] { font-family: "arial", "Helvetica Neue", sans-serif; font-size-adjust: none; font-size: 100%; font-style: normal; letter-spacing: normal; font-stretch: normal; font-variant: normal; font-weight: normal; font: normal normal 100% "arial", "Helvetica Neue", Helvetica, sans-serif; text-align: left; text-align-last: initial; text-decoration: none; -webkit-text-emphasis: none; text-emphasis: none; text-height: auto; text-indent: 0; text-justify: auto; text-outline: none; text-shadow: none; text-transform: none; text-wrap: normal; alignment-adjust: auto; alignment-baseline: baseline; -webkit-animation: none 0 ease 0 1 normal; animation: none 0 ease 0 1 normal; -webkit-animation-play-state: running; animation-play-state: running; -webkit-appearance: normal; -moz-appearance: normal; appearance: normal; azimuth: center; -webkit-backface-visibility: visible; backface-visibility: visible; background: none 0 0 auto repeat scroll padding-box transparent; background-color: transparent; background-image: none; baseline-shift: baseline; binding: none; bleed: 6pt; bookmark-label: content(); bookmark-level: none; bookmark-state: open; bookmark-target: none; border: 0 none transparent; border-radius: 0; bottom: auto; box-align: stretch; -webkit-box-decoration-break: slice; box-decoration-break: slice; box-direction: normal; box-flex: 0.0; box-flex-group: 1; box-lines: single; box-ordinal-group: 1; box-orient: inline-axis; box-pack: start; -webkit-box-shadow: none; box-shadow: none; -webkit-box-sizing: content-box; box-sizing: content-box; -webkit-column-break-after: auto; break-after: auto; -webkit-column-break-before: auto; break-before: auto; -webkit-column-break-inside: auto; break-inside: auto; caption-side: top; clear: none; clip: auto; color: inherit; color-profile: auto; -webkit-column-count: auto; column-count: auto; -webkit-column-fill: balance; column-fill: balance; -webkit-column-gap: normal; column-gap: normal; -webkit-column-rule: medium medium #1f1f1f; column-rule: medium medium #1f1f1f; -webkit-column-span: 1; column-span: 1; -webkit-column-width: auto; column-width: auto; -webkit-columns: auto auto; columns: auto auto; content: normal; counter-increment: none; counter-reset: none; crop: auto; cursor: auto; direction: ltr; display: inline; dominant-baseline: auto; drop-initial-after-adjust: text-after-edge; drop-initial-after-align: baseline; drop-initial-before-adjust: text-before-edge; drop-initial-before-align: caps-height; drop-initial-size: auto; drop-initial-value: initial; elevation: level; empty-cells: show; fit: fill; fit-position: 0% 0%; float: none; float-offset: 0 0; grid-columns: none; grid-rows: none; hanging-punctuation: none; height: auto; hyphenate-after: auto; hyphenate-before: auto; hyphenate-character: auto; hyphenate-lines: no-limit; hyphenate-resource: none; -webkit-hyphens: manual; -ms-hyphens: manual; hyphens: manual; icon: auto; image-orientation: auto; image-rendering: auto; image-resolution: normal; inline-box-align: last; left: auto; line-height: inherit; line-stacking: inline-line-height exclude-ruby consider-shifts; list-style: disc outside none; margin: 0; marks: none; marquee-direction: forward; marquee-loop: 1; marquee-play-count: 1; marquee-speed: normal; marquee-style: scroll; max-height: none; max-width: none; min-height: 0; min-width: 0; move-to: normal; nav-down: auto; nav-index: auto; nav-left: auto; nav-right: auto; nav-up: auto; opacity: 1; orphans: 2; outline: invert none medium; outline-offset: 0; overflow: visible; overflow-style: auto; padding: 0; page: auto; page-break-after: auto; page-break-before: auto; page-break-inside: auto; page-policy: start; -webkit-perspective: none; perspective: none; -webkit-perspective-origin: 50% 50%; perspective-origin: 50% 50%; pointer-events: auto; position: static; presentation-level: 0; punctuation-trim: none; quotes: none; rendering-intent: auto; resize: none; right: auto; rotation: 0; rotation-point: 50% 50%; ruby-align: auto; ruby-overhang: none; ruby-position: before; ruby-span: none; size: auto; string-set: none; table-layout: auto; top: auto; -webkit-transform: none; transform: none; -webkit-transform-origin: 50% 50% 0; transform-origin: 50% 50% 0; -webkit-transform-style: flat; transform-style: flat; -webkit-transition: all 0 ease 0; transition: all 0 ease 0; unicode-bidi: normal; vertical-align: baseline; white-space: normal; white-space-collapse: collapse; widows: 2; width: auto; word-break: normal; word-spacing: normal; word-wrap: normal; z-index: auto; text-align: start; -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)"; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.makerobos_containerMain .makerobos_containerIn { width: 376px !important; height: calc(100% - 60px - 40px); min-height: 250px !important; max-height: 704px !important; position: fixed !important; bottom: 40px; z-index: 9999 !important; -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16) !important; box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16) !important; border-radius: 8px !important; overflow: hidden !important; }
+.makerobos_containerMain.expandedWidget .makerobos_containerIn { width: 600px !important;  }
+.makerobos_containerMain .makerobos_containerIn .makerobos_ContaineraIframe { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; width: 100% !important; height: 100% !important; position: absolute; }
+#makerobos_container .makerobos_containerIn { transition: opacity .2s ease-in-out, width .3s linear, transform .14s ease-in-out; }
+.mkosBTNContainer { line-height: 1; }
+.mkosBTNContainer .mkosBTNFrame { z-index: 99 !important; position: fixed !important; bottom: -170px; width: 130px !important; height: 130px !important; background: none !important; }
+.mkosBTNContainer .mkosBTNFrame._large { width: 140px !important; height: 140px !important; }
+.mkosBTNContainer .mkosBTNFrame._standard { width: 140px !important; height: 140px !important; }
+.mkosBTNContainer .mkosBTNFrame._small { width: 140px !important; height: 140px !important; }
+#makerobos_chat { visibility: visible !important; }
+.mkosBTNContainer .mr-btn-wrapper { width: 60px; height: 60px; position: fixed; bottom: 40px; border-radius: 50%; cursor: pointer; z-index: 9999 !important; }
+.mkosBTNContainer .mr-btn-wrapper._small { width: 45px; height: 45px; bottom: 40px; }
+.mkosBTNContainer .mr-btn-wrapper._standard { width: 60px; height: 60px; bottom: 40px; }
+.mkosBTNContainer .mr-btn-wrapper._large { width: 70px; height: 70px; bottom: 40px; }
+.makerobos_GlassContainerIn { cursor: auto; }
+#makerobos_Glasscontainer .makerobos_GlassIframe { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; opacity: 0; transform: translateY(20px); pointer-events: none; transition: transform .4s ease-in-out, opacity .4s ease-in-out, height .1s ease-in-out; }
+#makerobos_Glasscontainer .makerobos_GlassIframe.show { opacity: 1; transform: translateY(0px); pointer-events: auto; }
+.makerobos_GlassMain .makerobos_GlassIframe { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; position: fixed !important; z-index: 2147483000 !important; bottom: 85px; }
+.makerobos_GlassMain .makerobos_GlassIframe.iframe_simpleMessage_type2main { width: 360px !important; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; position: fixed !important; z-index: 2147483000 !important; bottom: 12px !important; transition: height .12s ease-in-out; }
+
+.makerobos_GlassMain._widgetLeft .makerobos_GlassIframe.iframe_simpleMessage_type3main {bottom: 0px !important; left: 80px !important; }
+.makerobos_GlassMain._widgetLeft._small .makerobos_GlassIframe.iframe_simpleMessage_type3main { left: 60px !important; }
+.makerobos_GlassMain._widgetRight .makerobos_GlassIframe.iframe_simpleMessage_type3main {bottom: 0px !important; right: 60px !important; }
+
+.makerobos_GlassMain._widgetRight .iframe_simpleMessage_type2main.launcherBTN_standard { right: 20px; }
+.makerobos_GlassMain._widgetRight .iframe_simpleMessage_type2main.launcherBTN_small { right: 7px; }
+
+.makerobos_GlassMain._widgetLeft .iframe_simpleMessage_type2main.launcherBTN_standard { left: 20px; }
+.makerobos_GlassMain._widgetLeft .iframe_simpleMessage_type2main.launcherBTN_small { left: 7px; }
+#makerobos_Glasscontainer ._mkosBotGradient { display: none; }
+.makerobos_GlassMain._widgetLeft { left: 40px; }
+.makerobos_GlassMain._widgetRight { right: 40px; }
+.mkosBTNContainer._widgetRight { right: 0px; }
+.mkosBTNContainer._widgetLeft { left: 0px; }
+
+.makerobos_containerMain._widgetLeft { left: 0px; }
+.makerobos_containerMain._widgetRight { right: 0px; }
+.makerobos_containerMain._widgetLeft._large .makerobos_containerIn { left: 120px; }
+.makerobos_containerMain._widgetLeft._standard .makerobos_containerIn { left: 110px; }
+.makerobos_containerMain._widgetLeft._small .makerobos_containerIn { left: 100px; }
+.makerobos_containerMain._widgetRight._large .makerobos_containerIn { right: 120px; }
+.makerobos_containerMain._widgetRight._standard .makerobos_containerIn { right: 110px; }
+.makerobos_containerMain._widgetRight._small .makerobos_containerIn { right: 100px; }
+.mkosBTNContainer._widgetRight .mr-btn-wrapper { right: 40px; }
+.mkosBTNContainer._widgetLeft .mr-btn-wrapper { left: 40px; }
+.mkosBTNContainer._widgetRight .mkosBTNFrame { right: 0px; }
+.mkosBTNContainer._widgetLeft .mkosBTNFrame { left: 0px; }
+.makerobos_GlassMain._widgetRight .makerobos_GlassIframe { right: 32px; }
+.makerobos_GlassMain._widgetLeft .makerobos_GlassIframe { left: 32px; }
+.makerobos_GlassMain._small .makerobos_GlassIframe { bottom: 60px; }
+.makerobos_GlassMain._standard .makerobos_GlassIframe { bottom: 80px; }
+/*type 3*/
+.makerobos_GlassMain .makerobos_GlassIframe.iframe_simpleMessage_type_3_main { bottom: 8px; width: 100% !important; max-width: calc(100% - 16px) !important; }
+.makerobos_GlassMain._widgetRight .makerobos_GlassIframe.iframe_simpleMessage_type_3_main { right: 8px; }
+.makerobos_GlassMain._widgetLeft .makerobos_GlassIframe.iframe_simpleMessage_type_3_main { left: 8px; }
+
+.makerobos_GlassMain:hover ~ #mkosBTNContainer { pointer-events: none; } 
+
+/* Model Gallery */
+._mkosModelGallery { position: fixed; width: 0px; height: 0px; display: none; left: 0px; bottom: 0px; z-index: 9999999999999; pointer-events: auto; }
+._mkosModelGallery ._mkosModelGalleryIn {  position: fixed; width: 100%; height: 100%; background-color: rgba(255,255,255,.9); top: 0px; left: 0px; z-index: 2; }
+._mkosModelGallery ._mkosModelGalleryCloseBG { position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; z-index: 2; }
+._mkosModelGallery ._mkosModelGalleryWrapper { max-height: 80vh; position: absolute; top: calc(50% - 10px); opacity: 0; left: 50%; z-index: 4; transform: translate(-50%, -50%); text-align: center; transition: top .2s ease-in-out, opacity .2s ease-in-out; }
+._mkosModelGallery ._mkosModelGalleryCont { width: auto; min-width: 600px; min-height: 200px; max-height: 600px; margin: auto; display: inline-block; background-color: #fff; border-radius: 8px; box-shadow: 0px 3px 16px 3px rgba(65, 72, 89, 0.4); position: relative; }
+._mkosModelGallery ._mkoGalleryHold { width: 100%; max-height: 80vh; height: 100%; display: block; border-radius: 8px; overflow: hidden; overflow-y: auto; }
+._mkosModelGallery ._mkoGalleryThumb { width: 100%; margin: auto; max-height: 100%; display: block; border-radius: 8px; }
+._mkosModelGallery ._mkoGalleryVideo { width: 100%; height: 337px; display: block; border-radius: 8px; position: relative; }
+._mkosModelGallery ._mkosModelGalleryClose {position: absolute; right: 0; top: -35px; height: 28px; color: #fff; text-align: center; padding: 3px 15px 0; border-radius: 15px; z-index: 3; font-size: 14px; cursor: pointer; font-family: 'arial', sans-serif; background-color: rgba(65,72,89,.7); box-shadow: 0px 0px 4px 0px rgba(65, 72, 89, 0.4); transition: background .14s ease-in-out; }
+._mkosModelGallery ._mkosModelGalleryClose ._mkosModelGalleryCloseIcon { width: 16px; display: inline-block; vertical-align: -8px; margin-left: 0px; }
+._mkosModelGallery ._mkosModelGalleryClose:hover { background-color: rgba(65,72,89,.9); }
+._mkosModelGallery._mkosModelGalleryShow { display: block; }
+._mkosModelGallery ._mkosModelGalleryWrapper.mkosModelGalleryWrapperOpen { top: calc(50% + 20px); opacity: 1; }
+._mkosModelGallery ._mkoGalleryVideo:after {content: ''; width: 30px; height: 30px; position: absolute; left: 50%; top: 50%; margin-top: -15px; margin-left: -15px; display: inline-block; opacity: .8; border-radius: 100%; box-shadow: 1px 0px #262626; background: 0 0; animation: mkosLoader .8s linear infinite; }
+.mkosBTNContainer.buttonInvisible,
+.mkosBTNContainer.buttonInvisible .mkosBTNFrame,
+.mkosBTNContainer.buttonInvisible .mr-btn-wrapper { opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
+
+/*_mkosModelGalleryPrtrait*/
+@media only screen and (max-width:766px) {
+  ._mkosModelGallery ._mkosModelGalleryWrapper { width: 100%; }
+  ._mkosModelGallery ._mkosModelGalleryCont { min-width: 250px; width: calc(100% - 40px); min-height: 50px; }
+  ._mkosModelGallery ._mkosModelGalleryCont img { max-height: 400px; }
+  
+  ._mkosModelGallery ._mkosModelGalleryWrapper._mkosModelGalleryPrtrait { max-height: 100vh; }
+  ._mkosModelGallery ._mkosModelGalleryPrtrait ._mkoGalleryHold { max-height: 90vh; }
+  ._mkosModelGallery ._mkosModelGalleryWrapper._mkosModelGalleryPrtrait ._mkosModelGalleryCont img { max-height: 100vh; }
+}
+@media only screen and (max-device-width:667px), screen and (max-width:450px) {
+  .makerobos_containerMain .makerobos_containerIn { height: 100% !important; bottom: 0 !important; width: 100% !important; height: 100% !important; max-height: none !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; border-radius: 0 !important; }
+  .makerobos_GlassMain .makerobos_GlassIframe { max-width: calc(100% - 40px) !important; }
+  .makerobos_GlassMain._widgetRight .makerobos_GlassIframe.iframe_simpleMessage_type3main { max-width: calc(100% - 60px) !important; }
+  .makerobos_GlassMain._widgetLeft .makerobos_GlassIframe.iframe_simpleMessage_type3main { max-width: calc(100% - 80px) !important; }
+}
+.mkosBTNContainer .mkosBTNFrame { animation-name: mkosbounceInUp; animation-duration: .8s; animation-iteration-count: 1; animation-delay: .8s; animation-fill-mode: forwards; }
+
+@keyframes mkosbounceInUp {
+  0% { bottom: -170px; }
+  60% { bottom: 20px; }
+  90% { bottom: -10px; }
+  100% { bottom: 0px; }
+}
+ @keyframes mkosLoader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

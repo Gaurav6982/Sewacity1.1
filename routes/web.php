@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('main.choose');
 // });
+Route::get('pathkind-labs',function(){
+    return File::get(public_path('pathkindlabs/index4.html'));
+});
+Route::get('pathkind-labs-test',function(){
+    return File::get(public_path('pathkindlabstest/book.html'));
+});
 Route::get('/',"Main@index");
 Route::get('/about',"Main@about");
 Route::post('setSession','Main@setSession');

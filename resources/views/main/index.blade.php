@@ -522,6 +522,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                     {{-- <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li> --}}
                     <li> <a  href="/safari">LOCOMO</a></li>
                     <li><a  href="/shelters">SHELTERS</a></li>
+                    <li><a  href="/pathkind-labs">PathKindLabs</a></li>
                     </li>
                 </ul>
             </div>
@@ -732,8 +733,8 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
             <div class="container-fluid">
                 <div class="swiper-container">
                     <center>
-                        <div class="head1"> <img src="./assets/ecomhead.jpg">
-                            <p></p>
+                        <div class="head1"> <img src="{{asset('assets/back4.jpg')}}" style="height: 80px">
+                            <p class="text-white">PathKindLabs</p>
                         </div>
                     </center> <br>
                     <div class="swiper-wrapper">
@@ -748,37 +749,12 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                         <div class="swiper-slide">
                             <div class="ImgBx">
 
-                                <a href="https://sewacity.com/products?category=8&sort=latest&searchbox=">
+                                <a href="pathkind-labs">
 
-                                 <img src="./assets/cosban1.webp"> </div>
-                            <div class="ImgDetails"> Buy Now </div> </a>
+                                 <img src="./assets/pathkindlabs.jpeg"> </div>
+                            <div class="ImgDetails"> Click Now </div> </a>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                                 <a href="https://sewacity.com/products?category=3&sort=latest&searchbox=">
-                                 <img src="./assets/fotban1.webp"> </div>
-                            <div class="ImgDetails"> Buy Now </div></a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                             <a href="https://sewacity.com/products?category=7&sort=latest&searchbox=">
-                            <img src="./assets/Grocery.webp" alt="Image 1"> </div>
-                            <div class="ImgDetails">
-                                <h5>Buy Now</h5></a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                                 <a href="https://sewacity.com/products?category=1&sort=latest&searchbox=">
-                                 <img src="./assets/elecban.webp"> </div>
-                            <div class="ImgDetails">Buy Now </div></a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                                <a href="https://sewacity.com/products?category=4&sort=latest&searchbox=">
-                                 <img src="./assets/bookshwad.webp"> </div>
-                            <div class="ImgDetails"> Buy Now </div></a>
-                        </div>
+                        
                     </div> <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
