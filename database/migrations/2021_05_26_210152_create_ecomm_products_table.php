@@ -15,18 +15,20 @@ class CreateEcommProductsTable extends Migration
     {
         Schema::create('ecomm_products', function (Blueprint $table) {
             $table->id();
-            $table->string('product_name');
-            $table->json('images');
+            $table->longText('product_name');
+            $table->longText('showcase_image')->nullable();
             $table->longText('specs');
             $table->unsignedBigInteger('seller_id');
             // $table->foreign('seller_id')->references('id')->on('ecomm_sellers');
-            $table->string('offers');
+            $table->longText('offers');
             $table->unsignedBigInteger('category_id');
             // $table->foreign('category_id')->references('id')->on('categories');
             $table->double('price',8,2);
-            $table->double('discount',3,2);
+            $table->double('selling_price',8,2);
+            $table->double('discount',5,2);
             $table->longText('description');
             $table->boolean('is_active');
+            $table->boolean('sold_out');
             $table->timestamps();
         });
     }

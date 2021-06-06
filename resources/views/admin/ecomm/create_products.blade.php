@@ -90,6 +90,17 @@
                             @endif
                         </div>
                         <div class="form-group">
+                            <label for="sold_out">Product Status*</label>
+                            <select  name="sold_out" id="sold_out" class="form-control">
+    
+                                <option value="0" @isset($product) {{$product->sold_out==0?'selected':''}} @endisset>In Stock</option>
+                                <option value="1" @isset($product) {{$product->sold_out==1?'selected':''}} @endisset>Sold Out</option>
+                            </select>
+                            @if($errors->has('sold_out'))
+                                <div class="text-danger">{{ $errors->first('sold_out') }}</div>
+                            @endif
+                        </div>
+                        <div class="form-group">
                             <label for="price">Product Price*</label>
                             <input type="number"  name="price" id="price" value="{{isset($product)?$product->price:(old('price')??'')}}" class="form-control" placeholder="Enter Product Price">
                             @if($errors->has('price'))
@@ -110,6 +121,22 @@
                                 <div class="text-danger">{{ $errors->first('description') }}</div>
                             @endif
                         </div>
+                        @if(count($product->uploaded_images??[])>0)
+                        <div class="form-group">
+                            <label for="showcase_image">Product ShowCase Image</label>
+                           <select name="showcase_image" id="showcase_image" class="form-control select2">
+                               <option value="{{NULL}}">No Image Selected</option>
+                               @foreach ($product->uploaded_images as $image)
+                                   <option value="{{$image->file_path}}" @isset($product) {{$product->showcase_image==$image->file_path?'selected':''}} @endisset>{{$image->image_name}} </option>
+                               @endforeach
+                           </select>
+                           <small> <em>You can view the image by clicking on a image name below.</em></small>
+                            @if($errors->has('showcase_image'))
+                                <div class="text-danger">{{ $errors->first('showcase_image') }}</div>
+                            @endif
+                        </div>
+                        
+                        @endif
                         <div class="form-group">
                             <label for="images">Product Images</label>
                             @isset($product)
@@ -120,7 +147,7 @@
                                         {{-- <div class="card image-card"> --}}
                                             <tr>
                                             <td class="img-relative-div">
-                                                <a href="{{url($image->file_path)}}" target="_blank">Image {{$k+1}}</a>
+                                                <a href="{{url($image->file_path)}}" target="_blank">{{$image->image_name}}</a>
                                                 <div class="cross-button btn text-danger" data-id="{{$image->id}}"><i class="fa fa-times"></i></div>
                                             </td>
                                             </tr>
@@ -193,9 +220,12 @@
             $(el).parent().remove();
         }
         // alert("awd");
-            CKEDITOR.instances['specs'].setData("{!!$product->specs??''!!}")
-            CKEDITOR.instances['description'].setData("{!!$product->description??''!!}")
-            CKEDITOR.instances['offers'].setData("{!!$product->offers??''!!}")
+            var specs="{!!str_replace(array("\r","\n"),"",$product->specs??'')!!}";
+            var description="{!!str_replace(array("\r","\n"),"",$product->description??'')!!}";
+            var offers="{!!str_replace(array("\r","\n"),"",$product->offers??'')!!}";
+            CKEDITOR.instances['specs'].setData(specs)
+            CKEDITOR.instances['description'].setData(description)
+            CKEDITOR.instances['offers'].setData(offers)
     })
 </script>
 @endsection

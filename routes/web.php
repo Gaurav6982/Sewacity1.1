@@ -21,6 +21,13 @@ Route::get('/about',"Main@about");
 Route::post('setSession','Main@setSession');
 Route::post('gettSession','Main@getSession');
 Auth::routes();
+
+//User E-Comm
+Route::get('/e-commerce','UserEcommController@index')->name('e_comm');
+Route::post('/e-commerce','UserEcommController@filtered')->name('e_comm_filtered');
+Route::get('/e-commerce/product/{product_id}','UserEcommController@show')->name('show_product');
+Route::get('/e-commerce/cart','UserEcommController@cart')->name('ecomm_cart');
+
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
     Route::get('/city','Admin\AdminController@manage_cities');
@@ -61,7 +68,7 @@ Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
     })->name('admin');
-    Route::resource('posts', 'PostController');
+    // Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     
     Route::post('/manage-category','Admin\AdminController@manage_categories');
@@ -72,11 +79,11 @@ Route::group(['middleware'=>['admin','auth']],function(){
     Route::post('/delete-category','Admin\AdminController@delete_category');
 });
 Route::group(['middleware'=>['auth']],function(){
-	Route::get('/products/addItem/{pid}','CartController@addItem');
-	Route::get('/products/cart','CartController@show');
-	Route::get('/products/cart/delete/{pid}','CartController@remove');
-    Route::post('/products/send','CartController@send');
-    Route::put('/products/update/{id}','CartController@update');
+	// Route::get('/products/addItem/{pid}','CartController@addItem');
+	// Route::get('/products/cart','CartController@show');
+	// Route::get('/products/cart/delete/{pid}','CartController@remove');
+    // Route::post('/products/send','CartController@send');
+    // Route::put('/products/update/{id}','CartController@update');
     Route::get('/profile','ProfileController@index');
     Route::put('/profile/update','ProfileController@update');
     Route::get('/safari','SafariController@safari');

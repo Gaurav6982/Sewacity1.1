@@ -169,11 +169,12 @@ class AdminECommController extends Controller
         $product->offers=$request->input('offers');
         $product->price=$request->input('price');
         $product->seller_id=$seller_id;
+        $product->sold_out=$request->input('sold_out');  
         $product->discount=$request->input('discount');
+        $product->selling_price=round($product->price-$product->price*($product->discount/100),2);
         $product->is_active=$request->input('status');
         $product->category_id=$request->input('category_id');
         $product->description=$request->input('description');
-        $product->images=$request->has('images')?count($request->images):0;
         if($product->save())
         {
             if($request->has('images')){
@@ -187,6 +188,10 @@ class AdminECommController extends Controller
                     $image->image_extension=$file->getClientOriginalExtension();
                     $image->product_id=$product->id;
                     $image->file_path=$p.'/'.$image->image_name.'.'.$image->image_extension;
+                    if($k==0){
+                        $product->showcase_image=$image->file_path;
+                        $product->save();
+                    }
                     $file->move($path,$image->image_name.'.'.$image->image_extension);
                     $image->save();
                 }
@@ -222,10 +227,12 @@ class AdminECommController extends Controller
         $product->offers=$request->input('offers');
         $product->price=$request->input('price');
         $product->discount=$request->input('discount');
+        $product->selling_price=round($product->price-$product->price*($product->discount/100),2);
         $product->is_active=$request->input('status');
+        $product->sold_out=$request->input('sold_out');  
         $product->category_id=$request->input('category_id');
         $product->description=$request->input('description');
-        $product->images=$request->has('images')?($product->images-count($request->input('removed_images')??[])+count($request->images)):$product->images-count($request->input('removed_images'));
+        $product->showcase_image=$request->input('showcase_image');
         if($product->save())
         {
             foreach($request->input('removed_images')??[] as $img){
@@ -237,14 +244,20 @@ class AdminECommController extends Controller
                 // $category_name=$product->category->category_name;
                 $p='storage/ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
                 $path=public_path($p);
-                $count=$product->images;
+                $count=count($product->uploaded_images??[]);
                 foreach($request->images as $k=>$file){
                     $image=new EcommProductImage;
-                    $image->image_name=$product->product_name.($count--);
+                    $image->image_name=substr(trim($product->product_name),0,20).(++$count);
                     $image->image_size=filesize($file);
                     $image->image_extension=$file->getClientOriginalExtension();
                     $image->product_id=$product->id;
                     $image->file_path=$p.'/'.$image->image_name.'.'.$image->image_extension;
+                    if($k==0){
+                        if($product->showcase_image==NULL){
+                            $product->showcase_image=$image->file_path;
+                            $product->save();
+                        }
+                    }
                     $file->move($path,$image->image_name.'.'.$image->image_extension);
                     $image->save();
                 }

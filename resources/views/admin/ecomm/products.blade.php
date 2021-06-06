@@ -33,7 +33,10 @@
                                    <td> {{$product->category->category_name}}</td>
                                    <td> {{$product->price}}</td>
                                    <td> {{$product->discount}}</td>
-                                   <td> {!!$product->is_active?'<button disabled class="btn btn-sm btn-success">Active</button>':'<button class="btn btn-sm btn-danger" disabled>InActive</button>'!!}</td>
+                                   <td class=""> 
+                                        {!!$product->is_active?'<button disabled class="btn btn-sm btn-success">Active</button>':'<button class="btn btn-sm btn-danger" disabled>InActive</button>'!!}
+                                        {!!$product->sold_out?'<button disabled class="btn btn-sm btn-danger ml-1">Sold Out</button>':'<button class="btn btn-sm btn-success ml-1" disabled>In Stock</button>'!!}
+                                    </td>
                                    <td class="d-flex w-100 justify-content-around">
                                     <a href="{{route('edit_product',['id'=>$product->id])}}"  class="btn btn-sm btn-inline-block btn-warning edit_seller_btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <form action="{{route('delete_product',['id'=>$product->id])}}" method="POST">
@@ -68,7 +71,11 @@
 // var dt = require( 'datatables.net' )();
         $(document).ready(function(){
             // alert("ad");
-            $('table').DataTable();
+            $('table').DataTable({
+                "columnDefs": [
+                    { "width": "20%", "targets": 0 }
+                ]
+            });
             $('form').on("submit",function(){
                 $('#preloader').css('display','unset');
             })

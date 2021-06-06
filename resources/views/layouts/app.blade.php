@@ -26,11 +26,13 @@
 {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 <style>
 #messages{
-    padding-top: 65px;
+    /* padding-top: 65px; */
 }
 #select-dropdown{
     /* position: fixed; */
@@ -64,7 +66,7 @@
             
             padding: 0;
             margin:0;
-            padding-top: 120px;
+            /* padding-top: 120px; */
         }
 
     }
@@ -197,7 +199,8 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         <img src="/storage/preload/126.gif" alt="">
     </div>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="position:fixed;top:0;width:100%;z-index:99">
+        {{-- <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="position:fixed;top:0;width:100%;z-index:99"> --}}
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="width:100%;">
             <div class="container">
                 <a class="navbar-brand"  href="{{ url('/') }}">
                    <div>
@@ -218,7 +221,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         <ul class="navbar-nav">
                             <li class="nav-item active"><a href="/"class="nav-link"><span class="custom hoverable" id="len1">HOME</span></a></li>
                             <li class="nav-item hoverable" id="len2"><a href="/foodie"class="nav-link"><span class="custom">FOOD SERVICE</span></a></li>
-                            {{-- <li class="nav-item hoverable" id="len3"><a href="/products?category=0&sort=latest&searchbox="class="nav-link"><span class="custom">E-COMMERCE</span></a></li> --}}
+                            <li class="nav-item hoverable" id="len3"><a href="{{route('e_comm')}}"class="nav-link"><span class="custom">E-COMMERCE</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/safari"class="nav-link"><span class="custom">LOCOMO</span></a></li>
                             <li class="nav-item hoverable" id="len3"><a href="/shelters"class="nav-link"><span class="custom">SHELTERS</span></a></li>
                             <!--<li class="nav-item hoverable"id="len4"><a href="#"class="nav-link"><span class="custom">CITY's MERCHANT</span></a></li>-->
@@ -310,6 +313,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="//cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
@@ -365,5 +369,5 @@ $(function(){
     
     
 </script>
-@yield('js');
+@yield('js')
 </html>
