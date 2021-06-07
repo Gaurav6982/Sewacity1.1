@@ -322,6 +322,9 @@
         .not_in_mobile{
             display: block;
         }
+        #show-image{
+            object-fit: contain
+        }
         @media only screen and (max-width:600px)
         {
             
@@ -383,10 +386,15 @@
                 display: none;
             }
         }
+        #cart{
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 @endsection
 @section('content')
-<input type="hidden" name="authCheck" value="{{\Auth::check()?'true':'false'}}">
+<input type="hidden" name="authCheck" id="authCheck" value="{{\Auth::check()?'true':'false'}}">
 <form action="{{route('e_comm_filtered')}}" method="POST" id="search-form">
     {{ csrf_field() }}
 <header id="search-bar-ecommerce">
@@ -421,11 +429,12 @@
                 </div> 
             </div> -->
         <!-- </div> -->
-         <div id="cart">Cart <span><i class="fa fa-shopping-cart"></i></span></div>
+         <a href="{{route('ecomm_cart')}}" id="cart">Cart <span><i class="fa fa-shopping-cart"></i></span></a>
     </div>
 </header>
 </form>
 <main>
+    <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">
     <div class="custom-card">
         <div class="container-fluid">
             <div class="d-flex" id="image_and_content" style="position: relative;">
@@ -533,6 +542,7 @@
             });
 
             $('.addToCart button').click(function(){
+                // console.log($('#authCheck').val());
                 if($('#authCheck').val()=="true"){
                     $.ajax({
                         url:"{{url('/')}}"+'/add-to-ecomm-cart',
@@ -542,16 +552,19 @@
                             "product_id":$('#product_id').val()
                         },
                         success:function(data){
-                            if(data=="auth"){
+                            if(data=="success"){
+                                Swal.fire('Added To Cart!', '', 'success')
+                                // window.location.href="{{route('ecomm_cart')}}";
+                            }
+                            else if(data=="already"){
+                                Swal.fire('Already Added To Cart!', '', 'info')
+                            }
+                            else{
                                 Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
-                                text: 'Please Login First!',
+                                text: 'Something Went Wrong!',
                                 })
-                            }
-                            else if(data=="success"){
-                                Swal.fire('Added To Cart!', '', 'success')
-                                window.location.href="{{url('/e-commerce/cart')}}";
                             }
                         }
                     })

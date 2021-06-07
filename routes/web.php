@@ -26,7 +26,8 @@ Auth::routes();
 Route::get('/e-commerce','UserEcommController@index')->name('e_comm');
 Route::post('/e-commerce','UserEcommController@filtered')->name('e_comm_filtered');
 Route::get('/e-commerce/product/{product_id}','UserEcommController@show')->name('show_product');
-Route::get('/e-commerce/cart','UserEcommController@cart')->name('ecomm_cart');
+Route::get('/get-seller/{id}','UserEcommController@getSeller')->name('get_seller');
+
 
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
@@ -88,6 +89,10 @@ Route::group(['middleware'=>['auth']],function(){
     Route::put('/profile/update','ProfileController@update');
     Route::get('/safari','SafariController@safari');
     Route::post('/safari/book','SafariController@safariBook');
+    Route::get('/e-commerce/cart','UserEcommController@cart')->name('ecomm_cart');
+    Route::post('/add-to-ecomm-cart','UserEcommController@addToCart')->name('add_to_cart');
+    Route::delete('/remove-from-ecomm-cart','UserEcommController@removeFromCart')->name('remove_from_cart');
+    Route::post('/place-ecomm-request','UserEcommController@placeEcommRequest')->name('place_ecomm_request');
 });
 
 // Route::get('/products','Main@ecomm');

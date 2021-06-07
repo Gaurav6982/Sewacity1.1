@@ -113,13 +113,13 @@
                 		    @foreach($data['items'] as $item)
                 		        <tr>
                         			<td style="border:2px solid white"><?php echo ++$num;?></td>
-                        			<td style="border:2px solid white">{{$item->pname}}</td>
-                        			<?php $sub+=$item->price*$item->quantity?>
-                        			<td style="border:2px solid white">Rs. {{$item->price}}</td>
-                        			<td style="border:2px solid white">{{$item->quantity}}</td>
-                        			<td style="border:2px solid white">Rs.{{round(($item->discount/100)*$item->price)}}</td>
-                        			<?php $tot+=round($item->price*(1-(float)$item->discount/100))*$item->quantity?>
-                        			<td style="border:2px solid white">Rs.{{round($item->price*(1-(float)$item->discount/100))*$item->quantity}}</td>
+                        			<td style="border:2px solid white">{{$item['pname']}}</td>
+                        			<?php $sub+=$item['price']*$item['quantity']?>
+                        			<td style="border:2px solid white">Rs. {{$item['price']}}</td>
+                        			<td style="border:2px solid white">{{$item['quantity']}}</td>
+                        			<td style="border:2px solid white">Rs.{{$item['discount']}}</td>
+                        			<?php $tot+=$item['selling_price']*$item['quantity']?>
+                        			<td style="border:2px solid white">Rs.{{$item['selling_price']*$item['quantity']}}</td>
                         		</tr>
                 		    @endforeach
                 		    <tr>
@@ -130,12 +130,19 @@
                     		<tr>
                     			<td></td>
                     			<td style="border:2px solid white" colspan="3">Discount</td>
-                    			<td style="border:2px solid white">Rs. {{$sub-$tot}}</td>
+                    			<td style="border:2px solid white">Rs. {{number_format((float)($sub-$tot), 2, '.', '')}}</td>
+                    			{{-- <td style="border:2px solid white">Rs. {{round((float)($sub-$tot))}}</td> --}}
+                    		</tr>
+							<tr>
+                    			<td></td>
+                    			<td style="border:2px solid white" colspan="3">Delivery Charge</td>
+                    			<td style="border:2px solid white">Rs. {{number_format((float)($data['delivery']), 2, '.', '')}}</td>
+                    			{{-- <td style="border:2px solid white">Rs. {{round((float)($data['delivery']))}}</td> --}}
                     		</tr>
                     		<tr>
                     			<td></td>
                     			<td  style="border:2px solid white" colspan="3">Total</td>
-                    			<td style="border:2px solid white">Rs. {{$tot}}</td>
+                    			<td style="border:2px solid white">Rs. {{ceil($tot+$data['delivery'])}}</td>
                     		</tr>
                 		</tbody>
                 	</table>

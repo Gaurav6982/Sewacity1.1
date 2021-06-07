@@ -18,8 +18,7 @@ class CreateCartItemsTable extends Migration
             $table->string('user_id');
             $table->string('product_id');
             $table->integer('quantity')->default(0);
-             $table->string('pname');
-            $table->string('price');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
