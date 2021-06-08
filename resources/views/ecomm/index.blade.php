@@ -9,7 +9,8 @@
             position: sticky;
             top: 0px;
             z-index: 11;
-            background-color: black;
+            background-color: #DCDCDC;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
             color: white;
             
         }
@@ -174,6 +175,7 @@
         #user,
         #more,
         #cart{
+            color: black;
             cursor: pointer;
             padding: 4px 20px 0 20px;
             margin: 0 20px;

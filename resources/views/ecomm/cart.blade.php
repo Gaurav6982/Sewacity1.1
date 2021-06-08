@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('ecomm_cart/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('ecomm_cart/mdb.ecommerce.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       #shopping-head{
         background-color: #e899dc;
@@ -42,12 +43,176 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
         display: flex;
 
       }
+
+      /* nav */
+      body{
+            position: relative !important;
+        }
+        #search-form{
+            height: 65px;
+            position: sticky;
+            top: 0;
+            z-index: 11;
+            background-color: #DCDCDC;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            color: white;
+            
+        }
+        ul li{
+            word-break: break-all
+        }
+        header .wrapper{
+            display: flex;
+            padding-top: 1%;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+        }
+        #user,
+        #more,
+        #cart{
+            color: black;
+            cursor: pointer;
+            padding: 4px 20px 0 20px;
+            margin: 0 20px;
+            /* height: 100%; */
+            position: relative;
+        }
+        #user::after,#more::after{
+            content: '';
+            position: absolute;
+            bottom: -12%;
+            z-index: 1;
+            left: 45%;
+            transform: translateX(-50%);
+            width: 10px;height: 10px;
+            transform: rotateZ(45deg);
+            opacity: 0;
+            background-color: grey;
+        }
+        #user:hover::after,
+        #user:hover .submenu,
+        #more:hover .submenu,
+        #more:hover::after{
+            opacity: 1;
+        }
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+        .searchTerm {
+        width: 100%;
+        border: 3px solid #00B4CC;
+        border-right: none;
+        padding: 5px;
+        height: 100%;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9DBFAF;
+        }
+
+        .searchTerm:focus{
+        color: #00B4CC;
+        }
+
+        .searchButton {
+        width: 40px;
+        height: 36px;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+        }
+        header .wrapper{
+            display: flex;
+            padding-top: 1%;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+        }
+        .search-wrap{
+            
+        width: 30%;
+        margin-right: 20px;
+        /* position: absolute; */
+        /* top: 50%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
+        }
+        @media only screen and (max-width: 600px) {
+           
+            header .wrapper{
+                padding-top: 3%;
+                padding-left: 2%;
+                justify-content:space-between;
+            }
+            #cart{
+                /* cursor: pointer; */
+                padding: 5px 0px 0 5px;
+                text-align: center;
+                margin: 0 5px;
+                width: 100px;
+                /* height: 100%; */
+                /* position: relative; */
+            }
+            .search-wrap{
+                width: 90%;
+            }
+            .header-section h6{
+                font-size: 10px;
+            }
+            
+        }
       /* #specs ul li,#specs p{
         font-size: 8px;
       } */
     @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
 @endsection
 @section('content')
+<form action="{{route('e_comm_filtered')}}" method="POST" id="search-form">
+  {{ csrf_field() }}
+<header id="search-bar-ecommerce">
+  <div class="wrapper">
+      <div class="search-wrap">
+          <div class="search">
+             <input type="text" class="searchTerm" name="search_text" id="search_text" value="{{$search_text??""}}" placeholder="What are you looking for?">
+             <button type="submit" class="searchButton">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+       </div>
+       <!-- <div class="extra"> -->
+          <!-- <div id="user" class="extra">
+              Gaurav
+              <span><i class="fas fa-caret-down"></i></span>
+              <div class="submenu">
+                  <ul>
+                      <li>User Profile</li>
+                      <li>Options</li>
+                      <li>Logout</li>
+                  </ul>
+              </div>    
+          </div>
+          <div id="more" class="extra">More <span><i class="fas fa-caret-down"></i></span>
+              <div class="submenu">
+                  <ul>
+                      <li>Download App</li>
+                      <li>E</li>
+                      <li>F</li>
+                  </ul>
+              </div> 
+          </div> -->
+      <!-- </div> -->
+       <a href="{{route('ecomm_cart')}}" id="cart">Cart <span><i class="fa fa-shopping-cart"></i></span></a>
+  </div>
+</header>
+</form>
      <!--Main Navigation-->
   <header>
     <div class="container text-center pt-4">
