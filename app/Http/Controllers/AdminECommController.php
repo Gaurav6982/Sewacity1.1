@@ -8,6 +8,7 @@ use App\EcommProduct;
 use Auth;
 use App\Categories;
 use Storage;
+use App\CartItem;
 use File;
 use App\EcommProductImage;
 use Illuminate\Support\Facades\Validator;
@@ -83,7 +84,7 @@ class AdminECommController extends Controller
         $seller->shop_name=$request->shop_name;
         $seller->seller_name=$request->seller_name;
         $seller->is_active=$request->status;
-        if($seller->is_active==0){
+        if($seller->is_active=="0"){
             foreach($seller->products as $product){
                 $product->is_active=false;
                 $product->save();
