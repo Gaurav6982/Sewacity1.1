@@ -366,6 +366,10 @@
                 padding-right: 0;
             }
         }
+        #cart{
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 @endsection
 @section('content')
@@ -403,7 +407,7 @@
                 </div> 
             </div> -->
         <!-- </div> -->
-         <div id="cart">Cart <span><i class="fa fa-shopping-cart"></i></span></div>
+         <a href="{{route('ecomm_cart')}}" id="cart">Cart <span><i class="fa fa-shopping-cart"></i></span></a>
     </div>
 </header>
 <main>

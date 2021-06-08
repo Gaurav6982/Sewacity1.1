@@ -83,6 +83,28 @@ class AdminECommController extends Controller
         $seller->shop_name=$request->shop_name;
         $seller->seller_name=$request->seller_name;
         $seller->is_active=$request->status;
+        if($seller->is_active==0){
+            foreach($seller->products as $product){
+                $product->is_active=false;
+                $product->save();
+                $carts=CartItem::where('product_id',$product->id)->where('is_active','1')->get();
+                foreach($carts as $cart){
+                    $cart->is_active=false;
+                    $cart->save();
+                }
+            }
+        }
+        else{
+            foreach($seller->products as $product){
+                $product->is_active=true;
+                $product->save();
+                $carts=CartItem::where('product_id',$product->id)->where('is_active','1')->get();
+                foreach($carts as $cart){
+                    $cart->is_active=true;
+                    $cart->save();
+                }
+            }
+        }
         $seller->delivery_charge=$request->delivery_charge;
         if($request->has('shop_image')){
             $file=$request->file('shop_image');
@@ -105,7 +127,10 @@ class AdminECommController extends Controller
         // dd(File::delete(public_path($seller->shop_image)));
         if($seller->shop_image!='/storage/images/slogo.png')
         File::delete(public_path($seller->shop_image));
-
+        foreach($seller->products??[] as $product){
+            $carts=CartItem::where('product_id',$product->id)->where('is_active','1')->get();
+            foreach($carts as $cart) $cart->delete();
+        }
         foreach($seller->products??[] as $product) $product->delete();
         if($seller->delete())
         return back()->with('success','Seller Deleted');
@@ -229,6 +254,20 @@ class AdminECommController extends Controller
         $product->discount=$request->input('discount');
         $product->selling_price=round($product->price-$product->price*($product->discount/100),2);
         $product->is_active=$request->input('status');
+        if($product->is_active=="0"){
+            $carts=CartItem::where('is_active','1')->where('product_id',$product->id)->get();
+            foreach($carts as $cart){
+                $cart->is_active=false;
+                $cart->save();
+            }
+        }
+        else{
+            $carts=CartItem::where('is_active','1')->where('product_id',$product->id)->get();
+            foreach($carts as $cart){
+                $cart->is_active=true;
+                $cart->save();
+            }
+        }
         $product->sold_out=$request->input('sold_out');  
         $product->category_id=$request->input('category_id');
         $product->description=$request->input('description');
@@ -275,6 +314,8 @@ class AdminECommController extends Controller
             $image->delete();
             
         }
+        $carts=CartItem::where('is_active','1')->where('product_id',$product->id)->get();
+        foreach($carts as $cart) $cart->delete();
         // dd("ad");
         if($product->delete())
         return back()->with('success','Product Deleted');
