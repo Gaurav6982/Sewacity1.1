@@ -431,12 +431,12 @@
             total=parseInt(total)+parseInt(extra);
         $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":total},err:function(err){console.log("set-amount error")} });
         $.ajax({
-            type:"POST",
+            type:"post",
             url:"/payment",
             async:false,
             data:{
                 // {{-- "amount":"{{Session::get('amount')}}", --}}
-                "_token":"{{ csrf_token() }}",
+                // "_token":"{{ csrf_token() }}",
             },
             success:function(data){
                 // {{-- alert(JSON.stringify(data)); --}}
@@ -463,8 +463,8 @@
                         success:function(data){
                             // {{-- alert(JSON.stringify(data)); --}}
                            
-                            if(data==='success')
-                            {
+                            // if(data==='success')
+                            // {
                                 Swal.fire(
                                      'Success!',
                                      'Payment Successful.',
@@ -473,7 +473,7 @@
                                 $.ajax({url:"/set-success",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}"} });
                                 $('#preloader').css('display','unset');
                                 $('#cart-form')[0].submit();
-                            }
+                            // }
                             
                             //     location.reload();
                         },
@@ -492,8 +492,10 @@
                     "prefill": {
                        
                         // @if(Auth::user()->email!=null)
-                        "email": "{{Auth::user()->email}}",
+                        
+                        // "email": "{{Auth::user()->email}}",
                         // @endif
+                        
                         "name": "{{Auth::user()->name}}",
                         "contact": "{{Auth::user()->phone}}"
                     },

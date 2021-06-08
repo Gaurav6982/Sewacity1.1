@@ -6,7 +6,7 @@
 <footer>
     <!-- <div class="seperate"></div> -->
     <div class="container-fluid p-0 my-md-0 mx-md-0" style="background-color:black">
-        <div class="row" style="overflow:hidden">
+        <div class="row" style="overflow:hidden;width:100%">
             <div class="col-md-4">
                 <h4 style="color:white">Explore</h4>
                 <hr style="height: 1px;background-color: white">

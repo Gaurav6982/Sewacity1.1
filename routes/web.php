@@ -27,10 +27,41 @@ Route::get('/about',"Main@about");
 Route::post('setSession','Main@setSession');
 Route::post('gettSession','Main@getSession');
 Auth::routes();
+
+//User E-Comm
+Route::get('/e-commerce','UserEcommController@index')->name('e_comm');
+Route::post('/e-commerce','UserEcommController@filtered')->name('e_comm_filtered');
+Route::get('/e-commerce/product/{product_id}','UserEcommController@show')->name('show_product');
+Route::get('/get-seller/{id}','UserEcommController@getSeller')->name('get_seller');
+
+
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
     Route::get('/city','Admin\AdminController@manage_cities');
     Route::resource('food/item','FoodItemController');
+    //coupons Route
+    Route::get('/coupons','CouponController@index')->name('coupons');
+    Route::get('/coupons/create','CouponController@create')->name('create_coupon');
+    Route::get('/coupons/edit/{id}','CouponController@edit')->name('edit_coupon');
+    Route::post('/coupons/store','CouponController@store')->name('store_coupon');
+    Route::put('/coupons/update/{id}','CouponController@update')->name('update_coupon');
+    Route::delete('/coupons/delete/{id}','CouponController@destroy')->name('delete_coupon');
+
+    //Sellers Routes
+    Route::get('/ecomm-sellers','AdminEcommController@sellers')->name('sellers');
+    Route::get('/ecomm-sellers/create','AdminEcommController@createSeller')->name('create_seller');
+    Route::get('/ecomm-sellers/edit/{id}','AdminEcommController@editSeller')->name('edit_seller');
+    Route::post('/ecomm-sellers/store','AdminEcommController@storeSeller')->name('store_seller');
+    Route::put('/ecomm-sellers/update/{id}','AdminEcommController@updateSeller')->name('update_seller');
+    Route::delete('/ecomm-sellers/delete/{id}','AdminEcommController@deleteSeller')->name('delete_seller');
+    
+    //products
+    Route::get('/ecomm-products/{id}','AdminEcommController@showProducts')->name('show_products');
+    Route::get('/ecomm-products/{seller_id}/create','AdminEcommController@createProduct')->name('create_product');
+    Route::get('/ecomm-products/edit/{id}','AdminEcommController@editProduct')->name('edit_product');
+    Route::post('/ecomm-products/{seller_id}/store','AdminEcommController@storeProduct')->name('store_product');
+    Route::put('/ecomm-products/update/{id}','AdminEcommController@updateProduct')->name('update_product');
+    Route::delete('/ecomm-products/delete/{id}','AdminEcommController@deleteProduct')->name('delete_product');
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');
@@ -43,8 +74,8 @@ Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
-    });
-    Route::resource('posts', 'PostController');
+    })->name('admin');
+    // Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     
     Route::post('/manage-category','Admin\AdminController@manage_categories');
@@ -55,15 +86,19 @@ Route::group(['middleware'=>['admin','auth']],function(){
     Route::post('/delete-category','Admin\AdminController@delete_category');
 });
 Route::group(['middleware'=>['auth']],function(){
-	Route::get('/products/addItem/{pid}','CartController@addItem');
-	Route::get('/products/cart','CartController@show');
-	Route::get('/products/cart/delete/{pid}','CartController@remove');
-    Route::post('/products/send','CartController@send');
-    Route::put('/products/update/{id}','CartController@update');
+	// Route::get('/products/addItem/{pid}','CartController@addItem');
+	// Route::get('/products/cart','CartController@show');
+	// Route::get('/products/cart/delete/{pid}','CartController@remove');
+    // Route::post('/products/send','CartController@send');
+    // Route::put('/products/update/{id}','CartController@update');
     Route::get('/profile','ProfileController@index');
     Route::put('/profile/update','ProfileController@update');
     Route::get('/safari','SafariController@safari');
     Route::post('/safari/book','SafariController@safariBook');
+    Route::get('/e-commerce/cart','UserEcommController@cart')->name('ecomm_cart');
+    Route::post('/add-to-ecomm-cart','UserEcommController@addToCart')->name('add_to_cart');
+    Route::delete('/remove-from-ecomm-cart','UserEcommController@removeFromCart')->name('remove_from_cart');
+    Route::post('/place-ecomm-request','UserEcommController@placeEcommRequest')->name('place_ecomm_request');
 });
 
 // Route::get('/products','Main@ecomm');

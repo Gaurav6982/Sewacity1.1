@@ -140,10 +140,10 @@
         text-transform: uppercase;
     }
 
-    @yield('styles');
+    
 
 </style>
-
+@yield('styles')
 <body>
     {{-- @include('patna.inc.messages') --}}
 
@@ -278,6 +278,6 @@
 
 
 </script>
-    @yield('js');
+    @yield('js')
 
 </html>

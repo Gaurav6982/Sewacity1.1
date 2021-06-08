@@ -519,6 +519,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                     <li> <a  href="/about" target="_blank">ABOUT US</a></li>
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
                     <li> <a  href="/foodie">FOOD SERVICE</a></li>
+                    <li> <a  href="{{route('e_comm')}}">E-COMMERCE</a></li>
                     {{-- <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li> --}}
                     <li> <a  href="/safari">LOCOMO</a></li>
                     <li><a  href="/shelters">SHELTERS</a></li>
@@ -649,6 +650,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">HOME</a> --> <a class="dropdown-item"
                                         href="/foodie">Food Service</a> 
+                                        <a class="dropdown-item"href="{{route('e_comm')}}">E-Commerce</a>
                                         
                                         {{-- <a class="dropdown-item"href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a> --}}
                                         <a
