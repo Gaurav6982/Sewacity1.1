@@ -110,6 +110,7 @@ class UserEcommController extends Controller
 
         $contact=$user->phone;
         $items=[];
+        $sellers=[];
         foreach($quantities as $cart_id=>$quantity)
         {
             $cart=CartItem::find($cart_id);
@@ -122,8 +123,11 @@ class UserEcommController extends Controller
             $new_item['selling_price']=$product->selling_price;
             $new_item['quantity']=$quantity;
             $new_item['discount']=round(($product->discount/100)*$product->price,2);
-            array_push($items,$new_item);
+            // array_push($items,$new_item);
+            $items[$product->seller_id][]=$new_item;
+            $sellers[$product->seller_id]=EcommSeller::find($product->seller_id);
         }
+        return $items;
         $data=array(
             'name'=>Auth::user()->name,
             'phone'=>$contact,
@@ -131,6 +135,7 @@ class UserEcommController extends Controller
             'email'=>Auth::user()->email,
             'city'=>$user->city()->first()->city_name,
             'items'=>$items,
+            'sellers'=>$sellers,
         );
         if($user->email!=null)
         Mail::to($user->email)->send(new SendMail($data));

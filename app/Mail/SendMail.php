@@ -29,6 +29,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('sewacity106@gmail.com','SewaCity')->subject('New Request')->view('mail')->with('data',$this->data);
+        return $this->from('sewacity106@gmail.com','SewaCity')->subject('New Request')->view('ecomm_mail')->with('data',$this->data);
     }
 }
