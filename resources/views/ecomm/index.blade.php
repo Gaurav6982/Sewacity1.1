@@ -454,8 +454,8 @@
                                 <span class="sort-heading">Sort By</span>
                                 <!-- <div class="sort-buttons"> -->
                                     <input type="hidden" name="price_filter" id="price_filter" value="{{$price_filter??""}}">
-                                    <div class="sort-button {{$price_filter??""=='lth'?'selected':''}}" data-filter="lth"><a>Price - low to high</a></div>
-                                    <div class="sort-button {{$price_filter??""=='htl'?'selected':''}}" data-filter="htl"><a>Price - high to low</a></div>
+                                    <div class="sort-button {{isset($price_filter) && $price_filter=="lth"?'selected':''}}" data-filter="lth"><a>Price - low to high</a></div>
+                                    <div class="sort-button {{isset($price_filter) && $price_filter=="htl"?'selected':''}}" data-filter="htl"><a>Price - high to low</a></div>
                                 <!-- </div> -->
                             </div>
                         </div>

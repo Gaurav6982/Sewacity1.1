@@ -127,11 +127,11 @@ class UserEcommController extends Controller
             $items[$product->seller_id][]=$new_item;
             $sellers[$product->seller_id]=EcommSeller::find($product->seller_id);
         }
-        return $items;
+        // return $sellers;
         $data=array(
             'name'=>Auth::user()->name,
             'phone'=>$contact,
-            'delivery'=>(float)$request->input("delivery_charge"),
+            // 'delivery'=>(float)$request->input("delivery_charge"),
             'email'=>Auth::user()->email,
             'city'=>$user->city()->first()->city_name,
             'items'=>$items,

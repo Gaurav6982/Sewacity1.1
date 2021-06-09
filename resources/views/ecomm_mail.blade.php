@@ -97,31 +97,55 @@
 				<p>I want:</p>
 
 				<div style="margin:0;padding:0;text-align:center;">
+						@php
+							$extreme_total=0;
+							$extreme_delivery=0;
+							$extreme_selling=0;
+							$extreme_discount=0;
+						@endphp
+						@foreach($data['items'] as $seller=>$item)
                 	<table style="width:100%;">
-                		<thead >
+						<thead >
+						<tr>
+							<td colspan="3">{{$data['sellers'][$seller]->shop_name??''}}</td>
+							<td colspan="3">Delivery Charge : {{$data['sellers'][$seller]->delivery_charge??'undefined'}}</td>
+							@php
+								$extreme_delivery+=$data['sellers'][$seller]->delivery_charge??0;
+							@endphp
+						</tr>
                 		<tr>
                 			<th style="border:2px solid white">No.</th>
                 			<th style="border:2px solid white">Name:</th>
                 			<th style="border:2px solid white">Price:</th>
                 			<th style="border:2px solid white">Qty:</th>
-                			<th style="border:2px solid white">Discount:</th>
+                			<th style="border:2px solid white">Discount/Item:</th>
                 			<th style="border:2px solid white">Total:</th>
                 		</tr>
                 		</thead>
                 		<tbody>
                 		    <?php $num=0;$sub=0;$tot=0;?>
-                		    @foreach($data['items'] as $item)
-                		        <tr>
-                        			<td style="border:2px solid white"><?php echo ++$num;?></td>
-                        			<td style="border:2px solid white">{{$item['pname']}}</td>
-                        			<?php $sub+=$item['price']*$item['quantity']?>
-                        			<td style="border:2px solid white">Rs. {{$item['price']}}</td>
-                        			<td style="border:2px solid white">{{$item['quantity']}}</td>
-                        			<td style="border:2px solid white">Rs.{{$item['discount']}}</td>
-                        			<?php $tot+=$item['selling_price']*$item['quantity']?>
-                        			<td style="border:2px solid white">Rs.{{$item['selling_price']*$item['quantity']}}</td>
-                        		</tr>
-                		    @endforeach
+                		   
+								@foreach ($item as $k=>$product)
+									<tr>
+										<td style="border:2px solid white">{{$k+1}}</td>
+										<td style="border:2px solid white">{{$product['pname']}}</td>
+										<?php $sub+=$product['price']*$product['quantity']?>
+										<td style="border:2px solid white">Rs. {{$product['price']}}</td>
+										<td style="border:2px solid white">{{$product['quantity']}}</td>
+										@php
+											$extreme_discount+=$product['discount']*$product['quantity'];
+										@endphp
+										<td style="border:2px solid white">Rs.{{$product['discount']}}</td>
+										<?php $tot+=$product['selling_price']*$product['quantity']?>
+										
+										<td style="border:2px solid white">Rs.{{$product['selling_price']*$product['quantity']}}</td>
+									</tr>
+								@endforeach
+								@php
+									$extreme_total+=$sub;
+									$extreme_selling+=$tot;
+								@endphp
+                		   
                 		    <tr>
                     			<td></td>
                     			<td style="border:2px solid white" colspan="3">Sub-Total</td>
@@ -136,16 +160,36 @@
 							<tr>
                     			<td></td>
                     			<td style="border:2px solid white" colspan="3">Delivery Charge</td>
-                    			<td style="border:2px solid white">Rs. {{number_format((float)($data['delivery']), 2, '.', '')}}</td>
+                    			<td style="border:2px solid white">Rs. {{number_format((float)($data['sellers'][$seller]->delivery_charge), 2, '.', '')}}</td>
                     			{{-- <td style="border:2px solid white">Rs. {{round((float)($data['delivery']))}}</td> --}}
                     		</tr>
                     		<tr>
                     			<td></td>
                     			<td  style="border:2px solid white" colspan="3">Total</td>
-                    			<td style="border:2px solid white">Rs. {{ceil($tot+$data['delivery'])}}</td>
+                    			<td style="border:2px solid white">Rs. {{ceil($tot+$data['sellers'][$seller]->delivery_charge)}}</td>
                     		</tr>
                 		</tbody>
                 	</table>
+					@endforeach
+
+					<table style="width:100%;margin-top:10px">
+						<tr>
+							<td colspan="4">Total: </td>
+							<td>Rs. {{$extreme_total}}</td>
+						</tr>
+						<tr>
+							<td colspan="4">Total Discount: </td>
+							<td>Rs. {{$extreme_discount}}</td>
+						</tr>
+						<tr>
+							<td colspan="4">Total Delivery: </td>
+							<td>Rs. {{$extreme_delivery}}</td>
+						</tr>
+						<tr>
+							<td colspan="4">Payable Amount: </td>
+							<td>Rs. {{$extreme_selling+$extreme_delivery}}</td>
+						</tr>
+					</table>
             	</div>
 
             	<div class="container">

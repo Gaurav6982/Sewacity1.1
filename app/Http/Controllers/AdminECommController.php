@@ -170,6 +170,7 @@ class AdminECommController extends Controller
         return true;
     }
     public function storeProduct(Request $request, $seller_id){
+        try{
         $seller=EcommSeller::find($seller_id);
         if(!isset($seller)) return back()->with('error','Seller Not Found');
         $validator=Validator::make($request->all(),[
@@ -205,8 +206,9 @@ class AdminECommController extends Controller
         {
             if($request->has('images')){
                 // $category_name=$product->category->category_name;
-                $p='storage/ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
-                $path=public_path($p);
+                $path='ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
+                $p='storage/'.$path;
+                $path=storage_path('/app/public/'.$path);
                 foreach($request->images as $k=>$file){
                     $image=new EcommProductImage;
                     $image->image_name=$product->product_name.($k+1);
@@ -225,6 +227,10 @@ class AdminECommController extends Controller
             return back()->with('success','Product Added!');
         }
         return back()->with('error','Something Went Wrong!');
+        }
+        catch(Exception $e){
+            return back()->with('error','Something Went Wrong!');
+        }
     }
 
     public function updateProduct(Request $request,$id){
@@ -282,8 +288,9 @@ class AdminECommController extends Controller
             }
             if($request->has('images')){
                 // $category_name=$product->category->category_name;
-                $p='storage/ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
-                $path=public_path($p);
+                $path='ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
+                $p='storage/'.$path;
+                $path=storage_path('/app/public/'.$path);
                 $count=count($product->uploaded_images??[]);
                 foreach($request->images as $k=>$file){
                     $image=new EcommProductImage;

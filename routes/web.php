@@ -27,7 +27,17 @@ Route::get('/about',"Main@about");
 Route::post('setSession','Main@setSession');
 Route::post('gettSession','Main@getSession');
 Auth::routes();
+Route::get('/cleareverything-advance', function () {
+    $clearcache = Artisan::call('cache:clear');
+    echo "Cache cleared<br>";
 
+    $clearview = Artisan::call('view:clear');
+    echo "View cleared<br>";
+
+    $clearconfig = Artisan::call('config:cache');
+    echo "Config cleared<br>";
+
+});
 //User E-Comm
 Route::get('/e-commerce','UserEcommController@index')->name('e_comm');
 Route::post('/e-commerce','UserEcommController@filtered')->name('e_comm_filtered');
@@ -48,20 +58,20 @@ Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::delete('/coupons/delete/{id}','CouponController@destroy')->name('delete_coupon');
 
     //Sellers Routes
-    Route::get('/ecomm-sellers','AdminEcommController@sellers')->name('sellers');
-    Route::get('/ecomm-sellers/create','AdminEcommController@createSeller')->name('create_seller');
-    Route::get('/ecomm-sellers/edit/{id}','AdminEcommController@editSeller')->name('edit_seller');
-    Route::post('/ecomm-sellers/store','AdminEcommController@storeSeller')->name('store_seller');
-    Route::put('/ecomm-sellers/update/{id}','AdminEcommController@updateSeller')->name('update_seller');
-    Route::delete('/ecomm-sellers/delete/{id}','AdminEcommController@deleteSeller')->name('delete_seller');
+    Route::get('/ecomm-sellers','AdminECommController@sellers')->name('sellers');
+    Route::get('/ecomm-sellers/create','AdminECommController@createSeller')->name('create_seller');
+    Route::get('/ecomm-sellers/edit/{id}','AdminECommController@editSeller')->name('edit_seller');
+    Route::post('/ecomm-sellers/store','AdminECommController@storeSeller')->name('store_seller');
+    Route::put('/ecomm-sellers/update/{id}','AdminECommController@updateSeller')->name('update_seller');
+    Route::delete('/ecomm-sellers/delete/{id}','AdminECommController@deleteSeller')->name('delete_seller');
     
     //products
-    Route::get('/ecomm-products/{id}','AdminEcommController@showProducts')->name('show_products');
-    Route::get('/ecomm-products/{seller_id}/create','AdminEcommController@createProduct')->name('create_product');
-    Route::get('/ecomm-products/edit/{id}','AdminEcommController@editProduct')->name('edit_product');
-    Route::post('/ecomm-products/{seller_id}/store','AdminEcommController@storeProduct')->name('store_product');
-    Route::put('/ecomm-products/update/{id}','AdminEcommController@updateProduct')->name('update_product');
-    Route::delete('/ecomm-products/delete/{id}','AdminEcommController@deleteProduct')->name('delete_product');
+    Route::get('/ecomm-products/{id}','AdminECommController@showProducts')->name('show_products');
+    Route::get('/ecomm-products/{seller_id}/create','AdminECommController@createProduct')->name('create_product');
+    Route::get('/ecomm-products/edit/{id}','AdminECommController@editProduct')->name('edit_product');
+    Route::post('/ecomm-products/{seller_id}/store','AdminECommController@storeProduct')->name('store_product');
+    Route::put('/ecomm-products/update/{id}','AdminECommController@updateProduct')->name('update_product');
+    Route::delete('/ecomm-products/delete/{id}','AdminECommController@deleteProduct')->name('delete_product');
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');
