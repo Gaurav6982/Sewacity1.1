@@ -56,6 +56,7 @@ class UserEcommController extends Controller
 
     public function show($product_id){
         $product=EcommProduct::find($product_id);
+        if($product->sold_out=="1") return back()->with('error','This Product is Sold Out!');
         $images=$product->uploaded_images;
         return view('ecomm.show',compact('product','images'));
     }

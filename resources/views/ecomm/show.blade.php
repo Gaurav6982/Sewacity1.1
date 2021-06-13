@@ -474,9 +474,9 @@
                     </div>
                     <div class="product-price">
                         <div class="row">
-                            <div class="price col-xs-6 col-md-2 text-center">{!! '<span class="m-0">&#8377;</span>'.round($product->selling_price)!!}</div>
+                            <div class="price col-xs-6 col-md-2 text-center">{!! '<span class="m-0">&#8377;</span>'.$product->selling_price!!}</div>
                             <div class="striked col-xs-6 col-md-2 text-center"><strike> {!!'<span class="m-0">&#8377;</span>'.$product->price!!}</strike></div>
-                            <div class="discount col-xs-12 col-md-2 text-center text-success">{{round($product->discount,2)}}% off</div>
+                            <div class="discount col-xs-12 col-md-2 text-center text-success">{{$product->discount}}% off</div>
                         </div>
                     </div>
                     <div class="offers">

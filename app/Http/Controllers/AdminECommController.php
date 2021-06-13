@@ -186,7 +186,7 @@ class AdminECommController extends Controller
         if($validator->fails()){
             return back()->withErrors($validator);
         }
-        if(EcommProduct::where('product_name',$request->input('product_name'))->where('category_id',$request->input('category_id'))->where('seller_id',$seller_id)->exists()) return back()->with('error','Duplicate Name Found!');
+        // if(EcommProduct::where('product_name',$request->input('product_name'))->where('category_id',$request->input('category_id'))->where('seller_id',$seller_id)->exists()) return back()->with('error','Duplicate Name Found!');
         // dd($request->images);
         if($request->has('images') && !$this->validateImages($request->images)) return back()->with('error','Invalid Format!');
         // dd($request->all());
@@ -209,9 +209,10 @@ class AdminECommController extends Controller
                 $path='ecomm_product_images/'.$seller->shop_name.$seller->id.'/'.$product->product_name.$product->id;
                 $p='storage/'.$path;
                 $path=storage_path('/app/public/'.$path);
+
                 foreach($request->images as $k=>$file){
                     $image=new EcommProductImage;
-                    $image->image_name=$product->product_name.($k+1);
+                    $image->image_name=substr(trim($product->product_name),0,20).($k+1);
                     $image->image_size=filesize($file);
                     $image->image_extension=$file->getClientOriginalExtension();
                     $image->product_id=$product->id;
@@ -275,7 +276,14 @@ class AdminECommController extends Controller
                 $cart->save();
             }
         }
-        $product->sold_out=$request->input('sold_out');  
+        $product->sold_out=$request->input('sold_out');
+        if($product->sold_out=="1"){
+            $carts=CartItem::where('product_id',$product->id)->where('is_active','!=','1')->get();
+            foreach($carts as $cart){
+                $cart->is_active=false;
+                $cart->save();
+            }
+        }  
         $product->category_id=$request->input('category_id');
         $product->description=$request->input('description');
         $product->showcase_image=$request->input('showcase_image');

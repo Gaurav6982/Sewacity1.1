@@ -17,10 +17,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('main.choose');
 // });
 Route::get('pathkind-labs',function(){
-    return File::get(public_path('pathkindlabs/index4.html'));
+    try{
+        return File::get(public_path('pathkindlabs/index4.html'));
+    }
+    catch(Exception $e){
+        return back()->with('error','Page Not Found!');
+    }
 });
 Route::get('pathkind-labs-test',function(){
-    return File::get(public_path('pathkindlabstest/book.html'));
+    try{
+        return File::get(public_path('pathkindlabstest/book.html'));
+    }
+    catch(Exception $e){
+        return back()->with('error','Page Not Found!');
+    }
 });
 Route::get('/',"Main@index");
 Route::get('/about',"Main@about");

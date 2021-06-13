@@ -77,7 +77,7 @@
 			border-bottom: 2px solid black;
 			z-index: 2">
 				<center>
-				<h1>Request Recieved Successfully.</h1>
+				<h1>Order Recieved </h1>
 				</center>
 			</div>
 			<div class="card-body" style="border: 2px solid #F2F2F2;
@@ -89,12 +89,12 @@
 			color: white;
 			border: 2px solid #F2F2F2;
 			z-index: 2">
-						<p>Hello, This is {{$data['name']}}</p>
+						<p>Hello, {{$data['name']}}</p>
 				<p>Registered Contact Number: {{$data['phone']}}</p>
 				{{-- <p>Delivery Address: {{$data['address']}}</p> --}}
                 <p>Registered Email: {{$data['email']}}</p>
                 <p>City: {{$data['city']}} </p>
-				<p>I want:</p>
+				{{-- <p>I want:</p> --}}
 
 				<div style="margin:0;padding:0;text-align:center;">
 						@php
@@ -166,7 +166,7 @@
                     		<tr>
                     			<td></td>
                     			<td  style="border:2px solid white" colspan="3">Total</td>
-                    			<td style="border:2px solid white">Rs. {{ceil($tot+$data['sellers'][$seller]->delivery_charge)}}</td>
+                    			<td style="border:2px solid white">Rs. {{number_format((float)($tot+$data['sellers'][$seller]->delivery_charge),2,'.','')}}</td>
                     		</tr>
                 		</tbody>
                 	</table>
@@ -192,12 +192,12 @@
 					</table>
             	</div>
 
-            	<div class="container">
+            	{{-- <div class="container">
         	        <p style="color:white;">Dear Customer,
 
 Our Country Bharat, is going through challenging times. Due to the current circumstances in Covid-19, product availability may take some time. We will get back to you within the next 12 hours. Thank You for giving a chance to Indian Brands Focused startup -Sewacity.</p>
         	        <p style="color:#00ff00;">हमारा देश, भारत,आज एक चुनौतीपूर्ण दौर से गुजर रहा है | कोविद -19 में वर्तमान परिस्थितियों के कारण, प्रोडक्ट्स की उपलब्धता में थोड़ा समय लग सकता है | अतः आर्डर की पुष्टि आपको अगले 12 घंटो में दे दी जायेगी  | भारतीय ब्रांड्स पर केंद्रित स्टार्टअप - सेवासिटी  , का साथ देने के लिए सदा आपके आभारी रहेंगे |</p>
-        	    </div>
+        	    </div> --}}
 
 				Thank You for Using Our Website.!
 			</div>

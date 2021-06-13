@@ -436,7 +436,7 @@
             async:false,
             data:{
                 // {{-- "amount":"{{Session::get('amount')}}", --}}
-                // "_token":"{{ csrf_token() }}",
+                "_token":"{{ csrf_token() }}",
             },
             success:function(data){
                 // {{-- alert(JSON.stringify(data)); --}}
@@ -479,13 +479,14 @@
                         },
                         error:function(data){
                             // <!--alert(JSON.stringify(data));-->
+                            console.log(data);
                              Swal.fire(
                                      'Error!',
                                      'Something Went Wrong!',
                                      'error'
                                  )
                                  console.log("Error Payment");
-                                 location.reload();
+                                //  location.reload();
                         }
                         })
                     },
@@ -519,13 +520,14 @@
             error:function(err)
             {
                 // <!--alert("Error");-->
+                console.log(err);
                 Swal.fire(
                                      'Error!',
                                      'Something Went Wrong!',
                                      'error'
                                  )
                                 //  console.log("/payment failed")
-                                 location.reload();
+                                //  location.reload();
                 // <!--alert(JSON.stringify(err));-->
             }
         })

@@ -373,7 +373,7 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
               <span>Grand Total : </span>
               </div>
               <div>
-              <span class="m-0">&#8377;</span> <span id="grand_total">{{round($grand_total+$delivery_charge)}}</span>
+              <span class="m-0">&#8377;</span> <span id="grand_total">{{number_format((float)($grand_total+$delivery_charge),2,'.','')}}</span>
               </div>
             </div>
             @endif
@@ -454,7 +454,7 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
             //price total
             $('#price_total').html( (parseFloat($('#price_total').html()).toFixed(2)-selling_price ).toFixed(2));
             //grandtotal
-            $('#grand_total').html(  (parseFloat($('#price_total').html())+parseFloat($('#delivery_charge').html()) ).toFixed(0)  );
+            $('#grand_total').html(  (parseFloat($('#price_total').html())+parseFloat($('#delivery_charge').html()) ).toFixed(2)  );
 
           });
           $('.plus').click(function(){
@@ -476,7 +476,7 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
             //price total
             $('#price_total').html( ( parseFloat($('#price_total').html())+parseFloat(selling_price) ).toFixed(2));
             //grandtotal
-            $('#grand_total').html(  (parseFloat($('#price_total').html())+parseFloat($('#delivery_charge').html()) ).toFixed(0)  );
+            $('#grand_total').html(  (parseFloat($('#price_total').html())+parseFloat($('#delivery_charge').html()) ).toFixed(2)  );
           });
         })
     </script>

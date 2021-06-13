@@ -15,10 +15,10 @@
             
         }
         .select2-selection__rendered{
-            font-size: 10px ;
+            font-size: 16px ;
         }
         .select2-results__option{
-            font-size: 10px;
+            font-size: 16px;
         }
         #filters{
             padding: 10px;
@@ -47,7 +47,7 @@
         }
         #filters .custom-card .select-div span.pick{
             letter-spacing: 3px;
-            font-size: 8px;
+            font-size: 12px;
             /* width: 100%; */
             /* padding: 5px; */
         }
@@ -118,6 +118,22 @@
         }
         #products-list .items-list .product-item{
             border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        #products-list .items-list .product-item .sold_out{
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 11;
+            /* display: none; */
+        }
+        #products-list .items-list .product-item .sold_out img{
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
         }
         #products-list .items-list .product-item .specs{
             padding: 20px;
@@ -129,7 +145,7 @@
             font-size: 13px;
         } */
         #products-list .items-list .product-item .image{
-            padding: 15px 0px;
+            /* padding: 15px 0px; */
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -138,7 +154,7 @@
         }
         #products-list .items-list .product-item .image img{
             /* width: 100%; */
-            padding: 10px 0;
+            padding: 1px 0;
             max-width: 100%;
             position: absolute;
             top: 50%;
@@ -317,7 +333,7 @@
             }
             #products-list .sort-section .sort-button,
             #products-list .sort-section .sort-heading{
-                font-size: 45%;
+                font-size: 65%;
             }
             #products-list .items-list .product-item{
                 padding: 10px 0;
@@ -338,12 +354,13 @@
                 margin: 0;
             }
             .name h4{
+                /* font-size: 15px !important; */
                 font-weight: 600;
-                font-size: 48%;
+                font-size: 85%;
                 text-align: left;
             }
             .price-for-mobile{
-                font-size: 9.5px;
+                /* font-size: 14px; */
                 display: block;
             }
             .show-for-mobile{
@@ -463,6 +480,11 @@
                         <div class="items-list">
                             @foreach ($products as $product)
                             <div class="product-item">
+                                @if($product->sold_out=="1")
+                                <div class="sold_out">
+                                    <img src="{{asset('/storage/images/sold.jpg')}}" alt="Sold Out">
+                                </div>
+                                @endif
                                 <a href="{{route('show_product',['product_id'=>$product->id])}}">
                                     <div class="d-flex">
                                         <div class="col-md-3">
@@ -497,7 +519,7 @@
                                                 <div class="col-sm-4 px-0 extra">
                                                     <div class="price-section">
                                                         @if($product->discount>0)
-                                                        <div class="price"><span>&#8377;</span> {{round($product->price-$product->price*($product->discount/100))}}</div>
+                                                        <div class="price"><span>&#8377;</span> {{number_format((float)($product->price-$product->price*($product->discount/100)),2,'.','')}}</div>
                                                         <div class="d-flex justify-content-center">
                                                             <div class="original-price"><strike><span>&#8377;</span> {{$product->price}}</strike></div>
 
