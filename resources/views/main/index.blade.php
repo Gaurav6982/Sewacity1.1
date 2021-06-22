@@ -954,7 +954,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
         <!-- /main -->
 
         <!-- footer -->
-        @include('inc.footer')
+        @include('inc.new_footer')
 
     </div> <!-- /footer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>

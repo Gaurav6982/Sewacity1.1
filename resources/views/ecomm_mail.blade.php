@@ -205,7 +205,7 @@ Our Country Bharat, is going through challenging times. Due to the current circu
 
 	</div>
 	<footer>
-		<center>@SewaCity 2020</center>
+		<center>@SewaCity {{date("Y")}}</center>
 	</footer>
 </body>
 </html>
