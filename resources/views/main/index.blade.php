@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- font Awesome -->
-    <script src="https://kit.fontawesome.com/988756cd88.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/988756cd88.js" crossorigin="anonymous"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
@@ -615,7 +616,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                         <div style="margin-bottom: 20px;display:flex;position:relative" >
             
                             <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
-                            <button type="submit" id="submit-search"><i class="fa fa-search"></i></button>
+                            <button type="submit" id="submit-search"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                         </form>
                         <a href="tel:8676036607" id="submit-phone"><img src="https://img.icons8.com/wired/64/000000/phone-disconnected.png"/></a>
@@ -660,10 +661,9 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                         </ul>
                     </div>
                     <div class="form-inline my-2 my-lg-0"> <a class="btn btn-outline-success my-2 my-sm-0"
-                            href="/products?category=0&searchbox=&sort=latest&page=1"><i
-                                class="fas fa-search search-icon"></i></a> <a
+                            href="/products?category=0&searchbox=&sort=latest&page=1"><i class="fa fa-search search-icon" aria-hidden="true"></i></a> <a
                             class="btn btn-outline-success my-2 my-sm-0" href="/products/cart"><i
-                                class="fas fa-shopping-basket basket-icon"></i></a> </div>
+                                class="fa fa-shopping-basket basket-icon"></i></a> </div>
                 </nav>
             </div>
         </header> <!-- /header -->
@@ -954,7 +954,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
         <!-- /main -->
 
         <!-- footer -->
-        @include('inc.new_footer')
+        @include('inc.footer')
 
     </div> <!-- /footer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
