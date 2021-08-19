@@ -16,25 +16,86 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('main.choose');
 // });
+Route::get('pathkind-labs',function(){
+    try{
+        return File::get(public_path('pathkindlabs/index4.html'));
+    }
+    catch(Exception $e){
+        return back()->with('error','Page Not Found!');
+    }
+});
+Route::get('pathkind-labs-test',function(){
+    try{
+        return File::get(public_path('pathkindlabstest/book.html'));
+    }
+    catch(Exception $e){
+        return back()->with('error','Page Not Found!');
+    }
+});
 Route::get('/',"Main@index");
 Route::get('/about',"Main@about");
 Route::post('setSession','Main@setSession');
 Route::post('gettSession','Main@getSession');
 Auth::routes();
+Route::get('/cleareverything-advance', function () {
+    $clearcache = Artisan::call('cache:clear');
+    echo "Cache cleared<br>";
+
+    $clearview = Artisan::call('view:clear');
+    echo "View cleared<br>";
+
+    $clearconfig = Artisan::call('config:cache');
+    echo "Config cleared<br>";
+
+});
+//User E-Comm
+Route::get('/e-commerce','UserEcommController@index')->name('e_comm');
+Route::post('/e-commerce','UserEcommController@filtered')->name('e_comm_filtered');
+Route::get('/e-commerce/product/{product_id}','UserEcommController@show')->name('show_product');
+Route::get('/get-seller/{id}','UserEcommController@getSeller')->name('get_seller');
+
+
 Route::group(['middleware'=>['admin','auth'],'prefix'=>'admin'],function(){
     Route::resource('food','FoodController');
     Route::get('/city','Admin\AdminController@manage_cities');
     Route::resource('food/item','FoodItemController');
+    //coupons Route
+    Route::get('/coupons','CouponController@index')->name('coupons');
+    Route::get('/coupons/create','CouponController@create')->name('create_coupon');
+    Route::get('/coupons/edit/{id}','CouponController@edit')->name('edit_coupon');
+    Route::post('/coupons/store','CouponController@store')->name('store_coupon');
+    Route::put('/coupons/update/{id}','CouponController@update')->name('update_coupon');
+    Route::delete('/coupons/delete/{id}','CouponController@destroy')->name('delete_coupon');
+
+    //Sellers Routes
+    Route::get('/ecomm-sellers','AdminECommController@sellers')->name('sellers');
+    Route::get('/ecomm-sellers/create','AdminECommController@createSeller')->name('create_seller');
+    Route::get('/ecomm-sellers/edit/{id}','AdminECommController@editSeller')->name('edit_seller');
+    Route::post('/ecomm-sellers/store','AdminECommController@storeSeller')->name('store_seller');
+    Route::put('/ecomm-sellers/update/{id}','AdminECommController@updateSeller')->name('update_seller');
+    Route::delete('/ecomm-sellers/delete/{id}','AdminECommController@deleteSeller')->name('delete_seller');
+    
+    //products
+    Route::get('/ecomm-products/{id}','AdminECommController@showProducts')->name('show_products');
+    Route::get('/ecomm-products/{seller_id}/create','AdminECommController@createProduct')->name('create_product');
+    Route::get('/ecomm-products/edit/{id}','AdminECommController@editProduct')->name('edit_product');
+    Route::post('/ecomm-products/{seller_id}/store','AdminECommController@storeProduct')->name('store_product');
+    Route::put('/ecomm-products/update/{id}','AdminECommController@updateProduct')->name('update_product');
+    Route::delete('/ecomm-products/delete/{id}','AdminECommController@deleteProduct')->name('delete_product');
 });
 Route::group(['middleware'=>['special','auth'],'prefix'=>'admin'],function(){
     Route::resource('sliders','SlidersController');
+    Route::get('delivery-status','Main@deliveryStatus');
+    Route::post('set-delivery-status','Main@setDeliveryStatus');
     Route::post('sliders/addSlide/{id}','SlidersController@addSlide');
+    Route::post('sliders/{slider_id}/editSlide/{slide_id}','SlidersController@editSlide');
+    Route::delete('sliders/{slider_id}/delete/{slide_id}','SlidersController@deleteSlide');
 });
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
-    });
-    Route::resource('posts', 'PostController');
+    })->name('admin');
+    // Route::resource('posts', 'PostController');
     Route::get('/users','Main@users');
     
     Route::post('/manage-category','Admin\AdminController@manage_categories');
@@ -45,18 +106,22 @@ Route::group(['middleware'=>['admin','auth']],function(){
     Route::post('/delete-category','Admin\AdminController@delete_category');
 });
 Route::group(['middleware'=>['auth']],function(){
-	Route::get('/products/addItem/{pid}','CartController@addItem');
-	Route::get('/products/cart','CartController@show');
-	Route::get('/products/cart/delete/{pid}','CartController@remove');
-    Route::post('/products/send','CartController@send');
-    Route::put('/products/update/{id}','CartController@update');
+	// Route::get('/products/addItem/{pid}','CartController@addItem');
+	// Route::get('/products/cart','CartController@show');
+	// Route::get('/products/cart/delete/{pid}','CartController@remove');
+    // Route::post('/products/send','CartController@send');
+    // Route::put('/products/update/{id}','CartController@update');
     Route::get('/profile','ProfileController@index');
     Route::put('/profile/update','ProfileController@update');
     Route::get('/safari','SafariController@safari');
     Route::post('/safari/book','SafariController@safariBook');
+    Route::get('/e-commerce/cart','UserEcommController@cart')->name('ecomm_cart');
+    Route::post('/add-to-ecomm-cart','UserEcommController@addToCart')->name('add_to_cart');
+    Route::delete('/remove-from-ecomm-cart','UserEcommController@removeFromCart')->name('remove_from_cart');
+    Route::post('/place-ecomm-request','UserEcommController@placeEcommRequest')->name('place_ecomm_request');
 });
 
-Route::get('/products','Main@ecomm');
+// Route::get('/products','Main@ecomm');
 Route::get('/tieup',function(){
     return view('main.tieup');
 });
@@ -73,6 +138,7 @@ Route::get('/privacy',function(){
     return view('others.privacy');
 });
 Route::get('/foodie','UserFoodController@index');
+Route::post('/foodie/{res_id}/filter','UserFoodController@filterInRes');
 Route::get('/foodie/cart','UserFoodController@show_cart')->middleware('auth');
 Route::post('/foodie/sendMail','UserFoodController@sendMail')->middleware('auth');
 Route::delete('/foodie/delete/{id}','UserFoodController@deleteitem')->middleware('auth');
@@ -103,6 +169,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('payment-success','PayController@success');
     Route::post('payment','PayController@payment');
     Route::post('pay','PayController@pay');
-    Route::post('set-amount','PayController@set_amount');
+    Route::post('get-amount','PayController@get_amount');
     Route::post('set-success','PayController@set_success');
+    Route::post('set-fail','PayController@set_fail');
+    Route::get('mark-order-placed-read','UserFoodController@forgetOrderPlaced')->name('mark_order_placed_read');
 });

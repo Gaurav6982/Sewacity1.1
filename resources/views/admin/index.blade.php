@@ -151,24 +151,25 @@
             @endif
             </section>
         </div>
+
+
+        <?php $link=("/posts?category=".$page."&searchbox=".$input."&page=");?>
+@endsection
+
+@section('js')
 <script>
     var slt3=document.getElementById('jumpEdit');
     function changeEdit($id)
      {
-        <?php $link=("/posts?category=".$page."&searchbox=".$input."&page=");?>
         window.location.href="<?php echo $link;?>"+slt3.value;
      }
 </script>
-
-@endsection
-
-@section('js')
-
+<script>
     $(function(){
         $('#catselectEdit').val({{$page}});
         $('#city').val({{$city}});
     });
 
-    
+</script>
 
 @endsection

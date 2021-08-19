@@ -109,6 +109,13 @@
               <input type="text" name="desc" id="desc" placeholder="Enter Item Desc" class="form-control" required>
             </div>
             <div>
+              <label for="status">Select Status:</label>
+              <select name="status" id="status" required class="form-control">
+                <option value="0">Available</option>
+                <option value="1">Sold Out</option>
+              </select>
+            </div>
+            <div>
               <label for="name">Choose Image:</label>
               <input type="file" name="image" id="image" placeholder="Enter Item Image" class="form-control" required>
             </div>
@@ -209,7 +216,7 @@
     <div class="modal-dialog modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="slideModalTitle">Add Slider</h5>
+          <h5 class="modal-title" id="slideModalTitle">Add Slide</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -231,7 +238,7 @@
             </div>
 
             <div class="form-group">
-              <label for="slide_url">Slide URL:</label>
+              <label for="slide_url">URL to Redirect:</label>
               <input type="text" name="slide_url" id="slide_url" class="form-control" placeholder="https://sewacity.com/example">
             </div>
 
@@ -240,7 +247,6 @@
               <input type="file" name="slide_img" id="slide_img" class="form-control">
             </div>
             
-
           </form>
         </div>
         <div class="modal-footer">
@@ -251,7 +257,7 @@
     </div>
   </div>
 
-  {{-- Confirm BUtton modal --}}
+  {{-- Confirm BUtton modal
   <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -345,4 +351,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}

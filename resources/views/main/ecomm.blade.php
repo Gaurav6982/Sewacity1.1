@@ -220,19 +220,23 @@
 @endsection
 
 @section('js')
-
+<?php $link=("/products?category=".$page."&searchbox=".$input."&sort=".$sort."&page=");?>
+<?php $num="#number".$_GET['page']?>
     @guest
+    <script>
     $(function(){
-        {{-- console.log(city); --}}
+        // {{-- console.log(city); --}}
         
        var cit= sessionStorage.getItem("city");
-       {{-- console.log(cit); --}}
+    //    {{-- console.log(cit); --}}
        $('#session_city').val(cit);
        
        
-        {{-- $('#select') --}}
+        // {{-- $('#select') --}}
     });
+    </script>
     @endguest
+    <script>
     function load($id)
     {
 
@@ -250,16 +254,16 @@ slt2.getElementsByTagName('option')[{{$st}}].setAttribute("selected", "selected"
 var slt3=document.getElementById('jump');
  function change($id)
  {
-    <?php $link=("/products?category=".$page."&searchbox=".$input."&sort=".$sort."&page=");?>
+    
     window.location.href="<?php echo $link;?>"+slt3.value;
-    <!--console.log(""+slt3.value);-->
+    // <!--console.log(""+slt3.value);-->
  }
     $(document).ready(function(){
-        <!-- $('#categoryselect').css('display','none'); -->
+        // <!-- $('#categoryselect').css('display','none'); -->
         $('#cat').attr("checked","checked");
          $('#searchinput').css('display','none');
          $('#sortselect').css('display','none');
-         <?php $num="#number".$_GET['page']?>
+         
 $('{{$num}}').removeClass('btn-outline-success');
          $('{{$num}}').addClass('btn-success');
     });
@@ -278,4 +282,5 @@ $('{{$num}}').removeClass('btn-outline-success');
          $('#categoryselect').css('display','none');
          $('#searchinput').css('display','none');
     });
+</script>
 @endsection

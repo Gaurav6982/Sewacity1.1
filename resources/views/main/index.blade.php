@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- font Awesome -->
-    <script src="https://kit.fontawesome.com/988756cd88.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/988756cd88.js" crossorigin="anonymous"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
@@ -162,7 +163,7 @@
         /* background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%); */
         background-size: cover;
         background-repeat: no-repeat;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
         font-size: 14px;
         color: #000;
         margin: 0;
@@ -219,12 +220,12 @@
         z-index: 95;
         position: relative;
         background-color: #2a2a72;
-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.33%, #ff3858 50%, #f00053 66.67%, #e40052 83.33%, #d90054 100%);
         width: 100%;
     }
     header{
         background-color: #2a2a72;
-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.33%, #ff3858 50%, #f00053 66.67%, #e40052 83.33%, #d90054 100%);
     }
     
     /* .navbar-ham {
@@ -321,12 +322,14 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     #city-select{
         
         margin-top: 10px;
+        width:45%;
+        /* overflow: hidden; */
         /* min-width: 100px; */
         padding: 2px 25px 2px 6px;
         height: 50px;
         background-color:grey;
         letter-spacing: 3px;
-        appearance: none;
+        /* appearance: none; */
         position: relative;
     }
     #city-select-parent{
@@ -339,11 +342,12 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         /* border: 2px solid black; */
 
     }
-    #city-select-parent #icon{
+    #city-select #icon{
         position: absolute;
         /* display: none; */
         /* right: 10px; */
-        left: 120px;
+        right: 0px;
+        z-index: 9999;
         pointer-events: none;
         width: 30px;
         background-color: black;
@@ -516,19 +520,25 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                     <li> <a  href="/about" target="_blank">ABOUT US</a></li>
                     <li> <a  href="/tieup">WANT TO JOIN US?</a> </li>
                     <li> <a  href="/foodie">FOOD SERVICE</a></li>
-                    <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li>
+                    <li> <a  href="{{route('e_comm')}}">E-COMMERCE</a></li>
+                    {{-- <li> <a  href="/products?category=0&searchbox=&sort=latest&page=1">E-COMMERCE</a></li> --}}
                     <li> <a  href="/safari">LOCOMO</a></li>
                     <li><a  href="/shelters">SHELTERS</a></li>
+                    <li><a  href="/pathkind-labs">PathKindLabs</a></li>
                     </li>
                 </ul>
             </div>
         </div>
         <marquee>
-            <h11>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</h11>
+            <span>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</span>
         </marquee> @guest<div class="banner">
-                <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times" id="cross"
+                <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times cross"
                         style="font-size: 30px"></i> </div>
         </div> @endguest
+        <div class="banner">
+            <div class="imag"> <img src="/storage/images/notice.webp" class="sticky"> <i class="fa fa-times cross" 
+                    style="font-size: 30px"></i> </div>
+        </div>
         <!-- header -->
         <header>
             @include('inc.messages') <div class="container">
@@ -536,11 +546,13 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 <div class="row" id="navbar-outer">
                     <div class="col-md-4 col-sm-12" id="city-select-parent">
                         <select name="" id="city-select">
+                            {{-- <div id="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>ww --}}
                             @foreach ($cities as $item)
                                 <option value="{{$item->id}}" @auth @if(Auth::user()->city_id==$item->id)selected @else disabled @endif @endauth >{{$item->city_name}}</option>
                             @endforeach
+                            
                         </select>
-                        <div id="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                        
                     </div>
                     <div class="col-md-4 col-sm-12 text-center">
                         <h2 class="my-md-3 site-title text-white">SEWACITY</h2>
@@ -570,7 +582,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                                     <a href="/posts?category=0&searchbox=page=1"
                                             class="dropdown-item">Manage Products</a>
                                             <a href="/users"
-                                        class="dropdown-item">User Deatils</a>
+                                        class="dropdown-item">User Details</a>
                                     @endif
                                     <a href="/profile"
                                         class="dropdown-item">Profile Settings</a> <a class="dropdown-item"
@@ -600,11 +612,12 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </div> --}}
-                    <form id="search-form">
+                    <form action="{{route('e_comm_filtered')}}" method="POST" id="search-form">
+                        {{ csrf_field() }}
                         <div style="margin-bottom: 20px;display:flex;position:relative" >
-            
-                            <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
-                            <button type="submit" id="submit-search"><i class="fa fa-search"></i></button>
+                            
+                            <input type="text" class="form-control" placeholder="Search Items" name="search_text">
+                            <button type="submit" id="submit-search"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                         </form>
                         <a href="tel:8676036607" id="submit-phone"><img src="https://img.icons8.com/wired/64/000000/phone-disconnected.png"/></a>
@@ -638,18 +651,20 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                                     aria-expanded="false"> Our Services </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">HOME</a> --> <a class="dropdown-item"
-                                        href="/foodie">Food Service</a> <a class="dropdown-item"
-                                        href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a><a
+                                        href="/foodie">Food Service</a> 
+                                        <a class="dropdown-item"href="{{route('e_comm')}}">E-Commerce</a>
+                                        
+                                        {{-- <a class="dropdown-item"href="/products?category=0&searchbox=&sort=latest&page=1">E-Commerce</a> --}}
+                                        <a
                                         class="dropdown-item" href="/safari">LOCOMO</a><a class="dropdown-item"
                                         href="/shelters">Shelters</a> </div>
                             </li>
                         </ul>
                     </div>
                     <div class="form-inline my-2 my-lg-0"> <a class="btn btn-outline-success my-2 my-sm-0"
-                            href="/products?category=0&searchbox=&sort=latest&page=1"><i
-                                class="fas fa-search search-icon"></i></a> <a
+                            href="/e-commerce"><i class="fa fa-search search-icon" aria-hidden="true"></i></a> <a
                             class="btn btn-outline-success my-2 my-sm-0" href="/products/cart"><i
-                                class="fas fa-shopping-basket basket-icon"></i></a> </div>
+                                class="fa fa-shopping-basket basket-icon"></i></a> </div>
                 </nav>
             </div>
         </header> <!-- /header -->
@@ -664,7 +679,31 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
             <div class="coronabtn"><a href="https://www.covid19india.org/state/BR" class="corona pull-right">
                     <span></span> <span></span> <span></span> <span></span> Corona Update </a></div>
                     <br>
-
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header text-center" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                              Aapka Shehar Aapki madad
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body text-center">
+                              <strong>प्रिय शहरवासियों
+                                  सेवासिटी चाहती है कि उन जरुरतमंदो की मदद हो सके जो अपने शहर से है और मदद की जरूरत है क्योंकि इस महामारी से उनको विकट परिस्थितियों का सामना करना पड़ रहा है, इसमें सबकोई अपना योगदान दे सकते है चाहे वो सेवासिटी के सेलर हो या ग्राहक या खुद टीम के सदस्य।।
+                                  <br>
+                                  अतः सबसे यही अपेक्षा है कि अपने शहर के मदद में अपना हाथ आगे बढ़ाए एवं दिए गए लिंक पर क्लिक पर आप ₹1 से ₹10,000 तक का योगदान दे सकते हैं!!
+                                 
+                      
+                                  <div class="d-grid gap-2 text-center mx-auto">
+                                      <br>
+                                      <a href="https://rzp.io/l/R8bBbujdzW"> <button class="btn btn-primary" type="button">Donate Now</button></a>
+                                   
+                                    </div>
+                                    <br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
             <section id="banner-area">
                 <div class="owl-carousel">
                     <div class="item">
@@ -675,7 +714,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                         <a href="/safari"><img src="/storage/banner/locomo.webp" alt="Banner2"></a>
                     </div>
                     <div class="item">
-                        <a href="/products?category=0&searchbox=&sort=latest&page=1"><img
+                        <a href="/e-commerce"><img
                                 src="/storage/banner/forbesganj.webp" alt="Banner3"></a>
                     </div>
                     <div class="item">
@@ -693,52 +732,57 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                     </div> -->
                 </div>
             </section>
+            
             <div class="container-fluid">
                 <div class="swiper-container">
                     <center>
-                        <div class="head1"> <img src="./assets/ecomhead.jpg">
-                            <p></p>
+                        <div class="head1"> <img src="{{asset('assets/back4.jpg')}}" style="height: 80px">
+                            <p class="text-white">PathKindLabs</p>
                         </div>
                     </center> <br>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <div class="ImgBx">
 
-                                <a href="https://sewacity.com/products?category=8&sort=latest&searchbox=">
+                                <a href="{{url('/products?category=58&sort=latest&searchbox=')}}">
 
-                                 <img src="./assets/cosban1.webp"> </div>
+                                 <img src="./assets/holi-special.jpeg"> </div>
                             <div class="ImgDetails"> Buy Now </div> </a>
-                        </div>
+                        </div> --}}
                         <div class="swiper-slide">
                             <div class="ImgBx">
-                                 <a href="https://sewacity.com/products?category=3&sort=latest&searchbox=">
-                                 <img src="./assets/fotban1.webp"> </div>
-                            <div class="ImgDetails"> Buy Now </div></a>
+
+                                <a href="pathkind-labs">
+
+                                 <img src="./assets/pathkindlabs.jpeg"> </div>
+                            <div class="ImgDetails"> Click Now </div> </a>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                             <a href="https://sewacity.com/products?category=7&sort=latest&searchbox=">
-                            <img src="./assets/Grocery.webp" alt="Image 1"> </div>
-                            <div class="ImgDetails">
-                                <h5>Buy Now</h5></a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                                 <a href="https://sewacity.com/products?category=1&sort=latest&searchbox=">
-                                 <img src="./assets/elecban.webp"> </div>
-                            <div class="ImgDetails">Buy Now </div></a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ImgBx">
-                                <a href="https://sewacity.com/products?category=4&sort=latest&searchbox=">
-                                 <img src="./assets/bookshwad.webp"> </div>
-                            <div class="ImgDetails"> Buy Now </div></a>
-                        </div>
+                        
                     </div> <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
             </div> <!-- /First Slider -->
+            @if(count($sliders??[])>0)
+            <div id="customSliders" class="container">
+                <center>
+                    <div class="head1"> <img src="{{asset('assets/back4.jpg')}}" style="height: 80px">
+                        <p class="text-white">Popular in the city</p>
+                    </div>
+                </center> <br>
+                @foreach ($sliders as $slider)
+                <br>
+                <br>
+                <div class="custom-carousel owl-carousel owl-theme">
+                    @foreach ($slides[$slider->id] as $item)
+                        <div class="item"><a @if($item->url!=null) href="{{$item->url}}" @endif><img src="{{asset('/storage/frontSliders/'.$slider->id.'/'.$item->image)}}" alt=""></a></div>
+                    @endforeach
+                    
+                </div>
+                <br><br>
+                @endforeach
+                
+            </div>
+            @endif
             <!-- Services -->
             <div class="container"> <br>
                 <div class="row">
@@ -757,13 +801,13 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 </div> <br>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card hover-over"> <a href=""><img class="card-img-top" src="./assets/E-C0mmerce.jpg"
+                        <div class="card hover-over"> <a href=""><img class="card-img-top" src="{{asset('/assets/E-C0mmerce.jpg')}}"
                                     alt="Card image cap"></a>
                             <div class="card-body">
                                 <p class="card-text">E-Commerce</p>
                             </div>
                             <div class="overlay">
-                                <div class="overlay-text"><a href="/products?category=0&searchbox=&sort=latest&page=1"
+                                <div class="overlay-text"><a href="{{url('/e-commerce')}}"
                                         class="btn btn-secondary">Go Shopping!</a></div>
                             </div>
                         </div>
@@ -919,7 +963,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn+.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
         
 
@@ -932,6 +976,25 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     <!-- <script src="./js/main.js"></script> -->
     <!-- Initialize Swiper -->
     <script>
+        $('.custom-carousel').owlCarousel({
+            loop:false,
+            dots:true,
+            stagePadding: 20,
+            center:true,
+            margin:10,
+            nav:false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
         $('.slider').slick({
             dots: true,
             infinite: false,
@@ -986,8 +1049,9 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
                 el: '.swiper-pagination',
             },
         });
-        $('#cross').click(function() {
-            $('.banner').css('display', 'none');
+        $('.cross').click(function() {
+            // console.log($(this).parent().parent());
+            $(this).parent().parent().css('display', 'none');
         });
         $('document').ready(function() {
             $("#banner-area .owl-carousel").owlCarousel({
@@ -1025,12 +1089,12 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
             document.getElementById("second-nav").style.width="0";
         }
         $(document).ready(function(){
-            $("#search-form").on('submit',function(e){
-                e.preventDefault();
-                var search=$('#Search-bar').val();
-                // console.log(search);
-                window.location.href="/products?category=0&searchbox="+search+"&sort=latest&page=1";
-            });
+            // $("#search-form").on('submit',function(e){
+            //     e.preventDefault();
+            //     var search=$('#Search-bar').val();
+            //     // console.log(search);
+            //     window.location.href="/products?category=0&searchbox="+search+"&sort=latest&page=1";
+            // });
             $(document).scroll(function(){
                 if($(document).scrollTop()>150)
                 {

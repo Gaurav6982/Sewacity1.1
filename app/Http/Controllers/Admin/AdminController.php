@@ -8,7 +8,7 @@ use App\Categories;
 use App\Posts;
 use App\City;
 use App\Sliders;
-
+use Auth;
 class AdminController extends Controller
 {
     public function manage_categories(Request $request){

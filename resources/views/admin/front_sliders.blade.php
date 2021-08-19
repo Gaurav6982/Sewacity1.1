@@ -39,6 +39,9 @@
     @include('inc.modals')
 @endsection
 @section('js')
+<script>
+
+
   $('#openSliderModal').click(function(){
       $('#sliderModal #slider_name').val('');
       $('#sliderModal #slider_status').val(0);
@@ -100,7 +103,7 @@
         })      
   })
 
-  {{-- Edit --}}
+//   {{-- Edit --}}
   $('.openEditModal').click(function(){
     $('#sliderModal #slider_name').val($(this).data("name"));
     $('#sliderModal #slider_status').val($(this).data("status"));
@@ -163,4 +166,5 @@
           }
       })      
 })
+</script>
 @endsection

@@ -17,6 +17,7 @@
 
 @endsection
 @section('styles')
+<style>
     .bouter{
         position:relative;
     }
@@ -168,6 +169,7 @@
         }
 
     }
+</style>
 @endsection
 @section('content')
 
@@ -242,7 +244,7 @@
 @section('js')
 
 
-
+<script>
 
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -258,7 +260,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-
+</script>
 @endsection
 <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
 

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Page Not Found | Path Kind Labs</title>
+<meta name="author" content="Path Kind Labs" />
+<meta name="description" content="" />
+<meta name="keywords"  content="" />
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="google-site-verification" content="GONl9X2bXdrDjU713Q3uF0ZsQu63NoK43CO09viF_14" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link rel="shortcut icon" href="https://www.pathkindlabs.com/front/img/favicon.ico" type="image/x-icon">
+<!--<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/datepicker.min.css">-->
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/style.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/style-new.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/jquery.bxslider.min.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/slick.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/aos.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/selectric.css">
+<link rel="stylesheet" type="text/css" href="https://www.pathkindlabs.com/front/css/jquery.timepicker.css" />
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/responsive.css">
+<script src="https://www.pathkindlabs.com/front/js/jquery.min.js"></script> 
+
+
+
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/blossomfeaturebox_new.css" />
+<link rel="stylesheet" href="https://www.pathkindlabs.com/front/css/optincontent.css" />
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
+<script src="https://www.pathkindlabs.com/front/jquery.min.js"></script>
+
+
+<script src="https://www.pathkindlabs.com/front/js/blossomfeaturebox.min.js">
+
+/**
+ * http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+ * JK Responsive Gallery Script
+ * Copyright JavaScript Kit (www.javascriptkit.com)     
+ * Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code       
+ */
+
+</script>
+<script>
+
+
+function eDosSubmit(){
+             	var test_id		= jQuery("#test_id").val();
+		var test_name		= jQuery("#test_name").val();
+		var Schedule		= jQuery("#Schedule").val();
+	
+			jQuery.ajax({
+			type :"POST",
+			data: jQuery('#frm-Edos').serialize(),	
+			url		: 'https://www.pathkindlabs.com/cms/edos_submit',
+	
+	
+		});	
+		return false;
+            
+	}
+
+
+	function callBackPopupSubmit(){
+		var call_name = jQuery("#call_name").val();
+		var call_mobile	= jQuery("#call_mobile").val();
+		var call_type = jQuery("input[name='call_type']:checked").val();
+		//
+		// alert(call_type);
+		//
+		var count = 0;
+		//
+		if (call_name == "") {
+			// alert('1');
+			jQuery('.error-msg').html('Please enter name.');
+			count++;
+		} else if (!regex.test(call_name)) {
+			// alert('2');
+			jQuery('.error-msg').html('Please enter valid name.');
+			count++;
+		} else if (call_mobile == ""){
+			// alert('3');
+		    jQuery('.error-msg').html('Please enter mobile number.');
+			count++;
+		} else if (isNaN(call_mobile)){
+			// alert('4');
+			jQuery('.error-msg').html('Enter valid mobile number.');
+			count++;
+		} else if(call_mobile.length != 10){
+			// alert('4');
+			jQuery('.error-msg').html('Enter 10 digit mobile number.');
+			count++;
+		}
+		if(count == 0){
+			// alert('5');
+			jQuery('.error-msg').html('');
+			jQuery.ajax({
+				type : "POST",
+				data : jQuery('#frm-call-back').serialize(),	
+				beforeSend: function(){
+					// jQuery("#load-book-pop-one-img").css("display", "inline-block");
+					jQuery("#submit-btn").css("display", "none");
+					jQuery("#processing-btn").css("display", "block");
+				},
+				url : 'https://www.pathkindlabs.com/test_catalogue/callback_submit',
+				success : function(data){
+					data_arr = data.split('@@'); //alert(data_arr);
+					//
+					// alert(data_arr);
+					//
+					if(data_arr[0]=='Succ'){
+						// jQuery("#load-book-pop-one-img").css("display", "none");
+						jQuery("#succ-callback").html(data_arr[1]);
+						jQuery("#call_name").val("");
+						jQuery("#call_mobile").val("");
+                        setTimeout(function () {document.getElementById('call-bck').style.display='none'}, 3000);
+               		} else {
+						jQuery("#succ-callback").html(data_arr[2]);
+					}								
+					return false;
+				}
+			});	
+			return false;
+        }}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$site_url ='https://www.pathkindlabs.com/';
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6KQZ85');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-THH47LC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109149630-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-109149630-1');
+</script>
+
+<!--Start of Zendesk Chat Script-->
+<!-- script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://v2.zopim.com/?5fsIRVuNEEwnUwM1hhvmv7RntISMWHFc";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script -->
+<!--End of Zendesk Chat Script-->
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '490989954629341');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=490989954629341&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+	
+<script type="application/ld+json">
+	{
+  	"@context": "https://schema.org/",
+  	"@type": "Website",
+  	"name": "Pathkind Labs",
+  	"url": "https://www.pathkindlabs.com/",
+  	"potentialAction": {
+    	"@type": "SearchAction",
+    	"target": "{search_term_string}",
+    	"query-input": "required name=search_term_string"
+  		}
+	}
+</script><!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '913604792792048');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=913604792792048&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+</head>
+<body>
+<div itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="PathKind Labs">
+<link itemprop="url" href="https://www.pathkindlabs.com/">
+<img itemprop="logo" class="alignleft" style="display:none; width: 283; height: 72;" 
+title="Dr. Atul Peters" src="https://www.pathkindlabs.com/front/img/logo.png">
+<span style="display:none;" itemprop="telephone">0124 – 2870000</span>
+<meta itemprop="email" content="care@pathkindlabs.com">
+<link itemprop="sameAs" href="https://www.facebook.com/PathKindLabs/">
+<link itemprop="sameAs" href="https://twitter.com/pathkindlabs">
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6KQZ85"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THH47LC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="fed-overlay">
+  <div class="fed-wrap">
+    <div class="fed-closeBtn">X</div>
+    <div class="fed-title">Feedback</div>
+    <div class="row">
+	<form id="frm-header-feedback" name="frm-header-feedback" method="post">
+      <div class="inputFormField">
+        <input type="text" placeholder="Name" name="hname" id="hname" onKeyUp="return Remove('hname');" maxlength="70">
+			<span id="error_hname" class="error"></span>
+      </div>
+      <div class="inputFormField">
+        <input type="text" placeholder="Email Address" name="hemail" id="hemail" onKeyUp="return Remove('hemail');" maxlength="100" >
+			<span id="error_hemail" class="error"></span>
+      </div>
+      <div class="inputFormField">
+        <input type="text" placeholder="Mobile Number" name="hmobile" id="hmobile" onKeyUp="return Remove('hmobile');" maxlength="10" >
+			<span id="error_hmobile" class="error"></span>
+      </div>
+      <div class="inputFormField">
+        <input type="text" placeholder="City" name="hcity" id="hcity" onKeyUp="return Remove('hcity');" maxlength="100" >
+			<span id="error_hcity" class="error"></span>
+      </div>
+      <div class="inputFormField">
+        <select name="htype" id="htype" onkeyup="return Remove('htype');" >
+          <option value="">-Select Type- </option>
+          <option value="Quality & Service">Quality &amp; Service </option>
+          <option value="Report TAT">Report TAT</option>
+          <option value="Feedback of Specific Lab">Feedback of Specific Lab</option>
+          <option value="Collection Center">Collection Center</option>
+          <option value="Any Other Feedback">Any Other Feedback</option>
+        </select>
+		<span id="error_htype" class="error"></span>
+      </div>
+      <div class="inputFormField textareaBox">
+        <textarea placeholder="Detailed Feedback" name="hfeedback" id="hfeedback" onKeyUp="return Remove('hfeedback');" maxlength="1000"></textarea>
+		  <span id="error_hfeedback" class="error"></span>
+      </div>
+	  <div class="inputFormField">
+        <input type="submit" value="Submit" class="submitBtn" id="submit-header-feedback" name="submit-header-feedback">
+		<span id="load-header-feedback-img" style="display:none;"><img src="https://www.pathkindlabs.com/front/img/loading.gif" alt="Loading"/></span>
+      </div>
+	  <div id="error_feedback_general" class="error msg"></div>
+		<div id="success_feedback" class="success"></div>
+      <div class="clr"></div>
+	</form>
+    </div>
+  </div>
+</div>
+<header> <a href="https://www.pathkindlabs.com/"><img src="https://www.pathkindlabs.com/front/img/logo.png" alt="Pathkind Labs" title="Pathkind Labs"></a>
+  <div class="top-section">
+    <div class="xs-box-02">
+      <div class="home-call"> <span><img src="https://www.pathkindlabs.com/front/img/tollfree-icon.png" alt="tollfree icon"> </span>
+				<a href="tel:782-784-4444">782-784-4444</a>
+		</div>
+    <div class="social2">
+      <!-- <a id="feedback" class="feedback1" href="javascript:void(0);">Feedback</a> -->
+      <a id="feedback" class="feedback1" href="https://www.pathkindlabs.com/franchising-opportunities">Become a Franchisee</a>
+          <a href="https://www.facebook.com/PathKind-Labs-877146235759813/" target="_blank" class="fa fa-facebook" aria-hidden="true"></a>
+              <a href="https://twitter.com/pathkindlabs" target="_blank" class="fa fa-twitter" aria-hidden="true"></a>
+      </div>
+    </div>
+    <div class="nav-mobile"></div>
+    <div class="navigation">
+		<div class="xs-box-02 sticky-view">
+      <div class="home-call"> <span><img src="https://www.pathkindlabs.com/front/img/tollfree-icon.png" alt="tollfree icon"> </span>		<a href="tel:782-784-4444">782-784-4444</a>
+		</div>
+    </div>
+      <ul class="desktop-view">
+        <li><a href="javascript:void(0)">COVID-19<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/covid-19/know-about-covid-19">Know about COVID-19</a></li>
+            <li><a href="https://www.pathkindlabs.com/Book-COVID-19-Test-Online" target="_blank">Book COVID-19 RT-PCR Test</a></li>
+            <li><a href="https://www.pathkindlabs.com/COVID-19-Antibody-Test" target="_blank">Book Antibody Tests</a></li>
+            <li><a href="https://www.pathkindlabs.com/covid-19/faq">FAQs</a></li>
+            <li><a href="https://www.pathkindlabs.com/covid-19/blog-video">Blogs / Videos</a></li>
+            <!-- <li><a href="">Videos</a></li> -->
+            <!-- <li><a href="">Myths Vs Facts</a></li> -->
+            <li><a href="https://www.pathkindlabs.com/covid-19/clinical-research">Clinical Research</a></li>
+          </ul>
+        </li>
+
+        <li><a href="javascript:void(0)">Patients <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/test-catalogue">Book A Test</a></li>
+            <li><a href="https://www.pathkindlabs.com/find-a-lab">Find a Lab</a></li>
+            <!-- li><a href="https://partners.pathkindlabs.com/Download/PatientLogin.aspx" target="_blank">My Reports </a></li -->
+            <li><a href="https://www.pathkindlabs.com/contact-us">Query / Enquiry form</a></li>
+            <!-- li><a href="">Health Packages</a></li -->
+            <li><a href="https://www.pathkindlabs.com/faq">FAQ'<small>S</small></a></li>
+            <li><a href="https://www.pathkindlabs.com/blog">Blog</a></li>
+            <li><a href="https://www.pathkindlabs.com/health-tips">Health Tips</a></li>
+			<li><a href="https://www.pathkindlabs.com/events">Events</a></li>
+			 <li><a href="https://www.pathkindlabs.com/press-release">PR/Media</a></li>
+       <li><a href="https://www.pathkindlabs.com/health-videos">Health Videos</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0)">Doctors <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/test-catalogue">Tests Offered</a></li>
+            
+            <li><a href="https://www.pathkindlabs.com/doctors-event">Doctor'<small>S</small> Events</a></li>
+            <li><a href="https://www.pathkindlabs.com/brochures">BROCHURES</a></li>
+           
+			      <li><a href="https://www.pathkindlabs.com/doctors-blog">Doctor'<small>S</small> Blog</a></li>
+            <li><a href="https://www.pathkindlabs.com/download">Download Forms</a></li>
+            <!-- <li><a href="">Doctor'<small>S</small> Clinical Research</a></li> -->
+          </ul>
+        </li>
+        <li><a href="https://www.pathkindlabs.com/health-packages">Packages </a> </li>
+         <li><a href="https://www.pathkindlabs.com/e-dos">E Dos</a></li>
+
+        <li><a href="https://www.pathkindlabs.com/contact-us">Contact Us</a></li>
+        
+        <li><a href="javascript:void(0)">PARTNER WITH US <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/franchising-opportunities">Franchising Opportunities</a></li>
+            <li><a href="https://www.pathkindlabs.com/corporate-wellness">Corporate Wellness</a></li>
+            <li><a href="https://www.pathkindlabs.com/hospital-lab-management">Hospital Lab Management</a></li>
+            <li><a href="https://www.pathkindlabs.com/organise-camps">Organise Camps</a></li>
+          </ul>
+        </li>
+        <li><a href="http://104.211.117.133/download/PatientLogin.aspx" target="_blank">Login</a></li>
+      </ul>
+      <div class="mobile-view">
+        <div class="close-cross"> </div>
+        <div class="home-call"> <span>Customer Care – </span>		<a href="tel:782-784-4444">782-784-4444</a>
+		</div>
+      </div>
+      <div class="slidercol">
+        <div class="mobile-view nav-scroll">
+          <ul>
+            <li><a href="javascript:void(0)">COVID-19<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul>
+                <li><a href="https://www.pathkindlabs.com/covid-19/know-about-covid-19">Know about COVID-19</a></li>
+                <li><a href="https://www.pathkindlabs.com/Book-COVID-19-Test-Online" target="_blank">Book COVID-19 RT-PCR Test</a></li>
+                <li><a href="https://www.pathkindlabs.com/COVID-19-Antibody-Test" target="_blank">Book Antibody Tests</a></li>
+                <li><a href="https://www.pathkindlabs.com/covid-19/faq">FAQs</a></li>
+                <li><a href="https://www.pathkindlabs.com/covid-19/blog-video">Blogs / Videos</a></li>
+                <!-- <li><a href="">Videos</a></li> -->
+                <!-- <li><a href="">Myths Vs Facts</a></li> -->
+                <li><a href="https://www.pathkindlabs.com/covid-19/clinical-research">Clinical Research</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0)">Patients <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul xstyle="display: block;">
+                <li><a href="https://www.pathkindlabs.com/test-catalogue">Book A Test</a></li>
+                <li ><a href="https://www.pathkindlabs.com/test-catalogue"><span>Find A Test</span></a></li>
+                <li><a href="https://www.pathkindlabs.com/find-a-lab">Find a Lab</a></li>
+                <li><a href="http://104.211.117.133/download/PatientLogin.aspx" target="_blank">My Reports </a></li>
+                <li><a href="https://www.pathkindlabs.com/contact-us">Query / Enquiry form</a></li>
+                <li><a href="https://www.pathkindlabs.com/health-packages">Health Packages</a></li>
+                <li><a href="https://www.pathkindlabs.com/faq">FAQ'S</a></li>
+                <li><a href="https://www.pathkindlabs.com/blog">Blogs</a></li>
+                <li><a href="https://www.pathkindlabs.com/health-tips">Health Tips</a></li>
+                <li><a href="https://www.pathkindlabs.com/health-videos">Health Videos</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0)">Doctor <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul>
+                <li><a href="https://www.pathkindlabs.com/test-catalogue">Tests Offered</a></li>
+                <li><a href="https://www.pathkindlabs.com/events">Events</a></li>
+                <li><a href="https://www.pathkindlabs.com/brochures">Brouchures</a></li>
+                <li><a href="https://www.pathkindlabs.com/press-release">PR/Media</a></li>
+          		  <li><a href="https://www.pathkindlabs.com/doctors-blog">Doctor'<small>S</small> Blog</a></li>
+                <li><a href="https://www.pathkindlabs.com/download">Download Forms</a></li>
+              </ul>
+            </li>
+            <li><a href="https://www.pathkindlabs.com/health-packages">Packages</a> </li>
+            <li ><a href="http://104.211.117.133/download/PatientLogin.aspx" target="_blank"></i><span>Download Report</span></a></li>
+            <li><a href="https://www.pathkindlabs.com/e-dos">E Dos</a></li>
+            <li><a href="https://www.pathkindlabs.com/contact-us">Contact Us</a></li>
+
+            <li><a href="javascript:void(0)">PARTNER WITH US <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul>
+                <li><a href="https://www.pathkindlabs.com/franchising-opportunities">Franchising Opportunities</a></li>
+                <li><a href="https://www.pathkindlabs.com/corporate-wellness">Corporate Wellness</a></li>
+                <li><a href="https://www.pathkindlabs.com/hospital-lab-management">Hospital Lab Management</a></li>
+                <li><a href="https://www.pathkindlabs.com/organise-camps">Organise Camps</a></li>
+              </ul>
+            </li>
+            <li><a href="http://104.211.117.133/download/PatientLogin.aspx" target="_blank">Login</a></li>
+          </ul>
+        </div>
+        <div class="mobile-view feedback-col">
+        <!-- <a id="feedback" class="feedback1" href="javascript:void(0);">Feedback</a> -->
+        <a id="feedback" class="feedback1" href="https://www.pathkindlabs.com/franchising-opportunities">Become a Franchisee</a>
+      </div>
+       <div class=" navsocial mobile-view" style="display: block;"> 
+              <a href="https://www.facebook.com/PathKind-Labs-877146235759813/" target="_blank" class="fa fa-facebook-square" aria-hidden="true"></a>
+                    <a href="https://twitter.com/pathkindlabs" target="_blank" class="fa fa-twitter-square" aria-hidden="true"></a>
+          </div>
+      </div>
+      
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</header>
+<div class="right-menu">
+  <ul>
+    <li class="book"><a href="https://www.pathkindlabs.com/test-catalogue"> </i><span>Book A Test</span></a></li>
+    <li class="find-a-test"><a href="https://www.pathkindlabs.com/test-catalogue"></i><span>Find A Test</span></a></li>
+    <li class="download"><a href="http://104.211.117.133/download/PatientLogin.aspx" target="_blank"></i><span>Download Report</span></a></li>
+    <!-- <li class="download"><a href="https://partners.pathkindlabs.com/Download/PatientLogin.aspx" target="_blank"></i><span>Download Report</span></a></li> -->
+    <li class="find-a-lab"><a href="https://www.pathkindlabs.com/find-a-lab"></i><span>Find A Lab</span></a></li>
+ <!--  <li class="book"><a href="https://www.pathkindlabs.com/e-dos"></i><span>eDOS</span></a></li> -->
+  </ul>
+</div>
+
+
+
+
+
+<!-- header close -->
+<!-- main container  -->
+
+<div class="error-404">
+  <div class="container">
+    <div class="row">
+     
+      <div class="col-50">
+        <div class="content">
+		<div class="image"><img src="https://www.pathkindlabs.com/front/img/404.jpg" alt=""></div>
+          <p>We looked everywhere for this page. Are you sure the URL you are looking for is correct ? kindly go back and search again.</p>
+        </div>
+        <div class="read-more">
+          <a href="https://www.pathkindlabs.com/" class="linkBtn">Back to Homepage</a>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="book-top-height">&nbsp;</div>
+<div class="book-appointment" data-aos="zoom-in">
+    <div class="wrapper">
+             <div class="app-img">
+	<img alt="" src="https://www.pathkindlabs.com/front/img/mobile.png" /></div>
+<div class="xs-col-01">
+	<div class="sm-title-03">
+		For Sahi Test Results</div>
+	<div class="xs-txt-01">
+		Book Your Appointment through our Customer Care</div>
+</div>
+<div class="xs-col-02">
+	<div class="xs-title-02">
+		&nbsp;</div>
+	<div class="xs-txt-02 new-add">
+		<a href=" tel:7827844444">782-784-4444</a></div>
+</div>
+          </div>
+  </div>
+
+<footer>
+  <div class="ft-bg">
+    <div class="wrapper">
+      <div class="row">
+        <div class="ft-col-01">
+          <div class="ft-title">About Us</div>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/about-us#section1-aboutus">Mission &amp; Vision</a></li>
+            <li><a href="https://www.pathkindlabs.com/about-us#section5-aboutus">Management</a></li>
+            <li><a href="https://www.pathkindlabs.com/contact-us">Contact Us</a></li>
+            <li><a href="https://www.pathkindlabs.com/research-and-development">Research and Development</a></li>
+          </ul>
+        </div>
+
+           <div class="ft-col-01">
+          <div class="ft-title">Partner With Us</div>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/franchising-opportunities">Partner With Us</a></li>
+            <li><a href="https://www.pathkindlabs.com/hospital-lab-management">Hospital Lab Management</a></li>
+            <li><a href="https://www.pathkindlabs.com/organise-camps">Organise Camps</a></li>
+          </ul>
+        </div>
+
+  
+        <div class="ft-col-01">
+          <div class="ft-title">Packages</div>
+          <ul>
+            <li><a href="https://www.pathkindlabs.com/health-packages">List of all Packages</a></li>
+                       
+          </ul>
+          <br>
+
+<div class="ft-title">Careers</div>
+<ul>
+             <li><a href="https://www.pathkindlabs.com/career">Current Openings</a></li>
+</ul>
+
+
+        </div>
+     
+
+
+
+        <div class="ft-col-01">
+          <div class="ft-title">Employee Portals</div>
+          <ul>
+         
+  <div class="extra-link">
+                  <span><a href="http://sfa1.mankindpharma.in/DCR/ScrLogin.aspx" target="_blank">Employee Portal 1</a></span>
+          <br>    <span><a href="http://sfa2.mankindpharma.in/DCR/ScrLogin.aspx" target="_blank">Employee Portal 2</a></span>
+          <br>    <span><a href="https://www.pathkindlabs.com/download" >Downloads Forms</a></span>
+          </div>
+
+           
+          </ul>
+        
+        </div>
+        <div class="ft-col-01 ft-mob-viw">
+          <div class="ft-title">Follow us</div>
+          <div class="socils-fot"> 
+							<a href="https://www.facebook.com/PathKind-Labs-877146235759813/" target="_blank" class="fa fa-facebook-square" aria-hidden="true"></a>
+										<a href="https://twitter.com/pathkindlabs" target="_blank" class="fa fa-twitter-square" aria-hidden="true"></a>
+						
+			
+			</div>
+        </div>
+  
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+   <div class="copy">						<p>
+	&copy; 2021 -&nbsp;<span style="font-family: Arial, Helvetica, sans-serif; font-size: small;">Pathkind Diagnostics Private Limited</span>. All Rights Reserved</p>
+					 | <a href="https://www.pathkindlabs.com/privacy-policy">Privacy Policy</a> | <a href="https://www.pathkindlabs.com/terms-of-use">Terms Of Use</a> | <a href="https://www.pathkindlabs.com/disclaimer">Disclaimer</a> | <a href="https://www.pathkindlabs.com/sitemap">Sitemap</a></div>
+</footer>
+<script src="https://www.pathkindlabs.com/front/js/slick.min.js"></script> 
+<script src="https://www.pathkindlabs.com/front/js/jquery.selectric.js"></script> 
+<script src="https://www.pathkindlabs.com/front/js/jquery.bxslider.js"></script> 
+<script src="https://www.pathkindlabs.com/front/js/aos.js"></script> 
+<script src="https://www.pathkindlabs.com/front/js/jquery.mousewheel.min.js"></script> 
+<script src="https://www.pathkindlabs.com/front/js/custom.min.js"></script>
+<script src="https://www.pathkindlabs.com/front/js/jquery.form.js"></script>
+
+<!--<script src="https://www.pathkindlabs.com/frontjs/datepicker.min.js"></script> 
+<script src="https://www.pathkindlabs.com/frontjs/datepicker.en.js"></script>--> 
+<script type="text/javascript" src="https://www.pathkindlabs.com/front/js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="https://www.pathkindlabs.com/front/js/common.js"></script>
+
+<script
+  id="makerobos_v1" 
+  type="text/javascript" 
+  data-token="QPTE9I8C0UR15NM0R4HVQIT4YSQ6WLEC" 
+  src="https://link.makerobos.com/C8I6YI7S">
+</script>
+
+</body>
+</html>

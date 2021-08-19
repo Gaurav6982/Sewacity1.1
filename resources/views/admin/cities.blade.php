@@ -46,6 +46,7 @@
 @endsection
 
 @section('js')
+<script>
 $(document).ready(function(){
     
 
@@ -55,6 +56,7 @@ $(document).ready(function(){
         $('#editCityModal #status').val("0");
 
         var options='<option value="0">On Top</option>';
+        
         @foreach ($cities as $key=>$item)
                 @if($item->is_active==1)
                     options+='<option value="{{$item->id}}" @if($key==0) selected @endif>{{$item->city_name}}</option>';
@@ -191,4 +193,5 @@ $(document).ready(function(){
     });
 
 });
+</script>
 @endsection

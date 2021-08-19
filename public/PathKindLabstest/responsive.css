@@ -1,0 +1,630 @@
+.in-banner .mob-ban,.main-banner .mob-ban{display:none}
+@media screen and (min-width:1920px){header{padding-left:95px;padding-right:95px}
+}
+@media screen and (min-width:1169px){.dirlistopen{display:none!important}
+}
+@media screen and (max-width:1300px){header.sticky .top-section{width:70%}
+.services-row .services{min-height:600px}
+.services-row2 .services{min-height:380px}
+.col-brochures ul{margin:0}
+}
+@media screen and (max-width:1169px){.wrapper.wcrl{padding:0}
+.abt-over,.wrapper.thanyou-page{overflow:hidden}
+.wrapper{max-width:100%;padding:0 15px}
+header{padding:15px}
+header.sticky{padding:10px 15px}
+body{padding:103px 0 0}
+.title-sld-lg{font-size:50px;line-height:50px}
+.sm-box-01{float:left;width:34%}
+.md-cont-box-01{padding-left:0}
+.md-col-02{width:47%}
+.md-col-03{padding-top:80px;width:50%}
+h1,h2{font-size:42px;line-height:42px;padding:0 0 20px}
+.app-img{left:0}
+.book-appointment{padding-left:55px}
+.sm-title-03{font-size:22px}
+.xs-col-01{width:60%}
+.xs-col-02{width:39%}
+.cdt-cont{font-size:18px;line-height:26px}
+.video-box{margin:0;height:580px!important}
+.right-menu{width:65px;background:rgba(255,255,255,.7)}
+.paging{position:absolute;top:auto;left:15px;bottom:4%}
+.paging a{display:inline-block;margin:0 3px}
+.slider-cont{height:500px!important}
+#section3-aboutus div{margin-right:23px}
+.director-list:hover .director-description{opacity:0}
+.director-list .name-board{left:0;text-align:center;width:100%}
+.img-box>img{width:123%}
+.part-left-faq.color-left{padding-left:0;width:50%;height:421px}
+.part-left-faq.color-left .abt-sld{margin-top:-75px}
+.in-banner .part-left-faq{padding:90px 40px 0 30px;height:432px}
+.healthpackages-tab li{margin:0}
+.event-listing .btn{opacity:1}
+.locality-listing .content-area{height:255px}
+.event-listing div h2{clear:both}
+.fill-out-the-information-form-area.career-form .form-group{margin-right:2.1111%}
+.home-collection-form-wrapper .form-group{width:48.5555%}
+.All-filters-form.career-form .form-group,.All-filters-form.career-form .form-group:nth-child(3){margin-right:1%}
+.all-test-catalogue-listing .tcl{min-height:360px}
+.in-banner.abt-bnr .in-banner-left{padding:157px 10px 0 50px}
+#section6-aboutus .slick-arrow{display:none!important}
+.right-menu ul li a{font-size:11px;padding-bottom:0}
+.sticky .xs-box-02{display:none}
+header.sticky .top-section{width:auto}
+.services-row .services{min-height:665px}
+.services-row2 .services{min-height:440px}
+.select-scroll li p{margin-right:10%}
+.right-menu ul li.book a,.right-menu ul li.download a,.right-menu ul li.find-a-lab a,.right-menu ul li.find-a-test a{background-position:center 14px}
+.col-brochures ul{margin:0 -8px -30px}
+.col-brochures ul li{padding:0 8px;margin-bottom:30px}
+.health_tips_col .brochures-title{min-height:53px;}
+}
+@media screen and (max-width:1022px){.video-box{height:553px!important}
+.slider-cont{height:405px!important}
+body{padding-top:103px}
+#section3-aboutus{padding:55px 30px 125px}
+#section5-aboutus{padding:65px 0 60px}
+#section6-aboutus .slick-next.slick-arrow{right:42%}
+#section6-aboutus .slick-prev.slick-arrow{left:42%}
+.part-left-faq.color-left .abt-sld{padding:0 0 0 40px}
+.in-banner .part-left-faq h2{margin-bottom:60px}
+.in-banner h2::after{top:30px}
+.in-banner .part-left-faq{height:414px}
+.in-banner.Crprte-Pckg-banner .in-banner-left{padding-top:120px}
+.in-banner.Crprte-Pckg-banner.PBHCB .in-banner-left{padding-top:90px}
+.below-part,.health-packages-page{width:90%}
+.radio-form .space{margin-right:10px}
+.in-banner.abt-bnr h2{font-size:40px;line-height:42px}
+.services-row .services{min-height:690px}
+.services-row2 .services{min-height:455px}
+}
+@media screen and (min-width:768px) and (max-width:979px){.home-call{margin-top:0}
+.navigation>ul>li>a{line-height:22px}
+.navigation>ul>li:nth-child(4) ul{left:-61px}
+.right-menu ul li a{font-size:11px;padding-bottom:4px}
+header>a>img{height:56px}
+header.sticky .navigation{padding-top:0}
+.brochures-title{font-size:17px;}
+}
+@media screen and (max-width:979px){.search-box-mobile{display:block;color:#014268;cursor:pointer;float:right;font-size:20px;line-height:30px;padding:0;text-align:right;width:26px}
+.navigation .search-box{display:none;position:absolute;right:0;top:53px;z-index:9}
+.top-section{width:70%}
+header>a{display:block;float:left;width:28%}
+.wrapper.thanyou-page>h1{font-size:34px;line-height:49px}
+.ft-bg .row .ft-col-01{padding:0 0 0 15px}
+.ft-bg .row .ft-col-01:nth-child(1){padding-left:0}
+.wrapper.thanyou-page>img{float:left;margin-left:15px;height:350px}
+.title-sld-lg{font-size:44px;line-height:44px}
+.sm-box-01{width:29%}
+.sm-box-02{width:68%}
+.xs-box-01{width:48%;line-height:24px;padding-bottom:30px}
+.form-box{width:85%}
+.md-cont-box-01{padding-top:77px}
+.franchising-opportunities-page .global-heading,h1,h2{font-size:38px;line-height:38px;padding:0 0 15px}
+#section7-aboutus h2{line-height:38px}
+p{margin:0 0 15px}
+.md-cont-box-01 a{margin-top:0}
+.md-cont-box-01{line-height:20px}
+.select-box-01{padding-bottom:15px}
+.md-col-03 h1{font-size:32px;line-height:32px}
+.md-col-02{width:52%}
+.md-col-03{padding-top:66px;width:47%;margin-left:-30px;position:absolute;left:50%;top:0;z-index:1}
+.count-txt-01{font-size:42px}
+.sm-title-02{font-size:20px}
+.cdt-cont{font-size:16px;line-height:24px}
+.xs-col-01{width:50%}
+.xs-col-02{width:48%}
+.xs-txt-02{font-size:30px}
+.xs-txt-01{padding-bottom:12px}
+.video-box{height:433px!important}
+.slider-cont{height:350px!important}
+.award-box,.social{width:65px;background:rgba(255,255,255,.7);box-shadow:0 0 4px rgba(0,0,0,.3);padding:0}
+.award-box{padding:10px 0}
+.social a{margin:10px 0}
+.sm-col-01{padding:0 10px}
+#section2-aboutus .img-box-01{padding-top:125px}
+.all-director-list{margin-top:20px}
+.color-left .title-sld-lg{font-size:38px;line-height:38px}
+.part-left-faq.color-left .abt-sld{padding:0 0 0 20px;margin-top:-75px}
+.in-banner .part-left-faq{height:324px;padding:50px 20px 0}
+.global-heading:after{top:35px}
+.all-blog-stories .blog-stories .content{padding:18px 10px 15px}
+.global-heading{margin-bottom:65px;margin-top:50px}
+.all-blog-stories .blog-stories{margin-right:3%;margin-bottom:36px;width:48%}
+.in-banner .in-banner-right{height:324px}
+.in-banner .in-banner-left{height:324px;padding:50px 20px 0}
+.in-banner-right>img{display:block;margin:0 auto;max-width:100%}
+.in-banner.abt-bnr .in-banner-left{padding:80px 20px 0}
+.in-banner .in-banner-left h2,.in-banner .part-left-faq h2{font-size:34px;line-height:34px;margin-bottom:50px}
+.in-banner.abt-bnr .in-banner-left h2{margin-bottom:0}
+.in-banner h2::after{top:25px}
+.blog-right-part .related-stroies img{height:74px;margin-right:15px;width:74px}
+.blog-right-part ul.popular-tag li{margin:0 5px 8px 0;padding:3px 8px}
+.blog-left-part h1{font-size:30px;line-height:40px}
+.submit-your-post-content{padding:30px 25px}
+.career-form .form-group{width:32.1111%}
+.left-car-detail{width:68%}
+.right-car-detail{padding:20px 10px 35px;width:30%}
+.in-banner.Crprte-Pckg-banner .in-banner-left{padding-top:48px}
+.in-banner.Crprte-Pckg-banner.PBHCB .in-banner-left{padding-top:40px}
+.below-part,.health-packages-page{width:100%}
+.healthpackages-tab a{font-size:14px;padding:15px 10px}
+.dowload-list h3{width:56%}
+.all-event-page,.home-collection-form-wrapper,.press-release-page{max-width:94%;padding:35px}
+.locality-listing{margin:0 1% 3%;width:30%}
+.locality-listing .content-area,.locality-listing-action{padding-left:12px;padding-right:12px}
+.locality-listing h2{margin-bottom:30px}
+.detection-location-form .form-group{margin:0 1%}
+.find-a-lab-page .global-heading,.services-offers-page .global-heading{padding-top:50px}
+.franchisingopportunities-tab li{font-size:15px;text-align:center;width:32.9%}
+.fill-out-the-information-form-area{padding:30px 30px 30px 190px}
+.hlm-page .col-left,.ofc .col-left{margin-bottom:20px;margin-right:5%}
+.hlm-page .col-right,.ofc .col-right{float:none;width:auto}
+.ofc .col-right{float:right;width:52%}
+.content-ofc{margin-bottom:30px}
+.health-tips-accordian{padding:0 25px}
+.press-listing-heading{background-position:0 10px;font-size:15px;padding:7px 32px 20px 50px}
+.press-listing-heading::before{left:33px}
+.press-listing-heading h2{font-size:20px;line-height:22px}
+.press-listing{padding-top:15px}
+.press-listing-content{padding-left:33px}
+.services{margin:0 1% 15px;padding:12px;width:47%}
+.All-applied-filters .tcl-filter-left,.All-applied-filters .tcl-filter-right{float:none;width:auto;max-width:inherit;margin-bottom:15px}
+.All-filters-form.career-form .form-group{width:42%}
+.collaps-arrow{display:none}
+.All-filters-form.career-form{height:auto;overflow:hidden}
+.All-filters-form.career-form .form-group.showingg{opacity:1}
+.All-filters-form.career-form .clr{clear:none}
+.form-group.pkk.showingg{float:right;margin-right:2%}
+.all-test-catalogue-listing .tcl p{margin:0 0 12px;padding-left:0}
+.all-test-catalogue-listing .tcl label{display:block;float:none;margin:0}
+.all-test-catalogue-listing .tcl label.last{padding-bottom:0;margin-bottom:0}
+.all-test-catalogue-listing .tcl p.last,.last-para{margin-bottom:15px}
+.all-test-catalogue-listing .tcl{padding:15px 15px 50px}
+.all-test-catalogue-listing .tcl-action button{padding:5px 10px}
+.all-test-catalogue-listing .tcl-action,.myModalbox-wraper .tcl-action{padding:10px 15px}
+.all-sitemap li{width:30%}
+.test-cont{padding:0 170px 20px}
+.contact-data .col-address,.contact-data .col-form{padding:50px}
+header.sticky .navigation{padding-top:8px}
+.navigation ul li a{font-size:11px;padding:0 3px}
+.services-row .services{min-height:450px}
+.services-row2 .services{min-height:290px}
+.health-lft{padding-top:0}
+.newsletter-box-01{padding-left:0}
+.book-appointment .sm-title-03{font-size:19px}
+.All-filters-form.career-form .form-inputs .form-group .selectric,.All-filters-form.career-form .form-inputs .form-group input{border-bottom:3px solid #c7ced5}
+.select-scroll li p{width:50%;margin-right:10px}
+.select-scroll li>span{width:120px}
+}
+@media screen and (max-width:767px){.ft-bg .row .ft-col-01,.navsocial,.ofc .col-left{text-align:center}
+.ft-bg .row .ft-col-01 br{display:none}
+.aboutus-wrapper,.myModalbox-wraper{width:94%}
+.ft-bg .ft-title::after{content:"+";display:block;font-size:18px;font-weight:700;height:20px;margin-right:10px;position:absolute;right:0;top:4px;width:15px}
+.ft-bg .ft-title.minus::after{content:"-"}
+.close-cross,.ft-col-01 ul li a::before{content:""}
+.nav-mobile{background:url(../img/tg-icon.png) center center no-repeat #fff;cursor:pointer;height:23px;line-height:23px;margin-left:0;margin-top:10px;padding:0;width:26px;transition:all .6s ease 0s;-moz-transition:all .6s ease 0s;-webkit-transition:all .6s ease 0s;position:absolute;right:0;top:0}
+.close-cross{background:url(../img/close-cross2.png) center center no-repeat #004169;display:block;height:34px;left:-34px;position:absolute;top:20px;width:34px;z-index:9999999;cursor:pointer}
+.navigation{clear:none;float:right;display:block;width:250px;margin-top:0;position:fixed;right:-90%;top:0;height:100%;background:#004169;padding:0 0 62px;z-index:9999999}
+.navigation ul li{display:block;float:none}
+.navigation ul li a,.navigation ul ul li a{padding:0 15px;display:block;color:#f1f1f1;font-size:14px;font-weight:400;text-transform:capitalize}
+.navigation ul li a:hover{background-color:#014268}
+.navigation ul ul{position:relative;z-index:0;top:0;box-shadow:none;width:100%!important}
+.navigation ul ul li{border-bottom:none}
+.navigation ul ul li a{background-color:transparent;font-size:12px!important}
+.navigation ul i.fa.fa-caret-down{float:right;display:block;margin-top:4px;font-size:22px}
+.navsocial{padding:0 10px;margin-bottom:20px}
+.navsocial a{font-size:28px;display:inline-block;float:none;color:#f1f1f1;margin:0 3px}
+.desktop-view{display:none!important}
+.navigation ul li:hover ul,.top-section .xs-box-02{display:none}
+.mobile-view.nav-scroll{overflow-x:hidden;margin-bottom:20px}
+.slidercol{position:absolute;left:15px;top:0;bottom:0;right:0;overflow-y:auto;margin-top:48px;z-index:1}
+body{padding-top:0}
+header,header.sticky{height:auto;padding:10px 15px;position:static}
+header>a>img{height:42px}
+.blog-left-part,.blog-right-part,.left-car-detail,.right-car-detail{width:auto;float:none}
+.right-car-detail{padding:20px 26px 35px}
+.blog-right-part{margin-top:40px}
+.nav-mobile{display:block}
+.search-box-mobile{display:none}
+.app-store,.home-call{display:inline-block;float:none;vertical-align:top}
+.ft-bg .row .ft-col-01{padding:0;float:none;width:auto}
+.ft-col-01 ul{display:none;padding:10px 0}
+.ft-bg{padding:30px 0}
+.ft-title{background:#f8f8f8;margin-bottom:1px;padding:7px 0;cursor:pointer}
+.app-store-icon,.app-store-icon.apple{background-size:48px auto}
+.right-menu{display:none;margin-top:-106px;width:64px}
+.app-store-icon.apple{background-position:-31px 0}
+.wrapper.thanyou-page>h1{font-size:30px;line-height:36px;margin:128px 0 0;padding:0 15px 15px 0}
+.wrapper.thanyou-page>h3{font-size:16px}
+.wrapper.thanyou-page{padding:30px 0 50px}
+.ft-col-01 ul li{background:0 0;padding:3px 0}
+.ft-col-01 ul li a::before{background:url(../img/dot.png) no-repeat rgba(0,0,0,0);display:inline-block;height:7px;margin-right:5px;position:relative;width:7px}
+.wrapper.thanyou-page>img{max-width:250px}
+.navigation .search-box{display:block;position:static;padding:20px 10px;width:100%;float:none}
+.navigation ul li a{border-bottom:1px solid #013250;margin:0 10px;padding:0 5px}
+.navigation ul{margin:0 0 10px}
+.video-box{height:362px!important}
+.home-call a,.home-call span{color:#ffcb08;font-size:14px;font-weight:600;line-height:normal;}
+.home-call{color:#ffcb08;font-size:14px;padding:0;margin:15px;background:0 0}
+.app-store-icon{background-image:url(../img/store-icons-white.png)}
+.md-col-01,.newsletter-box-01,.newsletter-box-02,.sm-box-01,.sm-box-02,.sm-col-03{width:auto;float:none;padding:0 15px}
+.wrapper.pad50{padding:30px 0 20px}
+.sm-box-01 img{width:200px;margin:0 auto}
+.title-sld-lg{font-size:34px;line-height:34px}
+.slider-cont{height:320px!important}
+.health-packages-slider ul.slick-dots{margin:20px auto 0;text-align:center;padding:0}
+.health-packages-slider .slick-dots li{background:rgba(0,0,0,0);border:1px solid #0e4b71;border-radius:50%;display:inline-block;width:7px;height:7px;overflow:hidden;margin:0 2.5px;cursor:pointer}
+.health-packages-slider .slick-dots li.slick-active{background:#0e4b71}
+.health-packages-slider .slick-dots li button{background:rgba(0,0,0,0);border:0;text-indent:-20px;padding:0;margin:0;overflow:hidden}
+.view-link-box{padding-top:24px}
+.health-packages-slider .slick-slide img{display:block;margin:0 auto}
+.award-box,.fb-img,.img-box-01,.outer-row:after,.social{display:none}
+.md-cont-box-01{line-height:22px;padding:40px 0}
+.test-cont{padding:0}
+.md-col-02{width:60%}
+.md-col-03{width:54%;margin-left:-40px}
+.outer-row{margin:0}
+.view-link-box{margin-bottom:20px}
+.newsletter-box-01{margin-left:0;margin-bottom:10px}
+.sm-title-03{font-size:16px;line-height:18px;margin-bottom:5px}
+.xs-txt-01{font-size:13px}
+.socils-fot a{font-size:28px;display:inline-block;float:none;color:#004169;margin:0 3px}
+.contact-data:before,.healthpackages-listing .overlay-hover{display:none}
+.socils-fot{padding:10px}
+header.homepage{position:fixed}
+.abt-sld{margin-top:-86px;padding:0 0 0 15px}
+.title-sld{font-size:18px;padding-left:25px}
+.title-sld:before{width:18px}
+.title-sld:after{width:52px}
+#section1-aboutus .col-left{border-right:0;float:none;border-bottom:1px solid #ebebeb;padding:0 0 15px;width:auto}
+.mar45{margin:30px 0}
+.all-director-list{margin-bottom:42px;margin-top:10px}
+#section4-aboutus .sm-col-11{width:32.6%}
+.director-list .name-board{font-size:14px}
+#section3-aboutus div{font-size:16px;height:130px;line-height:130px;margin-bottom:23px;margin-left:12px;margin-right:12px;width:130px}
+#section3-aboutus div:last-child{margin-right:12px}
+#section3-aboutus div:nth-child(2){padding-top:44px}
+#section3-aboutus{padding:55px 30px 60px}
+.color-left .title-sld-lg{font-size:34px;line-height:34px}
+[data-aos=fade-left],[data-aos=fade-right]{transform:translate(0)!important}
+.part-left-faq.color-left .abt-sld{padding:0}
+.all-blog-stories .blog-stories:nth-child(3n+3){margin-right:3%}
+.all-blog-stories .blog-stories:nth-child(2n+2){margin-right:0}
+.global-heading,.home-collection-page .global-heading{margin-bottom:50px;margin-top:35px}
+.find-a-lab-page .map>h1.global-heading::after,.global-heading:after,.home-collection-page .global-heading::after{top:25px}
+.in-banner h2::after{top:22px}
+.in-banner .in-banner-left,.in-banner .part-left-faq{padding:50px 30px;width:auto;height:auto;float:none}
+.in-banner .in-banner-right{float:none;width:auto;height:300px}
+.blog-right-part ul.popular-tag li{margin:0 15px 10px 0;padding:5px 20px}
+.career-form .form-group{margin-right:2%;width:48.6%}
+.career-form .form-group:nth-child(3n+3){margin-right:2%}
+.career-form .form-group:nth-child(2n+2){margin-right:0}
+.career-form .choselable{margin-right:4px}
+.healthpackages-tab li{margin:0 0 2px;border:1px solid #eee;width:100%;border-bottom:0 none}
+.ask-a-question-content{padding:20px}
+.below-part .career-form .form-group{margin-right:2%;width:48.6%}
+.in-banner.Crprte-Pckg-banner .in-banner-left,.in-banner.Crprte-Pckg-banner.PBHCB .in-banner-left{padding-top:30px}
+.healthpackages-tab{margin-top:30px}
+.dowload-list h3{width:48%}
+.all-event-page,.home-collection-form-wrapper,.press-release-page{max-width:100%;padding:20px}
+.all-event-page .selectric-wrapper{width:100%}
+.event-listing{font-size:15px;padding:14px}
+.event-listing div h2{font-size:20px;line-height:23px}
+.event-listing div{padding-left:55px}
+.event-listing div::before{left:35px}
+.all-faq-pannel{padding:0 20px}
+.ask-a-question-content.career-form .form-group:nth-child(3){margin-right:0;width:100%}
+.locality-listing{width:47%}
+.find-a-lab-page .global-heading,.find-a-lab-page .map>h1.global-heading,.services-offers-page .global-heading{padding-top:35px}
+.find-a-lab-page .map>h1.global-heading{background-position:center bottom;height:50px}
+.map iframe{height:350px!important}
+.fill-out-the-information-form-area{padding:30px}
+.franchisingopportunities-tab li{font-size:14px;font-weight:600;vertical-align:middle;width:32.8%}
+.ofc .col-left,.ofc .col-right{width:auto;float:none}
+.franchisingopportunities-tab li a{padding:10px 4px}
+.opl{padding:10px 20px}
+.ofc .col-leftimg>img{margin:0 auto}
+.health-tips-listing h2{font-size:16px;padding:10px 28px 10px 0;line-height:22px}
+.health-tips-accordian{padding:0 15px}
+.all-test-catalogue-listing .tcl{float:none;margin:0 auto 20px;padding:15px 15px 50px;width:94%;min-height:inherit;height:inherit}
+.health-conditions .tcl{padding-bottom:20px}
+.all-test-catalogue-listing .tcl p{margin:0 0 20px;padding-left:0}
+.TestDetailsModal label,.all-test-catalogue-listing .tcl label{float:none;margin:0}
+.All-filters-form.career-form .form-group{margin:0 0 20px;width:100%}
+.All-filters-form.career-form .form-group,.All-filters-form.career-form .form-group:nth-child(3){margin-right:0}
+.All-filters-form.career-form .form-group:nth-child(2){line-height:inherit;margin:0;text-align:left}
+.all-test-catalogue-listing{margin-top:20px}
+.services{margin:0 0 15px;padding:12px;width:auto;min-height:inherit!important}
+.all-services{padding:40px 0;text-align:center}
+.in-banner.abt-bnr .in-banner-left{padding:50px 30px}
+.myModalbox-wraper{padding:15px 15px 50px}
+.dirlistopen .closebtn,.myModalbox .closebtn{right:20px}
+.test-catelog-wraper .myModalbox .closebtn{right:28px}
+.pat-loc .form-group{width:48%;margin-right:2%}
+.select-scroll li p{width:53%;font-size:13px;line-height:20px}
+.all-sitemap li{width:47%}
+.xs-col-01,.xs-col-02{width:auto}
+.xs-col-02{border:none;padding:0 0 0 162px}
+.health-test .md-col-02 img{opacity:.6}
+#section1-aboutus .wrapper{background-size:338px auto}
+.contact-data .col-address,.contact-data .col-form{padding:30px;width:100%;float:none;margin:0 auto;border:0}
+.contact-data .col-address{width:86%}
+#map-canvas{height:300px!important}
+.health-conditions .All-filters-form.career-form .form-group{width:100%}
+.All-filters-form.career-form .form-group.searchh-btn{width:11%;margin-bottom:0}
+.health-conditions .form-inputs{text-align:inherit}
+.catalouge-page .tcl-action.btn-center,.extra-link.mob,.feedback-col{text-align:center}
+.health-lft,.health-rgt{width:auto;float:none}
+.health-lft{padding-bottom:25px}
+.main-banner .slick-dots{right:10px;bottom:0}
+.services-offers-page .All-filters-form.career-form .form-group{margin-bottom:5px!important}
+.All-applied-filters{padding:0}
+.services-offers-page .global-heading{margin-bottom:20px}
+.healthpackages-tab a.active,.healthpackages-tab a:hover{padding:15px 10px}
+.health-packages-page .All-filters-form.career-form .form-group{margin-bottom:10px}
+.All-filters-form.career-form .form-inputs .form-group .selectric,.All-filters-form.career-form .form-inputs .form-group input{height:35px}
+.fed-wrap{margin-left:15px;margin-right:15px}
+#xfeedback{background:url(../img/feedback-mobile.png) no-repeat;margin-bottom:18px}
+#feedback{background:url(../img/franchise-mobile.png) no-repeat;margin-bottom:18px}
+#feedback:hover{background-position:inherit}
+#section4-aboutus .main-col{margin-top:0}
+.healthpackages-listing:hover .overlay-hover{opacity:0}
+.destop-none{display:block}
+.healthpackages-listing .blue-btn{padding:5px 16px;margin-top:10px}
+.contact-details{padding-bottom:0}
+.book-top-height{height:45px}
+.cdt-icon{height:60px}
+.cdt-icon i{vertical-align:top}
+.extra-link.mob{display:block;background:#f8f8f8;margin-top:1px;padding:5px 0}
+.test-catelog-wraper.catalouge-page{padding:0}
+.select-scroll li>span{width:106px}
+.col-brochures ul li{width:50%}
+.brochures-wrapper{margin:8% auto}
+.health_tips_pop .brochures-wrapper{padding:40px 15px;}
+.new-add{top:-10px;}
+}
+@media screen and (max-width:639px){.sm-col-04,.xs-col-01{width:auto;float:none}
+.in-banner .desk-ban,.main-banner .desk-ban,.xs-title-02:before{display:none}
+.wrapper.thanyou-page>h1{font-size:24px;line-height:28px;margin:45px 0 0;padding:0 15px 15px 0}
+.top-section .xs-box-02{float:none;text-align:center;width:auto}
+.nav-mobile{float:left;margin:0;text-align:left}
+.navigation ul{left:0;right:auto}
+.wrapper.thanyou-page>img{height:238px}
+.video-box{height:272px!important}
+.slider-cont{height:270px!important}
+.know{padding:6px 16px}
+.title-sld-lg{font-size:26px;line-height:26px}
+.abt-sld{margin-top:-74px}
+.col-box-01{padding-bottom:50px}
+.col-box-02{height:80px}
+.linkBtn{margin-top:-20px;padding:9px 15px;}
+.count-txt-01{font-size:32px;}
+.section-health{padding:30px 0}
+.sm-col-04{margin-bottom:20px}
+.bord-lft-rght{padding:15px 0;border:2px solid #f5f5f5;border-left:none;border-right:none}
+.app-img{left:15px;width:74px;top:0}
+.book-appointment{height:auto;padding-left:0;min-height:180px}
+.xs-col-02{padding-left:115px}
+.md-col-03{width:70%;margin-left:-30%;right:15px;left:auto}
+.md-col-02{width:78%}
+.copy{padding:5px 15px}
+.all-director-list{margin-bottom:0}
+.color-left .title-sld-lg{font-size:26px;line-height:28px;padding:0}
+.part-left-faq.color-left .abt-sld{margin-top:-56px}
+.all-blog-stories .blog-stories .autor-date{line-height:16px}
+.in-banner h2::after{top:15px}
+.in-banner .in-banner-left,.in-banner .part-left-faq{padding:30px}
+.blog-left-part h1{font-size:24px;line-height:34px}
+.submit-your-post-content .form-group{float:none;margin:0 0 23px;width:auto}
+.below-part .career-form .form-group,.career-form .form-group{width:48.4%}
+.submit-your-post{margin-top:40px}
+.career-listing h2{line-height:24px;padding-bottom:8px}
+.career-form .chose-file{margin-left:0}
+.form-area.bnor>p{padding-left:0}
+.form-area{padding:20px}
+.healthpackages-tab a{padding:15px 0}
+.dowload-list .down-btn{margin-left:92px;margin-top:10px;float:left}
+.dowload-list h3{margin:0;width:75%}
+.dowload-list h3::before{background:url(../img/pdf-icon.jpg) center center no-repeat rgba(0,0,0,0)}
+.all-event-page,.home-collection-form-wrapper,.press-release-page{padding:10px}
+.event-listing div h2{font-size:18px}
+.event-listing .btn{margin:-3px 0 0}
+.ques{font-size:14px;padding:15px 36px 16px 0}
+.all-faq-pannel .answer{padding:15px 0}
+.detection-location-form .form-group{width:46%}
+.locality-listing{margin:10px 0;min-height:inherit;width:94%}
+.locality-listing .content-area{height:auto}
+.map iframe{height:300px!important}
+.in-banner .in-banner-left h2,.in-banner .part-left-faq h2{font-size:30px;line-height:30px;margin-bottom:40px}
+.fill-out-the-information-form-area{padding:20px;background-size:cover}
+.fill-out-the-information-form-area.career-form .form-group{margin-right:0;width:100%}
+.investment-part{float:left}
+.franchisingopportunities-tab li{font-size:15px;border-bottom:1px solid #fff;width:100%}
+.franchisingopportunities-tab li a{padding:20px 4px}
+.slogan-content span{font-size:18px}
+.franchisingopportunities-tab li:last-child{border-bottom:0}
+.opl{padding:10px 15px;margin-bottom:30px}
+.hlm-page .fill-out-the-information-form-area{background-size:cover}
+.opl li{background-position:left top 12px;line-height:22px;padding:12px 0 12px 32px}
+.hlm-page h3{margin-bottom:20px;margin-top:40px}
+.fill-out-the-information-form h2{font-size:18px;line-height:24px;margin:0 15px;padding:10px 20px}
+.health-tips-listing .content-health-tips{padding:10px 0 5px}
+.health-tips-listing .date{height:38px;line-height:38px}
+.health-tips-listing .date strong{font-size:22px}
+.home-collection-form-wrapper .form-group{margin:0 0 22px;width:100%}
+.home-collection-form-wrapper .form-group input,.home-collection-form-wrapper .form-group textarea{padding:12px 15px;width:100%}
+.home-collection-form-wrapper .selectric .label{margin-left:15px}
+.press-listing-heading h2{font-size:16px}
+.press-listing-heading{padding-bottom:15px}
+.add-test{right:10px}
+.aboutus-wrapper h2,.all-test-catalogue-listing .tcl h2,.myModalbox-wraper h2{padding-right:20px}
+.in-banner .in-banner-right{height:auto}
+.select-scroll li p{width:64%}
+.SelectALab-HomeCollectionModal-LabSelected .select-scroll .btn-sky{margin-top:0}
+.view-map{margin-top:7px}
+.myModalbox-wraper .tcl-action button{padding:7px 10px}
+.all-sitemap li{width:46%}
+.nav-mobile{top:12px}
+.in-banner .mob-ban,.main-banner .mob-ban{display:block}
+.form-box{margin-top:20px}
+.pat-loc .form-group{width:auto;margin-right:0;float:none}
+.myModalbox-wraper .date-pic input{float:none}
+.select-scroll li>span{width:auto;float:right;margin-right:40px;margin-top:0}
+.select-label{top:14px;margin-top:0}
+.tstcat-btn{float:right;clear:both;margin-top:5px}
+.catalouge-page input,.myModalbox-wraper .tcl-action button.fr,.myModalbox-wraper textarea{float:none}
+.myModalbox-wraper textarea{width:100%}
+.catalouge-page .pat-loc br{display:none}
+.health-tips-listing .content-health-tips img{max-width:100%}
+.brochures-img span{font-size:12px;padding:7px 10px}
+.new-add{top:-30px;}
+}
+@media screen and (max-width:479px){.navigation .search-box,.navigation ul{top:31px}
+.wrapper.thanyou-page>img{height:238px;float:none;width:initial;margin:0 auto}
+.wrapper.thanyou-page>h1{font-size:22px;line-height:24px;margin:20px 0 0;padding:0 15px 10px 0}
+.video-box{height:204px!important}
+.slider-cont{height:202px!important}
+.title-sld-lg{font-size:20px;line-height:20px}
+.abt-sld{margin-top:-65px}
+.title-sld:after{width:24px}
+.sm-box-01 img{width:150px}
+.xs-box-01{width:auto;padding-bottom:20px;float:none}
+.sm-txt-01{padding-bottom:30px}
+.testimonial-section h3{font-size:30px;padding:0 0 20px}
+.testimonial-section{padding:30px}
+.inputbox{width:68%;height:40px}
+.inputsubmit{width:30%;height:40px}
+.app-img{left:0;width:52px;top:0}
+.book-appointment{padding:15px;min-height:inherit}
+.xs-col-01{padding-left:50px}
+.xs-title-02:before{font-size:76px}
+.count-txt-01{font-size:36px}
+.otr-box-01{padding-bottom:20px;padding-top:20px}
+.linkBtn{padding:5px 20px}
+.home-collection-page .global-heading,h1,h2{font-size:30px;line-height:30px}
+.md-col-03{width:auto;margin-left:0;right:auto;left:15px}
+.md-col-02{width:100%;opacity:.4}
+.news-letter{padding:45px 0 30px}
+#section4-aboutus .sm-col-11{float:none;margin-bottom:20px;width:100%}
+#section7-aboutus{margin-bottom:0;padding:45px 0 50px}
+#section7-aboutus h2{line-height:30px}
+.color-left .title-sld-lg{font-size:20px;line-height:24px}
+.all-blog-stories .blog-stories{margin-right:0;margin-bottom:20px;width:auto;min-height:inherit;max-height:inherit;float:none}
+.below-part .career-form .form-group,.career-form .form-group{width:100%;margin-right:0}
+.all-blog-stories .blog-stories:nth-child(3n+3){margin-right:0}
+.in-banner .in-banner-left,.in-banner .part-left-faq{padding:30px 15px}
+.in-banner .in-banner-left h2,.in-banner .part-left-faq h2{margin-bottom:35px}
+.in-banner .in-banner-right{height:200px}
+.submit-your-post-content{padding:30px 20px}
+.blue-btn-blog{margin-top:30px;padding:8px 20px}
+.blue-btn-blog::before{margin-right:6px}
+.blog-next::after{margin-left:6px}
+.submit-your-post-action button{padding:14px 15px}
+.career-form .form-group{float:none}
+.career-form .form-group:nth-child(3n+3){margin-right:0}
+.career-listing label{display:inline-block;margin-bottom:5px}
+.healthpackages-tab li{width:100%}
+.healthpackages-listing .content-text{clear:both;padding:15px}
+.healthpackages-listing label{padding:0}
+.healthpackages-listing .overlay-hover .price-content .pricess{margin-top:95px}
+.healthpackages-listing .overlay-hover{background:right center no-repeat rgba(196,208,219,.7);text-align:center}
+.below-part .note>span{font-size:24px;line-height:30px}
+.dowload-list .down-btn{padding:8px 10px;margin-left:26px;margin-top:15px}
+.dowload-list h3::before{background-position:left 11px top 25px;background-size:24px auto;width:38px;border:none}
+.dowload-list h3{font-size:14px;width:92%;padding-left:26px}
+.all-faq-pannel{padding:0 15px}
+.blue-btn,.cancel{padding:8px 15px}
+.ask-a-question-content .form-group textarea,.below-part .career-form .form-group textarea,.career-form .selectric,.career-form input,.career-form textarea{padding-left:10px;padding-right:10px}
+.detection-location-form .form-group{margin:0 0 15px;width:90%}
+.detection-location-form .form-group:last-child{padding-top:0}
+.map iframe{height:250px!important}
+.franchising-opportunities-page .global-heading{font-size:30px;line-height:34px}
+.slogan-content{padding:20px;background-position:left 10px top 7px;background-size:24px auto}
+.slogan-content span{font-size:16px;line-height:22px}
+.radio-form{padding:20px 20px 0}
+.fill-out-the-information-form h2{font-size:18px;line-height:26px;margin:0 12px;padding:10px}
+.franchisingopportunities-tab li{border-bottom:1px solid #fff}
+.hlm-page .col-left,.ofc .col-left{float:none;margin-bottom:20px;margin-right:0;width:auto}
+.global-heading span{display:inline}
+.free-camp li{padding:12px 0 12px 32px}
+.health-tips-listing h2{font-size:15px}
+.home-collection-form-wrapper button{font-size:14px;height:auto;padding:8px 20px}
+.press-listing{padding:12px 12px 0}
+.press-listing-heading h2{font-size:15px;line-height:20px}
+.press-listing-heading::before{left:28px}
+.press-listing-heading{padding-bottom:10px;padding-left:38px}
+.TestDetailsModal label,.all-test-catalogue-listing .tcl label{float:none;margin:0}
+.all-test-catalogue-listing .tcl p{margin:0 0 12px;padding-left:0}
+.All-filters-form.career-form{padding:20px 10px 0}
+.All-applied-filters label{margin-right:0}
+.All-applied-filters .tcl-filter-left .fil-items{margin-right:2px}
+.all-test-catalogue-listing .tcl{padding:15px 15px 89px;font-size:13px}
+.all-test-catalogue-listing .tcl-action button,.myModalbox-wraper .tcl-action button{clear:both;margin:5px 0;padding:5px 10px}
+.aboutus-wrapper h2,.all-test-catalogue-listing .tcl h2,.myModalbox-wraper h2{font-size:15px}
+.TestDetailsModal p span,.all-test-catalogue-listing .tcl p span{margin:3px 0;font-size:12px}
+.xs-title-02::before{display:none}
+.xs-col-02{padding:0 0 0 50px}
+.xs-txt-02{font-size:23px}
+.in-banner.abt-bnr .in-banner-left h2{font-size:30px;line-height:32px;margin-top:0}
+.in-banner.abt-bnr .in-banner-left{padding:50px 15px}
+.dirlistopen{margin-left:-47%;top:20px;width:94%}
+.dirlistopen p{font-size:13px}
+.TestDetailsModal p{padding-left:0}
+.pat-loc .form-group{width:100%;margin-right:0}
+.myModalbox-wraper{padding:10px 10px 85px}
+.text-pakage-table tr td{padding:5px;font-size:12px}
+.myModalbox-wraper .tcl-action button.fr{float:left}
+.select-label{right:5px}
+.myModalbox-wraper .tcl-action{padding:10px 10px 5px}
+.SelectALab-HomeCollectionModal-LabSelected .select-scroll .btn-sky{float:left;margin:0}
+.SelectALab-HomeCollectionModal-LabSelected .btn-sky{float:left;margin-top:0}
+.myModalbox-wraper .tcl-action button{padding:7px 10px}
+.wid50{width:100%}
+.grey-heading .wid50{width:49%}
+.all-test-catalogue-listing .tcl-action button{float:left}
+.login-form{padding:15px}
+.login-form .checkbox a{float:none;margin:10px 0;clear:both}
+.all-sitemap li{width:100%;margin:0}
+.sm-col-02{width:100%}
+#section1-aboutus .col-left{padding-bottom:144px}
+.htpck .banner-content{display:block;color:#004169;padding:60px 30px;text-align:center;background:url(../img/mob-pattern.jpg);font:italic 800 22px/26px Open Sans}
+.htpck .banner-content span{color:#FFF}
+#map-canvas{height:200px!important}
+.contact-data .col-form{padding:10px}
+.inputFormField{width:100%;padding-bottom:15px}
+.healthpackages-listing img{width:100%;border:0;border-radius:0}
+.event-listing div h2{font-size:14px;line-height:normal}
+.select-scroll li p{margin-bottom:10px;width:auto;margin-right:25px;float:none}
+.select-scroll li>span{width:auto;float:left;margin-right:0;margin-top:0}
+.tstcat-btn{clear:none;margin-top:0}
+.catalouge-page .myModalbox-wraper .tcl-action button.fr{float:none}
+.catalouge-page .tcl-action.btn-center i{display:block}
+.col-brochures ul li{width:100%}
+.health_tips_pop .brochures-wrapper img{max-width:100%;}
+.health_tips_col .brochures-title{min-height:inherit;}
+}
+@media screen and (max-width:359px){.g-recaptcha{transform:scale(.77);-webkit-transform:scale(.77);transform-origin:0 0;-webkit-transform-origin:0 0}
+.slider-cont,.video-box{height:180px!important}
+.know{padding:3px 16px;font-size:12px;margin-top:8px}
+.title-sld-lg{font-size:18px;line-height:18px}
+.abt-sld{margin-top:-52px}
+.title-sld:after{width:17px}
+.title-sld{font-size:16px}
+.sm-col-02{height:186px;width:auto;float:none}
+.md-col-03 h1{font-size:28px;line-height:28px}
+.health-test{overflow:hidden}
+.md-col-02{width:119%}
+.date-post{float:none;width:auto}
+.date-post img{width:auto;max-width:100%}
+.post-article{padding-left:0;padding-top:10px}
+.app-store,.home-call{font-size:13px;margin-bottom:10px}
+.testimonial-section h3{font-size:34px;padding:0 0 10px}
+.news-letter{padding:40px 0 25px}
+.inputbox{width:64%}
+.inputsubmit{width:34%}
+.submit-your-post-action button{padding:14px 10px}
+.event-listing div{padding-left:48px}
+.radio-form{padding:10px}
+.xs-txt-02{font-size:25px}
+}

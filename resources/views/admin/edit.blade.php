@@ -74,6 +74,8 @@
    $num=$post->category_id-1;
 ?>
 @section('js')
+<script>
     var slt1=document.getElementById('category');
     slt1.getElementsByTagName('option')[{{$num}}].setAttribute("selected", "selected");
+</script>
 @endsection

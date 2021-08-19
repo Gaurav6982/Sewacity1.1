@@ -44,7 +44,7 @@
     </div>
 @endsection
 @section('js')
-
+    <script>
     $(document).ready(function(){
         $('.delete-feedback-btn').click(function(){
             const id=$(this).data("id");
@@ -112,6 +112,6 @@
         });
     });
 
-
+</script>
 @endsection
 

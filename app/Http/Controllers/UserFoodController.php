@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Restaurants;
 use App\Menu;
 use App\FoodCart;
+use App\DeliveryAvailable;
 use Auth;
 use Illuminate\Support\Facades\Mail; 
 use App\Mail\SendFoodMail; 
@@ -24,12 +25,7 @@ session_start();
 class UserFoodController extends Controller
 {
     public function index(){
-        // return $_SESSION['city'];
-        // $response = file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
-        // $obj=json_decode($response);
-        // $arr=explode('T',$obj->datetime);
-        // $time=explode('+',$arr[1]);
-        // $time_now=strtotime($time[0]);
+      
         $time_now=time();
         if(Auth::check())
         $city=Auth::user()->city_id;
@@ -40,16 +36,9 @@ class UserFoodController extends Controller
         $restaurants=Restaurants::where('city_id',$city)->where('is_active',1)->get();
         return view('food.index')->with('res',$restaurants)->with('time_now',$time_now);
     }
-    public function show($id){
-        $res=Restaurants::find($id);
-        
-        // $response =file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
-        // $obj=json_decode($response);
-        // $arr=explode('T',$obj->datetime);
-        // $time=explode('+',$arr[1]);
-        // $time_now=strtotime($time[0]);
-        $time_now=time();
+    public function resIsClosed($res){
         if(
+
             (
                 ( intval(date('H',strtotime($res->open_time))) <= intval(date('H',strtotime($res->close_time))) ) 
                 && 
@@ -62,6 +51,19 @@ class UserFoodController extends Controller
                 ( (time()>=strtotime($res->close_time)&& time()<=strtotime($res->open_time)))
             )
         )
+        return true;
+        return false;
+    }
+    public function show($id){
+        $res=Restaurants::find($id);
+        
+        // $response =file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
+        // $obj=json_decode($response);
+        // $arr=explode('T',$obj->datetime);
+        // $time=explode('+',$arr[1]);
+        // $time_now=strtotime($time[0]);
+        $time_now=time();
+        if($this->resIsClosed($res))
         return back()->with('error','Restaurant Closed!');
         $items=$res->items;
         $data=[
@@ -79,7 +81,10 @@ class UserFoodController extends Controller
         {
             return response()->json(['askConfirm'=>true],400);
         }
-
+        foreach($carts as $cart){
+            if($cart->food_id==$request->input("item_id"))
+            return response()->json(['exist'=>true]);
+        }
         $cart=new FoodCart;
         $cart->user_id=Auth::user()->id;
         $cart->res_id=$res_id;
@@ -114,7 +119,10 @@ class UserFoodController extends Controller
     }
     public function show_cart(){
         $carts=FoodCart::where('user_id',Auth::user()->id)->get();
-        return view('food.cart')->with('carts',$carts);
+        $status=DeliveryAvailable::all()->last();
+        if(isset($status)) $status=$status->status;
+        else $status="Available";
+        return view('food.cart')->with('carts',$carts)->with('status',$status);
     }
     public function del_all(Request $request){
         $carts=FoodCart::where('user_id',Auth::user()->id)->get();
@@ -140,27 +148,31 @@ class UserFoodController extends Controller
     public function sendMail(Request $request){
         // return $request->all();
         $quantities=$request->input('quantities');
-        $ids=$request->input('ids');
+        // $ids=$request->input('ids');
         $phone=$request->input('phone');
-
+        $address=$request->input('address');
+        $set_default_address=$request->input('default_address');
         
-        $carts=Auth::user()->foodcarts;
-        $res_id;
-        // return $carts;
-        foreach($carts as $i => $cart)
+        
+        $res_name="NOT FOUND";
+        foreach($quantities as $i => $quan)
         {
+            // $res_id=$cart->res_id;
+            // if($cart->id==$ids[$i])
+            $cart=FoodCart::find($i);
             $res_id=$cart->res_id;
-            if($cart->id==$ids[$i])
-            $cart->quantity=$quantities[$i];
+            $cart->quantity=$quan;
             $cart->save();
         }
         if(isset($res_id))
         $res_name=Restaurants::find($res_id);
-        else
-        $res_name="NOT FOUND";
+        
+        if($res_name=="NOT FOUND" || $this->resIsClosed($res_name))
+        return back()->with('error','Restaurant is Closed ');
         // return $carts;
         //return $items;
         $user=Auth::user();
+        $carts=Auth::user()->foodcarts;
         if($carts==null)
         return back()->with('error','There might be Some Error');
 
@@ -177,13 +189,14 @@ class UserFoodController extends Controller
         $data=array(
             'name'=>Auth::user()->name,
             'phone'=>$contact,
+            'address'=>$address,
             'email'=>Auth::user()->email,
             'paid'=>Session::get('payDone')??false,
             'res_name'=>$res_name->name,
             'city'=>$user->city()->first()->city_name,
             'items'=>$items,
         );
-
+        Session::pull('payDone');
         // return $data;
         if($user->email!=null)
         Mail::to($user->email)->send(new SendFoodMail($data));
@@ -195,8 +208,117 @@ class UserFoodController extends Controller
             $cartitem->delete();
         }
         $user->no_of_requests=$user->no_of_requests+1;
+        if($set_default_address=="on")
+        $user->address=$address;
         $user->update();
         // if(Auth::user()->city_id==1)
-        return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        // return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        Session::put('order-placed',true);
+        return redirect('/foodie');
+    }
+    public function forgetOrderPlaced(){
+        Session::forget("order-placed");
+        return;
+    }
+    public function filterInRes(Request $request,$res_id)
+    {
+        $inc=$request->input('selected')==1?'desc':'asc';
+        if($request->input('query')=='')
+        {
+            $items=Menu::where('res_id',$res_id)->orderBy('price',$inc)->get();
+        }
+        else{
+            $items=Menu::where('res_id',$res_id)->where('name','like','%'.$request->input('query').'%')->orderBy('price',$inc)->get();
+        }
+        $data='<h4 class="my-2">Menu ('.count($items??[]).' items)</h4>';
+        if(count($items??[])>0){
+            $data.='<div class="row">';
+              
+            foreach($items as $item){
+                $id=$item->id;
+                $data.='<div class="col-md-12 my-4">
+                <div class="card">
+                    <div class="card-body" style="padding:5px">
+                    <div class="row">
+                        <p style="position:absolute;right:5px;top:5px">';
+                if(isset($item->is_veg)){
+                    if($item->is_veg==1){
+                        $data.='<img src="https://img.icons8.com/color/48/000000/vegetarian-food-symbol.png"/>';
+                    }
+                    else{
+                        $data.='<img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"/>';
+                    }
+                }
+                $data.='</p>
+                <div class="col-md-4 col-xs-4 image-outer">';
+                if($item->sold_out)
+                {
+                    $data.='<img src="';
+                    $data.=asset("/storage/images/sold.jpg");
+                    $data.='" alt="Sold Out" class="overlay-img" >';
+
+                }
+
+                $data.='<img class="card-img-top item-img" ';
+                if($item->image)
+                    $data.='src="'.asset("storage/restaurants/items/".$item->image).'"';
+                else 
+                    $data.='src="https://via.placeholder.com/150"';
+                $data.='alt="Card image cap">
+                </div> 
+                <div class="col-md-8 col-xs-8 content">';
+                $data.='<p class="stylish">Name : '.$item->name.'</p>';
+                $data.='<p class="stylish">Price : '.$item->price.'</p>';
+                $data.='<p class="stylish"> '.$item->desc.'</p>';
+                $data.='                              </div>
+                </div>
+                <div class="float-right">';
+                //if guest
+                if(!Auth::user())
+                {
+                    
+                    $data.='<div style="" class="quandiv" id="quandiv'.$id.'">';
+                    $data.='<button class="btn btn-danger">-</button><input type="text" class="form-control quantity" value="1" disabled> <button class="btn btn-info">+</button>
+                    </div>';
+                    if(!$item->sold_out)
+                    $data.='
+                    <a class="btn btn-primary add-cart" data-id="'.$id.'" id="cart'.$id.'">Add to Cart</a>';
+                }
+                //not guest
+                else{
+                    if(!$item->sold_out){
+                        $carts=Auth::user()->foodcarts;
+                        $done=false;
+                        foreach ($carts as $cart){
+                            if ($cart->food_id==$id){
+                                $data.='<a class="btn btn-primary add-cart"  data-id="'.$id.'" id="cart'.$id.'" style="display: none">Add to Cart</a>
+                                <div style="height:35px" class="quandiv" id="quandiv'.$id.'">
+                                <button class="btn btn-danger sub"id="sub'.$id.'" data-id="'.$id.'">-</button><input type="text" class="form-control quantity" value="'.$cart->quantity.'" disabled id="show'.$id.'"> <button class="btn btn-info add" data-id="'.$id.'" id="add'.$id.'">+</button>
+                                </div>';
+                            $done=true;
+                            break;
+                            }
+                        }//inner foreach
+
+                        if(!$done){
+                            $data.='<div style="" class="quandiv" id="quandiv'.$id.'">
+                            <button class="btn btn-danger sub" id="sub'.$id.'" data-id="'.$id.'">-</button><input type="text" class="form-control quantity" value="1" disabled id="show'.$id.'"> <button class="btn btn-info add" data-id="'.$id.'" id="add'.$id.'">+</button>
+                        </div>
+                        <a class="btn btn-primary add-cart"  data-id="'.$id.'" id="cart'.$id.'">Add to Cart</a>';
+                        }
+                    }
+
+                }//end logged in user
+                $data.='</div></div></div></div>';
+            }//end foreach
+            $data.='</div>';
+        }
+        else{
+            
+            $data.='<div class="my-4">No Items Found</div>';
+        } 
+        
+        return response()->json($data,200);
+        
     }
 }
