@@ -163,7 +163,7 @@
         /* background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%); */
         background-size: cover;
         background-repeat: no-repeat;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
         font-size: 14px;
         color: #000;
         margin: 0;
@@ -612,10 +612,11 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </div> --}}
-                    <form id="search-form">
+                    <form action="{{route('e_comm_filtered')}}" method="POST" id="search-form">
+                        {{ csrf_field() }}
                         <div style="margin-bottom: 20px;display:flex;position:relative" >
-            
-                            <input type="text" class="form-control" placeholder="Search Items" id="Search-bar">
+                            
+                            <input type="text" class="form-control" placeholder="Search Items" name="search_text">
                             <button type="submit" id="submit-search"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                         </form>
@@ -661,7 +662,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                         </ul>
                     </div>
                     <div class="form-inline my-2 my-lg-0"> <a class="btn btn-outline-success my-2 my-sm-0"
-                            href="/products?category=0&searchbox=&sort=latest&page=1"><i class="fa fa-search search-icon" aria-hidden="true"></i></a> <a
+                            href="/e-commerce"><i class="fa fa-search search-icon" aria-hidden="true"></i></a> <a
                             class="btn btn-outline-success my-2 my-sm-0" href="/products/cart"><i
                                 class="fa fa-shopping-basket basket-icon"></i></a> </div>
                 </nav>
@@ -713,7 +714,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                         <a href="/safari"><img src="/storage/banner/locomo.webp" alt="Banner2"></a>
                     </div>
                     <div class="item">
-                        <a href="/products?category=0&searchbox=&sort=latest&page=1"><img
+                        <a href="/e-commerce"><img
                                 src="/storage/banner/forbesganj.webp" alt="Banner3"></a>
                     </div>
                     <div class="item">
@@ -806,7 +807,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                                 <p class="card-text">E-Commerce</p>
                             </div>
                             <div class="overlay">
-                                <div class="overlay-text"><a href="{{url('/products?category=0&searchbox=&sort=latest&page=1')}}"
+                                <div class="overlay-text"><a href="{{url('/e-commerce')}}"
                                         class="btn btn-secondary">Go Shopping!</a></div>
                             </div>
                         </div>
@@ -1088,12 +1089,12 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
             document.getElementById("second-nav").style.width="0";
         }
         $(document).ready(function(){
-            $("#search-form").on('submit',function(e){
-                e.preventDefault();
-                var search=$('#Search-bar').val();
-                // console.log(search);
-                window.location.href="/products?category=0&searchbox="+search+"&sort=latest&page=1";
-            });
+            // $("#search-form").on('submit',function(e){
+            //     e.preventDefault();
+            //     var search=$('#Search-bar').val();
+            //     // console.log(search);
+            //     window.location.href="/products?category=0&searchbox="+search+"&sort=latest&page=1";
+            // });
             $(document).scroll(function(){
                 if($(document).scrollTop()>150)
                 {

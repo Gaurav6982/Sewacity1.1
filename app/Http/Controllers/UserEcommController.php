@@ -14,7 +14,7 @@ use App\Mail\SendMail;
 class UserEcommController extends Controller
 {
     public function index(){
-
+       
         $city_id=Auth::check()?Auth::user()->city_id:(Session::has('city_id')?Session::get('city_id'):1);
         $sellers=EcommSeller::where('city_id',$city_id)->where('is_active',1)->get();
         $categories=Categories::where('city_id',$city_id)->orderBy('order')->get();
@@ -50,17 +50,19 @@ class UserEcommController extends Controller
         
         $products=$products->where('is_active',"1")->get();
         
-       
+        // Session::forget('order_placed');
         return view('ecomm.index',compact('sellers','categories','products','search_text','category_id','seller_id','price_filter'));
     }
 
     public function show($product_id){
+        // Session::forget('order_placed');
         $product=EcommProduct::find($product_id);
         if($product->sold_out=="1") return back()->with('error','This Product is Sold Out!');
         $images=$product->uploaded_images;
         return view('ecomm.show',compact('product','images'));
     }
     public function cart(){
+        // Session::forget('order_placed');
         $cart_items=CartItem::where('user_id',Auth::user()->id)->where('cart_items.is_active','1')->join('ecomm_products','ecomm_products.id','=','product_id')->select('cart_items.*','product_id','category_id','seller_id','showcase_image','selling_price','price','discount','product_name','specs')->get()->groupBy('seller_id');
         // return response()->json($cart_items);
         $sellers=[];
@@ -145,6 +147,8 @@ class UserEcommController extends Controller
         $user->no_of_requests=$user->no_of_requests+1;
         $user->update();
         // if(Auth::user()->city_id==1)
-        return redirect('/e-commerce')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        // $order_placed=true;
+        // Session::put('order_placed',true);
+        return redirect('/e-commerce')->with('success','Order Placed Successfully!');
     }
 }

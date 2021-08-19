@@ -402,6 +402,7 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
 <script src="{{asset('ecomm_cart/mdb.ecommerce.min.js')}}"></script>
 <script src="{{asset('ecomm_cart/mdb.min.js')}}"></script>
 <script src="{{asset('ecomm_cart/popper.min.js')}}"></script>
+
     <script>
         $(document).ready(function(){
           $('#submit-request').click(function(){

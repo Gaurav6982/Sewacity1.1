@@ -31,8 +31,26 @@ class PayController extends Controller
         return response()->json('Something Went Wrong!',400);
     }
     public function payment(Request $request){
-        $user=Auth::user()->id;
-        $amount=intval(Session::get('amount'))*100;
+        $user=Auth::user();
+        $quantities=explode("&",$request->quantities);
+        // return response()->json($quantities,500);
+        $amount=0;
+        foreach($quantities as $quantity){
+            $id=explode("quantities%5B",$quantity)[1];
+            $id=explode("%5D",$id);
+            $quan=explode("=",$id[1])[1];
+            $id=$id[0];
+            $cart=FoodCart::find($id);
+            $cart->quantity=$quan;
+            $cart->save();
+            $amount+=$cart->item_details->price*intval($quan);
+        }
+        $amount+=$this->deliveryCharge($amount);
+        $amount=$amount*100;
+        $cartItems=$user->cartitems;
+
+
+        // $amount=intval(Session::get('amount'))*100;
         // $amount=intval($request->amount)*100;
         $pay_id=Payment::orderBy('created_at','desc')->first();
         if(is_null($pay_id))
@@ -46,7 +64,7 @@ class PayController extends Controller
         // Session::put('amount',$amount);
         // Session::put('order_id'.$pay_id,$orderId);
         $pay=new Payment;
-        $pay->user_id=$user;
+        $pay->user_id=$user->id;
         $pay->amount=$amount;
         $pay->order_id=$orderId;
         $pay->save();
@@ -55,7 +73,11 @@ class PayController extends Controller
         // return view('pay.payConfirm')->with('order_id',$orderId)->with('amount',$amount);
 
     }
-    public function set_amount(Request $request)
+    public function deliveryCharge($amount){
+        if($amount>0 && $amount<100) return 20;
+        if($amount>=100) return 15;
+    }
+    public function get_amount(Request $request)
     {
         Session::forget("amount");
         Session::put('amount',$request->amount);

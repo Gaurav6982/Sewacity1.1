@@ -500,12 +500,12 @@
                                                     <div class="price-for-mobile">
                                                         @if($product->discount>0)
                                                         <span>
-                                                        {!! '<span class="m-0">&#8377;</span>'.round($product->selling_price)!!}
+                                                        {!! '<span class="m-0">&#8377;</span>'.number_format($product->selling_price,2,'.',"")!!}
                                                         </span>
                                                         <span class="mx-1"><strike> {!!'<span class="m-0">&#8377;</span>'.$product->price!!}</strike>
                                                         </span>
                                                         <br>
-                                                        <span class="text-success mx-1">{{round($product->discount,2)}}% off</span>
+                                                        <span class="text-success mx-1">{{number_format($product->discount,2,".","")}}% off</span>
                                                         @else 
                                                         <span>&#8377;</span> {{round($product->price)}} 
                                                         @endif
@@ -551,7 +551,13 @@
 @endsection
 
 @section('js')
+{{-- @if (Session::has('order_placed') && Session::get('order_placed')==true)
     <script>
+       Swal.fire("Your order is placed and under processing! There won't be any confirmation call or message generally!!<br>Now you will be contacted by our delivery person !<br>In Case you want to cancel your order contact us within 1minuter after you placed your order<br><br>आपका order placed हो गया है और processing में है! सामान्यतः आपको कोई confiramation call या message नहीं किया जाएगा !!<br>अब आपसे  हमारे Delivery Person आपके दिए हुए address पर पहुंचकर संपर्क करेंगे!!<br>यदि आप अपना ऑर्डर cancel करना चाहते हैं तो अपना ऑर्डर देने के  1 मिनट के भीतर हमसे संपर्क करें!!","","info");
+    </script>
+@endif --}}
+    <script>
+        // alert("{{$order_placed??'not set'}}")
         $(document).ready(function(){
         $(".owl-carousel").owlCarousel({
             items:3,
@@ -574,7 +580,7 @@
     });
     $(document).ready(function(){
         $("option").addClass("myFont")
-        $('select').select2({
+        $('.select').select2({
             theme: 'classic',
             // dropdownCssClass: "myFont"
         });

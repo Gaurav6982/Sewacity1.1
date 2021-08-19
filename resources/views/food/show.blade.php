@@ -309,6 +309,13 @@
                         'warning'
                     )
               }
+              else if(data.exist){
+                // Swal.fire(
+                //         'Error!',
+                //         'Item Already in Cart!!',
+                //         'warning'
+                //     )
+              }
               else
               {
                 Swal.fire(

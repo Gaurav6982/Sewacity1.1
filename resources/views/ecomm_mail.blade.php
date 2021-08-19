@@ -178,12 +178,12 @@
 							<td>Rs. {{$extreme_total}}</td>
 						</tr>
 						<tr>
-							<td colspan="4">Total Discount: </td>
-							<td>Rs. {{$extreme_discount}}</td>
-						</tr>
-						<tr>
 							<td colspan="4">Total Delivery: </td>
 							<td>Rs. {{$extreme_delivery}}</td>
+						</tr>
+						<tr>
+							<td colspan="4">Total Discount: </td>
+							<td>Rs. {{$extreme_discount}}</td>
 						</tr>
 						<tr>
 							<td colspan="4">Payable Amount: </td>
@@ -198,7 +198,12 @@
 Our Country Bharat, is going through challenging times. Due to the current circumstances in Covid-19, product availability may take some time. We will get back to you within the next 12 hours. Thank You for giving a chance to Indian Brands Focused startup -Sewacity.</p>
         	        <p style="color:#00ff00;">हमारा देश, भारत,आज एक चुनौतीपूर्ण दौर से गुजर रहा है | कोविद -19 में वर्तमान परिस्थितियों के कारण, प्रोडक्ट्स की उपलब्धता में थोड़ा समय लग सकता है | अतः आर्डर की पुष्टि आपको अगले 12 घंटो में दे दी जायेगी  | भारतीय ब्रांड्स पर केंद्रित स्टार्टअप - सेवासिटी  , का साथ देने के लिए सदा आपके आभारी रहेंगे |</p>
         	    </div> --}}
-
+				<p style="color: white">Your order is placed and under processing! There won't be any confirmation call or message generally!!
+					Now you will be contacted by our delivery person !
+					In Case you want to cancel your order contact us within 1minuter after you placed your order</p>
+				<p style="color:white">आपका order placed हो गया है और processing में है! सामान्यतः आपको कोई confiramation call या message नहीं किया जाएगा !!
+					अब आपसे  हमारे Delivery Person आपके दिए हुए address पर पहुंचकर संपर्क करेंगे!!
+					यदि आप अपना ऑर्डर cancel करना चाहते हैं तो अपना ऑर्डर देने के  1 मिनट के भीतर हमसे संपर्क करें!!</p>
 				Thank You for Using Our Website.!
 			</div>
 		</div>

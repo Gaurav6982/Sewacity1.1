@@ -169,7 +169,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('payment-success','PayController@success');
     Route::post('payment','PayController@payment');
     Route::post('pay','PayController@pay');
-    Route::post('set-amount','PayController@set_amount');
+    Route::post('get-amount','PayController@get_amount');
     Route::post('set-success','PayController@set_success');
     Route::post('set-fail','PayController@set_fail');
+    Route::get('mark-order-placed-read','UserFoodController@forgetOrderPlaced')->name('mark_order_placed_read');
 });

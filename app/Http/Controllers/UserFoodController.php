@@ -36,16 +36,9 @@ class UserFoodController extends Controller
         $restaurants=Restaurants::where('city_id',$city)->where('is_active',1)->get();
         return view('food.index')->with('res',$restaurants)->with('time_now',$time_now);
     }
-    public function show($id){
-        $res=Restaurants::find($id);
-        
-        // $response =file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
-        // $obj=json_decode($response);
-        // $arr=explode('T',$obj->datetime);
-        // $time=explode('+',$arr[1]);
-        // $time_now=strtotime($time[0]);
-        $time_now=time();
+    public function resIsClosed($res){
         if(
+
             (
                 ( intval(date('H',strtotime($res->open_time))) <= intval(date('H',strtotime($res->close_time))) ) 
                 && 
@@ -58,6 +51,19 @@ class UserFoodController extends Controller
                 ( (time()>=strtotime($res->close_time)&& time()<=strtotime($res->open_time)))
             )
         )
+        return true;
+        return false;
+    }
+    public function show($id){
+        $res=Restaurants::find($id);
+        
+        // $response =file_get_contents('http://worldtimeapi.org/api/timezone/Asia/Kolkata');
+        // $obj=json_decode($response);
+        // $arr=explode('T',$obj->datetime);
+        // $time=explode('+',$arr[1]);
+        // $time_now=strtotime($time[0]);
+        $time_now=time();
+        if($this->resIsClosed($res))
         return back()->with('error','Restaurant Closed!');
         $items=$res->items;
         $data=[
@@ -75,7 +81,10 @@ class UserFoodController extends Controller
         {
             return response()->json(['askConfirm'=>true],400);
         }
-
+        foreach($carts as $cart){
+            if($cart->food_id==$request->input("item_id"))
+            return response()->json(['exist'=>true]);
+        }
         $cart=new FoodCart;
         $cart->user_id=Auth::user()->id;
         $cart->res_id=$res_id;
@@ -139,28 +148,31 @@ class UserFoodController extends Controller
     public function sendMail(Request $request){
         // return $request->all();
         $quantities=$request->input('quantities');
-        $ids=$request->input('ids');
+        // $ids=$request->input('ids');
         $phone=$request->input('phone');
         $address=$request->input('address');
         $set_default_address=$request->input('default_address');
         
-        $carts=Auth::user()->foodcarts;
-        $res_id;
-        // return $carts;
-        foreach($carts as $i => $cart)
+        
+        $res_name="NOT FOUND";
+        foreach($quantities as $i => $quan)
         {
+            // $res_id=$cart->res_id;
+            // if($cart->id==$ids[$i])
+            $cart=FoodCart::find($i);
             $res_id=$cart->res_id;
-            if($cart->id==$ids[$i])
-            $cart->quantity=$quantities[$i];
+            $cart->quantity=$quan;
             $cart->save();
         }
         if(isset($res_id))
         $res_name=Restaurants::find($res_id);
-        else
-        $res_name="NOT FOUND";
+        
+        if($res_name=="NOT FOUND" || $this->resIsClosed($res_name))
+        return back()->with('error','Restaurant is Closed ');
         // return $carts;
         //return $items;
         $user=Auth::user();
+        $carts=Auth::user()->foodcarts;
         if($carts==null)
         return back()->with('error','There might be Some Error');
 
@@ -200,7 +212,13 @@ class UserFoodController extends Controller
         $user->address=$address;
         $user->update();
         // if(Auth::user()->city_id==1)
-        return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        // return redirect('/foodie')->with('success','Order Placed, Our Service Executive team will contact you shortly, Thank You');
+        Session::put('order-placed',true);
+        return redirect('/foodie');
+    }
+    public function forgetOrderPlaced(){
+        Session::forget("order-placed");
+        return;
     }
     public function filterInRes(Request $request,$res_id)
     {

@@ -165,8 +165,8 @@
                                     </td>
                                     <td style="display: flex">
                                         <button class="downbtn btn btn-secondary" data-id="{{$cart->id}}">-</button>
-                                        <input type="hidden" name="ids[]" value="{{$cart->id}}">
-                                        <input type="number" name="quantities[]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}" readonly>
+                                        {{-- <input type="hidden" name="ids[]" value="{{$cart->id}}"> --}}
+                                        <input type="number" name="quantities[{{$cart->id}}]" class="form-control inquan" min="1" max="20" id="inquan{{$cart->id}}" value="{{$cart->quantity}}" data-id="{{$cart->id}}" readonly>
                                         <button class="upbtn btn btn-secondary" data-id="{{$cart->id}}">+</button>
                                     </td>
                                     <td>
@@ -218,7 +218,7 @@
                 <div class="float-right d-flex" >
                     <button class="btn btn-primary " id="submit">Place Request</button>
                     <div style="padding-top:4px">&nbsp; OR &nbsp;</div>
-                    <input type="hidden" id="amount-input"  value="">
+                    {{-- <input type="hidden" id="amount-input"  value=""> --}}
                     <button class="btn btn-primary " id="pay-btn">Pay Online</button>
                     
                 </div>
@@ -321,7 +321,7 @@
             }
             
             // {{-- if(total!==0 && extra!==0)
-            $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
+            // $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":parseInt(total)+parseInt(extra)} }); --}}
             // {{-- $('#amount-input').val(parseInt(total)+parseInt(extra)); --}}
         })   
         $('.inquan').on("change",function(){
@@ -429,13 +429,15 @@
         else if(parseInt(total) < 100 && parseInt(total) > 0)
             extra=20;
             total=parseInt(total)+parseInt(extra);
-        $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":total},err:function(err){console.log("set-amount error")} });
+        // $.ajax({url:"/set-amount",async:false,type:"POST",data:{"_token":"{{ csrf_token() }}","amount":total},err:function(err){console.log("set-amount error")} });
         $.ajax({
             type:"post",
             url:"/payment",
             async:false,
             data:{
                 // {{-- "amount":"{{Session::get('amount')}}", --}}
+
+                "quantities":$('.inquan').serialize(),
                 "_token":"{{ csrf_token() }}",
             },
             success:function(data){

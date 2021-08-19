@@ -147,6 +147,7 @@
 body {
 	/*background-image:url('./assets/bg.jpg');*/
 	/*background-color: #21d190;*/
+    min-height: 100vh;
     background-color: #7f53ac;
 background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 	/* background-image: linear-gradient(135deg, #21d190 0%, #d65bca 74%) !important; */

@@ -2,6 +2,9 @@
     .uns{
         display: none;
     }
+    footer{
+        font-family: sans-serif
+    }
 </style>
 <footer>
     <!-- <div class="seperate"></div> -->
@@ -60,7 +63,7 @@
               
         </div>
             <hr style="background-color: white">
-            <b> &copy; {{date("Y")}} Sewacity.com &nbsp;, All rights reserved | <a href='/privacy'>Privacy Policy</a> | <a href="/terms-and-conditions">Terms and Conditions</a> </b> </div>
+            <b> &copy; {{date("Y")}} Sewacity Technologies Private Limited &nbsp;, All rights reserved | <a href='/privacy'>Privacy Policy</a> | <a href="/terms-and-conditions">Terms and Conditions</a> </b> </div>
 
     </footer>
 
