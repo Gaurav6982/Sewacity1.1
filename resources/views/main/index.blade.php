@@ -486,7 +486,55 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
         height: 300px !important;
     }
     
-    
+    body{
+        background: #EEEEEE;
+    }
+    .hoveractive{
+        background: rgb(15, 167, 15);
+        border-radius: 5px;
+    }
+    * {
+    box-sizing: border-box;
+  }
+   
+   input {
+    -webkit-appearance: none;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-image: url(https://i.postimg.cc/857jHw2q/Screenshot-2020-04-16-at-1-07-06-PM.png);
+    background-size: cover;
+    border-radius: 50px;
+    outline: none;
+    transition: background-image .90s;
+    box-shadow: 0px 2px 5px 1px gray;
+    outline: none;
+  }
+  
+  input:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: navy;
+    border-radius: 50px;
+    transition: all .9s;
+    background-color: #F7CA33;
+  }
+  
+  input:checked {
+    background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png);
+    transition: background-image .90s;
+  
+  }
+  
+  input:checked:before {
+    transform: translate(100%);
+    transition: all .9s;
+    background-color: #ECF0F3;
+  }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 <body>
@@ -529,9 +577,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                 </ul>
             </div>
         </div>
-        <marquee>
-            <span>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</span>
-        </marquee> @guest<div class="banner">
+         @guest<div class="banner">
                 <div class="imag"> <img src="/storage/images/banner.webp" class="sticky"> <i class="fa fa-times cross"
                         style="font-size: 30px"></i> </div>
         </div> @endguest
@@ -585,10 +631,15 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                                         class="dropdown-item">User Details</a>
                                     @endif
                                     <a href="/profile"
-                                        class="dropdown-item">Profile Settings</a> <a class="dropdown-item"
+                                        class="dropdown-item">Profile Settings</a>
+                                        <a class="dropdown-item"
                                         href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }} </a>
+                                        <a href="/profile"
+                                        class="dropdown-item"> 
+                                        <input type="checkbox">
+                                        </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                         style="display: none;"> @csrf </form>
@@ -642,7 +693,7 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active"> <a class="nav-link" href="/">Home <span
+                            <li class="nav-item active hoveractive"> <a class="nav-link" href="/">Home <span
                                         class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/tieup">Want To Join Us?</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/about" target="_blank">About Us</a> </li>
@@ -668,6 +719,9 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                 </nav>
             </div>
         </header> <!-- /header -->
+        <marquee>
+            <span>Sewacity is a digital Platform which derive its motivation from "Serve the City" which means to provide services to the people in a city to make their work effortless and we provide services like E-commerce ,Food Services & many others. We work towards our motto " By the city and for the city".The Founder of Sewacity is Mayank Gupta & a well skilled team is behind this.Please contact us on +91 9117575868 for the service you need from sewacity.com</span>
+        </marquee>
         <!-- main -->
         <main style="overflow:hidden">
 
@@ -770,15 +824,12 @@ background-image: linear-gradient(135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.
                     </div>
                 </center> <br>
                 @foreach ($sliders as $slider)
-                <br>
-                <br>
                 <div class="custom-carousel owl-carousel owl-theme">
                     @foreach ($slides[$slider->id] as $item)
                         <div class="item"><a @if($item->url!=null) href="{{$item->url}}" @endif><img src="{{asset('/storage/frontSliders/'.$slider->id.'/'.$item->image)}}" alt=""></a></div>
                     @endforeach
                     
                 </div>
-                <br><br>
                 @endforeach
                 
             </div>
