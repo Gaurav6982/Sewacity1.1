@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Gugi&family=Monoton&family=Piedra&family=Metal+Mania&family=Shadows+Into+Light&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
 :root{
 	--primary-color:#0AA903;
 	--secondary-color:#1FFF01;
@@ -111,30 +110,26 @@ header .site-title{
 	width: 100%;
 }
 .navbar-nav .nav-item .nav-link{
-	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-family:var(--piedra);
 	font-size: 17px;
 	padding: 0 1.6em !important;
 	transition: all 0.3s ease;
-	font-weight: 800;
 }
 .navbar-nav{
 	padding: 0.1em 0em;
 }
 .navbar-nav a{
 	cursor: pointer;
-	margin-left: 10px;
-	border-radius: 10px;
-	font-family: 'Barlow Semi Condensed', sans-serif;
 }
 .navbar-nav a:hover{
-	background-color: #e73b77;
+	background-color: var(--primary-color);
 }
 .form-inline .btn{
 	margin-right: 2em !important;
 }
 .navbar-nav .nav-item .nav-link:hover{
-	border-radius: 10px;
-	transform: translateZ(3px);
+	border-radius: 20px;
+	transform: scale(1.1);
 }
 header .header-links{
 	font-family: var(--gugi);

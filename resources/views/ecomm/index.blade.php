@@ -556,17 +556,6 @@
        Swal.fire("Your order is placed and under processing! There won't be any confirmation call or message generally!!<br>Now you will be contacted by our delivery person !<br>In Case you want to cancel your order contact us within 1minuter after you placed your order<br><br>आपका order placed हो गया है और processing में है! सामान्यतः आपको कोई confiramation call या message नहीं किया जाएगा !!<br>अब आपसे  हमारे Delivery Person आपके दिए हुए address पर पहुंचकर संपर्क करेंगे!!<br>यदि आप अपना ऑर्डर cancel करना चाहते हैं तो अपना ऑर्डर देने के  1 मिनट के भीतर हमसे संपर्क करें!!","","info");
     </script>
 @endif --}}
-<script>
-    $(document).ready(function () {
-       $('input[type="checkbox"]').click(function(){
-          if($(this).prop("checked") == true){
-             $('#strech').click(function(){
-                   $('#OOel').css("height","650px");
-             });  
-          }
-       });
-    });
- </script>
     <script>
         // alert("{{$order_placed??'not set'}}")
         $(document).ready(function(){
