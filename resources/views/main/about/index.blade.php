@@ -35,10 +35,25 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    #loading{
+	  position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #E26A2C;
+    background-color: rgb(15 6 20 / 90%);
+}
+  </style>
 </head>
 
-<body>
-
+<body onload="myFunction()">
+  <div id="loading" >
+    <img src="{{'assets/pred.gif'}}" alt="preloader">
+  </div>
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top ">
     <div class="container d-flex align-items-center">
@@ -1014,8 +1029,13 @@
   </footer><!-- End Footer -->
 
   <a target="_blank" href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
-  <div id="preloader"></div>
-
+  {{-- <div id="preloader"></div> --}}
+  <script>
+    var preloader = document.getElementById('loading');
+    function myFunction (){
+     preloader.style.display = 'none';
+    }
+ </script>
   <!-- Vendor JS Files -->
   <script src="/assets/vendor/jquery/jquery.min.js"></script>
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -10,9 +10,25 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<style>
+		#loading{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #E26A2C;
+                background-color: rgb(15 6 20 / 90%);
+            }
+	</style>
 </head>
 	
-<body>
+<body onload="myFunction()">
+	<div id="loading" >
+        <img src="{{'assets/pred.gif'}}" alt="preloader">
+      </div>
 	<div class="container" style="
 			border: 1px solid grey;
 			border-radius: 20px;
@@ -123,4 +139,10 @@
 		<center>@SewaCity 2021</center>
 	</footer>
 </body>
+<script>
+    var preloader = document.getElementById('loading');
+    function myFunction (){
+     preloader.style.display = 'none';
+    }
+ </script> 
 </html>

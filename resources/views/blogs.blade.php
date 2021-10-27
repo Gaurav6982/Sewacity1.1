@@ -8,9 +8,22 @@
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+#loading{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #E26A2C;
+                background-color: rgb(15 6 20 / 90%);
+            }
 </style>
-<body class="w3-light-grey">
-
+<body class="w3-light-grey" onload="myFunction()">
+  <div id="loading" >
+    <img src="{{'assets/pred.gif'}}" alt="preloader">
+  </div>
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
@@ -102,4 +115,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 </footer>
 
 </body>
+<script>
+  var preloader = document.getElementById('loading');
+  function myFunction (){
+   preloader.style.display = 'none';
+  }
+</script>
 </html>

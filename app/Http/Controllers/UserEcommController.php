@@ -110,15 +110,17 @@ class UserEcommController extends Controller
         $quantities=$request->input("quantity");
         if(count($quantities??[])<=0) return back()->with('error','Something Went Wrong!');
         $user=Auth::user();
-
+        
         $contact=$user->phone;
         $items=[];
         $sellers=[];
+        $newprddata=1;
         foreach($quantities as $cart_id=>$quantity)
         {
             $cart=CartItem::find($cart_id);
             $cart->quantity=$quantity;
             $cart->is_active=false;
+            $cart->order_id=$newprddata;
             $cart->save();
             $product=EcommProduct::find($cart->product_id);
             $new_item['pname']=$product->product_name;
@@ -148,7 +150,7 @@ class UserEcommController extends Controller
         $user->update();
         // if(Auth::user()->city_id==1)
         // $order_placed=true;
-        // Session::put('order_placed',true);
-        return redirect('/e-commerce')->with('success','Order Placed Successfully!');
+        // Session::put('order_placed',true); ->with('success','Order Placed Successfully!')
+        return redirect('/orderSummary');
     }
 }

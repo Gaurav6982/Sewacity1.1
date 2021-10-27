@@ -112,7 +112,17 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
         outline: none;
         color: #9DBFAF;
         }
-
+        /* #loading{
+	        position: fixed;
+          width: 100%;
+          height: 100vh;
+          z-index: 999999;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          background-color: #E26A2C;
+          background-color: rgb(15 6 20 / 90%);
+        } */
         .searchTerm:focus{
         color: #00B4CC;
         }
@@ -175,6 +185,10 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
     @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
 @endsection
 @section('content')
+{{-- <body onload="myFunction()">  --}}
+ {{-- <div id="loading" >
+  <img src="{{'assets/pred.gif'}}" alt="preloader">
+</div> --}}
 <form action="{{route('e_comm_filtered')}}" method="POST" id="search-form">
   {{ csrf_field() }}
 <header id="search-bar-ecommerce">
@@ -397,12 +411,22 @@ background-image: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
 <!--Main layout-->
 
 @endsection
-
+{{-- </body> --}}
 @section('js')
 <script src="{{asset('ecomm_cart/mdb.ecommerce.min.js')}}"></script>
 <script src="{{asset('ecomm_cart/mdb.min.js')}}"></script>
 <script src="{{asset('ecomm_cart/popper.min.js')}}"></script>
-
+<script>
+  // var praaeloader = document.getElementById('loading');
+  // function myFunction (){
+  //  praaeloader.style.display = 'none';
+  function myFunction() {
+    setTimeout(function(){ 
+      var pre = document.getElementById('loading');
+      pre.style.display = "none";
+   },2000);
+  }  
+</script>
     <script>
         $(document).ready(function(){
           $('#submit-request').click(function(){

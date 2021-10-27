@@ -15,8 +15,24 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    <style>
+        #loading{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #E26A2C;
+                background-color: rgb(15 6 20 / 90%);
+            }
+    </style>
 </head>
-<body>
+<body onload="myFunction()">
+    <div id="loading" >
+        <img src="{{'assets/pred.gif'}}" alt="preloader">
+      </div>
     <div class="container" style="height:100vh">
         <div class="row text-center d-flex" style="align-items: center;height:100%">
             <div class="col-6 offset-3">
@@ -114,6 +130,12 @@
         </div>
     </div>
 </body>
+<script>
+    var preloader = document.getElementById('loading');
+    function myFunction (){
+     preloader.style.display = 'none';
+    }
+ </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>

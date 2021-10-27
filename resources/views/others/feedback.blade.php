@@ -31,8 +31,22 @@ body{
 .hefee{
     background-color: rgb(251, 253, 91);
 }
+#loading{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #E26A2C;
+                background-color: rgb(15 6 20 / 90%);
+            }
     </style>
-    <body >
+    <body onload="myFunction()">
+        <div id="loading" >
+            <img src="{{'assets/pred.gif'}}" alt="preloader">
+          </div>
         @include('inc.messages')
         <div class="container feed">
             <div class="row">
@@ -88,6 +102,12 @@ body{
             </div>
         </div>
     </body>
+    <script>
+        var preloader = document.getElementById('loading');
+        function myFunction (){
+         preloader.style.display = 'none';
+        }
+     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script type="text/javascript">

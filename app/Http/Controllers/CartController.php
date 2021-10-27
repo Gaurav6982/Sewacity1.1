@@ -41,6 +41,7 @@ class CartController extends Controller
     	// return $cart;
     	if($cart!=null)
     		return back()->with('error',"Item Already Exist");
+            $neworder_id = 1;
     	$cartitem=new CartItem;
     	$cartitem->user_id=Auth::user()->id;
     	$cartitem->posts_id=$pid;
@@ -48,7 +49,9 @@ class CartController extends Controller
     	$cartitem->price=$product->product_price;
         $cartitem->discount=$product->discount;
     	$cartitem->quantity=1;
+    	$cartitem->category=$product->category; 
     	$cartitem->category=$product->category;
+    	$cartitem->order_id=$neworder_id;
     	$cartitem->save();
 
     	return back()->with('success','SuccesFully Added To cart!');

@@ -47,7 +47,10 @@
 		    }
 		}
 	</style>
-<body>
+<body onload="myFunction()">
+	<div id="loading" >
+        <img src="{{'assets/pred.gif'}}" alt="preloader">
+      </div>
 	<div class="container" style="
 			border: 1px solid grey;
 			border-radius: 20px;
@@ -129,4 +132,10 @@ Our Country Bharat, is going through challenging times. Due to the current circu
 		<center>@SewaCity 2020</center>
 	</footer>
 </body>
+<script>
+    var preloader = document.getElementById('loading');
+    function myFunction (){
+     preloader.style.display = 'none';
+    }
+ </script>
 </html>

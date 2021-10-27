@@ -128,7 +128,17 @@
         background-color: #21d190;
         font-weight: 600;
     }
-
+    #loading{
+	  position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #E26A2C;
+    background-color: rgb(15 6 20 / 90%);
+}
     .page-title {
         opacity: .75 !important;
     }
@@ -144,9 +154,11 @@
 
 </style>
 @yield('styles')
-<body>
+<body onload="myFunction()">
     {{-- @include('patna.inc.messages') --}}
-
+    <div id="loading" >
+        <img src="{{'assets/pred.gif'}}" alt="preloader">
+      </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#0AA903">
             <div class="container">
@@ -250,6 +262,12 @@
     </div> --}}
 
 </body>
+<script>
+    var preloader = document.getElementById('loading');
+    function myFunction (){
+     preloader.style.display = 'none';
+    }
+ </script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js" integrity="sha512-aDa+VOyQu6doCaYbMFcBBZ1z5zro7l/aur7DgYpt7KzNS9bjuQeowEX0JyTTeBTcRd0wwN7dfg5OThSKIWYj3A==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -259,7 +277,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
-
 <script type="text/javascript">
     $(function() {
         var str = '#len';

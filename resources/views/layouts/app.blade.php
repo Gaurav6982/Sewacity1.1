@@ -31,6 +31,338 @@
 
 </head>
 <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: cursive; */
+  }
+  ::selection{
+    color: #fff;
+    background: #f00053;
+  }
+  nav{
+    display: flex;
+    width: 100%;
+    background-color: #2a2a72;
+    background-image: linear-gradient(
+  135deg, #ff7f64 0, #ff6e62 16.67%, #ff575e 33.33%, #ff3858 50%, #f00053 66.67%, #e40052 83.33%, #d90054 100%);
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+  }
+  nav .icon{
+    font-size: 26px;
+    font-weight: 800;
+    color: #FFF5FD;
+    cursor: pointer;
+  }
+  nav ol{
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+  }
+  nav ol li{
+    margin : 0 2px;
+  }
+  nav ol li a{
+    color: #00000080;
+    font-size: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 5px 10px;
+  }
+  .hideing_mb{
+    display: none;
+  }
+  /* Drop Down start editing */
+  nav ol li ul{
+    position: absolute;
+    top: 80px;
+    z-index: 12;
+    opacity: 1;
+    visibility: hidden;
+    list-style: none; 
+    margin-left: -87px;
+    margin-right: 0px;
+  }
+  nav ol li:hover > ul{
+    top: 59px;
+    opacity: 1;
+    width: 200px;
+    margin-right: 120px;
+    visibility: visible;
+    transition: all 0.3s ease;
+  }
+  nav ol li:hover > ul li a{
+    padding: 15px 0px 15px 10px;
+    color: #000000;
+    background: #fff;
+    margin-top: -11px;
+  }
+  nav ol li:hover > ul li a:hover{
+    color: #fff;
+    background: #f00053;
+  }
+  nav ol li ul li a{
+    display: block;
+    width: 100%;
+    line-height: 20px;
+    border-radius: 0px!important;
+    text-align: left;
+  }
+  /* Drop Down ending editing */
+  
+  nav ol li:hover a{
+    background:#fff;
+    color: #f00053;
+    border-radius: 12px;
+    transition: all ease 0.3s;
+  }
+  nav .search_box{
+    display: flex;
+    margin: auto 0;
+    height: 35px;
+    line-height: 35px;
+  }
+  nav .search_box input{
+    border: none;
+    outline: none;
+    background:#FFF5FD;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 315px;
+  }
+  nav .search_box span{
+    color: #FFF5FD;
+    font-size: 20px;
+    background: #ff7f64;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;  
+  }
+  nav .search_box span:hover{
+    color: #f00053;
+  }
+  nav .search_box span::after{
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: #FFF5FD;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  nav .search_box span:hover::after{
+    width: 100%;
+  }
+  nav .bar{
+    position: relative;
+    margin: auto;
+    display: none;
+  }
+  nav .bar span{
+    position: absolute;
+    color: #FFF5FD;
+    font-size: 23px;
+  }
+  input[type="checkbox"]{
+    -webkit-appearance: none;
+    display: none;
+    
+  }
+  input[type="search"]{
+    font-size: 12px;
+    padding-left: 10px;
+    color:#f00053;
+  }
+  nav .cart{
+    position: relative;
+    margin: auto;
+    display: none;
+  }
+  nav .cart span{
+    position: absolute;
+    font-size: 23px;
+    color: #fff;
+  }
+  #loading{
+	  position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #E26A2C;
+    background-color: rgb(15 6 20 / 90%);
+}
+  .search-input .autocom-box{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .btns{
+    border: none;
+    outline: none;
+    
+  }
+  @media screen and (max-width:786px){
+    nav{
+      display: block;
+    }
+    .icon{
+      display: none;
+    }
+    nav .icon{
+      display: inline-block;
+      padding: 15px 30px;
+    }
+    nav .search_box{
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    nav .search_box input{
+      width: 100%;
+    }
+    nav ol{
+      display: flex;
+      flex-direction: column;
+      background: #FFF5FD;
+      height: 0;
+      visibility: hidden;
+      transition: 0.5s ease;
+    }
+    nav ol li{
+      text-align: center;
+      transition: 0.3s 0.1s all;
+      opacity: 0;
+    }
+    nav ol li a{
+      color: black;
+      font-size: 20px;
+      padding: 25px;
+      display: block;
+    }
+    nav ol li:nth-child(1){
+      transform: translateX(-150px);
+    }
+    nav ol li:nth-child(2){
+      transform: translateX(-200px);
+    }
+    nav ol li:nth-child(3){
+      transform: translateX(-250px);
+    }
+    nav ol li:nth-child(4){
+      transform: translateX(-300px);
+    }
+    nav ol li:nth-child(5){
+      transform: translateX(-350px);
+    }
+    nav .bar{
+      display: block;
+      position: absolute;
+      top: 20px;
+      cursor: pointer;
+    }
+    nav .bar #times{
+      display: none;
+    }
+    #check:checked ~ nav .bar #times{
+      display: block;
+    }
+    #check:checked ~ nav .bar #bars{
+      display: none;
+    }
+    #check:checked ~ nav ol{
+      visibility: visible;
+      height: 400px;
+    }
+    #check:checked ~ nav ol li:nth-child(1),
+    #check:checked ~ nav ol li:nth-child(2),
+    #check:checked ~ nav ol li:nth-child(3),
+    #check:checked ~ nav ol li:nth-child(4),
+    #check:checked ~ nav ol li:nth-child(5){
+    transform: translateX(0);
+    opacity: 1;
+    }
+    
+    /* cart Editing  */
+    nav .cart{
+      display: block;
+      position: absolute;
+      top: 20px; 
+      right: 55px;
+      cursor: pointer;
+    }
+    /* cart Editing end */
+  
+    /* Drop Down  */
+    nav ol li ul{
+        position: absolute;
+        top: 80px;
+        visibility: hidden;
+        list-style: none; 
+        margin-left: -87px;
+        margin-right: 0px;
+    }
+    nav ol li:hover > ul{
+        top: 59px;
+        opacity: 1;
+        width: 250px;
+        margin-right: 100px;
+        visibility: visible;
+        transition: all 0.3s ease;
+        margin-left: 1px;
+        z-index: 3;
+    }
+    nav ol li:hover > ul li a{
+        padding: 14px 0px 14px 1px;
+        font-size: 18px;
+        color: #1b1b11;
+        background: #FFF5FD;
+        text-align: center;
+        margin-top: 6px;
+    }
+    nav ol li:hover > ul li a:hover{
+        color: #FFF5FD;
+        background:#f00053;
+    }
+    nav ol li ul li a{
+        display: block;
+        width: 100%;
+        line-height: 20px;
+        border-radius: 0px!important;
+        text-align: left;
+    }
+    .login_drop:hover{
+      margin-bottom: 230px;
+    }
+    .hideing_mb{
+      display: inline-block;
+    }
+    
+  }
+</style>
+<style>
 #messages{
     /* padding-top: 65px; */
 }
@@ -156,11 +488,8 @@ background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
     position: relative;
 }
 #app nav{
-    background-color: #2a2a72;
-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
-
-
-
+    /* background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); */
 }
 .page-title {
 	opacity: .75 !important;
@@ -172,125 +501,20 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 	font-family: 'Impact';
 	text-transform: uppercase;
 }
-
-#preloader{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 999;
-}
-#preloader img{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    /* background-color: rgba(255, 255, 255, 0.35); */
-
-}
-    
 </style>
 @yield('styles')
-<body>
-    
-    
-    <div id="preloader">
+<body onload="myFunction()">
+  <div id="loading" >
+    <img src="{{'assets/pred.gif'}}" alt="preloader">
+  </div>
+    {{-- <div id="preloader">
         <img src="/storage/preload/126.gif" alt="">
-    </div>
+    </div> --}}
     <div id="app">
-        {{-- <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="position:fixed;top:0;width:100%;z-index:99"> --}}
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="width:100%;">
-            <div class="container">
-                <a class="navbar-brand"  href="{{ url('/') }}">
-                   <div>
-                     <div class="logo">
-                    <img src="/storage/images/logo.png" height="40" alt="Logo"> <span class="comname">{{ config('app.name', 'Laravel') }}
-                      </span>
-                    </div>
-                </div>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active"><a href="/"class="nav-link"><span class="custom hoverable" id="len1">HOME</span></a></li>
-                            <li class="nav-item hoverable" id="len2"><a href="/foodie"class="nav-link"><span class="custom">FOOD SERVICE</span></a></li>
-                            <li class="nav-item hoverable" id="len3"><a href="{{route('e_comm')}}"class="nav-link"><span class="custom">E-COMMERCE</span></a></li>
-                            <li class="nav-item hoverable" id="len3"><a href="/safari"class="nav-link"><span class="custom">LOCOMO</span></a></li>
-                            <li class="nav-item hoverable" id="len3"><a href="/shelters"class="nav-link"><span class="custom">SHELTERS</span></a></li>
-                            <!--<li class="nav-item hoverable"id="len4"><a href="#"class="nav-link"><span class="custom">CITY's MERCHANT</span></a></li>-->
-                            <!--<li class="nav-item hoverable"><a href="#"class="nav-link"><span class="custom">ABOUT</span></a></li>-->
-                            </ul>
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" style="color:white;font-weight:700"class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @if(Auth::user()->usertype=='special')
-                                    <a href="/manage-feedbacks" class="dropdown-item">Manage Feedbacks</a>
-                                    @endif
-                                    @if(Auth::user()->usertype=='admin' || Auth::user()->usertype=='special')
-                                    <a  class="dropdown-item" href="/dashboard" >Admin Panel</a>
-                                    <a href="/posts?category=0&searchbox=&page=1" class="dropdown-item">Manage Products</a>
-                                    <a href="/users" class="dropdown-item">User Details</a>
-                                    @endif
-                                    <a href="/profile" class="dropdown-item">Profile Settings</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-            @if(!Auth::check() || Auth::user()->usertype=='normal')
-            <div id="select-dropdown">
-                {{-- <label for="city">Choose City:</label> --}}
-                <?php $cities=App\City::where('is_active',1)->orderBy('order')->get();?>
-                <select class="form-control" id="city" name="city">
-                    @foreach ($cities as $item)
-                        <option value="{{$item->id}}" @if(Auth::check() && Auth::user()->city_id!==$item->id) disabled @else selected @endif  >{{$item->city_name}}</option>
-                    @endforeach
-                  </select>
-                  {{-- <label class="mdb-main-label">Blue select</label> --}}
-            </div>
-            @endif
-        </nav>
-        
-        <nav>
+        @include('nav')
+        {{-- <nav>
             @yield('extra')
-        </nav>
+        </nav> --}}
         <div id="messages">
             @include('inc.messages')
         </div>
@@ -303,10 +527,18 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
         @include('inc.modals')
     </div>
 </body>
+<script>
+  // var praaeloader = document.getElementById('loading');
+  // function myFunction (){
+  //  praaeloader.style.display = 'none';
+  setTimeout(function(){ 
+      var pre = document.getElementById('loading');
+      pre.style.display = "none";
+   },2000);
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
-{{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -319,11 +551,6 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        $('#preloader').css('display','none');
-
-        // $('#submit').click(function(){
-		//     $('#preloader').css('display','unset');
-	    // });
   var str = '#len';
   $(document).ready(function(){
     var i, stop;
@@ -369,6 +596,17 @@ $(function(){
 });
     
     
+</script>
+<script>
+  $(document).ready(function () {
+     $('input[type="checkbox"]').click(function(){
+        if($(this).prop("checked") == true){
+           $('#strech').click(function(){
+                 $('#OOel').css("height","650px");
+           });  
+        }
+     });
+  });
 </script>
 @yield('js')
 </html>

@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\cartDataDBController;
+use App\Http\Controllers\OrderhistoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderSummaryController;
+use App\OrderHistory;
+
 // use Auth;
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +17,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('main.choose');
+// Route::get('/orderSummary', function () {
+//     return view('orderSummary');
 // });
+Route::get('/orderSummary',[OrderSummaryController::class,'show']);
+Route::get('/', function () {
+    return view('main.choose');
+});
 Route::get('pathkind-labs',function(){
     try{
         return File::get(public_path('pathkindlabs/index4.html'));
@@ -119,6 +127,13 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('/add-to-ecomm-cart','UserEcommController@addToCart')->name('add_to_cart');
     Route::delete('/remove-from-ecomm-cart','UserEcommController@removeFromCart')->name('remove_from_cart');
     Route::post('/place-ecomm-request','UserEcommController@placeEcommRequest')->name('place_ecomm_request');
+    Route::get('/orderhistory',[OrderhistoryController::class,'show']);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Route::post('/place-ecomm-request',[cartDataDBController::class, 'create'])->name('create');
+
+    
+    // /////////////////////////////////////////////////////////////////////////////////////////////////
 });
 
 // Route::get('/products','Main@ecomm');

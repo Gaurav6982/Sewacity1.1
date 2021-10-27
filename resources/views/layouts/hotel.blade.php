@@ -43,10 +43,23 @@
          font-weight:800;
          letter-spacing:4px;
      }
+     #loading{
+	  position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #E26A2C;
+    background-color: rgb(15 6 20 / 90%);
+}
 </style>
 
-<body>
-    
+<body onload="myFunction()">
+  <div id="loading" >
+    <img src="{{'assets/pred.gif'}}" alt="preloader">
+  </div>
     <header class="site-header js-site-header">
       <div class="container-fluid"style="width:100%">
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5de6de;
@@ -77,7 +90,12 @@
     </header>
     
        @yield('content')
-    
+       <script>
+        var preloader = document.getElementById('loading');
+        function myFunction (){
+         preloader.style.display = 'none';
+        }
+     </script>
     <script src="{{asset('hotels/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('hotels/js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{asset('hotels/js/popper.min.js')}}"></script>

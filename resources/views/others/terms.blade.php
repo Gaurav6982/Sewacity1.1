@@ -19,11 +19,24 @@
 .tc{font-size:17px;}
 
 }
-
+#loading{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #E26A2C;
+                background-color: rgb(15 6 20 / 90%);
+            }
 
 
   </style>
-  <body>
+  <body onload="myFunction()">
+    <div id="loading" >
+      <img src="{{'assets/pred.gif'}}" alt="preloader">
+    </div>
     <center>
     <div class="container">
       <h1 class="term"><u>Terms & Condition</u></h1>
@@ -45,5 +58,11 @@
   </div>
 </center>
 </body>
+<script>
+  var preloader = document.getElementById('loading');
+  function myFunction (){
+   preloader.style.display = 'none';
+  }
+</script>
 </html>
   
