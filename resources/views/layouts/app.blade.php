@@ -505,7 +505,7 @@ background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 @yield('styles')
 <body onload="myFunction()">
   <div id="loading" >
-    <img src="{{'assets/pred.gif'}}" alt="preloader">
+    <img src="{{'../assets/pred.gif'}}" alt="preloader">
   </div>
     {{-- <div id="preloader">
         <img src="/storage/preload/126.gif" alt="">
