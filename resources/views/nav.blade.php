@@ -58,6 +58,8 @@
               <li><a href="/shelters"><i class="fas fa-hotel" style="padding-right: 10px" ></i>Shelter</a></li>
             </ul>
          </li>
+         @if(Auth::guest())
+         @else
          <li><a href="#"> <i class="fas fa-users"></i></a>
             <ul>
                <li><a href="/profile" > <i class="far fa-id-badge" style="padding-right: 7px;"></i>Profile Settings</a></li>
@@ -68,6 +70,7 @@
                   </form>
              </ul>
          </li> 
+         @endif
       </ol>
       <label for="check" class="bar">
          <span class="fa fa-bars" id="bars"></span>
@@ -79,6 +82,12 @@
       </label> 
    </nav>
    <script>
+      var cur = document.querySelector('.')
+      if(){
+
+      }else{
+
+      }
       // document.getElementById('div_register').setAttribute("style","width:500px");
          // function incHeight() {
          //    $('input[type="checkbox"]').click(function(){
@@ -121,6 +130,7 @@
             }
          });
       });
+      if
    </script>
    </body>
 </html>
