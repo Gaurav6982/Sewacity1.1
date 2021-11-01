@@ -82,13 +82,11 @@
   /* Drop Down start editing */
   nav ol li ul{
     position: absolute;
-    top: 80px;
-    z-index: 12;
-    opacity: 1;
-    visibility: hidden;
-    list-style: none; 
-    margin-left: -87px;
-    margin-right: 0px;
+        top: 80px;
+        visibility: hidden;
+        list-style: none; 
+        margin-left: -152px;
+        margin-right: 0px;
   }
   nav ol li:hover > ul{
     top: 59px;
@@ -321,7 +319,7 @@
         top: 80px;
         visibility: hidden;
         list-style: none; 
-        margin-left: -87px;
+        margin-left: -129px;
         margin-right: 0px;
     }
     nav ol li:hover > ul{

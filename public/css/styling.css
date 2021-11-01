@@ -54,7 +54,7 @@
     opacity: 1;
     visibility: hidden;
     list-style: none; 
-    margin-left: -87px;
+    margin-left: -129px;
     margin-right: 0px;
   }
   nav ol li:hover > ul{
@@ -277,14 +277,13 @@
         top: 80px;
         visibility: hidden;
         list-style: none; 
-        margin-left: -87px;
+        margin-left: -152px;
         margin-right: 0px;
     }
     nav ol li:hover > ul{
         top: 59px;
         opacity: 1;
-        width: 250px;
-        margin-right: 100px;
+        width: 159px;
         visibility: visible;
         transition: all 0.3s ease;
         margin-left: 1px;
