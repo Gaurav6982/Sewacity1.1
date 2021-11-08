@@ -49,18 +49,43 @@
          <li><a href="/" class="mt"><i class="far fa-user" style="padding-right: 7px;"></i>Home </a></li>
          <li><a href="/tieup"> <i class="fas fa-hands-helping" style="padding-right: 7px;"></i>Want join us </a></li>
          <li><a href="/about"> <i class="fas fa-users" style="padding-right: 7px;"></i>About Us </a></li>
-         <li class="strech" onclick="incHeight()"><a href="#" class="desktop-link strech" onclick="incHeight()"><i class="fas fa-toolbox" style="padding-right: 7px;"></i> Our Services <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+         <li class="strech"><a class="desktop-link strech"><i class="fas fa-toolbox" style="padding-right: 7px;"></i> Our Services <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
             <ul>
-              <li><a href="#"><i class="far fa-user" style="padding-right: 10px" ></i> Home</a></li>
-              <li><a href="/foodie"><i class="fas fa-pizza-slice" style="padding-right: 10px" ></i>Food Services</a></li>
-              <li><a href="{{route('e_comm')}}"><i class="fas fa-shopping-bag" style="padding-right: 10px" ></i>E-Commerce</a></li>
-              <li><a href="/safari"><i class="fas fa-bus" style="padding-right: 10px" ></i>Locomo</a></li>
-              <li><a href="/shelters"><i class="fas fa-hotel" style="padding-right: 10px" ></i>Shelter</a></li>
+              <li>
+                 <a href="/">
+                     <i class="far fa-user" style="padding-right: 10px" ></i>
+                         Home
+                  </a>
+              </li>
+              <li>
+                 <a href="/foodie">
+                     <i class="fas fa-pizza-slice" style="padding-right: 10px" ></i>
+                        Food Services
+                 </a>
+              <li>
+              <li>
+                 <a href="{{route('e_comm')}}">
+                     <i class="fas fa-shopping-bag" style="padding-right: 10px" ></i>
+                        E-Commerce
+                 </a>
+              </li>
+              <li>
+                 <a href="/safari">
+                     <i class="fas fa-bus" style="padding-right: 10px" ></i>
+                        Locomo
+                 </a>
+              </li>
+              <li>
+                 <a href="/shelters">
+                     <i class="fas fa-hotel" style="padding-right: 10px" ></i>
+                        Shelter
+                 </a>
+              </li>
             </ul>
          </li>
-         @if(Auth::guest())
+         @if(Auth::guest())        
          @else
-         <li><a href="#"> <i class="fas fa-users"></i></a>
+         <li class="prfLogout"><a href="#"> <i class="fas fa-users"></i></a>
             <ul>
                <li><a href="/profile" > <i class="far fa-id-badge" style="padding-right: 7px;"></i>Profile Settings</a></li>
                <li>
@@ -82,12 +107,12 @@
       </label> 
    </nav>
    <script>
-      var cur = document.querySelector('.')
-      if(){
+      // var cur = document.querySelector('.')
+      // if(){
 
-      }else{
+      // }else{
 
-      }
+      // }
       // document.getElementById('div_register').setAttribute("style","width:500px");
          // function incHeight() {
          //    $('input[type="checkbox"]').click(function(){
